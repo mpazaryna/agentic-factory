@@ -1,10 +1,10 @@
-# Claude Toolkit
+# Agentic Factory
 
-A collection of specialized skills, agents, commands, and templates for enhancing Claude Code's capabilities.
+A meta-generator factory system for building custom Claude Code components — Skills, Prompts, Agents, Commands, and Hooks — through interactive guided workflows.
 
 ## Overview
 
-This toolkit provides structured markdown-based configurations that guide Claude Code through various development tasks:
+Agentic Factory provides structured markdown-based configurations that guide Claude Code through various development tasks:
 
 - **Skill Families** - Organized collections of progressive-disclosure skills for developer workflow and design
 - **Factory System** - Meta-generator for creating Skills, Prompts, Agents, Commands, and Hooks
@@ -55,7 +55,7 @@ The factory system lives in `.claude/` and is fully portable—copy to any proje
 ## Structure
 
 ```
-claude-toolkit/
+agentic-factory/
 ├── .claude/                     # Core configuration (portable)
 │   ├── agents/                  # Factory guide agents
 │   ├── commands/                # Slash commands (/build, /git:*)

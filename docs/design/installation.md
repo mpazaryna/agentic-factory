@@ -6,8 +6,8 @@
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/[username]/claude-toolkit.git
-cd claude-toolkit
+git clone https://github.com/[username]/agentic-factory.git
+cd agentic-factory
 ```
 
 2. Add your project to the index:
@@ -71,7 +71,7 @@ Maintains a registry of all your projects with:
 If you prefer manual copying:
 ```bash
 # Copy specific files to your project's .claude directory
-cp claude-toolkit/agents/*.md your-project/.claude/agents/
-cp -r claude-toolkit/commands/paz your-project/.claude/commands/
-cp claude-toolkit/templates/paz/acb/*.md your-project/.claude/templates/
+cp agentic-factory/agents/*.md your-project/.claude/agents/
+cp -r agentic-factory/commands/paz your-project/.claude/commands/
+cp agentic-factory/templates/paz/acb/*.md your-project/.claude/templates/
 ```

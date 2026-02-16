@@ -1,6 +1,6 @@
-# Code Review: claude-toolkit
+# Code Review: agentic-factory
 
-**Repository**: `/Users/mpaz/workspace/claude-toolkit`
+**Repository**: `/Users/mpaz/workspace/agentic-factory`
 **Review Date**: 2025-12-01
 **Reviewer**: Claude Code (code-reviewer agent)
 
@@ -8,7 +8,7 @@
 
 ## Executive Summary
 
-The claude-toolkit is a **well-structured, purposeful repository** that provides a factory system for generating Claude Code components (skills, agents, commands, hooks, prompts). The work demonstrates **clear architectural thinking, strong documentation practices, and appropriate scope**.
+The agentic-factory is a **well-structured, purposeful repository** that provides a factory system for generating Claude Code components (skills, agents, commands, hooks, prompts). The work demonstrates **clear architectural thinking, strong documentation practices, and appropriate scope**.
 
 **Overall Assessment**: This is **good and needful work** with a few areas for cleanup and consistency improvements.
 
@@ -33,7 +33,7 @@ The claude-toolkit is a **well-structured, purposeful repository** that provides
 The repository follows a logical, well-documented structure:
 
 ```
-claude-toolkit/
+agentic-factory/
 ├── .claude/                      # Portable factory system (EXCELLENT)
 │   ├── agents/                   # Factory guide agents
 │   ├── commands/                 # Core /build command
@@ -78,7 +78,7 @@ The absence of executable code is a **strength, not a weakness** - it reduces co
 
 ### Factory Templates: EXCELLENT
 
-**File**: `/Users/mpaz/workspace/claude-toolkit/.claude/templates/SKILLS_FACTORY_PROMPT.md`
+**File**: `/Users/mpaz/workspace/agentic-factory/.claude/templates/SKILLS_FACTORY_PROMPT.md`
 
 **Strengths**:
 - Extremely comprehensive (1,013 lines)
@@ -101,25 +101,25 @@ The template explicitly calls out common mistakes and provides correct/incorrect
 
 #### Strong Examples:
 
-**1. spike-driven-dev** (`/Users/mpaz/workspace/claude-toolkit/skills/spike-driven-dev/SKILL.md`)
+**1. spike-driven-dev** (`/Users/mpaz/workspace/agentic-factory/skills/spike-driven-dev/SKILL.md`)
 - Clear methodology with concrete examples
 - Well-structured with references to supporting docs
 - Practical workflow guidance
 - No unnecessary complexity
 
-**2. internal-comms** (`/Users/mpaz/workspace/claude-toolkit/skills/internal-comms/SKILL.md`)
+**2. internal-comms** (`/Users/mpaz/workspace/agentic-factory/skills/internal-comms/SKILL.md`)
 - Solves real problem (22A reports, devlogs)
 - Includes example templates
 - Clear invocation instructions
 
-**3. goose-recipes** (`/Users/mpaz/workspace/claude-toolkit/skills/goose-recipes/SKILL.md`)
+**3. goose-recipes** (`/Users/mpaz/workspace/agentic-factory/skills/goose-recipes/SKILL.md`)
 - Comprehensive guide to Goose recipe creation
 - Includes troubleshooting section
 - Multiple template examples
 
 #### Weak Examples:
 
-**1. code-reviewer** (`/Users/mpaz/workspace/claude-toolkit/skills/code-reviewer/SKILL.md`)
+**1. code-reviewer** (`/Users/mpaz/workspace/agentic-factory/skills/code-reviewer/SKILL.md`)
 ```markdown
 # Code Reviewer
 
@@ -145,7 +145,7 @@ The template explicitly calls out common mistakes and provides correct/incorrect
 
 **Recommendation**: Expand with concrete examples, checklists, or criteria like the spike-driven-dev skill does.
 
-**2. commit-helper** (`/Users/mpaz/workspace/claude-toolkit/skills/commit-helper/SKILL.md`)
+**2. commit-helper** (`/Users/mpaz/workspace/agentic-factory/skills/commit-helper/SKILL.md`)
 - Only 19 lines
 - Lacks examples of good commit messages
 - No guidance on conventional commit format
@@ -153,7 +153,7 @@ The template explicitly calls out common mistakes and provides correct/incorrect
 
 #### Template Quality Issues:
 
-**File**: `/Users/mpaz/workspace/claude-toolkit/skills/goose-recipes/assets/basic-recipe-template.yaml`
+**File**: `/Users/mpaz/workspace/agentic-factory/skills/goose-recipes/assets/basic-recipe-template.yaml`
 
 ```yaml
 title: "TODO: Add Recipe Title"
@@ -237,8 +237,8 @@ This is **excellent design** - the entire factory system is portable as a single
 **1. Multiple Generated Example Skills**
 
 Files like:
-- `/Users/mpaz/workspace/claude-toolkit/skills/yoga-class-planner/` (278 lines)
-- `/Users/mpaz/workspace/claude-toolkit/skills/synth-notes/`
+- `/Users/mpaz/workspace/agentic-factory/skills/yoga-class-planner/` (278 lines)
+- `/Users/mpaz/workspace/agentic-factory/skills/synth-notes/`
 
 These appear to be **test outputs from using the factory**, not core toolkit functionality. They demonstrate the factory works, but **could live in a separate `examples/` directory** rather than `skills/`.
 
@@ -252,12 +252,12 @@ The `commands/` directory contains subdirectories (context/, prime/, research/, 
 
 **3. Hardcoded Personal Paths**
 
-**File**: `/Users/mpaz/workspace/claude-toolkit/skills/synth-notes/SKILL.md` (line 101, 169)
+**File**: `/Users/mpaz/workspace/agentic-factory/skills/synth-notes/SKILL.md` (line 101, 169)
 ```markdown
 path: /Users/mpaz/workspace/synthetic-notes/output/batch_XXX
 ```
 
-**File**: `/Users/mpaz/workspace/claude-toolkit/agents/synth-notes-generator/AGENT.json` (line 44)
+**File**: `/Users/mpaz/workspace/agentic-factory/agents/synth-notes-generator/AGENT.json` (line 44)
 ```json
 "location": "/Users/mpaz/workspace/synthetic-notes/output/batch_XXX/"
 ```
@@ -277,13 +277,13 @@ path: /Users/mpaz/workspace/synthetic-notes/output/batch_XXX
 
 **1. Missing Plugin Configuration**
 
-Expected file: `/Users/mpaz/workspace/claude-toolkit/.claude-plugin/plugin.json`
+Expected file: `/Users/mpaz/workspace/agentic-factory/.claude-plugin/plugin.json`
 **Status**: File does not exist
 
 The README.md (line 26-28) instructs users to:
 ```bash
-claude-code plugin marketplace add /path/to/claude-toolkit/.claude-plugin
-claude-code plugin install claude-toolkit@claude-toolkit-local
+claude-code plugin marketplace add /path/to/agentic-factory/.claude-plugin
+claude-code plugin install agentic-factory@agentic-factory-local
 ```
 
 But the plugin.json file is missing, so this won't work.
@@ -291,7 +291,7 @@ But the plugin.json file is missing, so this won't work.
 **Recommendation**: Create `.claude-plugin/plugin.json` with proper metadata:
 ```json
 {
-  "name": "claude-toolkit",
+  "name": "agentic-factory",
   "version": "0.1.0",
   "description": "Factory system for generating Claude Code components",
   "author": "mpazaryna",
@@ -327,7 +327,7 @@ Skills like `code-reviewer` and `commit-helper` are too sparse to provide value.
 
 **2. Orphaned Plugins Directory**
 
-`/Users/mpaz/workspace/claude-toolkit/plugins/` contains:
+`/Users/mpaz/workspace/agentic-factory/plugins/` contains:
 - `decide-technical/`
 - `git-start-new/`
 - `hello-world/`
@@ -450,7 +450,7 @@ The plugin installation assumes `.claude-plugin/plugin.json` exists but doesn't 
 **From orchestrator/CLAUDE.md**:
 > Build for now, not theoretical later. This project is about learning agent coordination patterns through real usage, not building infrastructure for imaginary scale.
 
-**Assessment**: The claude-toolkit **aligns well** with this philosophy:
+**Assessment**: The agentic-factory **aligns well** with this philosophy:
 
 **Positive Alignment**:
 - No over-engineered Python infrastructure
@@ -472,7 +472,7 @@ If they're just demos, move them to `examples/` to clarify intent.
 ### Immediate Actions (High Value, Low Effort)
 
 1. **Create `.claude-plugin/plugin.json`**
-   - File path: `/Users/mpaz/workspace/claude-toolkit/.claude-plugin/plugin.json`
+   - File path: `/Users/mpaz/workspace/agentic-factory/.claude-plugin/plugin.json`
    - Fix the plugin installation instructions
    - Priority: HIGH (user-facing feature currently broken)
 
@@ -527,7 +527,7 @@ If they're just demos, move them to `examples/` to clarify intent.
 
 ### Example 1: Factory Guide Agent Structure
 
-**File**: `/Users/mpaz/workspace/claude-toolkit/.claude/agents/factory-guide.md`
+**File**: `/Users/mpaz/workspace/agentic-factory/.claude/agents/factory-guide.md`
 **Lines**: 1-250
 
 **Positive**: This agent definition is **excellent**:
@@ -541,7 +541,7 @@ If they're just demos, move them to `examples/` to clarify intent.
 
 ### Example 2: Skills Factory Prompt Template
 
-**File**: `/Users/mpaz/workspace/claude-toolkit/.claude/templates/SKILLS_FACTORY_PROMPT.md`
+**File**: `/Users/mpaz/workspace/agentic-factory/.claude/templates/SKILLS_FACTORY_PROMPT.md`
 **Lines**: 22-65 (File Cleanliness Standards)
 
 **Positive**: The validation checklist is **comprehensive and explicit**:
@@ -566,7 +566,7 @@ Before completing, run these checks:
 
 ### Example 3: Minimal Skill Definition
 
-**File**: `/Users/mpaz/workspace/claude-toolkit/skills/code-reviewer/SKILL.md`
+**File**: `/Users/mpaz/workspace/agentic-factory/skills/code-reviewer/SKILL.md`
 **Lines**: 1-24 (entire file)
 
 **Current State**:
@@ -674,7 +674,7 @@ This provides **actionable criteria** rather than generic categories.
 
 ## 13. Conclusion
 
-The claude-toolkit is **well-conceived and appropriately scoped** work. It solves real problems (standardized component generation) without over-engineering (no build systems, no complex dependencies). The factory template system is comprehensive and shows deep thought about validation and quality.
+The agentic-factory is **well-conceived and appropriately scoped** work. It solves real problems (standardized component generation) without over-engineering (no build systems, no complex dependencies). The factory template system is comprehensive and shows deep thought about validation and quality.
 
 **Primary Issues**:
 - Missing `.claude-plugin/plugin.json` breaks advertised functionality

@@ -1,7 +1,7 @@
 # Journal Entry: Redesigning the Journal Skill
 
 **Date:** 2025-11-20 17:59
-**Project:** claude-toolkit
+**Project:** agentic-factory
 **Scope:** .claude/skills/journal
 
 ## Summary

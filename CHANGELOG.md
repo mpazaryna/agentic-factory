@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Initial release of Claude Toolkit
+- Initial release of Agentic Factory
 - Three specialized agents for code quality, documentation, and work summarization
   - `quality-control-enforcer` - Reviews code for quality issues and incomplete implementations
   - `research-docs-fetcher` - Fetches and organizes web documentation
@@ -55,5 +55,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Initial pre-release version for community testing and feedback.
 
-[Unreleased]: https://github.com/[username]/claude-toolkit/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/[username]/claude-toolkit/releases/tag/v0.1.0
+[Unreleased]: https://github.com/[username]/agentic-factory/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/[username]/agentic-factory/releases/tag/v0.1.0

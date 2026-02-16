@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Structure
 
-This is a Claude Code plugin repository containing specialized agents, commands, and templates. The project is organized as a collection of Markdown-based configuration files and is distributed as a Claude Code plugin for easy installation across projects.
+Agentic Factory is a meta-generator factory system for building custom Claude Code components — Skills, Prompts, Agents, Commands, and Hooks — through interactive guided workflows. The project is organized as a collection of Markdown-based configuration files and is distributed as a Claude Code plugin for easy installation across projects.
 
 ### Directory Organization
 
@@ -91,13 +91,13 @@ Unlike skills (deep knowledge + behavior) or agents (workflow + persona), curate
 
 ## Architecture Notes
 
-This repository serves as a Claude Code plugin providing a configuration and template library. It doesn't contain executable code but rather provides structured markdown documents that define:
+Agentic Factory serves as a Claude Code plugin providing a configuration and template library. It doesn't contain executable code but rather provides structured markdown documents that define:
 - Agent behaviors and review criteria
 - Command sequences for codebase analysis
 - Templates for documenting different types of projects
 - Curated prompts for direct use with any LLM
 
-The plugin is designed to enhance Claude Code's ability to understand, analyze, and document various codebases through structured approaches and specialized agent roles. It can be installed across multiple projects via the Claude Code plugin system, providing consistent tooling and workflows.
+The factory is designed to enhance Claude Code's ability to understand, analyze, and document various codebases through structured approaches and specialized agent roles. It can be installed across multiple projects via the Claude Code plugin system, providing consistent tooling and workflows.
 
 ### Portability Design
 

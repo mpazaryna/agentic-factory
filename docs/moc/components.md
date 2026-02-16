@@ -3,13 +3,13 @@ title: Components Catalog
 type: moc
 generated: 2025-11-20
 last_updated: 2025-11-20
-project: claude-toolkit
+project: agentic-factory
 status: current
 ---
 
 # Components Catalog
 
-This document catalogs all components in the Claude Toolkit system, organized by type and function.
+This document catalogs all components in the Agentic Factory system, organized by type and function.
 
 ## Factory System Components
 
@@ -139,7 +139,7 @@ This document catalogs all components in the Claude Toolkit system, organized by
 - **Location:** [skills/project-moc-generator/](../../skills/project-moc-generator/)
 - **Generated:** 2025-11-20
 - **Purpose:** Generates Map of Content documentation for software projects
-- **Current Test:** Running on claude-toolkit (this documentation!)
+- **Current Test:** Running on agentic-factory (this documentation!)
 
 **Other Skills:**
 - yoga-class-planner - Plans yoga class sequences

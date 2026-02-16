@@ -2,7 +2,7 @@
 
 **Date:** 2025-11-20 17:51
 **Session Duration:** ~1 hour
-**Context:** claude-toolkit/.claude/skills/journal
+**Context:** agentic-factory/.claude/skills/journal
 
 ## Executive Summary
 

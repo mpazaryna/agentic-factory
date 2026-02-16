@@ -247,7 +247,7 @@ To update the skill with new templates or documentation:
 
 ```bash
 # Pull latest changes
-cd claude-toolkit
+cd agentic-factory
 git pull origin main
 
 # Re-copy to skills directory

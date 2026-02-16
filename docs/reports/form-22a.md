@@ -128,5 +128,5 @@ Development moved faster than documentation updates, creating temporary knowledg
 **Period Covered:** 14 days (2 reporting weeks)
 **Total Commits Analyzed:** 9
 **Lines Changed:** +8,548 / -1
-**Repository:** claude-toolkit
+**Repository:** agentic-factory
 **Branch:** main

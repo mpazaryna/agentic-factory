@@ -1,8 +1,8 @@
-# Claude Toolkit - Project Portfolio
+# Agentic Factory - Project Portfolio
 
 ## Elevator Pitch
 
-Claude Toolkit is a meta-generator factory system for Claude Code that enables developers to rapidly build custom Skills, Prompts, Agents, Commands, and Hooks through interactive guided workflows. Built entirely from markdown configurations and YAML frontmatter, it provides a portable, plugin-based development toolkit that transforms Claude Code into an extensible AI-powered development environment.
+Agentic Factory is a meta-generator factory system for Claude Code that enables developers to rapidly build custom Skills, Prompts, Agents, Commands, and Hooks through interactive guided workflows. Built entirely from markdown configurations and YAML frontmatter, it provides a portable, plugin-based development toolkit that transforms Claude Code into an extensible AI-powered development environment.
 
 ## Context & Problem
 
@@ -16,7 +16,7 @@ Additionally, teams and individual developers often build similar patterns repea
 
 ## Solution & Approach
 
-Claude Toolkit solves this through a meta-generator factory system built on three key principles:
+Agentic Factory solves this through a meta-generator factory system built on three key principles:
 
 **1. Guided Generation Over Manual Creation**
 Rather than requiring developers to write YAML frontmatter and markdown manually, the toolkit uses interactive Q&A workflows (4-11 questions depending on component type) that gather requirements and automatically generate complete, validated output.
@@ -34,7 +34,7 @@ The entire factory system resides in a `.claude/` directory that can be copied t
 
 ### Architecture
 
-The toolkit uses a three-layer architecture:
+The factory uses a three-layer architecture:
 
 **Layer 1: Factory Orchestration**
 - `/build` command serves as the entry point
@@ -313,8 +313,8 @@ While templates remain verbose, they now share consistent patterns that make mai
 
 ## Project Links
 
-- **Repository:** https://github.com/mpazaryna/claude-toolkit
-- **Local Directory:** `/Users/mpaz/workspace/claude-toolkit`
+- **Repository:** https://github.com/mpazaryna/agentic-factory
+- **Local Directory:** `/Users/mpaz/workspace/agentic-factory`
 - **Key Files:**
   - Factory orchestrator: `.claude/agents/factory-guide.md`
   - Build command: `.claude/commands/build.md`
@@ -347,7 +347,7 @@ While templates remain verbose, they now share consistent patterns that make mai
 
 **System Design Question:** "How would you build an extensible plugin system for an AI coding assistant?"
 
-**Answer:** Claude Toolkit demonstrates a three-layer architecture:
+**Answer:** Agentic Factory demonstrates a three-layer architecture:
 1. Orchestration layer with `/build` command routing to specialist agents
 2. Specialist agents (5) for different component types with interactive Q&A
 3. Factory templates (5,175 lines) encoding generation logic and validation
@@ -366,7 +366,7 @@ While templates remain verbose, they now share consistent patterns that make mai
 
 ### For Portfolio Website (1 paragraph)
 
-Claude Toolkit is a meta-generator factory system that enables developers to rapidly build custom Skills, Prompts, Agents, Commands, and Hooks for Claude Code through interactive guided workflows. Built entirely from markdown configurations and YAML frontmatter, it employs a specialist agent architecture where five dedicated generators create production-ready components with automatic validation and file cleanliness standards. The portable `.claude/` directory design allows instant deployment to any project, while the plugin marketplace system enables easy distribution across multiple projects. Key technical achievements include reducing component creation time from hours to 5-15 minutes, generating 12+ production-ready skills, and maintaining 100% YAML validation through comprehensive factory templates totaling 5,175 lines of generation logic.
+Agentic Factory is a meta-generator factory system that enables developers to rapidly build custom Skills, Prompts, Agents, Commands, and Hooks for Claude Code through interactive guided workflows. Built entirely from markdown configurations and YAML frontmatter, it employs a specialist agent architecture where five dedicated generators create production-ready components with automatic validation and file cleanliness standards. The portable `.claude/` directory design allows instant deployment to any project, while the plugin marketplace system enables easy distribution across multiple projects. Key technical achievements include reducing component creation time from hours to 5-15 minutes, generating 12+ production-ready skills, and maintaining 100% YAML validation through comprehensive factory templates totaling 5,175 lines of generation logic.
 
 ### For Resume Bullet Points
 
@@ -384,7 +384,7 @@ Claude Toolkit is a meta-generator factory system that enables developers to rap
 
 **Title:** "Building a Meta-Generator: How I Created a Factory System for Claude Code Components"
 
-**Hook:** What if you could build complex AI development tools just by answering 5-7 questions? Claude Toolkit demonstrates how markdown-based agent orchestration can replace traditional code generation frameworks.
+**Hook:** What if you could build complex AI development tools just by answering 5-7 questions? Agentic Factory demonstrates how markdown-based agent orchestration can replace traditional code generation frameworks.
 
 **Key sections:**
 1. **The Problem:** Creating Claude Code components requires intricate YAML, format knowledge, and consistency

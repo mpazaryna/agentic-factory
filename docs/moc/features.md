@@ -3,13 +3,13 @@ title: Features Overview
 type: moc
 generated: 2025-11-20
 last_updated: 2025-11-20
-project: claude-toolkit
+project: agentic-factory
 status: current
 ---
 
 # Features Overview
 
-This document catalogs all currently implemented features in the Claude Toolkit project.
+This document catalogs all currently implemented features in the Agentic Factory project.
 
 ## Core Features (Currently Implemented)
 
@@ -17,7 +17,7 @@ This document catalogs all currently implemented features in the Claude Toolkit 
 
 **Status:** ✅ Fully Operational
 
-The centerpiece of Claude Toolkit - an interactive system for building custom Claude Code components.
+The centerpiece of Agentic Factory - an interactive system for building custom Claude Code components.
 
 **What It Does:**
 - Provides unified `/build` command for all component types

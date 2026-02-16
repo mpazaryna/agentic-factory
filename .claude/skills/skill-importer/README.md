@@ -8,8 +8,8 @@ When you build skills outside the factory workflow (or receive skills from elsew
 
 ## Installation
 
-### Option 1: Already part of claude-toolkit plugin
-If you installed the claude-toolkit plugin, this skill is already available.
+### Option 1: Already part of agentic-factory plugin
+If you installed the agentic-factory plugin, this skill is already available.
 
 ### Option 2: Manual installation
 ```bash

@@ -5,8 +5,8 @@ A simple example plugin demonstrating basic slash commands.
 ## Installation
 
 ```bash
-/plugin marketplace add https://github.com/mpazaryna/claude-toolkit  
-/plugin install git-start-new@claude-toolkit
+/plugin marketplace add https://github.com/mpazaryna/agentic-factory  
+/plugin install git-start-new@agentic-factory
 ```
 
 ## Usage

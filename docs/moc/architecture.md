@@ -3,13 +3,13 @@ title: Architecture Overview
 type: moc
 generated: 2025-11-20
 last_updated: 2025-11-20
-project: claude-toolkit
+project: agentic-factory
 status: current
 ---
 
 # Architecture Overview
 
-This document describes the technical architecture of the Claude Toolkit meta-generator factory system.
+This document describes the technical architecture of the Agentic Factory meta-generator factory system.
 
 ## System Architecture
 
