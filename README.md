@@ -12,7 +12,24 @@ A meta-generator factory system for building custom Claude Code components — S
 | **Commands** | Slash commands following Anthropic patterns |
 | **Hooks** | Workflow automation with safety validation |
 
-## Quick Start
+## Install Components Into Any Project
+
+```
+/install-agentic-factory skill cloudflare
+/install-agentic-factory agent research-agent
+/install-agentic-factory command gh-issue
+```
+
+Installs individual skills, agents, or commands from this repo into your current project's `.claude/` directory. Available globally after setup:
+
+```bash
+mkdir -p ~/.claude/commands
+cp commands/install-agentic-factory/install-agentic-factory.md ~/.claude/commands/
+```
+
+> Set `AGENTIC_FACTORY_HOME` if your clone isn't at `~/workspace/agentic-factory`.
+
+## Build New Components
 
 ```
 /build → Choose a component type → Answer 4-11 questions → Get production-ready output
@@ -28,16 +45,15 @@ Or go direct:
 /build hook
 ```
 
-## Installation
+## Full Factory Installation
 
 The factory system lives in `.claude/` and is fully portable:
 
 ```bash
-# Copy the factory to any project
+# Copy the entire factory to any project
 cp -r .claude/ /path/to/your/project/
 
-# Or copy individual skills
-cp -r skills/dev-* /path/to/your/project/.claude/skills/
+# Or use /install-agentic-factory for individual components
 ```
 
 ## Structure
