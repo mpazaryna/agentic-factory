@@ -39,9 +39,9 @@ claude-toolkit/
 │   ├── commands/                 # Core /build command
 │   ├── templates/                # Factory prompt templates
 │   └── skills/                   # Built-in skills
-├── generated-skills/             # Output directory for generated skills
-├── generated-agents/             # Output directory for generated agents
-├── generated-commands/           # Output directory for generated commands
+├── skills/             # Output directory for generated skills
+├── agents/             # Output directory for generated agents
+├── commands/           # Output directory for generated commands
 ├── commands/                     # Example commands (context/, prime/, research/, tools/)
 ├── plugins/                      # Legacy plugins (appears unused)
 ├── docs/                         # Comprehensive documentation
@@ -101,25 +101,25 @@ The template explicitly calls out common mistakes and provides correct/incorrect
 
 #### Strong Examples:
 
-**1. spike-driven-dev** (`/Users/mpaz/workspace/claude-toolkit/generated-skills/spike-driven-dev/SKILL.md`)
+**1. spike-driven-dev** (`/Users/mpaz/workspace/claude-toolkit/skills/spike-driven-dev/SKILL.md`)
 - Clear methodology with concrete examples
 - Well-structured with references to supporting docs
 - Practical workflow guidance
 - No unnecessary complexity
 
-**2. internal-comms** (`/Users/mpaz/workspace/claude-toolkit/generated-skills/internal-comms/SKILL.md`)
+**2. internal-comms** (`/Users/mpaz/workspace/claude-toolkit/skills/internal-comms/SKILL.md`)
 - Solves real problem (22A reports, devlogs)
 - Includes example templates
 - Clear invocation instructions
 
-**3. goose-recipes** (`/Users/mpaz/workspace/claude-toolkit/generated-skills/goose-recipes/SKILL.md`)
+**3. goose-recipes** (`/Users/mpaz/workspace/claude-toolkit/skills/goose-recipes/SKILL.md`)
 - Comprehensive guide to Goose recipe creation
 - Includes troubleshooting section
 - Multiple template examples
 
 #### Weak Examples:
 
-**1. code-reviewer** (`/Users/mpaz/workspace/claude-toolkit/generated-skills/code-reviewer/SKILL.md`)
+**1. code-reviewer** (`/Users/mpaz/workspace/claude-toolkit/skills/code-reviewer/SKILL.md`)
 ```markdown
 # Code Reviewer
 
@@ -145,7 +145,7 @@ The template explicitly calls out common mistakes and provides correct/incorrect
 
 **Recommendation**: Expand with concrete examples, checklists, or criteria like the spike-driven-dev skill does.
 
-**2. commit-helper** (`/Users/mpaz/workspace/claude-toolkit/generated-skills/commit-helper/SKILL.md`)
+**2. commit-helper** (`/Users/mpaz/workspace/claude-toolkit/skills/commit-helper/SKILL.md`)
 - Only 19 lines
 - Lacks examples of good commit messages
 - No guidance on conventional commit format
@@ -153,7 +153,7 @@ The template explicitly calls out common mistakes and provides correct/incorrect
 
 #### Template Quality Issues:
 
-**File**: `/Users/mpaz/workspace/claude-toolkit/generated-skills/goose-recipes/assets/basic-recipe-template.yaml`
+**File**: `/Users/mpaz/workspace/claude-toolkit/skills/goose-recipes/assets/basic-recipe-template.yaml`
 
 ```yaml
 title: "TODO: Add Recipe Title"
@@ -237,12 +237,12 @@ This is **excellent design** - the entire factory system is portable as a single
 **1. Multiple Generated Example Skills**
 
 Files like:
-- `/Users/mpaz/workspace/claude-toolkit/generated-skills/yoga-class-planner/` (278 lines)
-- `/Users/mpaz/workspace/claude-toolkit/generated-skills/synth-notes/`
+- `/Users/mpaz/workspace/claude-toolkit/skills/yoga-class-planner/` (278 lines)
+- `/Users/mpaz/workspace/claude-toolkit/skills/synth-notes/`
 
-These appear to be **test outputs from using the factory**, not core toolkit functionality. They demonstrate the factory works, but **could live in a separate `examples/` directory** rather than `generated-skills/`.
+These appear to be **test outputs from using the factory**, not core toolkit functionality. They demonstrate the factory works, but **could live in a separate `examples/` directory** rather than `skills/`.
 
-**Recommendation**: Move personal-use generated skills to `examples/generated-skills/` to clarify what's toolkit infrastructure vs. usage examples.
+**Recommendation**: Move personal-use generated skills to `examples/skills/` to clarify what's toolkit infrastructure vs. usage examples.
 
 **2. Unclear Command Directory Purpose**
 
@@ -252,12 +252,12 @@ The `commands/` directory contains subdirectories (context/, prime/, research/, 
 
 **3. Hardcoded Personal Paths**
 
-**File**: `/Users/mpaz/workspace/claude-toolkit/generated-skills/synth-notes/SKILL.md` (line 101, 169)
+**File**: `/Users/mpaz/workspace/claude-toolkit/skills/synth-notes/SKILL.md` (line 101, 169)
 ```markdown
 path: /Users/mpaz/workspace/synthetic-notes/output/batch_XXX
 ```
 
-**File**: `/Users/mpaz/workspace/claude-toolkit/generated-agents/synth-notes-generator/AGENT.json` (line 44)
+**File**: `/Users/mpaz/workspace/claude-toolkit/agents/synth-notes-generator/AGENT.json` (line 44)
 ```json
 "location": "/Users/mpaz/workspace/synthetic-notes/output/batch_XXX/"
 ```
@@ -384,10 +384,10 @@ Example lint script (pseudo-code):
 find generated-skills -name "SKILL.md" -exec grep -L "^---$" {} \;
 
 # Find hardcoded personal paths
-grep -r "/Users/mpaz/" generated-skills/ generated-agents/
+grep -r "/Users/mpaz/" skills/ agents/
 
 # Check for TODO in non-template files
-grep -r "TODO" generated-skills/ | grep -v "template.yaml"
+grep -r "TODO" skills/ | grep -v "template.yaml"
 ```
 
 ---
@@ -477,7 +477,7 @@ If they're just demos, move them to `examples/` to clarify intent.
    - Priority: HIGH (user-facing feature currently broken)
 
 2. **Remove Hardcoded Paths**
-   - Files: `generated-skills/synth-notes/SKILL.md`, `generated-agents/synth-notes-generator/AGENT.json`
+   - Files: `skills/synth-notes/SKILL.md`, `agents/synth-notes-generator/AGENT.json`
    - Replace `/Users/mpaz/workspace/` with `${WORKSPACE_ROOT}` or relative paths
    - Priority: HIGH (breaks portability)
 
@@ -491,14 +491,14 @@ If they're just demos, move them to `examples/` to clarify intent.
 4. **Reorganize Examples vs. Core**
    ```
    Move:
-   - generated-skills/yoga-class-planner → examples/generated-skills/
-   - generated-skills/synth-notes → examples/generated-skills/
+   - skills/yoga-class-planner → examples/skills/
+   - skills/synth-notes → examples/skills/
    - plugins/* → examples/legacy-plugins/
    ```
    - Priority: MEDIUM (improves clarity)
 
 5. **Expand Minimal Skills**
-   - File: `generated-skills/code-reviewer/SKILL.md`
+   - File: `skills/code-reviewer/SKILL.md`
    - Add concrete checklists, language-specific patterns
    - Alternatively, remove and generate when needed
    - Priority: MEDIUM (quality improvement)
@@ -566,7 +566,7 @@ Before completing, run these checks:
 
 ### Example 3: Minimal Skill Definition
 
-**File**: `/Users/mpaz/workspace/claude-toolkit/generated-skills/code-reviewer/SKILL.md`
+**File**: `/Users/mpaz/workspace/claude-toolkit/skills/code-reviewer/SKILL.md`
 **Lines**: 1-24 (entire file)
 
 **Current State**:

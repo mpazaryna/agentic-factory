@@ -5,13 +5,13 @@
 ### For This Project Only
 
 ```bash
-cp generated-commands/plan-spec/plan-spec.md .claude/commands/
+cp commands/plan-spec/plan-spec.md .claude/commands/
 ```
 
 ### For All Projects (Global)
 
 ```bash
-cp generated-commands/plan-spec/plan-spec.md ~/.claude/commands/
+cp commands/plan-spec/plan-spec.md ~/.claude/commands/
 ```
 
 ## Verify Installation
@@ -36,7 +36,7 @@ Or try with a test spec file:
 ## File Structure
 
 ```
-generated-commands/plan-spec/
+commands/plan-spec/
 ├── plan-spec.md      # Main command file (copy this)
 ├── HOW_TO_USE.md     # Usage documentation
 ├── INSTALL.md        # This file

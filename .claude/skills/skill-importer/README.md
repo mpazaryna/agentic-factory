@@ -23,8 +23,8 @@ cp -r .claude/skills/skill-importer /path/to/project/.claude/skills/
 ## Usage
 
 ```
-"Import the skill at generated-skills/my-skill"
-"Analyze generated-skills/my-skill and show gaps"
+"Import the skill at skills/my-skill"
+"Analyze skills/my-skill and show gaps"
 "Bring ~/.claude/skills/external-skill up to factory spec"
 ```
 

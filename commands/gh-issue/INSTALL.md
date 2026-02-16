@@ -5,13 +5,13 @@
 ### For This Project Only
 
 ```bash
-cp generated-commands/gh-issue/gh-issue.md .claude/commands/
+cp commands/gh-issue/gh-issue.md .claude/commands/
 ```
 
 ### For All Projects (Global)
 
 ```bash
-cp generated-commands/gh-issue/gh-issue.md ~/.claude/commands/
+cp commands/gh-issue/gh-issue.md ~/.claude/commands/
 ```
 
 ## Prerequisites
@@ -65,14 +65,14 @@ gh auth status
 ```bash
 # From the repository root
 mkdir -p .claude/commands
-cp generated-commands/gh-issue/gh-issue.md .claude/commands/
+cp commands/gh-issue/gh-issue.md .claude/commands/
 ```
 
 **Global installation (all projects):**
 ```bash
 # Works everywhere
 mkdir -p ~/.claude/commands
-cp generated-commands/gh-issue/gh-issue.md ~/.claude/commands/
+cp commands/gh-issue/gh-issue.md ~/.claude/commands/
 ```
 
 ### Step 2: Verify Installation
@@ -123,7 +123,7 @@ To update to a newer version:
 
 **Permission errors:**
 ```bash
-chmod 644 generated-commands/gh-issue/gh-issue.md
+chmod 644 commands/gh-issue/gh-issue.md
 ```
 
 **Global vs Local:**
@@ -133,8 +133,8 @@ chmod 644 generated-commands/gh-issue/gh-issue.md
 
 ## File Locations
 
-- **Command file**: `generated-commands/gh-issue/gh-issue.md`
+- **Command file**: `commands/gh-issue/gh-issue.md`
 - **Local install**: `.claude/commands/gh-issue.md`
 - **Global install**: `~/.claude/commands/gh-issue.md`
-- **Usage guide**: `generated-commands/gh-issue/HOW_TO_USE.md`
-- **This file**: `generated-commands/gh-issue/INSTALL.md`
+- **Usage guide**: `commands/gh-issue/HOW_TO_USE.md`
+- **This file**: `commands/gh-issue/INSTALL.md`

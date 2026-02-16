@@ -222,7 +222,7 @@ Your hook's purpose: ___
 /validate-output skill
 
 # 3. Install
-/install-skill generated-skills/my-skill
+/install-skill skills/my-skill
 
 # 4. Test
 /test-factory my-skill

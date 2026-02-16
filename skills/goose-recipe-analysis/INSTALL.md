@@ -6,10 +6,10 @@
 
 ```bash
 # Global installation
-cp -r generated-skills/goose-recipe-analysis ~/.claude/skills/
+cp -r skills/goose-recipe-analysis ~/.claude/skills/
 
 # Project-specific
-cp -r generated-skills/goose-recipe-analysis .claude/skills/
+cp -r skills/goose-recipe-analysis .claude/skills/
 ```
 
 ### For Claude Web/Desktop
@@ -141,8 +141,8 @@ If you're working with both data extraction and analysis:
 
 ```bash
 # Install both skills
-cp -r generated-skills/goose-recipes ~/.claude/skills/
-cp -r generated-skills/goose-recipe-analysis ~/.claude/skills/
+cp -r skills/goose-recipes ~/.claude/skills/
+cp -r skills/goose-recipe-analysis ~/.claude/skills/
 ```
 
 ## Support

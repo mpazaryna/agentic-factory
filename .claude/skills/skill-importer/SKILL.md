@@ -139,14 +139,14 @@ Run final validation:
 ## How to Use
 
 **Import a skill:**
-"Import the skill at generated-skills/issue-analysis"
-"Bring generated-skills/my-custom-skill up to factory spec"
+"Import the skill at skills/issue-analysis"
+"Bring skills/my-custom-skill up to factory spec"
 
 **Analyze only (no changes):**
-"Analyze generated-skills/issue-analysis and show me what's missing"
+"Analyze skills/issue-analysis and show me what's missing"
 
 **Upgrade specific files:**
-"Generate a HOW_TO_USE.md for generated-skills/issue-analysis"
+"Generate a HOW_TO_USE.md for skills/issue-analysis"
 
 ## Factory Compliance Checklist
 

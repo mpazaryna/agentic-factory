@@ -131,12 +131,12 @@ This document catalogs all components in the Claude Toolkit system, organized by
 ### Production Skills
 
 **repo-summarizer**
-- **Location:** [generated-skills/repo-summarizer/](../../generated-skills/repo-summarizer/)
+- **Location:** [skills/repo-summarizer/](../../skills/repo-summarizer/)
 - **Generated:** 2025-11-19
 - **Purpose:** Analyzes repositories and generates PROJECT.md portfolio documents
 
 **project-moc-generator**
-- **Location:** [generated-skills/project-moc-generator/](../../generated-skills/project-moc-generator/)
+- **Location:** [skills/project-moc-generator/](../../skills/project-moc-generator/)
 - **Generated:** 2025-11-20
 - **Purpose:** Generates Map of Content documentation for software projects
 - **Current Test:** Running on claude-toolkit (this documentation!)
@@ -258,7 +258,7 @@ This document catalogs all components in the Claude Toolkit system, organized by
 
 **Codebase Size:**
 - .claude/ directory: 320K
-- generated-skills/: 548K
+- skills/: 548K
 - commands/: 16K
 - .claude-plugin/: 4K
 

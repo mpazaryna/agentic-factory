@@ -21,7 +21,7 @@ cp -r swift-lang/ ~/.claude/skills/
 If you want to keep the skill updated from this repository:
 
 ```bash
-ln -s /path/to/claude-toolkit/generated-skills/swift-lang ~/.claude/skills/swift-lang
+ln -s /path/to/claude-toolkit/skills/swift-lang ~/.claude/skills/swift-lang
 ```
 
 ## Verification

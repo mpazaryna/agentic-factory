@@ -6,10 +6,10 @@
 
 ```bash
 # Global installation (available everywhere)
-cp generated-commands/rebuild-readme/rebuild_readme.md ~/.claude/commands/
+cp commands/rebuild-readme/rebuild_readme.md ~/.claude/commands/
 
 # Project-specific installation
-cp generated-commands/rebuild-readme/rebuild_readme.md .claude/commands/
+cp commands/rebuild-readme/rebuild_readme.md .claude/commands/
 ```
 
 ### Verify Installation
@@ -187,7 +187,7 @@ git diff README.md
 
 ```bash
 # Add to team dotfiles
-cp generated-commands/rebuild-readme/rebuild_readme.md team-dotfiles/claude/commands/
+cp commands/rebuild-readme/rebuild_readme.md team-dotfiles/claude/commands/
 
 # Team members install
 cp team-dotfiles/claude/commands/rebuild_readme.md ~/.claude/commands/
@@ -198,7 +198,7 @@ cp team-dotfiles/claude/commands/rebuild_readme.md ~/.claude/commands/
 ```bash
 # Install in project
 mkdir -p .claude/commands
-cp generated-commands/rebuild-readme/rebuild_readme.md .claude/commands/
+cp commands/rebuild-readme/rebuild_readme.md .claude/commands/
 
 # Commit to version control
 git add .claude/commands/rebuild_readme.md
@@ -335,10 +335,10 @@ Install both commands for complete documentation:
 
 ```bash
 # Install rebuild-readme (stable docs)
-cp generated-commands/rebuild-readme/rebuild_readme.md ~/.claude/commands/
+cp commands/rebuild-readme/rebuild_readme.md ~/.claude/commands/
 
 # Install rebuild-context (dynamic context)
-cp generated-commands/rebuild-context/rebuild_context.md ~/.claude/commands/
+cp commands/rebuild-context/rebuild_context.md ~/.claude/commands/
 
 # Use together:
 /rebuild-readme .      # Once or when structure changes

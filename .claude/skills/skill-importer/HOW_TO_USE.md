@@ -1,20 +1,20 @@
 # How to Use This Skill
 
-Hey Claude—I just added the "skill-importer" skill. Can you analyze `generated-skills/issue-analysis` and bring it up to factory spec?
+Hey Claude—I just added the "skill-importer" skill. Can you analyze `skills/issue-analysis` and bring it up to factory spec?
 
 ## Example Invocations
 
 **Example 1: Full Import**
-Hey Claude—I just added the "skill-importer" skill. Can you import the skill at `generated-skills/my-custom-skill` and generate all missing factory files?
+Hey Claude—I just added the "skill-importer" skill. Can you import the skill at `skills/my-custom-skill` and generate all missing factory files?
 
 **Example 2: Analysis Only**
 Hey Claude—I just added the "skill-importer" skill. Can you analyze `~/.claude/skills/my-external-skill` and tell me what's missing to be factory-compliant?
 
 **Example 3: Specific File Generation**
-Hey Claude—I just added the "skill-importer" skill. Can you generate a HOW_TO_USE.md and sample data files for `generated-skills/issue-analysis`?
+Hey Claude—I just added the "skill-importer" skill. Can you generate a HOW_TO_USE.md and sample data files for `skills/issue-analysis`?
 
 **Example 4: Restructure SKILL.md**
-Hey Claude—I just added the "skill-importer" skill. The SKILL.md in `generated-skills/data-processor` doesn't follow factory structure. Can you restructure it?
+Hey Claude—I just added the "skill-importer" skill. The SKILL.md in `skills/data-processor` doesn't follow factory structure. Can you restructure it?
 
 ## What to Provide
 

@@ -35,9 +35,7 @@ This is a Claude Code plugin repository containing specialized agents, commands,
 - **.claude-plugin/** - Plugin configuration
   - `marketplace.json` - Local marketplace configuration for testing
 
-- **generated-commands/** - Output directory for generated Claude Commands
-- **generated-skills/** - Output directory for generated Claude Skills
-- **generated-agents/** - Output directory for generated Claude Agents (includes quality-control-enforcer, research-docs-fetcher, work-completion-summarizer, etc.)
+- **agents/** - Specialized agents (quality-control-enforcer, research-agent, research-docs-fetcher, work-completion-summarizer, etc.)
 
 - **curated-prompts/** - Collected and original prompts organized by domain
   - **art/** - Art and creative prompts
@@ -46,14 +44,14 @@ This is a Claude Code plugin repository containing specialized agents, commands,
   - **writing/** - Writing style, editing, and anti-slop prompts
   - **yoga/** - Yoga teaching and class planning prompts
 
-- **commands/** - Top-level commands directory with additional slash commands
+- **commands/** - Slash commands (context, prime, research, tools, gh-issue, plan-spec, rebuild-context, rebuild-readme)
 - **plugins/** - Example Claude Code plugins for reference
 - **docs/** - Additional documentation and reports
 
 ## Key Components
 
 ### Agents
-Factory guide agents in `.claude/agents/` help build new resources, while generated agents in `generated-agents/` provide specialized functionality. Each agent follows a YAML frontmatter format with:
+Factory guide agents in `.claude/agents/` help build new resources, while specialized agents in `agents/` provide task-specific functionality. Each agent follows a YAML frontmatter format with:
 - `name`: Agent identifier
 - `description`: When to use the agent (with examples)
 - `color`: Visual indicator

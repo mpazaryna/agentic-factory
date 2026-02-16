@@ -42,15 +42,15 @@ The output plan mirrors the spec filename:
 
 ```bash
 # Project-level
-cp generated-commands/plan-spec/plan-spec.md .claude/commands/
+cp commands/plan-spec/plan-spec.md .claude/commands/
 
 # Global (all projects)
-cp generated-commands/plan-spec/plan-spec.md ~/.claude/commands/
+cp commands/plan-spec/plan-spec.md ~/.claude/commands/
 ```
 
 ## Related
 
-- [spike-driven-dev](../../generated-skills/spike-driven-dev/) - For validating unfamiliar patterns before full implementation
+- [spike-driven-dev](../../skills/spike-driven-dev/) - For validating unfamiliar patterns before full implementation
 - Use `/plan-spec` to create the roadmap, spike-driven-dev to validate unknowns
 
 ## Structure Pattern

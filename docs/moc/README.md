@@ -34,7 +34,7 @@ Claude Toolkit is a collection of specialized agents, commands, templates, and a
 - 21 markdown files in `.claude/` directory
 - 6 specialized factory guide agents
 - 5 comprehensive factory templates (5,175 total lines)
-- 12+ generated skills in `generated-skills/`
+- 12+ generated skills in `skills/`
 - 4 example plugins in `plugins/`
 
 ## Core Features
@@ -111,7 +111,7 @@ claude-toolkit/
 ├── .claude-plugin/           # Plugin configuration
 ├── commands/                 # Example commands
 ├── plugins/                  # Example plugins
-├── generated-skills/         # Generated skill outputs
+├── skills/         # Generated skill outputs
 └── docs/                     # Documentation
     └── moc/                  # This MOC system
 ```
@@ -132,9 +132,9 @@ claude-toolkit/
    ```
 
 3. **Explore Generated Skills:**
-   - Check `generated-skills/` for examples
-   - Review `generated-skills/repo-summarizer/` for portfolio docs
-   - Test `generated-skills/project-moc-generator/` (this skill!)
+   - Check `skills/` for examples
+   - Review `skills/repo-summarizer/` for portfolio docs
+   - Test `skills/project-moc-generator/` (this skill!)
 
 ## Related Resources
 
@@ -151,7 +151,7 @@ claude-toolkit/
 
 **Building custom components?**
 - Use `/build` command for guided generation
-- Review `generated-skills/` for examples
+- Review `skills/` for examples
 - Check factory templates in `.claude/templates/`
 
 ## Project Status

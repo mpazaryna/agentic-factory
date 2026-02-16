@@ -6,10 +6,10 @@
 
 ```bash
 # Global installation (available everywhere)
-cp -r generated-agents/research-agent ~/.claude/agents/
+cp -r agents/research-agent ~/.claude/agents/
 
 # Project-specific installation
-cp -r generated-agents/research-agent .claude/agents/
+cp -r agents/research-agent .claude/agents/
 ```
 
 ### For Claude Web/Desktop
@@ -160,7 +160,7 @@ Share with your team:
 
 ```bash
 # Add to team dotfiles
-cp -r generated-agents/research-agent team-dotfiles/claude/agents/
+cp -r agents/research-agent team-dotfiles/claude/agents/
 
 # Team members install
 cp -r team-dotfiles/claude/agents/research-agent ~/.claude/agents/
@@ -171,7 +171,7 @@ cp -r team-dotfiles/claude/agents/research-agent ~/.claude/agents/
 ```bash
 # Install in project .claude/agents/
 mkdir -p .claude/agents
-cp -r generated-agents/research-agent .claude/agents/
+cp -r agents/research-agent .claude/agents/
 
 # Commit to version control
 git add .claude/agents/research-agent

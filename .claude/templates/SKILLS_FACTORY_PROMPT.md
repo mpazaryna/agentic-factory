@@ -42,7 +42,7 @@ Skills are:
 - Redundant documentation (multiple installation guides)
 - Development artifacts (.pytest_cache/, *.log)
 
-❌ **NEVER Create in generated-skills/ root:**
+❌ **NEVER Create in skills/ root:**
 - Summary documents (*_SUMMARY.md)
 - Internal documentation
 - Backup files
@@ -986,7 +986,7 @@ Before completing skill generation, you MUST perform these validation steps:
 - [ ] Exclude `__pycache__/`, `.backup`, and temp files
 - [ ] Verify ZIP contains complete, clean skill folder
 
-### 6. No Artifacts in generated-skills/ Root
+### 6. No Artifacts in skills/ Root
 - [ ] No `*_SUMMARY.md` files
 - [ ] No backup or temp files
 - [ ] Only `CLAUDE.md` and skill folders/ZIPs

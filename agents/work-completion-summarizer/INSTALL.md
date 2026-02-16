@@ -6,10 +6,10 @@
 
 ```bash
 # Global installation (available everywhere)
-cp -r generated-agents/work-completion-summarizer ~/.claude/agents/
+cp -r agents/work-completion-summarizer ~/.claude/agents/
 
 # Project-specific installation
-cp -r generated-agents/work-completion-summarizer .claude/agents/
+cp -r agents/work-completion-summarizer .claude/agents/
 ```
 
 ### For Claude Web/Desktop
@@ -182,7 +182,7 @@ Share with your team:
 
 ```bash
 # Add to team dotfiles
-cp -r generated-agents/work-completion-summarizer team-dotfiles/claude/agents/
+cp -r agents/work-completion-summarizer team-dotfiles/claude/agents/
 
 # Team members install
 cp -r team-dotfiles/claude/agents/work-completion-summarizer ~/.claude/agents/
@@ -193,7 +193,7 @@ cp -r team-dotfiles/claude/agents/work-completion-summarizer ~/.claude/agents/
 ```bash
 # Install in project .claude/agents/
 mkdir -p .claude/agents
-cp -r generated-agents/work-completion-summarizer .claude/agents/
+cp -r agents/work-completion-summarizer .claude/agents/
 
 # Add to version control
 git add .claude/agents/work-completion-summarizer

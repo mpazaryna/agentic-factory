@@ -899,7 +899,7 @@ Create documentation in api_reference.md
 ### Folder Organization
 
 ```
-generated-commands/[command-name]/
+commands/[command-name]/
 ├── [command-name].md          # Self-contained command file (ROOT)
 ├── HOW_TO_USE.md              # Invocation examples (ROOT)
 ├── INSTALL.md                 # Installation instructions (ROOT)
@@ -980,7 +980,7 @@ Validation Results:
 ✅ Structure: matches official pattern
 
 Installation:
-cp generated-commands/[command-name]/[command-name].md ~/.claude/commands/
+cp commands/[command-name]/[command-name].md ~/.claude/commands/
 
 Usage Example:
 /[command-name] [example arguments]

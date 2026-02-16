@@ -6,10 +6,10 @@
 
 ```bash
 # Global installation (available everywhere)
-cp -r generated-agents/research-docs-fetcher ~/.claude/agents/
+cp -r agents/research-docs-fetcher ~/.claude/agents/
 
 # Project-specific installation
-cp -r generated-agents/research-docs-fetcher .claude/agents/
+cp -r agents/research-docs-fetcher .claude/agents/
 ```
 
 ### For Claude Web/Desktop
@@ -170,7 +170,7 @@ Share with your team:
 
 ```bash
 # Add to team dotfiles
-cp -r generated-agents/research-docs-fetcher team-dotfiles/claude/agents/
+cp -r agents/research-docs-fetcher team-dotfiles/claude/agents/
 
 # Team members install
 cp -r team-dotfiles/claude/agents/research-docs-fetcher ~/.claude/agents/
@@ -181,7 +181,7 @@ cp -r team-dotfiles/claude/agents/research-docs-fetcher ~/.claude/agents/
 ```bash
 # Install in project .claude/agents/
 mkdir -p .claude/agents
-cp -r generated-agents/research-docs-fetcher .claude/agents/
+cp -r agents/research-docs-fetcher .claude/agents/
 
 # Add to version control
 git add .claude/agents/research-docs-fetcher

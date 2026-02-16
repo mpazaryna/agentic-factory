@@ -6,10 +6,10 @@
 
 ```bash
 # Global installation (available everywhere)
-cp generated-commands/rebuild-context/rebuild_context.md ~/.claude/commands/
+cp commands/rebuild-context/rebuild_context.md ~/.claude/commands/
 
 # Project-specific installation
-cp generated-commands/rebuild-context/rebuild_context.md .claude/commands/
+cp commands/rebuild-context/rebuild_context.md .claude/commands/
 ```
 
 ### Verify Installation
@@ -157,7 +157,7 @@ chmod 644 CONTEXT.md
 
 ```bash
 # Add to team dotfiles
-cp generated-commands/rebuild-context/rebuild_context.md team-dotfiles/claude/commands/
+cp commands/rebuild-context/rebuild_context.md team-dotfiles/claude/commands/
 
 # Team members install
 cp team-dotfiles/claude/commands/rebuild_context.md ~/.claude/commands/
@@ -168,7 +168,7 @@ cp team-dotfiles/claude/commands/rebuild_context.md ~/.claude/commands/
 ```bash
 # Install in project
 mkdir -p .claude/commands
-cp generated-commands/rebuild-context/rebuild_context.md .claude/commands/
+cp commands/rebuild-context/rebuild_context.md .claude/commands/
 
 # Commit to version control
 git add .claude/commands/rebuild_context.md
@@ -252,7 +252,7 @@ Install related commands for complete documentation workflow:
 
 ```bash
 # Also install rebuild-readme
-cp generated-commands/rebuild-readme/rebuild_readme.md ~/.claude/commands/
+cp commands/rebuild-readme/rebuild_readme.md ~/.claude/commands/
 
 # Use together:
 # /rebuild-readme . (stable documentation)

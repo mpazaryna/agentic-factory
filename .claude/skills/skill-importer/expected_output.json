@@ -1,5 +1,5 @@
 {
-  "skill_path": "generated-skills/issue-analysis",
+  "skill_path": "skills/issue-analysis",
   "actions_taken": {
     "skill_md_restructured": true,
     "files_generated": [

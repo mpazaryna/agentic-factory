@@ -6,10 +6,10 @@
 
 ```bash
 # Global installation (available everywhere)
-cp -r generated-agents/quality-control-enforcer ~/.claude/agents/
+cp -r agents/quality-control-enforcer ~/.claude/agents/
 
 # Project-specific installation
-cp -r generated-agents/quality-control-enforcer .claude/agents/
+cp -r agents/quality-control-enforcer .claude/agents/
 ```
 
 ### For Claude Web/Desktop
@@ -145,7 +145,7 @@ Share with your team:
 
 ```bash
 # Add to team dotfiles
-cp -r generated-agents/quality-control-enforcer team-dotfiles/claude/agents/
+cp -r agents/quality-control-enforcer team-dotfiles/claude/agents/
 
 # Team members install
 cp -r team-dotfiles/claude/agents/quality-control-enforcer ~/.claude/agents/
@@ -156,7 +156,7 @@ cp -r team-dotfiles/claude/agents/quality-control-enforcer ~/.claude/agents/
 ```bash
 # Install in project .claude/agents/
 mkdir -p .claude/agents
-cp -r generated-agents/quality-control-enforcer .claude/agents/
+cp -r agents/quality-control-enforcer .claude/agents/
 
 # Commit to version control
 git add .claude/agents/quality-control-enforcer

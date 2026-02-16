@@ -31,7 +31,7 @@ Help users create production-ready prompts by:
 - 7-point quality validation
 - Core mode (~5K tokens) or Advanced mode (~12K tokens)
 
-**Location**: `generated-skills/prompt-factory/`
+**Location**: `skills/prompt-factory/`
 
 ## Your Workflow
 
@@ -118,7 +118,7 @@ Which would you prefer? (Preset or Custom): ___"
 
 [8 more domains with 29 more presets...]
 
-**Full list**: See generated-skills/prompt-factory/SKILL.md
+**Full list**: See skills/prompt-factory/SKILL.md
 
 Which preset matches your need? (Enter number or name): ___"
 

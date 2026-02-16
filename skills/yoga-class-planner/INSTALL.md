@@ -6,10 +6,10 @@
 
 ```bash
 # Global installation (available everywhere)
-cp -r generated-skills/yoga-class-planner ~/.claude/skills/
+cp -r skills/yoga-class-planner ~/.claude/skills/
 
 # Project-specific installation
-cp -r generated-skills/yoga-class-planner .claude/skills/
+cp -r skills/yoga-class-planner .claude/skills/
 ```
 
 ### For Claude Web/Desktop

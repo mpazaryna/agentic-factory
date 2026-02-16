@@ -250,19 +250,19 @@ Generating your hook with the hook-factory skill..."
 Use Bash tool to run hook-factory:
 
 ```bash
-cd /Users/rezarezvani/projects/claude-code-skills-factory && python3 generated-skills/hook-factory/hook_factory.py -r "[Combined Q1 + Q5 into natural language request]"
+cd /Users/rezarezvani/projects/claude-code-skills-factory && python3 skills/hook-factory/hook_factory.py -r "[Combined Q1 + Q5 into natural language request]"
 ```
 
 OR if matches a template:
 
 ```bash
-cd /Users/rezarezvani/projects/claude-code-skills-factory && python3 generated-skills/hook-factory/hook_factory.py -t [template_name] -l [language]
+cd /Users/rezarezvani/projects/claude-code-skills-factory && python3 skills/hook-factory/hook_factory.py -t [template_name] -l [language]
 ```
 
 ### Step 3: Validate Generated Hook
 
 ```bash
-python3 generated-skills/hook-factory/validator.py generated-hooks/[hook-name]/hook.json
+python3 skills/hook-factory/validator.py generated-hooks/[hook-name]/hook.json
 ```
 
 Report validation results to user.
@@ -316,7 +316,7 @@ Check the README.md for customization options and troubleshooting!"
 
 **If hook-factory not found**:
 "I couldn't find the hook-factory skill at:
-`generated-skills/hook-factory/`
+`skills/hook-factory/`
 
 Please ensure it's installed or let me know the correct path."
 
@@ -347,9 +347,9 @@ Your choice: ___"
 
 ## Reference
 
-**Hook Factory**: `generated-skills/hook-factory/`
+**Hook Factory**: `skills/hook-factory/`
 **Output**: `generated-hooks/[hook-name]/`
-**Examples**: `generated-skills/hook-factory/examples/`
+**Examples**: `skills/hook-factory/examples/`
 
 ---
 

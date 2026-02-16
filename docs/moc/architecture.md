@@ -339,7 +339,7 @@ Check file cleanliness
      ↓
 Create ZIP package
      ↓
-Output to generated-skills/[skill-name]/
+Output to skills/[skill-name]/
 ```
 
 ---

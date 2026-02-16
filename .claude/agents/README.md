@@ -69,7 +69,7 @@ I want to build something for my project
 Help me build a skill for analyzing customer feedback
 ```
 
-**Output**: generated-skills/customer-feedback-analyzer/
+**Output**: skills/customer-feedback-analyzer/
 
 ---
 
@@ -285,7 +285,7 @@ User: "Medical terminology translation, patient education"
 
 [Continues through questions...]
 
-Result: generated-skills/medical-translator/ + ZIP file
+Result: skills/medical-translator/ + ZIP file
 ```
 
 ### Example 2: Getting a Prompt
@@ -339,7 +339,7 @@ Result: .claude/agents/code-reviewer.md
 **Want to Modify Generated Output**:
 - Edit the generated files directly
 - Or ask the agent to regenerate with changes
-- Files are in generated-skills/ or .claude/agents/
+- Files are in skills/ or .claude/agents/
 
 ---
 
@@ -354,7 +354,7 @@ Result: .claude/agents/code-reviewer.md
 ```
 
 **Generated Outputs**:
-- Skills: `generated-skills/[skill-name]/`
+- Skills: `skills/[skill-name]/`
 - Prompts: In conversation (copy-paste)
 - Agents: `.claude/agents/[agent-name].md` or `~/.claude/agents/[agent-name].md`
 

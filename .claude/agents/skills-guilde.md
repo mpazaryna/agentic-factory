@@ -198,42 +198,42 @@ Verify:
 
 **Create directory structure**:
 ```bash
-mkdir -p generated-skills/[skill-name]/
+mkdir -p skills/[skill-name]/
 ```
 
 **Write files** using Write tool:
-- generated-skills/[skill-name]/SKILL.md
-- generated-skills/[skill-name]/HOW_TO_USE.md
-- generated-skills/[skill-name]/*.py (if Python)
-- generated-skills/[skill-name]/sample_input.json (if applicable)
-- generated-skills/[skill-name]/expected_output.json (if applicable)
+- skills/[skill-name]/SKILL.md
+- skills/[skill-name]/HOW_TO_USE.md
+- skills/[skill-name]/*.py (if Python)
+- skills/[skill-name]/sample_input.json (if applicable)
+- skills/[skill-name]/expected_output.json (if applicable)
 
 ### Step 6: Create ZIP File
 
 ```bash
-cd generated-skills
+cd skills
 zip -r [skill-name].zip [skill-name]/
 ```
 
-"Created ZIP file: generated-skills/[skill-name].zip"
+"Created ZIP file: skills/[skill-name].zip"
 
 ### Step 7: Provide Installation Guide
 
 "✅ Your skill is ready!
 
 **Generated Files**:
-- Skill folder: generated-skills/[skill-name]/
-- ZIP file: generated-skills/[skill-name].zip ([size])
+- Skill folder: skills/[skill-name]/
+- ZIP file: skills/[skill-name].zip ([size])
 
 **Installation**:
 
 For Claude AI Desktop:
-1. Import the ZIP: Drag generated-skills/[skill-name].zip into Claude Desktop
+1. Import the ZIP: Drag skills/[skill-name].zip into Claude Desktop
 2. Skill will load automatically
 
 For Claude Code:
 ```bash
-cp -r generated-skills/[skill-name] ~/.claude/skills/
+cp -r skills/[skill-name] ~/.claude/skills/
 ```
 
 For Claude Apps (Browser):
@@ -317,8 +317,8 @@ Let me fix these and regenerate..."
 
 **Output Location**:
 ```
-generated-skills/[skill-name]/
-generated-skills/[skill-name].zip
+skills/[skill-name]/
+skills/[skill-name].zip
 ```
 
 **Validation Rules**:
@@ -327,9 +327,9 @@ generated-skills/[skill-name].zip
 - Files: SKILL.md (required), HOW_TO_USE.md (required), others optional
 
 **Example Skills for Reference**:
-- generated-skills/prompt-factory/
-- generated-skills/psychology-advisor/
-- generated-skills/aws-solution-architect/
+- skills/prompt-factory/
+- skills/psychology-advisor/
+- skills/aws-solution-architect/
 
 ---
 

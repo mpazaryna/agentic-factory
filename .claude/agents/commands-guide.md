@@ -237,33 +237,33 @@ Verify:
 
 **Create directory structure**:
 ```bash
-mkdir -p generated-commands/[command-name]/
+mkdir -p commands/[command-name]/
 ```
 
 **Write files** using Write tool:
-- generated-commands/[command-name]/[command-name].md (main command file)
-- generated-commands/[command-name]/HOW_TO_USE.md (usage examples)
-- generated-commands/[command-name]/INSTALL.md (installation guide)
-- generated-commands/[command-name]/examples/ (only if data analysis command)
+- commands/[command-name]/[command-name].md (main command file)
+- commands/[command-name]/HOW_TO_USE.md (usage examples)
+- commands/[command-name]/INSTALL.md (installation guide)
+- commands/[command-name]/examples/ (only if data analysis command)
 
 ### Step 6: Provide Installation Guide
 
 "✅ Your slash command is ready!
 
 **Generated Files**:
-- Command file: generated-commands/[command-name]/[command-name].md
-- Documentation: generated-commands/[command-name]/HOW_TO_USE.md
+- Command file: commands/[command-name]/[command-name].md
+- Documentation: commands/[command-name]/HOW_TO_USE.md
 
 **Installation**:
 
 For this project:
 ```bash
-cp generated-commands/[command-name]/[command-name].md .claude/commands/
+cp commands/[command-name]/[command-name].md .claude/commands/
 ```
 
 For all projects (global):
 ```bash
-cp generated-commands/[command-name]/[command-name].md ~/.claude/commands/
+cp commands/[command-name]/[command-name].md ~/.claude/commands/
 ```
 
 **Test Your Command**:
@@ -360,8 +360,8 @@ Common validation failures:
 
 **Output Location**:
 ```
-generated-commands/[command-name]/
-generated-commands/[command-name]/[command-name].md
+commands/[command-name]/
+commands/[command-name]/[command-name].md
 ```
 
 **Validation Rules**:

@@ -62,18 +62,17 @@ claude-toolkit/
 │   ├── templates/               # Factory templates
 │   └── skills/                  # Core skills (journal, repo-summarizer)
 │
-├── generated-skills/            # Skill families
+├── skills/                      # Skill families
 │   ├── dev-inquiry/             # Investigation & decisions
 │   ├── dev-explore/             # Codebase understanding
 │   ├── dev-reports/             # Journals & reports
 │   ├── dev-context/             # Context scaffolding
 │   ├── design-principles/       # Universal design theory
-│   ├── design-web/              # Web/CSS implementation
-│   ├── design-swiftui/          # SwiftUI implementation
+│   ├── web-design/              # Web/CSS implementation
 │   └── design-review/           # Audits & submission
 │
-├── generated-agents/            # Generated agent definitions
-├── generated-commands/          # Generated command definitions
+├── agents/                      # Specialized agents
+├── commands/                    # Slash commands
 └── CLAUDE.md                    # Claude Code instructions
 ```
 
@@ -83,10 +82,10 @@ Copy a skill family to your project:
 
 ```bash
 # Developer workflow skills
-cp -r generated-skills/dev-* /path/to/your/project/.claude/skills/
+cp -r skills/dev-* /path/to/your/project/.claude/skills/
 
 # Design skills
-cp -r generated-skills/design-* /path/to/your/project/.claude/skills/
+cp -r skills/design-* /path/to/your/project/.claude/skills/
 
 # Factory system (meta-generator)
 cp -r .claude/ /path/to/your/project/

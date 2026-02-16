@@ -39,7 +39,7 @@ The centerpiece of Claude Toolkit - an interactive system for building custom Cl
 - `.claude/templates/*.md` - 5 factory templates
 
 **Evidence of Success:**
-- 12+ generated skills in `generated-skills/`
+- 12+ generated skills in `skills/`
 - All with proper YAML frontmatter validation
 - Complete documentation packages
 - Production-ready ZIP files
@@ -261,7 +261,7 @@ A collection of working, production-ready skills demonstrating factory effective
 11. spike-driven-dev - Development methodology
 12. learn-project - Project learning
 
-**Location:** [generated-skills/](../../generated-skills/)
+**Location:** [skills/](../../skills/)
 
 ---
 

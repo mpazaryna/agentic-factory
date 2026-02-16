@@ -6,10 +6,10 @@
 
 ```bash
 # Global installation (available in all projects)
-cp -r generated-skills/goose-recipes ~/.claude/skills/
+cp -r skills/goose-recipes ~/.claude/skills/
 
 # Project-specific installation
-cp -r generated-skills/goose-recipes .claude/skills/
+cp -r skills/goose-recipes .claude/skills/
 ```
 
 ### For Claude Web/Desktop
@@ -251,7 +251,7 @@ cd claude-toolkit
 git pull origin main
 
 # Re-copy to skills directory
-cp -r generated-skills/goose-recipes ~/.claude/skills/
+cp -r skills/goose-recipes ~/.claude/skills/
 
 # Verify update
 ls -la ~/.claude/skills/goose-recipes/
@@ -275,7 +275,7 @@ Share with your team:
 
 ```bash
 # Add to team's dotfiles
-cp -r generated-skills/goose-recipes team-dotfiles/claude/skills/
+cp -r skills/goose-recipes team-dotfiles/claude/skills/
 
 # Team members install
 git clone team-dotfiles
@@ -286,7 +286,7 @@ cp -r team-dotfiles/claude/skills/goose-recipes ~/.claude/skills/
 
 ```bash
 # Create package
-cd generated-skills
+cd skills
 tar -czf goose-recipes-skill.tar.gz goose-recipes/
 
 # Share and extract

@@ -178,7 +178,7 @@ The templates are verbose but ensure high-quality, consistent output.
 
 ### Challenge 1: File Cleanliness and Output Quality
 
-**Problem:** Initial factory implementations generated working components but left behind backup files (.backup, .bak), Python cache directories (__pycache__/), and internal documentation (SUMMARY.md) that polluted the generated-skills/ directory. This created unprofessional deliverables and confused users about which files were intended for distribution.
+**Problem:** Initial factory implementations generated working components but left behind backup files (.backup, .bak), Python cache directories (__pycache__/), and internal documentation (SUMMARY.md) that polluted the skills/ directory. This created unprofessional deliverables and confused users about which files were intended for distribution.
 
 **Solution:** Implemented mandatory cleanup protocol in factory templates:
 - Added explicit "File Cleanliness Standards" section (44 lines) in SKILLS_FACTORY_PROMPT.md:671
@@ -323,9 +323,9 @@ While templates remain verbose, they now share consistent patterns that make mai
   - Project instructions: `CLAUDE.md`
 
 - **Generated Examples:**
-  - Repo Summarizer: `generated-skills/repo-summarizer/`
-  - Frontend Design: `generated-skills/frontend-design/`
-  - Commit Helper: `generated-skills/commit-helper/`
+  - Repo Summarizer: `skills/repo-summarizer/`
+  - Frontend Design: `skills/frontend-design/`
+  - Commit Helper: `skills/commit-helper/`
 
 ## Tags
 
