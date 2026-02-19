@@ -279,7 +279,7 @@ While templates remain verbose, they now share consistent patterns that make mai
 
 1. **Template Versioning** - Add version numbers to factory templates to enable migration paths when formats evolve
 
-2. **Output Validation Command** - Create `/validate-output skill|agent|command|hook` command for quality checking generated components
+2. ~~**Output Validation Command**~~ - **DONE**: `/validate skill|agent|command|curated-prompt <path>` command and `component-validator` agent
 
 3. **Factory Status Dashboard** - Implement `/factory-status` command showing history of generated components with timestamps and locations
 

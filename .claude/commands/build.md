@@ -200,7 +200,7 @@ Your hook's purpose: ___
 ## Related Commands
 
 **After building**:
-- `/validate-output skill|hook` - Check format and quality
+- `/validate skill|agent|command|curated-prompt <path>` - Check format and quality
 - `/install-skill path/to/skill` - Install generated skill
 - `/install-hook path/to/hook` - Install generated hook
 - `/test-factory skill-name` - Test it works
@@ -219,7 +219,7 @@ Your hook's purpose: ___
 [Answer questions, skill generated]
 
 # 2. Validate
-/validate-output skill
+/validate skill skills/my-skill
 
 # 3. Install
 /install-skill skills/my-skill
