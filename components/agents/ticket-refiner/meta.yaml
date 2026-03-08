@@ -1,0 +1,21 @@
+name: ticket-refiner
+type: agent
+scope: general
+domain: null
+description: "Refine a project management ticket into a formal PRD by cross-referencing the ticket's intent with the codebase. Requires CONTEXT.md. Discovers .orchestra/ for output location and ADR context."
+install_files:
+  - agent.md
+install_target: agents/ticket-refiner
+dependencies: []
+tags:
+  - prd
+  - ticket
+  - requirements
+  - clickup
+  - github
+source_project: chiro, resin-platform
+promoted_date: 2026-03-08
+context_requirements:
+  - CONTEXT.md (required)
+  - .orchestra/work/TEMPLATES/prd.md (optional, used if present)
+  - .orchestra/adr/ (optional, referenced if present)

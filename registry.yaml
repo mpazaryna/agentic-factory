@@ -155,6 +155,24 @@ components:
   # AGENTS (general)
   # ============================================================
 
+  - name: convention-auditor
+    type: agent
+    scope: general
+    description: "Audit codebase for compliance with project conventions and ADRs. Discovers rules from CONTEXT.md and project docs."
+    path: components/agents/convention-auditor
+    install_target: agents/convention-auditor
+    dependencies: []
+    tags: [audit, conventions, compliance, quality, adr]
+
+  - name: prd-to-spec
+    type: agent
+    scope: general
+    description: "Translate a validated PRD into a technical spec by deep-diving the codebase. Requires CONTEXT.md."
+    path: components/agents/prd-to-spec
+    install_target: agents/prd-to-spec
+    dependencies: [ticket-refiner]
+    tags: [spec, prd, implementation, architecture]
+
   - name: quality-control-enforcer
     type: agent
     scope: general
@@ -190,6 +208,15 @@ components:
     install_target: agents/synthesis-executor
     dependencies: []
     tags: [executor, synthesis, summary, data-pipeline]
+
+  - name: ticket-refiner
+    type: agent
+    scope: general
+    description: "Refine a project management ticket into a formal PRD by cross-referencing the ticket's intent with the codebase. Requires CONTEXT.md."
+    path: components/agents/ticket-refiner
+    install_target: agents/ticket-refiner
+    dependencies: []
+    tags: [prd, ticket, requirements, clickup, github]
 
   - name: work-completion-summarizer
     type: agent

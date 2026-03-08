@@ -1,0 +1,21 @@
+name: prd-to-spec
+type: agent
+scope: general
+domain: null
+description: "Translate a validated PRD into a technical spec by deep-diving the codebase. Requires CONTEXT.md. Discovers .orchestra/ for output and ADR context."
+install_files:
+  - agent.md
+install_target: agents/prd-to-spec
+dependencies:
+  - ticket-refiner
+tags:
+  - spec
+  - prd
+  - implementation
+  - architecture
+source_project: chiro, resin-platform
+promoted_date: 2026-03-08
+context_requirements:
+  - CONTEXT.md (required)
+  - .orchestra/work/TEMPLATES/spec.md (optional, used if present)
+  - .orchestra/adr/ (optional, referenced if present)
