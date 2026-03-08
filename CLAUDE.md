@@ -63,3 +63,7 @@ Every component in `components/` has a `meta.yaml` with: name, type, scope, desc
 2. `/factory promote` to bring proven components into the factory
 3. `/factory install` to distribute components to other projects
 4. `/factory check` / `/factory update` to keep installed copies current
+
+## Issue Tracking
+
+All tickets are tracked in ClickUp: https://app.clickup.com/9017822495/v/li/901711514601
