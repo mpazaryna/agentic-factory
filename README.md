@@ -1,80 +1,123 @@
 # Agentic Factory
 
-A meta-generator factory system for building custom Claude Code components — Skills, Prompts, Agents, Commands, and Hooks — through interactive guided workflows.
+A component registry and distribution system for AI-powered development tooling. Stores reusable Skills, Agents, Commands, Plugins, and Prompts — primarily for Claude Code, but designed to be platform-flexible.
 
-## What You Can Build
+Components are built organically in real projects, promoted into the factory when proven, and distributed back out to any project via the `/factory` gateway or Claude's native plugin system.
 
-| Component | What It Does |
-|-----------|-------------|
-| **Skills** | Multi-file capabilities with deep domain knowledge |
-| **Prompts** | Production-ready mega-prompts (69 presets across 15 domains) |
-| **Agents** | Workflow specialists with YAML frontmatter configuration |
-| **Commands** | Slash commands following Anthropic patterns |
-| **Hooks** | Workflow automation with safety validation |
+## What's Inside
 
-## Install Components Into Any Project
+| Type | Count | Location | Platform |
+|------|-------|----------|----------|
+| **Skills** | 16 general, 4 domain | `components/skills/` | Claude Code |
+| **Agents** | 8 general, 5 domain | `components/agents/` | Claude Code |
+| **Commands** | 6 general, 25 domain | `components/commands/` | Claude Code |
+| **Plugins** | 5 | `plugins/` | Claude Code + Desktop |
+| **Prompts** | 16 | `prompts/` | Any LLM |
 
-```
-/install-agentic-factory skill cloudflare
-/install-agentic-factory agent research-agent
-/install-agentic-factory command gh-issue
-```
+**64 components** across 5 domains (chiro, chiro-mlx, chiro-base, resin, yellow-house), plus a curated prompt library.
 
-Installs individual skills, agents, or commands from this repo into your current project's `.claude/` directory. Available globally after setup:
+## Quick Start
+
+### 1. Install the factory gateway (one time)
 
 ```bash
-mkdir -p ~/.claude/commands
-cp commands/install-agentic-factory/install-agentic-factory.md ~/.claude/commands/
+# From the factory repo
+cp components/commands/factory/factory.md ~/.claude/commands/factory.md
 ```
 
-> Set `AGENTIC_FACTORY_HOME` if your clone isn't at `~/workspace/agentic-factory`.
+This gives you `/factory` in every Claude Code session.
 
-## Build New Components
-
-```
-/build → Choose a component type → Answer 4-11 questions → Get production-ready output
-```
-
-Or go direct:
+### 2. Browse available components
 
 ```
-/build skill
-/build prompt
-/build agent
-/build command
-/build hook
+/factory list
+/factory list --scope general
+/factory list --type skill --search codebase
 ```
 
-## Full Factory Installation
+### 3. Install components
 
-The factory system lives in `.claude/` and is fully portable:
+```
+# Install a single component globally
+/factory install dev-explore --global
 
-```bash
-# Copy the entire factory to any project
-cp -r .claude/ /path/to/your/project/
+# Install to current project
+/factory install git --project
 
-# Or use /install-agentic-factory for individual components
+# Install all general-purpose components
+/factory install --all --scope general --project
 ```
 
-## Structure
+### 4. Keep components current
+
+```
+# Check for stale installed copies
+/factory check
+
+# Update everything
+/factory update --all
+```
+
+## Promoting Components
+
+Built something useful in a project? Bring it home:
+
+```
+/factory promote .claude/skills/my-new-skill/ --scope general
+/factory promote .claude/agents/my-agent.md --scope domain-specific --domain resin
+```
+
+The promote command scans for domain-specific hardcoding and helps you generalize components for reuse.
+
+## Plugins
+
+The `plugins/` directory contains packaged plugins for Claude Code and Claude Desktop with JSON manifests:
+
+| Plugin | Description |
+|--------|-------------|
+| `prd-creator` | Guided PRD generation workflow with bundled skill |
+| `decide-technical` | Technical decision framework with ADR output |
+| `research-task` | Structured research and investigation |
+| `git-start-new` | Safe feature branch creation |
+| `hello-world` | Example plugin for learning the format |
+
+## Prompts
+
+Platform-agnostic prompts in `prompts/`, organized by domain:
+
+- **pkm** — Personal knowledge management (weekly reviews, planning, summaries)
+- **yoga** — Class planning multi-agent system (orchestrator + specialists)
+- **writing** — Anti-slop writing guidelines
+- **market-research** — Competitive analysis
+- **ios-development** — Collected iOS development prompts
+
+## Repository Structure
 
 ```
 agentic-factory/
-├── .claude/              # Factory system (portable)
-│   ├── agents/           # Factory guide agents
-│   ├── commands/         # /build, /git:commit, /git:push
-│   ├── templates/        # 5 factory templates
-│   └── skills/           # Core skills
-├── skills/               # Pre-built skill families (dev-*, design-*)
-├── agents/               # Specialized agents
-├── commands/             # Additional slash commands
-├── curated-prompts/      # Standalone prompts organized by domain
-└── plugins/              # Example Claude Code plugins
+├── components/              # Component library
+│   ├── skills/              # General-purpose skills
+│   ├── agents/              # General-purpose agents
+│   ├── commands/            # General-purpose commands
+│   ├── templates/           # Shared templates
+│   └── domain/              # Domain-specific components
+│       ├── chiro/
+│       ├── chiro-mlx/
+│       ├── chiro-base/
+│       ├── resin/
+│       └── yellow-house/
+├── plugins/                 # Claude Code/Desktop plugins
+├── prompts/                 # Platform-agnostic prompts
+├── registry.yaml            # Component manifest
+├── .orchestra/              # ADRs, devlog, work items
+└── docs/                    # Documentation
 ```
 
-## Key Principles
+Each component has a `meta.yaml` with metadata (name, type, scope, install target, dependencies, tags) that drives the registry and installation.
 
-- **Pure Markdown** — No code execution, just structured configurations
-- **Portable** — Copy `.claude/` to any project for instant factory access
-- **Modular** — Pick and choose components as needed
-- **Guided** — Interactive Q&A workflows instead of manual config files
+## Design Principles
+
+- **Organic over generated** — Components are built through real work, not templated into existence
+- **Context separation** — General components discover project context at runtime, never hardcode it
+- **Pure markdown** — No executable code in the repo, just structured configurations
+- **One source of truth** — `components/` is canonical, `registry.yaml` is the manifest, `meta.yaml` per component drives everything
