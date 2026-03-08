@@ -249,6 +249,16 @@ components:
     dependencies: []
     tags: [context, readme, documentation, onboarding]
 
+  - name: factory
+    type: command
+    scope: general
+    description: "Agentic Factory gateway — install, discover, promote, and manage components. Bootstrap component: install globally once."
+    path: components/commands/factory
+    install_target: commands/factory
+    dependencies: []
+    tags: [factory, install, bootstrap, management]
+    bootstrap: true
+
   - name: git
     type: command
     scope: general

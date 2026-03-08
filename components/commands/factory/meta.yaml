@@ -1,0 +1,17 @@
+name: factory
+type: command
+scope: general
+domain: null
+description: "Agentic Factory gateway — install, discover, promote, and manage components from the factory toolkit. This is the bootstrap component: install it globally once, then manage everything else through it."
+install_files:
+  - factory.md
+install_target: commands/factory
+dependencies: []
+tags:
+  - factory
+  - install
+  - bootstrap
+  - management
+source_project: agentic-factory
+promoted_date: 2026-03-08
+bootstrap: true
