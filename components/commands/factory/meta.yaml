@@ -5,7 +5,8 @@ domain: null
 description: "Agentic Factory gateway — install, discover, promote, and manage components from the factory toolkit. This is the bootstrap component: install it globally once, then manage everything else through it."
 install_files:
   - factory.md
-install_target: commands/factory
+install_target: commands
+install_note: "Install as a single file at commands/factory.md, not in a subdirectory"
 dependencies: []
 tags:
   - factory
