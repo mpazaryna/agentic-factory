@@ -1,0 +1,48 @@
+{
+  "app_info": {
+    "name": "FitTracker Pro",
+    "description": "A comprehensive fitness tracking app that monitors workouts, nutrition, and health metrics",
+    "platforms": ["iOS", "iPadOS"],
+    "minimum_version": "iOS 16.0",
+    "categories": ["Health & Fitness", "Lifestyle"],
+    "monetization": "freemium_with_iap",
+    "features": [
+      "Workout tracking with GPS",
+      "Nutrition logging",
+      "HealthKit integration",
+      "Social sharing",
+      "Premium subscription for advanced analytics"
+    ]
+  },
+  "code_samples": {
+    "info_plist_entries": {
+      "NSHealthShareUsageDescription": "FitTracker needs access to read your health data to display your fitness progress",
+      "NSHealthUpdateUsageDescription": "FitTracker needs access to save workout data to your Health app",
+      "NSLocationWhenInUseUsageDescription": "FitTracker uses your location to track outdoor workouts and calculate distance",
+      "NSCameraUsageDescription": "FitTracker uses the camera to scan food barcodes for nutrition tracking"
+    },
+    "has_in_app_purchases": true,
+    "subscription_type": "auto_renewable",
+    "restore_purchases_implemented": true
+  },
+  "metadata": {
+    "app_name": "FitTracker Pro - Fitness & Health",
+    "subtitle": "Track workouts, nutrition & health",
+    "keywords": "fitness,workout,health,nutrition,tracking,exercise,gym,running,cycling,diet",
+    "privacy_policy_url": "https://fittrackerapp.com/privacy",
+    "support_url": "https://fittrackerapp.com/support",
+    "age_rating": "4+",
+    "has_screenshots": true,
+    "has_preview_video": false
+  },
+  "testing_status": {
+    "tested_on_devices": ["iPhone 14 Pro", "iPad Air"],
+    "tested_ios_versions": ["iOS 16.5", "iOS 17.0"],
+    "edge_cases_tested": ["offline mode", "empty workout list", "permissions denied"],
+    "known_issues": ["Occasional sync delay with HealthKit data"]
+  },
+  "concerns": [
+    "Is my HealthKit usage description detailed enough?",
+    "Do I need to provide test account credentials for the premium subscription?"
+  ]
+}

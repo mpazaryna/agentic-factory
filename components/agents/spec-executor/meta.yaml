@@ -1,0 +1,12 @@
+name: spec-executor
+type: agent
+scope: general
+domain: null
+description: "Generic executor that runs workflow specs, generates queries from spec descriptions, and writes structured JSON and Markdown output."
+install_files:
+  - agent.md
+install_target: agents/spec-executor
+dependencies: []
+tags: [executor, workflow, spec, data-pipeline]
+source_project: resin-platform
+promoted_date: 2026-03-08

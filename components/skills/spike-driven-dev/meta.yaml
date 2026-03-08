@@ -1,0 +1,15 @@
+name: spike-driven-dev
+type: skill
+scope: general
+domain: null
+description: "Guide for spike-driven development methodology. Emphasizes TDD, real data validation, and risk reduction through minimal proofs-of-concept before full implementation."
+install_files:
+  - SKILL.md
+  - references/decision-criteria.md
+  - references/examples.md
+  - references/spike-patterns.md
+install_target: skills/spike-driven-dev
+dependencies: []
+tags: [methodology, tdd, architecture, spikes, development]
+source_project: yellow-house-project
+promoted_date: 2026-03-08

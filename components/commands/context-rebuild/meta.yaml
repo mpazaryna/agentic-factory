@@ -1,0 +1,16 @@
+name: context-rebuild
+description: >
+  Context rebuild commands for generating and updating project documentation.
+  Includes two sub-commands: rebuild-context (creates/updates CONTEXT.md with
+  active work areas, known issues, and environment status) and rebuild-readme
+  (generates a developer-focused README.md with architecture, setup, and
+  troubleshooting sections).
+category: documentation
+tags:
+  - context
+  - readme
+  - documentation
+  - onboarding
+files:
+  - rebuild-context.md
+  - rebuild-readme.md

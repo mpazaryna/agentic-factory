@@ -1,0 +1,18 @@
+name: fork-terminal
+type: skill
+scope: general
+domain: null
+description: "Fork a terminal session to a new terminal window using agentic coding tools (Claude Code, Codex CLI, Gemini CLI) or raw CLI commands."
+install_files:
+  - SKILL.md
+  - cookbook/claude-code.md
+  - cookbook/cli-command.md
+  - cookbook/codex-cli.md
+  - cookbook/gemini-cli.md
+  - prompts/fork_summary_user_prompt.md
+  - tools/fork_terminal.py
+install_target: skills/fork-terminal
+dependencies: []
+tags: [terminal, automation, fork, agentic, cli]
+source_project: resin-platform
+promoted_date: 2026-03-08

@@ -1,0 +1,21 @@
+name: acb
+description: >
+  Analyze Codebase (ACB) - a modular, template-driven command that generates
+  comprehensive codebase_analysis.md documents. Auto-detects project technologies
+  (TypeScript, iOS/Swift, Android/Kotlin, MCP servers, Cloudflare Workers, Jest)
+  and merges the appropriate analysis templates for a tailored deep-dive.
+category: analysis
+tags:
+  - codebase-analysis
+  - documentation
+  - onboarding
+  - architecture
+files:
+  - acb.md
+  - templates/base.md
+  - templates/typescript.md
+  - templates/ios-swift.md
+  - templates/android-kotlin.md
+  - templates/jest-testing.md
+  - templates/mcp-server.md
+  - templates/cloudflare-worker.md

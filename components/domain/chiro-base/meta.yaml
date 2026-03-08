@@ -1,0 +1,5 @@
+domain: chiro-base
+description: "Chiropractic base project presentation and deck components"
+components:
+  - name: build-deck
+    type: skill

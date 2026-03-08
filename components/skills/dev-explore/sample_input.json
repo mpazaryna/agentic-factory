@@ -1,0 +1,91 @@
+{
+  "examples": [
+    {
+      "mode": "analyze",
+      "invocation": "Hey Claude—I just added the \"codebase-docs\" skill. Can you analyze this codebase?",
+      "context": {
+        "project_type": "Node.js API",
+        "detected_technologies": ["typescript", "express", "jest"],
+        "has_readme": true,
+        "has_tests": true
+      },
+      "output_file": "codebase_analysis.md"
+    },
+    {
+      "mode": "moc",
+      "invocation": "Hey Claude—I just added the \"codebase-docs\" skill. Can you generate a project MOC?",
+      "context": {
+        "project_type": "React application",
+        "detected_technologies": ["typescript", "react", "jest"],
+        "has_devlog": true,
+        "devlog_entries": [
+          "docs/devlog/2025-11-15-api-redesign.md",
+          "docs/devlog/2025-11-18-auth-implementation.md"
+        ]
+      },
+      "output_files": [
+        "docs/moc/README.md",
+        "docs/moc/features.md",
+        "docs/moc/architecture.md",
+        "docs/moc/components.md",
+        "docs/moc/decisions.md"
+      ]
+    },
+    {
+      "mode": "portfolio",
+      "invocation": "Hey Claude—I just added the \"codebase-docs\" skill. Can you create a PROJECT.md? This project serves 500+ daily users and reduced processing time by 70%.",
+      "context": {
+        "project_type": "Task Management API",
+        "detected_technologies": ["nodejs", "typescript", "postgresql", "redis"],
+        "user_provided_metrics": {
+          "daily_active_users": 500,
+          "performance_improvement": "70%",
+          "uptime": "99.5%"
+        }
+      },
+      "output_file": "PROJECT.md"
+    },
+    {
+      "mode": "combined",
+      "invocation": "Hey Claude—I just added the \"codebase-docs\" skill. Can you create complete documentation using all three modes?",
+      "context": {
+        "project_type": "iOS App",
+        "detected_technologies": ["swift", "swiftui", "swiftdata"]
+      },
+      "output_files": [
+        "codebase_analysis.md",
+        "docs/moc/README.md",
+        "docs/moc/features.md",
+        "docs/moc/architecture.md",
+        "docs/moc/components.md",
+        "PROJECT.md"
+      ]
+    }
+  ],
+  "technology_detection": {
+    "ios_swift": {
+      "indicators": ["Package.swift", "*.xcodeproj", "*.xcworkspace"],
+      "template": "templates/tech/ios-swift.md"
+    },
+    "android_kotlin": {
+      "indicators": ["build.gradle.kts with android plugin"],
+      "template": "templates/tech/android-kotlin.md"
+    },
+    "cloudflare_worker": {
+      "indicators": ["wrangler.toml", "wrangler.jsonc"],
+      "template": "templates/tech/cloudflare-worker.md"
+    },
+    "mcp_server": {
+      "indicators": ["@modelcontextprotocol/sdk in package.json"],
+      "template": "templates/tech/mcp-server.md"
+    },
+    "typescript": {
+      "indicators": ["tsconfig.json"],
+      "template": "templates/tech/typescript.md"
+    },
+    "jest": {
+      "indicators": ["jest.config.js", "jest.config.cjs", "jest.config.ts"],
+      "template": "templates/tech/jest-testing.md"
+    }
+  }
+}

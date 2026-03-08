@@ -1,0 +1,15 @@
+name: project-moc-generator
+type: skill
+scope: general
+domain: null
+description: "Generates comprehensive Map of Content (MOC) documentation for software projects using standard markdown links, analyzing current implementation state from codebase and devlog notes."
+install_files:
+  - SKILL.md
+  - HOW_TO_USE.md
+  - expected_output.md
+  - sample_input.json
+install_target: skills/project-moc-generator
+dependencies: []
+tags: [documentation, moc, markdown, github, project-docs]
+source_project: chiro-mlx
+promoted_date: 2026-03-08

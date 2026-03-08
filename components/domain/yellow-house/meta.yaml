@@ -1,0 +1,5 @@
+domain: yellow-house
+description: "Yellow House SwiftUI project components"
+components:
+  - name: swiftui-submission-prep
+    type: skill

@@ -1,0 +1,17 @@
+name: git
+type: command
+scope: general
+domain: null
+description: "Git workflow commands — commit, push, and issue fetching with Conventional Commits and governance rules"
+install_files:
+  - commit.md
+  - push.md
+  - issue.md
+install_target: commands/git
+dependencies: []
+tags:
+  - git
+  - conventional-commits
+  - governance
+source_project: chiro, pazland-astro
+promoted_date: 2026-03-08

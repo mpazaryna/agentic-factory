@@ -1,0 +1,13 @@
+name: writing
+type: skill
+scope: general
+domain: null
+description: "Create distinctive, production-grade blog posts with a structured, approval-driven SEO content writing workflow."
+install_files:
+  - SKILL.md
+  - examples/setlist.md
+install_target: skills/writing
+dependencies: []
+tags: [writing, seo, content, blog]
+source_project: pazland-astro
+promoted_date: 2026-03-08

@@ -1,0 +1,14 @@
+name: goose-recipe-analysis
+type: skill
+scope: general
+domain: null
+description: "Create Goose recipes for document analysis and transformation tasks. Use when creating recipes that analyze saved reports or perform analysis on existing data."
+install_files:
+  - SKILL.md
+  - assets/analysis-recipe-template.yaml
+  - assets/runner-script-template.sh
+install_target: skills/goose-recipe-analysis
+dependencies: []
+tags: [goose, recipes, analysis, document-processing]
+source_project: resin-platform
+promoted_date: 2026-03-08

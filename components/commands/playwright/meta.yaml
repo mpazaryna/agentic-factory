@@ -1,0 +1,14 @@
+name: playwright
+description: >
+  Playwright test generator agent. Uses the Playwright MCP to interactively
+  explore websites, then generates robust TypeScript tests following best
+  practices (role-based locators, auto-retrying assertions, no unnecessary
+  timeouts). Iterates until tests pass.
+category: testing
+tags:
+  - playwright
+  - e2e-testing
+  - test-generation
+  - automation
+files:
+  - playwright.md

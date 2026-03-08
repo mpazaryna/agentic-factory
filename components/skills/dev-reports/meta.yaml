@@ -1,0 +1,23 @@
+name: dev-reports
+type: skill
+scope: general
+domain: null
+description: "Developer reporting skill for work documentation and communication. Use when writing journals, devlogs, status updates, progress reports, or documenting development work."
+install_files:
+  - SKILL.md
+  - HOW_TO_USE.md
+  - INSTALL.md
+  - examples/github-journal.md
+  - examples/devlog.md
+  - examples/form-22a.md
+  - examples/form-22b.md
+install_target: skills/dev-reports
+dependencies: []
+tags:
+  - reporting
+  - devlog
+  - journal
+  - status-updates
+  - documentation
+source_project: chiro
+promoted_date: 2026-03-08

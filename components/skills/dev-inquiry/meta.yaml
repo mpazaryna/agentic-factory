@@ -1,0 +1,23 @@
+name: dev-inquiry
+type: skill
+scope: general
+domain: null
+description: "Developer inquiry skill for technical investigation, validation, and decision-making. Use when exploring unfamiliar technology, validating approaches with spikes, comparing options, or making architecture decisions."
+install_files:
+  - SKILL.md
+  - HOW_TO_USE.md
+  - INSTALL.md
+  - references/investigation.md
+  - references/spike.md
+  - references/scoring.md
+  - references/examples.md
+install_target: skills/dev-inquiry
+dependencies: []
+tags:
+  - investigation
+  - spike
+  - comparison
+  - decision-making
+  - technical-analysis
+source_project: chiro
+promoted_date: 2026-03-08

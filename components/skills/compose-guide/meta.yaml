@@ -1,0 +1,12 @@
+name: compose-guide
+type: skill
+scope: general
+domain: null
+description: "Compose a guide from UAT walkthrough files into a single handbook. Supports markdown composition and styled PDF generation."
+install_files:
+  - SKILL.md
+install_target: skills/compose-guide
+dependencies: []
+tags: [documentation, guides, uat, composition, pdf]
+source_project: chiro
+promoted_date: 2026-03-08

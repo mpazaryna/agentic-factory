@@ -1,0 +1,12 @@
+name: research-docs-fetcher
+type: agent
+scope: general
+domain: null
+description: "Research specialist that systematically fetches, processes, and organizes web content into structured markdown files."
+install_files:
+  - agent.md
+install_target: agents/research-docs-fetcher
+dependencies: []
+tags: [research, documentation, web-fetch, reference]
+source_project: yellow-house-project
+promoted_date: 2026-03-08

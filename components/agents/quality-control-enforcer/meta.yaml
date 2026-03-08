@@ -1,0 +1,12 @@
+name: quality-control-enforcer
+type: agent
+scope: general
+domain: null
+description: "Expert code reviewer and implementation validator that enforces quality standards, catches workarounds, and ensures genuine end-to-end functionality."
+install_files:
+  - agent.md
+install_target: agents/quality-control-enforcer
+dependencies: []
+tags: [quality, review, validation, code-review]
+source_project: yellow-house-project
+promoted_date: 2026-03-08

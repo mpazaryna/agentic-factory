@@ -1,0 +1,12 @@
+name: work-completion-summarizer
+type: agent
+scope: general
+domain: null
+description: "Creates extremely concise markdown summaries when tasks are finished, converting achievements into brief feedback with logical next steps."
+install_files:
+  - agent.md
+install_target: agents/work-completion-summarizer
+dependencies: []
+tags: [summary, devlog, completion, reporting]
+source_project: yellow-house-project
+promoted_date: 2026-03-08

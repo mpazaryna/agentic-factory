@@ -1,0 +1,33 @@
+domain: chiro
+description: "Chiropractic iOS/macOS app (PAB) components"
+components:
+  - name: clickup-refiner
+    type: agent
+  - name: config-auditor
+    type: agent
+  - name: spec-writer
+    type: agent
+  - name: install
+    type: command
+  - name: refine-ticket
+    type: command
+  - name: tk-agent
+    type: command
+  - name: tk-close
+    type: command
+  - name: tk-investigate
+    type: command
+  - name: tk-open
+    type: command
+  - name: uat-audit
+    type: command
+  - name: uat-new
+    type: command
+  - name: uat
+    type: command
+  - name: write-spec
+    type: command
+  - name: xcode
+    type: command
+  - name: mlx
+    type: skill

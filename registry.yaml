@@ -1,0 +1,536 @@
+version: 1
+generated: 2026-03-08
+factory_path: ~/workspace/agentic-factory
+
+components:
+  # ============================================================
+  # SKILLS (general)
+  # ============================================================
+
+  - name: cloudflare
+    type: skill
+    scope: general
+    description: "Cloudflare Workers development patterns including Workers AI, Durable Objects, KV storage, and Hono routing for serverless edge functions."
+    path: components/skills/cloudflare
+    install_target: skills/cloudflare
+    dependencies: []
+    tags: [cloudflare, workers, serverless, edge, hono, ai]
+
+  - name: compose-guide
+    type: skill
+    scope: general
+    description: "Compose a guide from UAT walkthrough files into a single handbook. Supports markdown composition and styled PDF generation."
+    path: components/skills/compose-guide
+    install_target: skills/compose-guide
+    dependencies: []
+    tags: [documentation, guides, uat, composition, pdf]
+
+  - name: dev-context
+    type: skill
+    scope: general
+    description: "Context architecture skill for aligning work. Use when starting new features, making architectural decisions, or setting up implementation work."
+    path: components/skills/dev-context
+    install_target: skills/dev-context
+    dependencies: []
+    tags: [context, architecture, adr, planning, specs]
+
+  - name: dev-explore
+    type: skill
+    scope: general
+    description: "Explore and understand codebases with interconnected documentation. Use when onboarding to a new project, exporting docs for external LLM tools, or generating portfolio artifacts."
+    path: components/skills/dev-explore
+    install_target: skills/dev-explore
+    dependencies: []
+    tags: [codebase-analysis, documentation, onboarding, portfolio, export]
+
+  - name: dev-inquiry
+    type: skill
+    scope: general
+    description: "Developer inquiry skill for technical investigation, validation, and decision-making. Use when exploring unfamiliar technology, validating approaches with spikes, comparing options, or making architecture decisions."
+    path: components/skills/dev-inquiry
+    install_target: skills/dev-inquiry
+    dependencies: []
+    tags: [investigation, spike, comparison, decision-making, technical-analysis]
+
+  - name: dev-reports
+    type: skill
+    scope: general
+    description: "Developer reporting skill for work documentation and communication. Use when writing journals, devlogs, status updates, progress reports, or documenting development work."
+    path: components/skills/dev-reports
+    install_target: skills/dev-reports
+    dependencies: []
+    tags: [reporting, devlog, journal, status-updates, documentation]
+
+  - name: fork-terminal
+    type: skill
+    scope: general
+    description: "Fork a terminal session to a new terminal window using agentic coding tools (Claude Code, Codex CLI, Gemini CLI) or raw CLI commands."
+    path: components/skills/fork-terminal
+    install_target: skills/fork-terminal
+    dependencies: []
+    tags: [terminal, automation, fork, agentic, cli]
+
+  - name: frontend-design
+    type: skill
+    scope: general
+    description: "Create distinctive, production-grade frontend interfaces with high design quality. Generates creative, polished code that avoids generic AI aesthetics."
+    path: components/skills/frontend-design
+    install_target: skills/frontend-design
+    dependencies: []
+    tags: [frontend, design, css, html, ui, web]
+
+  - name: goose-recipe-analysis
+    type: skill
+    scope: general
+    description: "Create Goose recipes for document analysis and transformation tasks. Use when creating recipes that analyze saved reports or perform analysis on existing data."
+    path: components/skills/goose-recipe-analysis
+    install_target: skills/goose-recipe-analysis
+    dependencies: []
+    tags: [goose, recipes, analysis, document-processing]
+
+  - name: goose-recipes
+    type: skill
+    scope: general
+    description: "Create, validate, and work with Goose recipes - reusable AI agent configurations that package specific setups for tasks."
+    path: components/skills/goose-recipes
+    install_target: skills/goose-recipes
+    dependencies: []
+    tags: [goose, recipes, ai-agents, automation, yaml]
+
+  - name: project-moc-generator
+    type: skill
+    scope: general
+    description: "Generates comprehensive Map of Content (MOC) documentation for software projects using standard markdown links, analyzing current implementation state from codebase and devlog notes."
+    path: components/skills/project-moc-generator
+    install_target: skills/project-moc-generator
+    dependencies: []
+    tags: [documentation, moc, markdown, github, project-docs]
+
+  - name: spike-driven-dev
+    type: skill
+    scope: general
+    description: "Guide for spike-driven development methodology. Emphasizes TDD, real data validation, and risk reduction through minimal proofs-of-concept before full implementation."
+    path: components/skills/spike-driven-dev
+    install_target: skills/spike-driven-dev
+    dependencies: []
+    tags: [methodology, tdd, architecture, spikes, development]
+
+  - name: swift-lang
+    type: skill
+    scope: general
+    description: "Swift language mastery skill covering macros, concurrency (async/await, actors), networking, Swift Testing, generics, memory optimization, and result builders."
+    path: components/skills/swift-lang
+    install_target: skills/swift-lang
+    dependencies: []
+    tags: [swift, ios, macos, concurrency, macros, testing]
+
+  - name: swift-ui
+    type: skill
+    scope: general
+    description: "SwiftUI implementation patterns for building polished iOS/macOS apps including views, state management, layouts, animations, accessibility, and architecture."
+    path: components/skills/swift-ui
+    install_target: skills/swift-ui
+    dependencies: []
+    tags: [swift, swiftui, ios, macos, ui, mobile]
+
+  - name: uat-audit
+    type: skill
+    scope: general
+    description: "Audit and enforce UAT folder organization. Runs deterministic checks via embedded script, uses agent judgment for content remediation."
+    path: components/skills/uat-audit
+    install_target: skills/uat-audit
+    dependencies: []
+    tags: [uat, audit, testing, documentation, quality]
+
+  - name: writing
+    type: skill
+    scope: general
+    description: "Create distinctive, production-grade blog posts with a structured, approval-driven SEO content writing workflow."
+    path: components/skills/writing
+    install_target: skills/writing
+    dependencies: []
+    tags: [writing, seo, content, blog]
+
+  # ============================================================
+  # AGENTS (general)
+  # ============================================================
+
+  - name: quality-control-enforcer
+    type: agent
+    scope: general
+    description: "Expert code reviewer and implementation validator that enforces quality standards, catches workarounds, and ensures genuine end-to-end functionality."
+    path: components/agents/quality-control-enforcer
+    install_target: agents/quality-control-enforcer
+    dependencies: []
+    tags: [quality, review, validation, code-review]
+
+  - name: research-docs-fetcher
+    type: agent
+    scope: general
+    description: "Research specialist that systematically fetches, processes, and organizes web content into structured markdown files."
+    path: components/agents/research-docs-fetcher
+    install_target: agents/research-docs-fetcher
+    dependencies: []
+    tags: [research, documentation, web-fetch, reference]
+
+  - name: spec-executor
+    type: agent
+    scope: general
+    description: "Generic executor that runs workflow specs, generates queries from spec descriptions, and writes structured JSON and Markdown output."
+    path: components/agents/spec-executor
+    install_target: agents/spec-executor
+    dependencies: []
+    tags: [executor, workflow, spec, data-pipeline]
+
+  - name: synthesis-executor
+    type: agent
+    scope: general
+    description: "Executes synthesis specs that combine multiple analysis JSON outputs into executive summaries and amalgamated data files."
+    path: components/agents/synthesis-executor
+    install_target: agents/synthesis-executor
+    dependencies: []
+    tags: [executor, synthesis, summary, data-pipeline]
+
+  - name: work-completion-summarizer
+    type: agent
+    scope: general
+    description: "Creates extremely concise markdown summaries when tasks are finished, converting achievements into brief feedback with logical next steps."
+    path: components/agents/work-completion-summarizer
+    install_target: agents/work-completion-summarizer
+    dependencies: []
+    tags: [summary, devlog, completion, reporting]
+
+  # ============================================================
+  # COMMANDS (general)
+  # ============================================================
+
+  - name: acb
+    type: command
+    scope: general
+    description: "Analyze Codebase (ACB) - a modular, template-driven command that generates comprehensive codebase_analysis.md documents. Auto-detects project technologies and merges the appropriate analysis templates for a tailored deep-dive."
+    path: components/commands/acb
+    install_target: commands/acb
+    dependencies: []
+    tags: [codebase-analysis, documentation, onboarding, architecture]
+
+  - name: context-rebuild
+    type: command
+    scope: general
+    description: "Context rebuild commands for generating and updating project documentation. Includes rebuild-context (creates/updates CONTEXT.md) and rebuild-readme (generates a developer-focused README.md)."
+    path: components/commands/context-rebuild
+    install_target: commands/context-rebuild
+    dependencies: []
+    tags: [context, readme, documentation, onboarding]
+
+  - name: git
+    type: command
+    scope: general
+    description: "Git workflow commands — commit, push, and issue fetching with Conventional Commits and governance rules."
+    path: components/commands/git
+    install_target: commands/git
+    dependencies: []
+    tags: [git, conventional-commits, governance]
+
+  - name: playwright
+    type: command
+    scope: general
+    description: "Playwright test generator agent. Uses the Playwright MCP to interactively explore websites, then generates robust TypeScript tests following best practices."
+    path: components/commands/playwright
+    install_target: commands/playwright
+    dependencies: []
+    tags: [playwright, e2e-testing, test-generation, automation]
+
+  - name: prime-web-dev
+    type: command
+    scope: general
+    description: "Quick codebase primer command. Lists all tracked files, reads the project README.md and CONTEXT.md, then summarizes understanding of the codebase."
+    path: components/commands/prime-web-dev
+    install_target: commands/prime-web-dev
+    dependencies: []
+    tags: [onboarding, context-loading, primer]
+
+  # ============================================================
+  # DOMAIN-SPECIFIC: chiro
+  # ============================================================
+
+  - name: clickup-refiner
+    type: agent
+    scope: domain-specific
+    domain: chiro
+    description: "Refine ClickUp tickets into formal PRDs for PAB chiropractic app"
+    path: components/domain/chiro/agents/clickup-refiner.md
+
+  - name: config-auditor
+    type: agent
+    scope: domain-specific
+    domain: chiro
+    description: "Audit SwiftUI views for PlatformConfig (ADR-000) compliance"
+    path: components/domain/chiro/agents/config-auditor.md
+
+  - name: spec-writer
+    type: agent
+    scope: domain-specific
+    domain: chiro
+    description: "Translate validated PRDs into technical specs for PAB codebase"
+    path: components/domain/chiro/agents/spec-writer.md
+
+  - name: install
+    type: command
+    scope: domain-specific
+    domain: chiro
+    description: "Build and install PAB app to Applications folder"
+    path: components/domain/chiro/commands/install.md
+
+  - name: refine-ticket
+    type: command
+    scope: domain-specific
+    domain: chiro
+    description: "Refine ClickUp ticket into formal PRD using clickup-refiner agent"
+    path: components/domain/chiro/commands/refine-ticket.md
+
+  - name: tk-agent
+    type: command
+    scope: domain-specific
+    domain: chiro
+    description: "Fully autonomous ticket execution for PAB"
+    path: components/domain/chiro/commands/tk-agent.md
+
+  - name: tk-close
+    type: command
+    scope: domain-specific
+    domain: chiro
+    description: "Close a ticket via UAT check, doc review, PR, and merge"
+    path: components/domain/chiro/commands/tk-close.md
+
+  - name: tk-investigate
+    type: command
+    scope: domain-specific
+    domain: chiro
+    description: "Investigate a ticket via discussion and analysis"
+    path: components/domain/chiro/commands/tk-investigate.md
+
+  - name: tk-open
+    type: command
+    scope: domain-specific
+    domain: chiro
+    description: "Fetch ClickUp ticket, create branch, start working"
+    path: components/domain/chiro/commands/tk-open.md
+
+  - name: uat-audit-cmd
+    type: command
+    scope: domain-specific
+    domain: chiro
+    description: "Run UAT folder audit and fix violations for PAB"
+    path: components/domain/chiro/commands/uat-audit.md
+
+  - name: uat-new
+    type: command
+    scope: domain-specific
+    domain: chiro
+    description: "Create new UAT test case file with scaffolding"
+    path: components/domain/chiro/commands/uat-new.md
+
+  - name: uat
+    type: command
+    scope: domain-specific
+    domain: chiro
+    description: "UAT fixture regression loop for PAB patient fixtures"
+    path: components/domain/chiro/commands/uat.md
+
+  - name: write-spec
+    type: command
+    scope: domain-specific
+    domain: chiro
+    description: "Translate PRD into technical spec using spec-writer agent"
+    path: components/domain/chiro/commands/write-spec.md
+
+  - name: xcode
+    type: command
+    scope: domain-specific
+    domain: chiro
+    description: "Xcode build, test, and diagnostics commands for PAB"
+    path: components/domain/chiro/commands/xcode/
+
+  - name: mlx
+    type: skill
+    scope: domain-specific
+    domain: chiro
+    description: "MLX pipeline improvement workflow for PAB AI features"
+    path: components/domain/chiro/skills/mlx/
+
+  # ============================================================
+  # DOMAIN-SPECIFIC: chiro-mlx
+  # ============================================================
+
+  - name: quality-checker
+    type: skill
+    scope: domain-specific
+    domain: chiro-mlx
+    description: "Validate model quality after training and guide deployment decisions"
+    path: components/domain/chiro-mlx/skills/quality-checker.md
+
+  - name: phi-guardian
+    type: skill
+    scope: domain-specific
+    domain: chiro-mlx
+    description: "Prevent PHI leaks for HIPAA compliance in git operations"
+    path: components/domain/chiro-mlx/skills/phi-guardian.md
+
+  - name: deployment-helper
+    type: skill
+    scope: domain-specific
+    domain: chiro-mlx
+    description: "Guide deployment of trained models to Xcode"
+    path: components/domain/chiro-mlx/skills/deployment-helper.md
+
+  - name: deploy-guide
+    type: command
+    scope: domain-specific
+    domain: chiro-mlx
+    description: "Guide user through deploying trained models to Xcode Resources"
+    path: components/domain/chiro-mlx/commands/deploy-guide.md
+
+  - name: quality-check
+    type: command
+    scope: domain-specific
+    domain: chiro-mlx
+    description: "Analyze model quality metrics and compare with previous versions"
+    path: components/domain/chiro-mlx/commands/quality-check.md
+
+  - name: status
+    type: command
+    scope: domain-specific
+    domain: chiro-mlx
+    description: "Check MLX model status, training data, and quality metrics"
+    path: components/domain/chiro-mlx/commands/status.md
+
+  - name: train
+    type: command
+    scope: domain-specific
+    domain: chiro-mlx
+    description: "Run complete MLX training workflow with PHI validation"
+    path: components/domain/chiro-mlx/commands/train.md
+
+  - name: validate-phi
+    type: command
+    scope: domain-specific
+    domain: chiro-mlx
+    description: "Run comprehensive PHI validation checks for HIPAA compliance"
+    path: components/domain/chiro-mlx/commands/validate-phi.md
+
+  # ============================================================
+  # DOMAIN-SPECIFIC: resin
+  # ============================================================
+
+  - name: clickup-refiner-resin
+    type: agent
+    scope: domain-specific
+    domain: resin
+    description: "Refine ClickUp tickets into PRDs for Resin platform"
+    path: components/domain/resin/agents/clickup-refiner.md
+
+  - name: spec-writer-resin
+    type: agent
+    scope: domain-specific
+    domain: resin
+    description: "Translate PRDs into technical specs for Resin platform"
+    path: components/domain/resin/agents/spec-writer.md
+
+  - name: extract-agent
+    type: command
+    scope: domain-specific
+    domain: resin
+    description: "Run extraction workflow using Claude Code subagents"
+    path: components/domain/resin/commands/extract-agent.md
+
+  - name: extract-worker
+    type: command
+    scope: domain-specific
+    domain: resin
+    description: "Run extraction workflow using TypeScript worker"
+    path: components/domain/resin/commands/extract-worker.md
+
+  - name: mill
+    type: command
+    scope: domain-specific
+    domain: resin
+    description: "Decompose recipes into agent-ready specs"
+    path: components/domain/resin/commands/mill.md
+
+  - name: refine-ticket-resin
+    type: command
+    scope: domain-specific
+    domain: resin
+    description: "Refine ClickUp ticket into formal PRD for Resin"
+    path: components/domain/resin/commands/refine-ticket.md
+
+  - name: run-agents
+    type: command
+    scope: domain-specific
+    domain: resin
+    description: "Run agent-based extraction pipeline"
+    path: components/domain/resin/commands/run-agents.md
+
+  - name: run-enrich
+    type: command
+    scope: domain-specific
+    domain: resin
+    description: "Run Python enrichment pipeline"
+    path: components/domain/resin/commands/run-enrich.md
+
+  - name: run-specs
+    type: command
+    scope: domain-specific
+    domain: resin
+    description: "Run all specs in folder using spec-executor"
+    path: components/domain/resin/commands/run-specs.md
+
+  - name: run-sync
+    type: command
+    scope: domain-specific
+    domain: resin
+    description: "Sync tenant data to R2 storage"
+    path: components/domain/resin/commands/run-sync.md
+
+  - name: ticket
+    type: command
+    scope: domain-specific
+    domain: resin
+    description: "Work ClickUp ticket through full lifecycle"
+    path: components/domain/resin/commands/ticket.md
+
+  - name: write-spec-resin
+    type: command
+    scope: domain-specific
+    domain: resin
+    description: "Translate PRD into technical spec for Resin"
+    path: components/domain/resin/commands/write-spec.md
+
+  - name: resin
+    type: skill
+    scope: domain-specific
+    domain: resin
+    description: "Platform orchestrator for Resin workflows and pipelines"
+    path: components/domain/resin/skills/resin/
+
+  # ============================================================
+  # DOMAIN-SPECIFIC: yellow-house
+  # ============================================================
+
+  - name: swiftui-submission-prep
+    type: skill
+    scope: domain-specific
+    domain: yellow-house
+    description: "Review SwiftUI apps for App Store submission readiness"
+    path: components/domain/yellow-house/skills/swiftui-submission-prep/
+
+  # ============================================================
+  # DOMAIN-SPECIFIC: chiro-base
+  # ============================================================
+
+  - name: build-deck
+    type: skill
+    scope: domain-specific
+    domain: chiro-base
+    description: "Convert Marp markdown presentations to editable PPTX files"
+    path: components/domain/chiro-base/skills/build-deck/
