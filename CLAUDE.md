@@ -47,7 +47,7 @@ A single globally-installed command (`~/.claude/commands/factory.md`) that manag
 - **Commands**: YAML frontmatter with `description`, markdown body
 
 ### Component Metadata
-Every component in `components/` has a `meta.yaml` with: name, type, scope, description, install_files, install_target, dependencies, tags
+`registry.yaml` is the single source of truth for all component metadata (name, type, scope, description, path, install_files, install_target, dependencies, tags). There are no per-component metadata files.
 
 ### Where Things Go
 - New components → `components/<type>s/<name>/` (via `/factory promote`)

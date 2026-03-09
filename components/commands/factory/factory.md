@@ -99,10 +99,10 @@ Use fixed-width alignment for readability. If no filters are provided, show ever
    - `--project` → `.claude/` (relative to current working directory)
    - Default: `--global` for single components, `--project` for `--all`
 6. For each component:
-   a. Read the component's `meta.yaml` from the factory to get `install_files` and `install_target`
+   a. Use the `install_files` and `install_target` fields from the registry entry
    b. Determine the full target path: `<base>/<install_target>/`
    c. For each file in `install_files`:
-      - Source: `~/workspace/agentic-factory/<component-path>/<file>`
+      - Source: `~/workspace/agentic-factory/<path>/<file>`
       - Target: `<base>/<install_target>/<file>`
       - If target file exists:
         - Read both files and compare content
@@ -164,30 +164,15 @@ Installed N components to [~/.claude/ | .claude/]:
    - General: `~/workspace/agentic-factory/components/<type>s/<name>/`
    - Domain-specific: `~/workspace/agentic-factory/components/domain/<domain>/<type>s/<name>/`
 6. Copy files to destination
-7. Generate `meta.yaml` in the destination:
-   ```yaml
-   name: <name>
-   type: <type>
-   scope: <scope>
-   domain: <domain or null>
-   description: "<from frontmatter>"
-   install_files:
-     - <list of files, excluding meta.yaml and README.md>
-   install_target: <type>s/<name>
-   dependencies: []
-   tags: []
-   source_project: <inferred from current directory name>
-   promoted_date: <today>
-   ```
-8. Remind the user to run `/factory rebuild-registry` to update the manifest
-9. Report:
+7. Add a new entry to `~/workspace/agentic-factory/registry.yaml` with all required fields:
+   - name, type, scope, domain, description, path, install_target, install_files, dependencies, tags
+8. Report:
 
 ```
 Promoted: <name> (<type>, <scope>)
   → ~/workspace/agentic-factory/components/<type>s/<name>/
   Files: <list>
-
-  Run `/factory rebuild-registry` to update the manifest.
+  Registry: updated
 ```
 
 ---
@@ -253,12 +238,20 @@ Run `/factory update <name>` or `/factory update --all` to refresh stale compone
 
 ## rebuild-registry
 
-**Purpose:** Regenerate `registry.yaml` from all `meta.yaml` files in the factory.
+**Purpose:** Regenerate `registry.yaml` by scanning the component directory structure.
 
 **Steps:**
 
-1. Find all `meta.yaml` files under `~/workspace/agentic-factory/components/`
-2. Read each one
+1. Scan `~/workspace/agentic-factory/components/` for all component directories and files:
+   - `components/skills/*/` — general skills
+   - `components/agents/*/` — general agents
+   - `components/commands/*/` — general commands
+   - `components/domain/<domain>/skills/`, `agents/`, `commands/` — domain-specific
+2. For each component found:
+   - Read the main .md file's YAML frontmatter to get name and description
+   - Infer type from parent directory (skills/, agents/, commands/)
+   - Determine install_files (all .md, .py, .json files, excluding README.md)
+   - Determine install_target from type and component name
 3. Build the registry structure grouped by:
    - Skills (general)
    - Agents (general)
