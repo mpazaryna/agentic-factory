@@ -1,0 +1,6 @@
+{
+  "name": "chiro-mlx",
+  "description": "Chiro MLX model training pipeline: quality checking, deployment, Phi model guardian",
+  "version": "1.0.0",
+  "author": { "name": "mpaz" }
+}

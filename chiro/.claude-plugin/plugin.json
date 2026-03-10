@@ -1,0 +1,6 @@
+{
+  "name": "chiro",
+  "description": "Chiro iOS/macOS chiropractic app project tools: ClickUp workflows, Xcode commands, config auditing, spec writing",
+  "version": "1.0.0",
+  "author": { "name": "mpaz" }
+}

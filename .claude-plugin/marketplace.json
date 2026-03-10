@@ -1,0 +1,90 @@
+{
+  "name": "agentic-factory",
+  "owner": { "name": "mpaz" },
+  "metadata": {
+    "description": "Practice-domain plugins for Claude Code — skills, agents, and commands organized by specialization",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "developer-workflow",
+      "source": "./developer-workflow",
+      "description": "Developer workflow: context, exploration, inquiry, reporting, quality, git",
+      "version": "1.0.0",
+      "category": "practice",
+      "tags": ["developer", "workflow", "documentation", "git", "quality"]
+    },
+    {
+      "name": "product-planning",
+      "source": "./product-planning",
+      "description": "Product planning: ticket refinement, PRDs, specs, execution",
+      "version": "1.0.0",
+      "category": "practice",
+      "tags": ["product", "planning", "prd", "specs", "tickets"]
+    },
+    {
+      "name": "codebase-analysis",
+      "source": "./codebase-analysis",
+      "description": "Codebase analysis: architecture analysis, auditing, research, testing, spike-driven development",
+      "version": "1.0.0",
+      "category": "practice",
+      "tags": ["analysis", "auditing", "testing", "research", "playwright"]
+    },
+    {
+      "name": "swift-development",
+      "source": "./swift-development",
+      "description": "Swift and SwiftUI development patterns, conventions, and App Store submission",
+      "version": "1.0.0",
+      "category": "practice",
+      "tags": ["swift", "swiftui", "ios", "macos", "apple"]
+    },
+    {
+      "name": "content-creation",
+      "source": "./content-creation",
+      "description": "Content creation: writing, guides, frontend design, documentation maps, synthesis",
+      "version": "1.0.0",
+      "category": "practice",
+      "tags": ["writing", "content", "design", "frontend", "documentation"]
+    },
+    {
+      "name": "platform-tools",
+      "source": "./platform-tools",
+      "description": "Platform-specific tools: Cloudflare Workers, Goose recipes, terminal utilities, UAT",
+      "version": "1.0.0",
+      "category": "practice",
+      "tags": ["cloudflare", "goose", "terminal", "platform", "uat"]
+    },
+    {
+      "name": "chiro",
+      "source": "./chiro",
+      "description": "Chiro iOS/macOS chiropractic app project tools",
+      "version": "1.0.0",
+      "category": "client",
+      "tags": ["chiro", "ios", "swift", "clickup", "domain"]
+    },
+    {
+      "name": "chiro-mlx",
+      "source": "./chiro-mlx",
+      "description": "Chiro MLX model training pipeline",
+      "version": "1.0.0",
+      "category": "client",
+      "tags": ["chiro", "mlx", "ml", "training", "domain"]
+    },
+    {
+      "name": "chiro-base",
+      "source": "./chiro-base",
+      "description": "Chiro support tooling: presentations and templates",
+      "version": "1.0.0",
+      "category": "client",
+      "tags": ["chiro", "presentations", "domain"]
+    },
+    {
+      "name": "resin",
+      "source": "./resin",
+      "description": "Resin data extraction platform tools",
+      "version": "1.0.0",
+      "category": "client",
+      "tags": ["resin", "extraction", "data", "domain"]
+    }
+  ]
+}

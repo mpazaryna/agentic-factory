@@ -1,9 +1,0 @@
-{
-  "name": "prd-creator",
-  "version": "0.1.0",
-  "description": "Guided PRD generator for creating clear, structured Product Requirements Documents for shared engagements",
-  "author": {
-    "name": "Product Team"
-  },
-  "keywords": ["prd", "product-requirements", "feature-spec", "templates"]
-}

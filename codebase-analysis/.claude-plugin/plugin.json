@@ -1,0 +1,6 @@
+{
+  "name": "codebase-analysis",
+  "description": "Codebase analysis practice: architecture analysis, auditing, research, testing, spike-driven development",
+  "version": "1.0.0",
+  "author": { "name": "mpaz" }
+}

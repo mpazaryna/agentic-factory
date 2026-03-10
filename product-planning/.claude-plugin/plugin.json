@@ -1,0 +1,6 @@
+{
+  "name": "product-planning",
+  "description": "Product planning practice: ticket refinement, PRD generation, spec writing, execution",
+  "version": "1.0.0",
+  "author": { "name": "mpaz" }
+}
