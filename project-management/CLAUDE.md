@@ -1,66 +1,63 @@
 # Project Management
 
-Ticket lifecycle management for any project. Commands are project-agnostic — they read `CONTEXT.md` at runtime for build commands, file paths, ADR locations, and conventions.
+Project management practice: ticket lifecycle, portfolio health, risk analysis, and resource planning. Each subdomain is a self-contained folder with its own commands and skills.
 
-Currently supports **ClickUp** via REST API. The pattern is extensible to other platforms (GitHub Issues, Linear, Jira) by adding platform-specific commands under a new subfolder.
+## Structure
+
+```
+project-management/
+├── .claude-plugin/plugin.json    ← registers all subdomain paths
+├── CLAUDE.md
+├── clickup/                      ← ticket lifecycle via ClickUp REST API
+│   ├── commands/
+│   └── skills/
+└── senior-pm/                    ← portfolio health, risk, capacity planning
+    ├── commands/
+    └── skills/
+```
+
+Adding a new subdomain (e.g., `linear/`, `scrum-master/`) means creating the folder and adding its paths to plugin.json.
 
 ## Prerequisites
 
 - `CONTEXT.md` in the project root (generate via `/context-rebuild` or from `templates/CONTEXT.stub.md`)
 - `.env` in the project root with `CLICKUP_API_KEY=pk_...` (for ClickUp commands)
 
-## Components
+## Subdomains
 
-### Commands (clickup/)
-- **open** — Fetch a ticket, evaluate, create branch, orient, plan & implement (interactive)
-- **investigate** — Fetch a ticket, analyze scope/risks, discuss — no code changes
-- **agent** — Autonomous ticket execution — no human checkpoints
-- **close** — UAT check, doc review, PR, merge, mark complete
+### clickup/
 
-### Skills (clickup/)
-- **clickup-conventions** — Comment templates, status transitions, and ticket hygiene patterns
+Ticket lifecycle management via ClickUp REST API.
 
-## How They Work Together
+**Commands:**
+- **clickup/open** — Fetch a ticket, evaluate, create branch, plan & implement
+- **clickup/investigate** — Analyze a ticket, discuss, refine — no code changes
+- **clickup/agent** — Autonomous ticket execution — no human checkpoints
+- **clickup/close** — UAT check, doc review, PR, merge, mark complete
 
-The commands form a ticket lifecycle:
+**Skills:**
+- **clickup-conventions** — Status flow, comment templates, ticket hygiene
 
-```
-investigate → open → (implement) → close
-      OR
-investigate → agent (autonomous end-to-end)
-```
+### senior-pm/
 
-Invoked as `/project-management:open`, `/project-management:agent`, etc.
+Portfolio management, risk analysis, resource capacity planning, executive reporting.
 
-- **investigate** is pre-work: read-only analysis and discussion
-- **open** starts interactive work: branch, plan, implement with human checkpoints
-- **agent** is autonomous: fetch → implement → PR → merge → close, no human input
-- **close** wraps up: UAT, docs, PR, merge, done
+**Commands:**
+- **senior-pm** — Entry point for portfolio health, risk, capacity, and reporting tasks
 
-All commands read `CONTEXT.md` for project-specific details (build commands, test commands, ADR paths, conventions). The commands never hardcode project paths.
+**Skills:**
+- **senior-pm** — Portfolio management expertise: health scoring, risk quantification (EMV, Monte Carlo), resource capacity planning, prioritization frameworks (WSJF, RICE, ICE), executive reporting. Includes Python analysis scripts and reference templates.
 
-## CONTEXT.md Sections Used
+## Command vs Skill Pattern
 
-| Section | Used by | Purpose |
-|---------|---------|---------|
-| Tech Stack | open, agent | Understand what to build with |
-| Directory Structure | open, investigate, agent | Navigate codebase |
-| Conventions | all | Naming, commit format, architecture patterns |
-| Key Files | open, agent | Entry points, config files |
-| Agent Knowledge Base | open, investigate | ADR/spec locations |
-| External Integrations | all | ClickUp team ID, other APIs |
-| Known Constraints | agent | Avoid violating project limits |
-
-## Conventions
-
-- Commands are organized by platform (`clickup/`, future: `linear/`, `github-issues/`)
-- Ticket descriptions are never overwritten — updates go in comments
-- Branch naming: `ticket/{task-id}-{short-name}`
-- Commits reference ticket ID in the body
+- **Skills** hold the knowledge — Claude auto-invokes them when relevant
+- **Commands** are user entry points — explicit actions the user triggers
+- A command can be a thin wrapper that delegates to a skill
+- Each subdomain manages its own commands/ and skills/ independently
 
 ## What's Missing
 
-- GitHub Issues support (commands that use `gh` CLI instead of ClickUp API)
-- Linear support
-- Sprint/velocity analysis skills
-- Ticket health dashboard
+- GitHub Issues subdomain (`github-issues/`)
+- Linear subdomain (`linear/`)
+- Scrum master subdomain (`scrum-master/`)
+- Confluence/docs subdomain

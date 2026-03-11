@@ -1,8 +1,8 @@
 {
   "name": "project-management",
-  "description": "Ticket lifecycle management: investigate, open, execute, and close tickets with CONTEXT.md-driven project awareness. Currently supports ClickUp.",
+  "description": "Project management: ticket lifecycle (ClickUp), portfolio health, risk analysis, resource planning. CONTEXT.md-driven.",
   "version": "1.0.0",
   "author": { "name": "mpaz" },
-  "commands": ["./clickup/commands/"],
-  "skills": ["./clickup/skills/"]
+  "commands": ["./clickup/commands/", "./senior-pm/commands/"],
+  "skills": ["./clickup/skills/", "./senior-pm/skills/"]
 }
