@@ -1,5 +1,5 @@
 ---
-name: clickup-conventions
+name: clickup
 description: "ClickUp ticket hygiene: comment templates, status transitions, and project management conventions. Use when interacting with ClickUp tickets, posting comments, or updating ticket status."
 ---
 
