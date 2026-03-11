@@ -55,12 +55,20 @@
       "tags": ["cloudflare", "goose", "terminal", "platform", "uat"]
     },
     {
-      "name": "project-management",
-      "source": "./project-management",
-      "description": "Ticket lifecycle management: investigate, open, execute, and close tickets with CONTEXT.md-driven project awareness",
+      "name": "clickup",
+      "source": "./project-management/clickup",
+      "description": "ClickUp ticket lifecycle: open, investigate, execute, and close tickets with CONTEXT.md-driven project awareness",
       "version": "1.0.0",
-      "category": "practice",
+      "category": "project-management",
       "tags": ["clickup", "tickets", "project-management", "lifecycle"]
+    },
+    {
+      "name": "senior-pm",
+      "source": "./project-management/senior-pm",
+      "description": "Senior PM: portfolio health, risk analysis, resource planning, prioritization frameworks, executive reporting",
+      "version": "1.0.0",
+      "category": "project-management",
+      "tags": ["portfolio", "risk", "capacity", "executive", "project-management"]
     },
     {
       "name": "chiro",

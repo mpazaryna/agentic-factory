@@ -22,7 +22,8 @@ Components are built organically in real projects, then promoted into the factor
 - `swift-development/` — Swift/SwiftUI patterns and App Store submission
 - `content-creation/` — Writing, guides, frontend design, documentation, synthesis
 - `platform-tools/` — Cloudflare, Goose, terminal utilities, UAT
-- `project-management/` — Ticket lifecycle: investigate, open, execute, close (ClickUp REST API, CONTEXT.md-driven)
+- `project-management/clickup/` — ClickUp ticket lifecycle: open, investigate, execute, close
+- `project-management/senior-pm/` — Portfolio health, risk analysis, resource planning
 
 ### Client Domains
 - `chiro/` — iOS/macOS chiropractic app project
