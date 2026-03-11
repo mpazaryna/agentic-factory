@@ -1,8 +1,6 @@
 {
   "name": "project-management",
   "description": "Project management: ticket lifecycle (ClickUp), portfolio health, risk analysis, resource planning. CONTEXT.md-driven.",
-  "version": "1.0.0",
-  "author": { "name": "mpaz" },
-  "commands": ["./clickup/commands/", "./senior-pm/commands/"],
-  "skills": ["./clickup/skills/", "./senior-pm/skills/"]
+  "version": "1.0.1",
+  "author": { "name": "mpaz" }
 }
