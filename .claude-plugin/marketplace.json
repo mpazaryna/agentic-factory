@@ -55,6 +55,14 @@
       "tags": ["cloudflare", "goose", "terminal", "platform", "uat"]
     },
     {
+      "name": "project-management",
+      "source": "./project-management",
+      "description": "Ticket lifecycle management: investigate, open, execute, and close tickets with CONTEXT.md-driven project awareness",
+      "version": "1.0.0",
+      "category": "practice",
+      "tags": ["clickup", "tickets", "project-management", "lifecycle"]
+    },
+    {
       "name": "chiro",
       "source": "./chiro",
       "description": "Chiro iOS/macOS chiropractic app project tools",
