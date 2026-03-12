@@ -72,7 +72,7 @@
     },
     {
       "name": "chiro",
-      "source": "./chiro",
+      "source": "./private/chiro",
       "description": "Chiro iOS/macOS chiropractic app project tools",
       "version": "1.0.0",
       "category": "client",
@@ -80,7 +80,7 @@
     },
     {
       "name": "chiro-mlx",
-      "source": "./chiro-mlx",
+      "source": "./private/chiro-mlx",
       "description": "Chiro MLX model training pipeline",
       "version": "1.0.0",
       "category": "client",
@@ -88,19 +88,11 @@
     },
     {
       "name": "chiro-base",
-      "source": "./chiro-base",
+      "source": "./private/chiro-base",
       "description": "Chiro support tooling: presentations and templates",
       "version": "1.0.0",
       "category": "client",
       "tags": ["chiro", "presentations", "domain"]
-    },
-    {
-      "name": "resin",
-      "source": "./resin",
-      "description": "Resin data extraction platform tools",
-      "version": "1.0.0",
-      "category": "client",
-      "tags": ["resin", "extraction", "data", "domain"]
     }
   ]
 }

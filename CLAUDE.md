@@ -25,11 +25,13 @@ Components are built organically in real projects, then promoted into the factor
 - `project-management/clickup/` — ClickUp ticket lifecycle: open, investigate, execute, close
 - `project-management/senior-pm/` — Portfolio health, risk analysis, resource planning
 
-### Client Domains
-- `chiro/` — iOS/macOS chiropractic app project
-- `chiro-mlx/` — MLX model training pipeline
-- `chiro-base/` — Chiro support tooling
-- `resin/` — Data extraction platform
+### Client Domains (under `private/`)
+- `private/chiro/` — iOS/macOS chiropractic app project
+- `private/chiro-mlx/` — MLX model training pipeline
+- `private/chiro-base/` — Chiro support tooling
+
+### MCP Servers
+- `mcp/clickup-daily-queue/` — Daily ClickUp task queue for Claude Desktop (FastMCP)
 
 ### Infrastructure
 - `.claude-plugin/marketplace.json` — Root plugin marketplace catalog
@@ -81,6 +83,7 @@ The repo is a Claude Code plugin marketplace. Install via:
 - New general components → into the appropriate practice domain
 - New client components → into the client domain folder
 - New practice areas → new top-level domain folder with plugin.json + CLAUDE.md
+- New MCP servers → `mcp/<server-name>/` with README.md, server.py, pyproject.toml
 - Curated prompts → `prompts/<domain>/`
 - ADRs → `.orchestra/adr/`
 - Devlogs → `.orchestra/devlog/`
