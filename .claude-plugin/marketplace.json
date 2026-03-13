@@ -111,6 +111,14 @@
       "tags": ["pkm", "journaling", "reviews", "planning", "rituals"]
     },
     {
+      "name": "orchestra",
+      "source": "./pm/orchestra",
+      "description": "Agent knowledge base methodology: .orchestra/ scaffolding, roadmaps as PRDs, BDRs, work items, devlogs",
+      "version": "1.0.0",
+      "category": "pm",
+      "tags": ["orchestra", "roadmap", "prd", "methodology", "knowledge-base"]
+    },
+    {
       "name": "yoga",
       "source": "./domain/yoga",
       "description": "Yoga class planning: multi-agent system for sequencing, anatomy, themes, and teaching readiness",
