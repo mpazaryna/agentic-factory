@@ -113,7 +113,7 @@
     {
       "name": "orchestra",
       "source": "./pm/orchestra",
-      "description": "Agent knowledge base methodology: .orchestra/ scaffolding, roadmaps as PRDs, BDRs, work items, devlogs",
+      "description": "Agent knowledge base methodology: .orchestra/ scaffolding, roadmaps as PRDs, ADRs, work items, devlogs",
       "version": "1.0.0",
       "category": "pm",
       "tags": ["orchestra", "roadmap", "prd", "methodology", "knowledge-base"]

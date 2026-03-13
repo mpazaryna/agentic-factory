@@ -63,13 +63,13 @@ If the agent doesn't update the score, the performance isn't complete.
 .orchestra/
 ├── README.md          ← Explains the system
 ├── roadmap.md         ← The score (top-level PRD)
-├── bdr/               ← Decision Records — standing constraints
+├── adr/               ← Decision Records — standing constraints
 ├── work/              ← Per-ticket PRDs and specs
 │   └── TEMPLATES/     ← PRD and spec templates
 └── devlog/            ← What happened and why, by quarter
 ```
 
-**BDRs** (Business/Architecture Decision Records) are long-lived decisions that constrain how the project evolves. They outlast any individual ticket. When an agent needs to know why something is the way it is, the answer is in a BDR.
+**ADRs** (Business/Architecture Decision Records) are long-lived decisions that constrain how the project evolves. They outlast any individual ticket. When an agent needs to know why something is the way it is, the answer is in a ADR.
 
 **Work items** are per-ticket folders containing a PRD and optionally a spec. The PRD defines intent; the spec defines execution. Folder naming follows `{ticket-id}-{short-name}/`.
 
@@ -94,4 +94,4 @@ Then scaffold your project:
 /scaffold ./my-project
 ```
 
-This creates the `.orchestra/` folder with the full structure, templates, and the founding BDR.
+This creates the `.orchestra/` folder with the full structure, templates, and the founding ADR.

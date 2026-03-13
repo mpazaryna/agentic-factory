@@ -20,7 +20,7 @@
 
 ## References
 
-- {Link to relevant BDRs, specs, or external docs}
+- {Link to relevant ADRs, specs, or external docs}
 
 ## Notes
 

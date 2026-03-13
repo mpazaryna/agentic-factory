@@ -16,7 +16,7 @@ The dot-prefix follows the same convention as `.github/`, `.vscode/`, and `.clau
 .orchestra/
 ├── README.md          ← This file
 ├── roadmap.md         ← The score — top-level PRD
-├── bdr/               ← Decision Records (long-lived constraints)
+├── adr/               ← Decision Records (long-lived constraints)
 ├── work/              ← Per-ticket work items (PRDs + specs)
 │   └── TEMPLATES/     ← PRD and spec templates
 └── devlog/            ← Chronological journal by quarter
@@ -26,13 +26,13 @@ The dot-prefix follows the same convention as `.github/`, `.vscode/`, and `.clau
 
 The top-level PRD. Its materials table lists milestones. Milestones are PRDs whose materials tables list deliverables. PRDs all the way down.
 
-### `bdr/` — Decision Records
+### `adr/` — Decision Records
 
 Standing decisions that constrain how the project evolves. Long-lived — they outlast any individual task.
 
-- **Format:** `BDR-{NNN}-{name}.md`
+- **Format:** `ADR-{NNN}-{name}.md`
 - **When to create:** When making a decision future agents must follow
-- **When to read:** Before any work — CLAUDE.md points to relevant BDRs by topic
+- **When to read:** Before any work — CLAUDE.md points to relevant ADRs by topic
 
 ### `work/` — Per-Ticket Work Items
 
@@ -53,7 +53,7 @@ Chronological entries capturing what happened, what was learned, what changed. O
 
 If the project context were reconstructed from scratch, an agent could read `.orchestra/` and understand:
 
-- **What decisions were made and why** → `bdr/`
+- **What decisions were made and why** → `adr/`
 - **What the plan is** → `roadmap.md`
 - **What was executed for each task** → `work/`
 - **What happened along the way** → `devlog/`

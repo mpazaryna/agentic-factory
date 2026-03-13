@@ -1,6 +1,6 @@
 ---
 name: orchestra-conventions
-description: "The .orchestra/ methodology: PRDs all the way down, BDRs, work items, devlogs, and the composer/conductor/orchestra roles. Use when working in a project that has .orchestra/ — provides background knowledge for how agents should interact with the knowledge base."
+description: "The .orchestra/ methodology: PRDs all the way down, ADRs, work items, devlogs, and the composer/conductor/orchestra roles. Use when working in a project that has .orchestra/ — provides background knowledge for how agents should interact with the knowledge base."
 user-invocable: false
 ---
 
@@ -54,7 +54,7 @@ Roadmap rows = milestones. Milestone rows = deliverables.
 .orchestra/
 ├── README.md          ← Explains the folder
 ├── roadmap.md         ← The score (top-level PRD)
-├── bdr/               ← Decision Records (long-lived constraints)
+├── adr/               ← Decision Records (long-lived constraints)
 ├── work/              ← Per-ticket PRDs and specs
 │   ├── TEMPLATES/     ← PRD and spec templates
 │   └── {id}-{name}/   ← One folder per ticket
@@ -65,7 +65,7 @@ Roadmap rows = milestones. Milestone rows = deliverables.
 
 | Artifact | When | Format |
 |----------|------|--------|
-| **BDR** | Making a decision future agents must follow | `BDR-{NNN}-{name}.md` |
+| **ADR** | Making a decision future agents must follow | `ADR-{NNN}-{name}.md` |
 | **Work item** | Starting a ClickUp ticket | `work/{clickup-id}-{name}/prd.md` |
 | **Spec** | Ticket needs execution detail | `work/{clickup-id}-{name}/spec.md` |
 | **Devlog** | Something happened worth recording | `devlog/{YYYY}-Q{N}/{date}-{slug}.md` |
@@ -73,7 +73,7 @@ Roadmap rows = milestones. Milestone rows = deliverables.
 
 ## Rules
 
-- **Never overwrite a BDR.** Supersede it with a new BDR that references the old one.
+- **Never overwrite a ADR.** Supersede it with a new ADR that references the old one.
 - **Roadmap is singular.** One `roadmap.md` per project, not inside `work/`.
 - **Trace everything back.** Tickets → milestone PRD → roadmap. If it doesn't trace, it doesn't belong.
 - **Update on close.** Completing work means updating the materials table. The score must reflect reality.

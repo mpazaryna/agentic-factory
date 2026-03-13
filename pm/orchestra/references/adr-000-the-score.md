@@ -1,4 +1,4 @@
-# BDR-000: The Score — Roadmaps as PRDs
+# ADR-000: The Score — Roadmaps as PRDs
 
 **Date:** 2026-03-12
 **Status:** Active

@@ -15,8 +15,8 @@ Create the `.orchestra/` agent knowledge base structure in the target project.
 .orchestra/
 ├── README.md                          ← Explains the folder to agents and humans
 ├── roadmap.md                         ← The score — top-level PRD
-├── bdr/                               ← Business/Architecture Decision Records
-│   └── BDR-000-the-score.md           ← Founding decision: PRDs all the way down
+├── adr/                               ← Business/Architecture Decision Records
+│   └── ADR-000-the-score.md           ← Founding decision: PRDs all the way down
 ├── work/                              ← Per-ticket work items
 │   └── TEMPLATES/
 │       ├── prd.md                     ← PRD template
@@ -32,7 +32,7 @@ Create the `.orchestra/` agent knowledge base structure in the target project.
 3. Create the directory structure above
 4. Generate `README.md` from [references/readme-template.md](${CLAUDE_SKILL_DIR}/../../references/readme-template.md)
 5. Generate `roadmap.md` as an empty top-level PRD with the project name
-6. Generate `BDR-000-the-score.md` from [references/bdr-000-the-score.md](${CLAUDE_SKILL_DIR}/../../references/bdr-000-the-score.md)
+6. Generate `ADR-000-the-score.md` from [references/adr-000-the-score.md](${CLAUDE_SKILL_DIR}/../../references/adr-000-the-score.md)
 7. Generate PRD and spec templates in `work/TEMPLATES/`
 8. Create the current quarter devlog folder
 
@@ -56,5 +56,5 @@ Generate the roadmap using the PRD template with milestones as materials table r
 Report what was created and remind the user:
 - Add `.orchestra/` references to the project's `CLAUDE.md`
 - The roadmap is the score — define milestones as PRDs
-- BDRs capture standing decisions agents must follow
+- ADRs capture standing decisions agents must follow
 - Devlogs capture what happened and why
