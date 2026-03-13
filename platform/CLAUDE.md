@@ -1,4 +1,4 @@
-# Platform Tools
+# Platform
 
 Platform-specific utilities and integrations. Each tool is its own installable plugin.
 

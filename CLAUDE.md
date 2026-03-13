@@ -19,21 +19,25 @@ Components are built organically in real projects, then promoted into the factor
 - `dev/developer-workflow/` — Context, exploration, inquiry, reporting, quality, git
 - `dev/codebase-analysis/` — Architecture analysis, auditing, research, testing
 - `dev/swift-development/` — Swift/SwiftUI patterns and App Store submission
+- `dev/frontend-design/` — Production-grade frontend interface design
 
 ### Product
-- `product-planning/` — Ticket refinement, PRDs, specs, execution
-- `content-creation/` — Writing, guides, frontend design, documentation, synthesis
+- `product/product-planning/` — Ticket refinement, PRDs, specs, execution
 
-### Platform Tools
-- `platform-tools/cloudflare/` — Workers, Hono, Workers AI, Durable Objects, KV
-- `platform-tools/fork-terminal/` — Fork terminal sessions with agentic coding tools
-- `platform-tools/goose/` — Goose recipe creation and document analysis
-- `platform-tools/uat-audit/` — UAT folder audit and enforcement
+### Content
+- `content/anti-slop/` — Clean prose style guide banning LLM clichés
+- `content/writing/` — SEO blog post creation with approval workflow
 
-### Project Management
-- `project-management/clickup/` — ClickUp ticket lifecycle: open, investigate, agent, close
-- `project-management/senior-pm/` — Portfolio health, risk analysis, resource planning
-- `project-management/pkm/` — Personal knowledge management: daily rituals, weekly/monthly reviews
+### Platform
+- `platform/cloudflare/` — Workers, Hono, Workers AI, Durable Objects, KV
+- `platform/fork-terminal/` — Fork terminal sessions with agentic coding tools
+- `platform/goose/` — Goose recipe creation and document analysis
+- `platform/uat-audit/` — UAT folder audit and enforcement
+
+### PM
+- `pm/clickup/` — ClickUp ticket lifecycle: open, investigate, agent, close
+- `pm/senior-pm/` — Portfolio health, risk analysis, resource planning
+- `pm/pkm/` — Personal knowledge management: daily rituals, weekly/monthly reviews
 
 ### Domain
 - `domain/yoga/` — Multi-agent yoga class planning for teachers
@@ -90,6 +94,11 @@ The repo is a Claude Code plugin marketplace. Install via:
 ### Component Formats
 - **Skills**: YAML frontmatter with `name` and `description`, plus SKILL.md and optional references/, examples/, scripts/
 - **Agents**: YAML frontmatter with `name`, `description`, `color`, and agent-specific fields
+
+### Structure Rules
+- Top-level folders are organizational groupings (dev/, product/, platform/, etc.)
+- Plugins always live one level down inside groupings
+- No plugin.json at the grouping level — only at the plugin level
 
 ### Where Things Go
 - New general components → into the appropriate practice domain
