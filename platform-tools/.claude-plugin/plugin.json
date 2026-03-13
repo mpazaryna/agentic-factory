@@ -1,6 +1,0 @@
-{
-  "name": "platform-tools",
-  "description": "Platform-specific tools: Cloudflare Workers, Goose recipes, terminal utilities, UAT auditing",
-  "version": "1.0.0",
-  "author": { "name": "mpaz" }
-}

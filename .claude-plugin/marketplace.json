@@ -8,7 +8,7 @@
   "plugins": [
     {
       "name": "developer-workflow",
-      "source": "./developer-workflow",
+      "source": "./dev/developer-workflow",
       "description": "Developer workflow: context, exploration, inquiry, reporting, quality, git",
       "version": "1.0.0",
       "category": "practice",
@@ -24,7 +24,7 @@
     },
     {
       "name": "codebase-analysis",
-      "source": "./codebase-analysis",
+      "source": "./dev/codebase-analysis",
       "description": "Codebase analysis: architecture analysis, auditing, research, testing, spike-driven development",
       "version": "1.0.0",
       "category": "practice",
@@ -47,12 +47,36 @@
       "tags": ["writing", "content", "design", "frontend", "documentation"]
     },
     {
-      "name": "platform-tools",
-      "source": "./platform-tools",
-      "description": "Platform-specific tools: Cloudflare Workers, Goose recipes, terminal utilities, UAT",
+      "name": "cloudflare",
+      "source": "./platform-tools/cloudflare",
+      "description": "Cloudflare Workers development: Workers, Hono, Workers AI, Durable Objects, KV storage",
       "version": "1.0.0",
-      "category": "practice",
-      "tags": ["cloudflare", "goose", "terminal", "platform", "uat"]
+      "category": "platform",
+      "tags": ["cloudflare", "workers", "edge", "serverless", "hono"]
+    },
+    {
+      "name": "fork-terminal",
+      "source": "./platform-tools/fork-terminal",
+      "description": "Fork terminal sessions with agentic coding tools (Claude Code, Codex CLI, Gemini CLI) or raw commands",
+      "version": "1.0.0",
+      "category": "platform",
+      "tags": ["terminal", "fork", "agents", "multi-agent"]
+    },
+    {
+      "name": "goose",
+      "source": "./platform-tools/goose",
+      "description": "Goose recipe creation, validation, and document analysis workflows",
+      "version": "1.0.0",
+      "category": "platform",
+      "tags": ["goose", "recipes", "analysis", "automation"]
+    },
+    {
+      "name": "uat-audit",
+      "source": "./platform-tools/uat-audit",
+      "description": "UAT folder audit and enforcement with structural checks and content quality validation",
+      "version": "1.0.0",
+      "category": "platform",
+      "tags": ["uat", "audit", "testing", "quality"]
     },
     {
       "name": "clickup",
@@ -69,30 +93,6 @@
       "version": "1.0.0",
       "category": "project-management",
       "tags": ["portfolio", "risk", "capacity", "executive", "project-management"]
-    },
-    {
-      "name": "chiro",
-      "source": "./private/chiro",
-      "description": "Chiro iOS/macOS chiropractic app project tools",
-      "version": "1.0.0",
-      "category": "client",
-      "tags": ["chiro", "ios", "swift", "clickup", "domain"]
-    },
-    {
-      "name": "chiro-mlx",
-      "source": "./private/chiro-mlx",
-      "description": "Chiro MLX model training pipeline",
-      "version": "1.0.0",
-      "category": "client",
-      "tags": ["chiro", "mlx", "ml", "training", "domain"]
-    },
-    {
-      "name": "chiro-base",
-      "source": "./private/chiro-base",
-      "description": "Chiro support tooling: presentations and templates",
-      "version": "1.0.0",
-      "category": "client",
-      "tags": ["chiro", "presentations", "domain"]
     }
   ]
 }
