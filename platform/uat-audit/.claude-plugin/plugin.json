@@ -1,6 +1,0 @@
-{
-  "name": "uat-audit",
-  "description": "UAT folder audit and enforcement with deterministic structural checks and content quality validation.",
-  "version": "1.0.0",
-  "author": { "name": "mpaz" }
-}

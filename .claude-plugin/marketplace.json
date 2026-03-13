@@ -87,14 +87,6 @@
       "tags": ["goose", "recipes", "analysis", "automation"]
     },
     {
-      "name": "uat-audit",
-      "source": "./platform/uat-audit",
-      "description": "UAT folder audit and enforcement with structural checks and content quality validation",
-      "version": "1.0.0",
-      "category": "platform",
-      "tags": ["uat", "audit", "testing", "quality"]
-    },
-    {
       "name": "clickup",
       "source": "./pm/clickup",
       "description": "ClickUp ticket lifecycle: open, investigate, execute, and close tickets with CONTEXT.md-driven project awareness",

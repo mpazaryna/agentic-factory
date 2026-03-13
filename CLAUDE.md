@@ -32,7 +32,6 @@ Components are built organically in real projects, then promoted into the factor
 - `platform/cloudflare/` — Workers, Hono, Workers AI, Durable Objects, KV
 - `platform/fork-terminal/` — Fork terminal sessions with agentic coding tools
 - `platform/goose/` — Goose recipe creation and document analysis
-- `platform/uat-audit/` — UAT folder audit and enforcement
 
 ### PM
 - `pm/clickup/` — ClickUp ticket lifecycle: open, investigate, agent, close

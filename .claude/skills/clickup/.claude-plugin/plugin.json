@@ -1,0 +1,6 @@
+{
+  "name": "clickup",
+  "description": "ClickUp ticket lifecycle: open, investigate, execute, and close tickets with CONTEXT.md-driven project awareness.",
+  "version": "1.0.0",
+  "author": { "name": "mpaz" }
+}
