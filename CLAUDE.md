@@ -18,13 +18,11 @@ Components are built organically in real projects, then promoted into the factor
 ### Dev
 - `dev/developer-workflow/` — Context, exploration, inquiry, reporting, quality, git
 - `dev/codebase-analysis/` — Architecture analysis, auditing, research, testing
+- `dev/swift-development/` — Swift/SwiftUI patterns and App Store submission
 
 ### Product
 - `product-planning/` — Ticket refinement, PRDs, specs, execution
 - `content-creation/` — Writing, guides, frontend design, documentation, synthesis
-
-### Languages & Frameworks
-- `swift-development/` — Swift/SwiftUI patterns and App Store submission
 
 ### Platform Tools
 - `platform-tools/cloudflare/` — Workers, Hono, Workers AI, Durable Objects, KV
@@ -35,6 +33,10 @@ Components are built organically in real projects, then promoted into the factor
 ### Project Management
 - `project-management/clickup/` — ClickUp ticket lifecycle: open, investigate, agent, close
 - `project-management/senior-pm/` — Portfolio health, risk analysis, resource planning
+- `project-management/pkm/` — Personal knowledge management: daily rituals, weekly/monthly reviews
+
+### Domain
+- `domain/yoga/` — Multi-agent yoga class planning for teachers
 
 ### MCP Servers
 - `mcp/clickup-daily-queue/` — Daily ClickUp task queue for Claude Desktop (FastMCP)
@@ -42,7 +44,6 @@ Components are built organically in real projects, then promoted into the factor
 ### Infrastructure
 - `.claude-plugin/marketplace.json` — Root plugin marketplace catalog
 - `templates/` — Shared templates (e.g., CONTEXT.stub.md)
-- `prompts/` — Standalone curated prompts (yoga, pkm, market-research, writing)
 - `.orchestra/` — Project documentation (ADRs, devlog, work items)
 - `.claude/` — Project-level Claude Code settings
 
@@ -95,7 +96,6 @@ The repo is a Claude Code plugin marketplace. Install via:
 - Project-specific tools → in the project repo as `.claude/skills/`
 - New practice areas → new plugin folder with `.claude-plugin/plugin.json` + `CLAUDE.md`
 - New MCP servers → `mcp/<server-name>/` with README.md, server.py, pyproject.toml
-- Curated prompts → `prompts/<domain>/`
 
 ### Workflow
 1. Build components organically in real projects

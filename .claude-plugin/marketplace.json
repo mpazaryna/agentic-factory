@@ -32,7 +32,7 @@
     },
     {
       "name": "swift-development",
-      "source": "./swift-development",
+      "source": "./dev/swift-development",
       "description": "Swift and SwiftUI development patterns, conventions, and App Store submission",
       "version": "1.0.0",
       "category": "practice",
@@ -93,6 +93,22 @@
       "version": "1.0.0",
       "category": "project-management",
       "tags": ["portfolio", "risk", "capacity", "executive", "project-management"]
+    },
+    {
+      "name": "pkm",
+      "source": "./project-management/pkm",
+      "description": "Personal knowledge management: daily kickoff/shutdown, interstitial journaling, weekly/monthly reviews and planning",
+      "version": "1.0.0",
+      "category": "project-management",
+      "tags": ["pkm", "journaling", "reviews", "planning", "rituals"]
+    },
+    {
+      "name": "yoga",
+      "source": "./domain/yoga",
+      "description": "Yoga class planning: multi-agent system for sequencing, anatomy, themes, and teaching readiness",
+      "version": "1.0.0",
+      "category": "domain",
+      "tags": ["yoga", "teaching", "sequencing", "anatomy"]
     }
   ]
 }

@@ -1,0 +1,6 @@
+{
+  "name": "yoga",
+  "description": "Yoga class planning: multi-agent system for sequencing, anatomy, themes, and teaching readiness.",
+  "version": "1.0.0",
+  "author": { "name": "mpaz" }
+}
