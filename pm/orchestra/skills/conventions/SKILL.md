@@ -77,3 +77,7 @@ Roadmap rows = milestones. Milestone rows = deliverables.
 - **Roadmap is singular.** One `roadmap.md` per project, not inside `work/`.
 - **Trace everything back.** Tickets → milestone PRD → roadmap. If it doesn't trace, it doesn't belong.
 - **Update on close.** Completing work means updating the materials table. The score must reflect reality.
+
+## Comprehensive Guide
+
+For detailed examples, common workflows, and skill-by-skill usage guide, see [GUIDE.md](${CLAUDE_SKILL_DIR}/../../GUIDE.md).
