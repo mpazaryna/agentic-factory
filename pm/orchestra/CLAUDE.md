@@ -4,9 +4,26 @@ The `.orchestra/` agent knowledge base methodology — PRDs all the way down.
 
 ## Skills
 
-- **scaffold** — Create the .orchestra/ folder structure, templates, and initial roadmap in a project
+### Setup
+- **scaffold** — Create the .orchestra/ folder structure, templates, and initial roadmap
+
+### Conductor (the planning loop)
+- **milestone-review** — Diff materials table against repo state, surface gaps, propose next work
+- **write-prd** — Generate a PRD from a milestone gap
+- **write-spec** — Generate an execution spec from an approved PRD
+- **create-ticket** — Push an approved spec to ClickUp as an executable ticket
+
+### Operations
 - **roadmap** — Read and manage roadmap.md: status, next work, updates, add milestones
-- **conventions** — Background knowledge: the methodology, roles, folder structure, rules (Claude-only)
+
+### Background
+- **conventions** — The methodology, roles, folder structure, rules (Claude-only)
+
+## The Loop
+
+```
+/milestone-review → /write-prd → /write-spec → /create-ticket → /open → implement → /close → update materials table
+```
 
 ## References
 
