@@ -1,6 +1,6 @@
 ---
 name: writing
-description: Create distinctive, production-grade blog posts. Use this skill when the user asks to build a new blog poast
+description: "Create distinctive, production-grade blog posts with SEO integration, research, and approval workflow. Use when building blog posts, crafting content marketing pieces, or generating SEO-optimized articles with brand voice."
 ---
 
 I need you to create a custom SEO content writer skill using the skill-creator skill. This skill should write blog posts in my specific brand voice with a structured, approval-driven workflow.

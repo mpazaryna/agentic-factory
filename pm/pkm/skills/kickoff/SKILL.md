@@ -1,9 +1,6 @@
 ---
 name: Morning Kickoff
 description: Quick morning orientation. Surface what matters, set focus.
-source: original
-collected: 2025-02-05
-tags: [pkm, daily, planning, routines, obsidian]
 ---
 
 # Kickoff

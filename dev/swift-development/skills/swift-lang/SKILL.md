@@ -1,9 +1,6 @@
 ---
 name: swift-lang
-description: |
-  Swift language mastery skill covering advanced language features beyond UI.
-  Use when working with macros, concurrency (async/await, actors), networking,
-  Swift Testing, generics, memory optimization, or result builders. Not for SwiftUI patterns - see swift-ui.
+description: "Master advanced Swift language features: macros, concurrency, generics, networking, testing. Use when working with Swift macros, async/await patterns, protocol design, or optimizing for performance. See swift-ui for SwiftUI-specific patterns."
 ---
 
 # swift-lang

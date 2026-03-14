@@ -1,6 +1,6 @@
 ---
 name: swiftui-submission-prep
-description: Reviews SwiftUI apps for App Store submission readiness by analyzing guidelines compliance, code quality, metadata, and testing coverage
+description: "Review SwiftUI apps for App Store submission readiness — guidelines compliance, code quality, metadata, and testing coverage. Use when preparing to submit iOS/macOS apps, checking App Store metadata, verifying accessibility, or addressing previous rejections."
 ---
 
 # SwiftUI App Store Submission Preparation

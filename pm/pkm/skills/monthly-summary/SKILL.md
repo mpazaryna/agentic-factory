@@ -1,9 +1,6 @@
 ---
 name: Monthly Summary
 description: Generate monthly retrospective from daily and weekly notes
-source: original
-collected: 2025-02-05
-tags: [pkm, monthly, retrospective, metrics, obsidian]
 ---
 
 # Monthly Summary

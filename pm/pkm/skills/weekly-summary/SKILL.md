@@ -1,9 +1,6 @@
 ---
 name: Weekly Summary
 description: Generate weekly retrospective from daily notes
-source: original
-collected: 2025-02-05
-tags: [pkm, weekly, retrospective, metrics, obsidian]
 ---
 
 # Weekly Summary

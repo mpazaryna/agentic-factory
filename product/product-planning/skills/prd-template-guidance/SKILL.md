@@ -1,6 +1,6 @@
 ---
 name: PRD Template & Guidance
-description: Expert knowledge for creating well-structured Product Requirements Documents. Guides users through problem framing, goal definition, success metrics, user stories, and acceptance criteria. Use when helping users generate or refine PRDs for clear feature specification.
+description: "Guide PRD creation with structured questions, quality checks, and best practices. Use when creating or refining Product Requirements Documents, defining acceptance criteria, or translating feature ideas into precise specifications."
 ---
 
 # PRD Template & Guidance

@@ -1,9 +1,6 @@
 ---
 name: Daily Shutdown
 description: End-of-day capture. Quick closure, clear state.
-source: original
-collected: 2025-02-05
-tags: [pkm, daily, shutdown, routines, obsidian]
 ---
 
 # Shutdown

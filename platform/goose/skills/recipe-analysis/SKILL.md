@@ -1,6 +1,6 @@
 ---
 name: recipe-analysis
-description: "Create Goose recipes for document analysis and transformation — analyzing saved reports, transforming markdown files, extracting insights from existing data. Use when creating analysis recipes that work with saved data rather than querying live sources."
+description: "Create Goose recipes for document analysis and transformation of saved data. Use when analyzing reports, extracting insights from existing files, or enriching documents without querying live sources."
 ---
 
 # Goose Recipe Analysis

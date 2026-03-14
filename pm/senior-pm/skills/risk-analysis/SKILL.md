@@ -1,6 +1,6 @@
 ---
 name: risk-analysis
-description: "Quantitative risk analysis with EMV calculations, Monte Carlo simulation inputs, risk matrices, and mitigation strategies. Use when a user needs risk assessments, risk registers, risk heat maps, mitigation planning, or portfolio risk correlation analysis for enterprise projects."
+description: "Perform quantitative risk analysis with probability/impact matrices, expected monetary value, and mitigation strategies. Use when assessing project risks, building risk registers, analyzing portfolio risk correlations, or planning mitigation approaches."
 ---
 
 # Quantitative Risk Analysis

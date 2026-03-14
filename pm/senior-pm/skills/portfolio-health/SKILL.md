@@ -1,6 +1,6 @@
 ---
 name: portfolio-health
-description: "Multi-dimensional portfolio health assessment with RAG scoring, trend analysis, and executive recommendations. Use when a user needs project health dashboards, portfolio status reviews, milestone tracking, or RAG status reports for enterprise initiatives."
+description: "Assess portfolio health across multiple dimensions with RAG status, trend analysis, and executive recommendations. Use when reviewing project portfolios, building health dashboards, tracking milestone progress, or preparing executive status reports."
 ---
 
 # Portfolio Health Assessment

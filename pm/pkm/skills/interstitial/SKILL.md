@@ -1,9 +1,6 @@
 ---
 name: Interstitial Capture
 description: Quick capture a timestamped note to log/ folder
-source: original
-collected: 2025-02-05
-tags: [pkm, capture, logging, obsidian]
 ---
 
 # Interstitial

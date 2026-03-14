@@ -1,9 +1,6 @@
 ---
 name: Remarkable Notebook Extraction
 description: Extract dated entries from a Remarkable PDF notebook into interstitial notes
-source: original
-collected: 2025-02-05
-tags: [pkm, remarkable, capture, extraction, obsidian]
 ---
 
 # Remarkable Notebook Extraction

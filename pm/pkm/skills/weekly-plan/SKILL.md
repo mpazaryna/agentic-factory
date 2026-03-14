@@ -1,9 +1,6 @@
 ---
 name: Weekly Plan
 description: Start-of-week planning session to set priorities and goals
-source: original
-collected: 2025-02-05
-tags: [pkm, weekly, planning, load-management, obsidian]
 ---
 
 # Weekly Plan

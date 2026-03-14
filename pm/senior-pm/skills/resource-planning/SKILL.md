@@ -1,6 +1,6 @@
 ---
 name: resource-planning
-description: "Resource capacity planning and optimization with utilization modeling, skill matching, bottleneck identification, and what-if scenario analysis. Use when a user needs team capacity planning, resource allocation, utilization reports, skill gap analysis, or workforce planning for enterprise portfolios."
+description: "Optimize resource capacity across teams — identify bottlenecks, model utilization, and scenario-test allocation changes. Use when planning team capacity, allocating resources across projects, analyzing skill gaps, or forecasting staffing needs."
 ---
 
 # Resource Capacity Planning

@@ -1,6 +1,6 @@
 ---
 name: clickup-conventions
-description: "ClickUp ticket hygiene: status flow, comment templates, branch naming, and project management conventions. Use when interacting with ClickUp tickets, posting comments, or updating ticket status."
+description: "ClickUp project conventions: status flow (to do → in progress → uat → complete), comment templates, branch naming, and ticket hygiene rules. Loaded automatically when working with ClickUp tickets."
 user-invocable: false
 ---
 

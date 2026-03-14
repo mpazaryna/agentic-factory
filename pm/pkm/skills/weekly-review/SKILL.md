@@ -1,9 +1,6 @@
 ---
 name: Weekly Review
 description: Weekly review of progress and planning for the week ahead
-source: original
-collected: 2025-02-05
-tags: [pkm, weekly, review, timetracking, obsidian]
 ---
 
 # Weekly Review
