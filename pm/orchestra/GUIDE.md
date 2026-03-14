@@ -1,0 +1,372 @@
+# Orchestra Guide
+
+A complete guide to the `.orchestra/` methodology — what it is, why it exists, and how to use every skill in the system.
+
+## What This Is
+
+Orchestra is a methodology for agent-driven project execution. It gives AI agents the context they need to understand, continue, and complete work across sessions — without relying on conversation history, Slack threads, or tribal knowledge.
+
+The core idea: every project is a performance. The performance needs a score. The score is a hierarchy of PRDs. Agents read the score, perform their part, and update the score when they're done.
+
+## The Problem It Solves
+
+Without orchestra, agent sessions start cold. Every conversation begins with "what are we working on?" and ends with context lost when the session closes. Work planning lives in the human's head. Ticket creation is reactive. Progress tracking is manual.
+
+Orchestra solves this by making project context **file-based, version-controlled, and agent-readable**. An agent opening a project with `.orchestra/` can immediately:
+
+- Read the roadmap to understand the vision
+- Find the active milestone to know what matters now
+- See what's done and what's not in the materials table
+- Pick up a ticket with full traceability to the roadmap
+
+## The Metaphor
+
+The naming is deliberate:
+
+**The Composer** is you. You write the score — define the roadmap, set milestones, decide what "done" looks like. You evaluate all inputs before they enter the system. Requirements from stakeholders, research from agents, external feedback — the composer filters everything. This role is always human.
+
+**The Conductor** interprets the score. Reads the active milestone, identifies what's not done, directs agents to the next piece of work. Today this is mostly you. As structure improves — clearer done-conditions, machine-readable materials tables, established patterns — the conductor role becomes delegatable. `/conduct` is the fully agentic conductor.
+
+**The Orchestra** is your agents. They read the score for context, pick up tickets as contracts, execute the work, and update the score when finished. An agent that completes work but doesn't update the PRD hasn't finished the job.
+
+**The Audience** — stakeholders, investors, co-founders — experiences the output, never the machinery. `.orchestra/` is backstage.
+
+## The Hierarchy: PRDs All The Way Down
+
+```
+Roadmap PRD (the score)
+└── Milestone PRD (a movement)
+    └── Deliverables (the notes)
+        └── Content files in your repo
+```
+
+A PRD already contains the shape of a milestone: an objective, success criteria, a materials table, and references. A roadmap is just the top-level PRD whose materials table lists milestones instead of deliverables. This recursive structure means no new artifact types — just PRDs at every level.
+
+### The Materials Table
+
+The key structure that makes everything machine-readable:
+
+```markdown
+| Material | Location | Status |
+|----------|----------|--------|
+| MVP Launch | .orchestra/work/mvp-launch/prd.md | In Progress |
+| Beta Testing | .orchestra/work/beta-testing/prd.md | Not Started |
+| Public Release | .orchestra/work/public-release/prd.md | Not Started |
+```
+
+At the roadmap level, rows are milestones. At the milestone level, rows are deliverables. Tickets are generated from gaps — rows that aren't "Done" become work.
+
+Status values: `Done`, `In Progress`, `Not Started`, `Needs Refresh`, `Cancelled`
+
+## The Folder
+
+```
+.orchestra/
+├── README.md          ← Explains the system to agents and humans
+├── roadmap.md         ← The score (top-level PRD)
+├── adr/               ← Architecture Decision Records
+│   └── ADR-000-the-score.md
+├── work/              ← Per-ticket PRDs and specs
+│   ├── TEMPLATES/
+│   │   ├── prd.md
+│   │   └── spec.md
+│   ├── mvp-launch/
+│   │   ├── prd.md
+│   │   └── spec.md
+│   └── beta-testing/
+│       └── prd.md
+└── devlog/            ← What happened and why
+    └── 2026-Q1/
+        └── 2026-03-14-project-kickoff.md
+```
+
+### ADRs
+
+Architecture Decision Records capture standing decisions that constrain how the project evolves. They outlast any individual ticket. When an agent needs to know *why* something is the way it is, the answer is in an ADR.
+
+Format: `ADR-{NNN}-{name}.md`. Never overwrite — supersede with a new ADR that references the old one.
+
+### Work Items
+
+Each ticket gets a folder with a PRD and optionally a spec. The PRD defines *what* and *why*. The spec defines *how*.
+
+| Document | Answers | Produced By |
+|----------|---------|-------------|
+| PRD | What's the goal? What does success look like? | `/prd` from milestone gap |
+| Spec | What steps? How to execute? | `/spec` from approved PRD |
+
+### Devlogs
+
+Chronological entries capturing what happened, what was learned, what changed. Not a changelog — context that helps agents understand the trajectory.
+
+Format: `{YYYY-MM-DD}-{slug}.md`, organized by quarter.
+
+---
+
+## The Skills
+
+### Getting Started
+
+#### `/scaffold`
+
+Creates the `.orchestra/` folder structure and walks you through defining the initial roadmap.
+
+**When to use:** Setting up a new project or adding orchestra to an existing one.
+
+**What it does:**
+1. Creates the folder structure (adr/, work/, devlog/, templates)
+2. Asks for your project vision and milestones
+3. Generates a populated roadmap.md
+4. Creates milestone PRD stubs
+5. Writes an initial devlog entry
+
+**Example:**
+```
+/scaffold .
+
+> Project name: Chiro App
+> Vision: AI-assisted chiropractic SOAP notes that replace paper
+> Milestones: MVP (core SOAP flow), Beta (multi-practitioner), Launch (App Store)
+```
+
+Result: Fully populated `.orchestra/` with roadmap and 3 milestone stubs ready to flesh out.
+
+---
+
+### The Conductor Loop
+
+The conductor loop is the planning cycle that turns roadmap gaps into executable tickets:
+
+```
+/milestone → /prd → /spec → /ticket → execute → update score
+```
+
+Each skill is independently useful, but they're designed to chain.
+
+#### `/milestone`
+
+Reviews the active milestone by diffing the materials table against actual repo state.
+
+**When to use:**
+- Starting a work session — "what should I work on?"
+- Checking progress — "how far along is this milestone?"
+- After completing work — "what's left?"
+
+**What it does:**
+1. Reads roadmap.md, finds the active milestone
+2. Reads the milestone PRD
+3. For each materials table row, checks if the deliverable exists and matches its status
+4. Surfaces gaps, stale entries, and mismatches
+5. Recommends next actions with priority
+
+**Example output:**
+```
+## Milestone Review: MVP Launch
+
+Progress: 2/5 deliverables done
+
+### Gaps
+| Material | Status | Issue |
+|----------|--------|-------|
+| SOAP note editor | Not Started | Core feature, blocks everything |
+| Patient lookup | Not Started | Dependency for SOAP flow |
+
+### Recommended Next Actions
+1. SOAP note editor — core to the milestone objective
+2. Patient lookup — dependency for #1
+```
+
+#### `/prd`
+
+Generates a PRD from a milestone gap.
+
+**When to use:** A milestone review surfaces a gap that needs scoping. The gap is too big or unclear to just start coding.
+
+**What it does:**
+1. Reads the milestone PRD and roadmap for context
+2. Reads relevant ADRs
+3. Asks for objective, success criteria, deliverables, constraints
+4. Generates the PRD using the template
+5. Saves to `.orchestra/work/{slug}/prd.md`
+6. Updates the milestone materials table
+
+**Example:**
+```
+/prd SOAP note editor
+
+> Objective: Build the core SOAP note editing interface with AI-assisted field population
+> Success criteria: Doctor can create, edit, save a SOAP note in under 2 minutes
+> Deliverables: SOAPNoteView, SOAPNoteViewModel, NoteService
+```
+
+#### `/spec`
+
+Generates an execution spec from an approved PRD.
+
+**When to use:** A PRD is approved and you're ready to define the concrete implementation plan. This is optional — simple work may not need a spec.
+
+**What it does:**
+1. Reads the PRD
+2. Analyzes the codebase for relevant patterns (if code work)
+3. Breaks work into ordered, concrete steps
+4. Generates the spec with approach, deliverables, acceptance criteria, risks
+5. Saves alongside the PRD
+
+**Example:**
+```
+/spec soap-note-editor
+
+Generates:
+- Step 1: Create SOAPNoteView with section fields
+- Step 2: Build SOAPNoteViewModel with validation
+- Step 3: Implement NoteService for persistence
+- Step 4: Add AI suggestion integration
+- Acceptance: Note created in <2min, all fields validate, saves to CloudKit
+```
+
+#### `/ticket`
+
+Pushes a work item (PRD or PRD+spec) to ClickUp as a trackable ticket.
+
+**When to use:** A PRD is ready for tracking. Spec is optional — it can be written later.
+
+**What it does:**
+1. Reads the PRD (and spec if it exists)
+2. Composes a self-contained ticket description
+3. Creates the ClickUp ticket via API
+4. Renames the work folder to include the ticket ID
+5. Updates the milestone materials table with the ClickUp link
+
+**Example:**
+```
+/ticket soap-note-editor
+
+## Ticket Created
+- Title: SOAP Note Editor
+- ID: 86e0xyz
+- URL: https://app.clickup.com/t/86e0xyz
+- Has spec: yes
+
+Ready for `/open 86e0xyz` or `/agent 86e0xyz`
+```
+
+---
+
+### Operations
+
+#### `/roadmap`
+
+Read and manage the roadmap directly.
+
+**When to use:**
+- **status** — Show the full roadmap with milestone progress roll-up
+- **next** — What's the next thing to work on?
+- **update** — Mark a milestone or deliverable status
+- **add** — Add a new milestone
+
+**Examples:**
+```
+/roadmap status
+/roadmap next
+/roadmap update mvp-launch Done
+/roadmap add "Analytics Dashboard"
+```
+
+#### `/conduct`
+
+The fully autonomous conductor. Runs the entire loop without human checkpoints.
+
+**When to use:** You trust the roadmap and milestones are well-defined, and you want the system to execute autonomously — find gaps, generate PRDs, write specs, create tickets, implement, and update the score.
+
+**What it does:**
+1. Finds the active milestone
+2. Identifies the highest-priority gap
+3. Generates PRD → spec → ticket
+4. Implements the work (code or docs)
+5. Updates the score
+6. Moves to the next gap
+7. Stops when the milestone is done or it hits ambiguity
+
+**When NOT to use:**
+- Milestones are vague or undefined
+- Work requires architectural decisions not captured in ADRs
+- You want to review before each step
+
+**Example:**
+```
+/conduct
+
+[Finds MVP Launch milestone, 3 gaps remaining]
+[Generates PRD for "Patient lookup"]
+[Writes spec with 4 implementation steps]
+[Creates ClickUp ticket 86e0abc]
+[Implements: creates PatientLookupView, PatientService, tests]
+[Updates milestone: Patient lookup → Done]
+[Moves to next gap: "SOAP note templates"]
+...
+```
+
+---
+
+### Background Knowledge
+
+#### `conventions`
+
+Not a slash command — Claude loads this automatically when working in a project with `.orchestra/`. Provides the methodology rules: status flow, when to create ADRs, how to update materials tables, the agent session loop.
+
+---
+
+## Common Workflows
+
+### Starting a New Project
+
+```
+/scaffold .
+```
+Answer the vision and milestone questions. You're ready.
+
+### Daily Work Session
+
+```
+/milestone
+```
+See what's next. Pick a gap. Either:
+- `/prd {gap}` → `/ticket {name}` → start working
+- Or just start working if the scope is clear enough
+
+### Weekly Planning
+
+```
+/roadmap status
+```
+Review all milestones. Reprioritize if needed. Add new milestones with `/roadmap add`.
+
+### Closing Work
+
+After implementing, update the score:
+- Mark deliverable as "Done" in the milestone PRD's materials table
+- If all deliverables done, mark milestone as "Done" in roadmap.md
+- Write a devlog entry if something notable happened
+
+### Going Fully Autonomous
+
+```
+/conduct
+```
+Let the system run. It will stop when it hits ambiguity or completes the milestone.
+
+---
+
+## Principles
+
+1. **The score is the source of truth.** If it's not in roadmap.md or a milestone PRD, it doesn't exist in the system.
+
+2. **PRDs all the way down.** No new artifact types. The same structure at every level keeps the system simple and learnable.
+
+3. **Trace everything back.** Every ticket traces to a spec, every spec traces to a PRD, every PRD traces to a milestone, every milestone traces to the roadmap. If it doesn't trace, it doesn't belong.
+
+4. **Update on close.** An agent that completes work but doesn't update the materials table hasn't finished. The score must reflect reality.
+
+5. **Compose, don't improvise.** The human writes the score. Agents perform it. The separation is what makes autonomous execution safe — agents work within the boundaries the composer defined.
+
+6. **Start simple.** Two milestones and a vision is enough. The system grows as you use it. Over-planning upfront is just another form of procrastination.
