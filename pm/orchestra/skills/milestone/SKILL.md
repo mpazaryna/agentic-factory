@@ -1,5 +1,5 @@
 ---
-name: milestone-review
+name: milestone
 description: "Review the active milestone — diff materials table against repo state, surface gaps, and propose next work items. Use when starting a work session, checking milestone progress, or deciding what to work on next."
 argument-hint: "<milestone-name or 'active'>"
 ---

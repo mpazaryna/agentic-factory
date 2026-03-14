@@ -1,5 +1,5 @@
 ---
-name: create-ticket
+name: ticket
 description: "Create a ClickUp ticket from an approved spec — push the execution contract to the task tracker with proper description, links, and acceptance criteria. Use when a spec is approved and ready for execution."
 argument-hint: "<spec-path or work-item-name>"
 disable-model-invocation: true

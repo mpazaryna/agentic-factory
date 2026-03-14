@@ -8,10 +8,11 @@ The `.orchestra/` agent knowledge base methodology — PRDs all the way down.
 - **scaffold** — Create the .orchestra/ folder structure, templates, and initial roadmap
 
 ### Conductor (the planning loop)
-- **milestone-review** — Diff materials table against repo state, surface gaps, propose next work
-- **write-prd** — Generate a PRD from a milestone gap
-- **write-spec** — Generate an execution spec from an approved PRD
-- **create-ticket** — Push an approved spec to ClickUp as an executable ticket
+- **milestone** — Diff materials table against repo state, surface gaps, propose next work
+- **prd** — Generate a PRD from a milestone gap
+- **spec** — Generate an execution spec from an approved PRD
+- **ticket** — Push an approved spec to ClickUp as an executable ticket
+- **conduct** — Run the entire loop autonomously (forked context, no human checkpoints)
 
 ### Operations
 - **roadmap** — Read and manage roadmap.md: status, next work, updates, add milestones
@@ -22,7 +23,9 @@ The `.orchestra/` agent knowledge base methodology — PRDs all the way down.
 ## The Loop
 
 ```
-/milestone-review → /write-prd → /write-spec → /create-ticket → /open → implement → /close → update materials table
+/conduct (autonomous)
+  or step-by-step:
+/milestone → /prd → /spec → /ticket → /open → implement → /close → update score
 ```
 
 ## References
