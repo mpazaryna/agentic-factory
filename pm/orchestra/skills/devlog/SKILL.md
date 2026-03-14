@@ -1,11 +1,11 @@
 ---
-name: dev-reports
-description: Developer reporting skill for work documentation and communication. Use when writing journals, devlogs, status updates (22A/22B), progress reports, or documenting development work. Generates reports from git history or manual input.
+name: devlog
+description: Developer reporting for the orchestra methodology. Write devlogs, journals, and status updates (22A/22B). Devlogs live in .orchestra/devlog/. Use when writing journals, devlogs, status updates, progress reports, or documenting development work.
 ---
 
-# Dev Reports
+# Devlog
 
-Document and communicate development work. From git commits to polished reports.
+Document and communicate development work. From git commits to polished reports. Output goes to `.orchestra/devlog/`.
 
 ## Report Types
 
@@ -58,10 +58,11 @@ Structured Progress/Plans/Problems format. Great for:
 - Leadership updates
 - Weekly reports
 
-## Part of the dev-* Family
+## Part of Orchestra
 
 | Skill | Purpose |
 |-------|---------|
-| `dev-inquiry` | Technical investigation and decision-making |
-| `dev-reason` | Problem-solving and debugging (future) |
-| `dev-reports` | Work documentation and communication |
+| `orchestra:conventions` | Methodology and roles |
+| `orchestra:roadmap` | Roadmap management |
+| `orchestra:milestone` | Milestone progress |
+| `orchestra:devlog` | Work documentation and communication |
