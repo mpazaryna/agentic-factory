@@ -1,6 +1,6 @@
 # Orchestra
 
-A methodology for agent-driven project execution. The metaphor is literal: every project is a performance, and every performance needs a score.
+A methodology for agent-driven project execution, distributed as a plugin via [agentic-factory](https://github.com/mpazaryna/agentic-factory). The metaphor is literal: every project is a performance, and every performance needs a score.
 
 ## The Metaphor
 
@@ -64,16 +64,11 @@ PRDs are refined only with input from the requestor or product team. Specs can b
 
 5. **Close** — Update the score. Mark deliverables done in the milestone PRD. Write a devlog entry capturing what happened and what was learned.
 
-## The Agent Session Loop
+Every agent session within Perform follows this protocol:
 
-Every agent session follows the same pattern:
-
-1. **Read the score** — roadmap → active milestone → materials table
-2. **Read the PRD** — understand the intent, success criteria, and deliverables
-3. **Write the spec** — derive an implementation plan from the PRD
-4. **Perform** — execute against the spec
-5. **Update the score** — mark the deliverable, update milestone progress
-6. **Devlog** — capture what happened, decisions made, lessons learned
+```
+read the score → read the PRD → write the spec → execute → update the score → devlog
+```
 
 If the agent doesn't update the score, the performance isn't complete.
 
@@ -112,10 +107,19 @@ The topology is the reference chain. Roadmap links to milestones, milestones lin
 
 ## Getting Started
 
-Orchestra is distributed as a plugin via [agentic-factory](https://github.com/mpazaryna/agentic-factory). Once installed, scaffold your project:
+Once the orchestra plugin is installed, scaffold your project:
 
 ```
 /scaffold .
 ```
 
-This creates the `.orchestra/` folder with the full structure, templates, and the founding ADR.
+This creates the `.orchestra/` folder with the full structure: `roadmap.md`, `adr/`, `work/TEMPLATES/`, and `devlog/`. The scaffold walks you through defining your project vision and initial milestones, so you'll have a populated roadmap when it finishes.
+
+From there, the first real cycle is:
+
+1. `/milestone` — review what the roadmap says needs doing
+2. `/prd {gap}` — scope one piece of work
+3. Let the agent write a spec and implement against it
+4. Update the score and `/devlog` what happened
+
+For the full skill reference and detailed workflows, see [GUIDE.md](GUIDE.md).
