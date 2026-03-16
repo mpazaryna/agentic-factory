@@ -4,9 +4,9 @@ A methodology for agent-driven project execution, distributed as a plugin via [a
 
 ## The Metaphor
 
-An orchestra doesn't improvise symphonies. Musicians read from a score, follow a conductor, and produce something greater than any individual could. Software projects work the same way when agents are involved.
+An orchestra doesn't improvise symphonies. Musicians read from a score, follow a conductor, and produce something greater than any individual could. Software projects work the same way when agents are involved — and the first thing any performance needs is a score.
 
-**The Score** is the roadmap — a PRD that defines the vision and lists milestones. Milestones are PRDs that list deliverables. Deliverables are the actual files in your repo. PRDs all the way down.
+**The Score** is the roadmap. Without it, agents start every session cold — no vision, no priorities, no sense of what's done or what's next. The roadmap is a PRD that defines the vision and lists milestones. Milestones are PRDs that list deliverables. Deliverables are the actual files in your repo. PRDs all the way down. The roadmap is the single document that makes everything else possible.
 
 **The Composer** is you. You write the score. You decide what gets built, in what order, and what "done" looks like. You evaluate inputs from stakeholders, research, and agents before anything enters the system. The composer is always human.
 
