@@ -69,10 +69,11 @@ PRDs are refined only with input from the requestor or product team. Specs can b
 Every agent session follows the same pattern:
 
 1. **Read the score** — roadmap → active milestone → materials table
-2. **Read the spec** — the implementation plan for this work item
-3. **Perform** — execute against the spec
-4. **Update the score** — mark the deliverable, update milestone progress
-5. **Devlog** — capture what happened, decisions made, lessons learned
+2. **Read the PRD** — understand the intent, success criteria, and deliverables
+3. **Write the spec** — derive an implementation plan from the PRD
+4. **Perform** — execute against the spec
+5. **Update the score** — mark the deliverable, update milestone progress
+6. **Devlog** — capture what happened, decisions made, lessons learned
 
 If the agent doesn't update the score, the performance isn't complete.
 
