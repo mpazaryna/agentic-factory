@@ -12,7 +12,7 @@ An orchestra doesn't improvise symphonies. Musicians read from a score, follow a
 
 **The Conductor** interprets the score and keeps tempo. Today, that's you — reading the active milestone, identifying what's not done, and pointing agents at the next piece of work. Over time, as structure improves, this role shifts agentic. Clear done-conditions and machine-readable materials tables make the conductor role delegatable.
 
-**The Orchestra** is your agents. They read the score for context, pick up tickets as contracts, execute the work, and update the score when they're done. An agent that completes work but doesn't update the PRD hasn't finished the job.
+**The Orchestra** is your agents. They read the score for context, pick up tickets as contracts, execute the work, and report back to the conductor when they're done. An agent that completes work but doesn't update the ticket hasn't finished the job.
 
 **The Audience** — co-founders, stakeholders, investors — experiences the output, never the machinery. The `.orchestra/` folder is backstage. Nobody reads the score during intermission; they ask what's coming next.
 
@@ -67,10 +67,10 @@ PRDs are refined only with input from the requestor or product team. Specs can b
 Every agent session within Perform follows this protocol:
 
 ```
-read the score → read the PRD → write the spec → execute → update the score → devlog
+read the score → read the PRD → write the spec → execute → update the ticket → devlog
 ```
 
-If the agent doesn't update the score, the performance isn't complete.
+If the agent doesn't update the ticket, the performance isn't complete.
 
 ## The Folder
 
