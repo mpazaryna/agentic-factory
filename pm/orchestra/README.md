@@ -14,7 +14,7 @@ An orchestra doesn't improvise symphonies. Musicians read from a score, follow a
 
 **The Orchestra** is your agents. They read the score for context, pick up tickets as contracts, execute the work, and update the score when they're done. An agent that completes work but doesn't update the PRD hasn't finished the job.
 
-**The Audience** — co-founders, stakeholders, investors — experiences the output, never the machinery. The `.orchestra/` folder is backstage. Nobody asks to see the compiler; they ask to see what it built.
+**The Audience** — co-founders, stakeholders, investors — experiences the output, never the machinery. The `.orchestra/` folder is backstage. Nobody reads the score during intermission; they ask what's coming next.
 
 ## The Score: PRDs All The Way Down
 
@@ -110,17 +110,12 @@ The clean separation between product layer (PRDs) and execution layer (specs) me
 
 The topology is the reference chain. Roadmap links to milestones, milestones link to deliverables, deliverables are files in the repo. No separate graph definition needed. The structure *is* the plan.
 
-## Installation
+## Getting Started
+
+Orchestra is distributed as a plugin via [agentic-factory](https://github.com/mpazaryna/agentic-factory). Once installed, scaffold your project:
 
 ```
-/plugin marketplace add mpazaryna/agentic-factory
-/plugin install orchestra@agentic-factory
-```
-
-Then scaffold your project:
-
-```
-/scaffold ./my-project
+/scaffold .
 ```
 
 This creates the `.orchestra/` folder with the full structure, templates, and the founding ADR.
