@@ -85,13 +85,20 @@ If the agent doesn't update the score, the performance isn't complete.
 ├── roadmap.md         ← The score (top-level PRD)
 ├── adr/               ← Decision Records — standing constraints
 ├── work/              ← Per-ticket PRDs and specs
-│   └── TEMPLATES/     ← PRD and spec templates
+│   ├── TEMPLATES/     ← PRD and spec templates
+│   └── {ticket-id}-{name}/
+│       ├── prd.md     ← Intent — what and why (product layer)
+│       └── spec.md    ← Implementation plan (execution layer)
 └── devlog/            ← What happened and why, by quarter
 ```
 
-**ADRs** (Business/Architecture Decision Records) are long-lived decisions that constrain how the project evolves. They outlast any individual ticket. When an agent needs to know why something is the way it is, the answer is in a ADR.
+**ADRs** (Business/Architecture Decision Records) are long-lived decisions that constrain how the project evolves. They outlast any individual ticket. When an agent needs to know why something is the way it is, the answer is in an ADR.
 
-**Work items** are per-ticket folders containing a PRD and a spec. The PRD defines intent (product layer — refined only with requestor input). The spec defines execution (agent layer — derived from the PRD, refined by the agent at runtime). Folder naming follows `{ticket-id}-{short-name}/`.
+**PRDs** define intent — the objective, success criteria, and deliverables. They are product-layer documents, refined only with input from the requestor or product team. An agent with questions about "why" or fundamental delivery requirements goes to the PRD.
+
+**Specs** define the implementation plan — derived from the PRD by the agent. The spec is what the agent reads to code. It can be refined by the agent at runtime as the approach evolves. No human approval needed for spec changes; the PRD's success criteria are the contract.
+
+**Work items** are per-ticket folders containing a PRD and a spec. Folder naming follows `{ticket-id}-{short-name}/`.
 
 **Devlogs** are chronological entries capturing what happened, what was learned, and what changed. Not a changelog — context that helps agents understand the trajectory of the project.
 
