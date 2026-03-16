@@ -6,7 +6,7 @@ A complete guide to the `.orchestra/` methodology — what it is, why it exists,
 
 Orchestra is a methodology for agent-driven project execution. It gives AI agents the context they need to understand, continue, and complete work across sessions — without relying on conversation history, Slack threads, or tribal knowledge.
 
-The core idea: every project is a performance. The performance needs a score. The score is a hierarchy of PRDs. Agents read the score, perform their part, and update the score when they're done.
+The core idea: every project is a performance. The performance needs a score. The score is a hierarchy of PRDs. Agents read the score, perform their part, and report back to the conductor when they're done.
 
 ## The Problem It Solves
 
@@ -21,15 +21,7 @@ Orchestra solves this by making project context **file-based, version-controlled
 
 ## The Metaphor
 
-The naming is deliberate:
-
-**The Composer** is you. You write the score — define the roadmap, set milestones, decide what "done" looks like. You evaluate all inputs before they enter the system. Requirements from stakeholders, research from agents, external feedback — the composer filters everything. This role is always human.
-
-**The Conductor** interprets the score. Reads the active milestone, identifies what's not done, directs agents to the next piece of work. Today this is mostly you. As structure improves — clearer done-conditions, machine-readable materials tables, established patterns — the conductor role becomes delegatable. `/conduct` is the fully agentic conductor.
-
-**The Orchestra** is your agents. They read the score for context, pick up tickets as contracts, execute the work, and update the score when finished. An agent that completes work but doesn't update the PRD hasn't finished the job.
-
-**The Audience** — stakeholders, investors, co-founders — experiences the output, never the machinery. `.orchestra/` is backstage.
+The system uses an orchestra metaphor — composer, conductor, orchestra, audience — to define clear roles and ownership boundaries. See [README.md](README.md) for the full breakdown.
 
 ## The Document Hierarchy
 
@@ -63,6 +55,17 @@ Roadmap PRD (the score)
 
 A PRD already contains the shape of a milestone: an objective, success criteria, a materials table, and references. A roadmap is just the top-level PRD whose materials table lists milestones instead of deliverables. This recursive structure means no new artifact types — just PRDs at every level, with specs as the bridge to execution.
 
+### Work Items
+
+Each ticket gets a folder with a PRD and a spec. These live in different ownership layers:
+
+| Document | Layer | Answers | Refined By |
+|----------|-------|---------|------------|
+| PRD | Product | What's the goal? Why does it matter? What does success look like? | Requestor / product team only |
+| Spec | Execution | How to build it? What steps? What's the approach? | Agent — derived from PRD, updated at runtime |
+
+The PRD is the contract between the requestor and the system. The spec is the agent's working document. An agent that needs to change *what* gets built goes back to the PRD and the requestor. An agent that needs to change *how* it's built updates the spec and keeps going.
+
 ### The Materials Table
 
 The key structure that makes everything machine-readable:
@@ -81,48 +84,7 @@ Status values: `Done`, `In Progress`, `Not Started`, `Needs Refresh`, `Cancelled
 
 ## The Folder
 
-```
-.orchestra/
-├── README.md          ← Explains the system to agents and humans
-├── roadmap.md         ← The score (top-level PRD)
-├── adr/               ← Architecture Decision Records
-│   └── ADR-000-the-score.md
-├── work/              ← Per-ticket PRDs and specs
-│   ├── TEMPLATES/
-│   │   ├── prd.md
-│   │   └── spec.md
-│   ├── mvp-launch/
-│   │   ├── prd.md
-│   │   └── spec.md
-│   └── beta-testing/
-│       └── prd.md
-└── devlog/            ← What happened and why
-    └── 2026-Q1/
-        └── 2026-03-14-project-kickoff.md
-```
-
-### ADRs
-
-Architecture Decision Records capture standing decisions that constrain how the project evolves. They outlast any individual ticket. When an agent needs to know *why* something is the way it is, the answer is in an ADR.
-
-Format: `ADR-{NNN}-{name}.md`. Never overwrite — supersede with a new ADR that references the old one.
-
-### Work Items
-
-Each ticket gets a folder with a PRD and a spec. These live in different ownership layers:
-
-| Document | Layer | Answers | Refined By |
-|----------|-------|---------|------------|
-| PRD | Product | What's the goal? Why does it matter? What does success look like? | Requestor / product team only |
-| Spec | Execution | How to build it? What steps? What's the approach? | Agent — derived from PRD, updated at runtime |
-
-The PRD is the contract between the requestor and the system. The spec is the agent's working document. An agent that needs to change *what* gets built goes back to the PRD and the requestor. An agent that needs to change *how* it's built updates the spec and keeps going.
-
-### Devlogs
-
-Chronological entries capturing what happened, what was learned, what changed. Not a changelog — context that helps agents understand the trajectory.
-
-Format: `{YYYY-MM-DD}-{slug}.md`, organized by quarter.
+See [README.md](README.md) for the full `.orchestra/` folder structure, including ADRs, work items, devlogs, and templates.
 
 ---
 
@@ -161,7 +123,7 @@ Result: Fully populated `.orchestra/` with roadmap and 3 milestone stubs ready t
 The conductor loop is the planning cycle that turns roadmap gaps into executed work:
 
 ```
-/milestone → /prd → /spec → agentic coding → update score → /devlog
+/milestone → /prd → /spec → agentic coding → update ticket → /devlog
 ```
 
 `/ticket` is optional (pushes to ClickUp for tracking). Each skill is independently useful, but they're designed to chain.
@@ -224,9 +186,9 @@ Generates a PRD from a milestone gap.
 
 #### `/spec`
 
-Generates an execution spec from an approved PRD.
+Generates an execution spec from an approved PRD. The spec is the bridge between product intent and code — the agent reads the PRD and derives an implementation plan it can execute against.
 
-**When to use:** A PRD is approved and you're ready to define the concrete implementation plan. This is optional — simple work may not need a spec.
+**When to use:** A PRD is approved and you're ready to define the concrete implementation plan.
 
 **What it does:**
 1. Reads the PRD
@@ -419,7 +381,7 @@ Let the system run. It will stop when it hits ambiguity or completes the milesto
 
 3. **Trace everything back.** Every ticket traces to a spec, every spec traces to a PRD, every PRD traces to a milestone, every milestone traces to the roadmap. If it doesn't trace, it doesn't belong.
 
-4. **Update on close.** An agent that completes work but doesn't update the materials table hasn't finished. The score must reflect reality.
+4. **Update on close.** An agent that completes work but doesn't update the ticket hasn't finished. The conductor updates the score; the score must reflect reality.
 
 5. **Compose, don't improvise.** The human writes the score. Agents perform it. The separation is what makes autonomous execution safe — agents work within the boundaries the composer defined.
 

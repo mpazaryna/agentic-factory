@@ -26,7 +26,7 @@ The `.orchestra/` agent knowledge base methodology — PRDs all the way down.
 ```
 /conduct (autonomous)
   or step-by-step:
-/milestone → /prd → /spec → agentic coding → update score → /devlog
+/milestone → /prd → /spec → agentic coding → update ticket → /devlog
 ```
 
 **Document ownership:** PRDs are product-layer documents refined only with requestor input. Specs are execution-layer documents derived from PRDs and refined by the agent at runtime.
