@@ -16,6 +16,7 @@ The `.orchestra/` agent knowledge base methodology — PRDs all the way down.
 
 ### Operations
 - **roadmap** — Read and manage roadmap.md: status, next work, updates, add milestones
+- **devlog** — Document work sessions: journals, devlogs, status updates (22A/22B)
 
 ### Background
 - **conventions** — The methodology, roles, folder structure, rules (Claude-only)
@@ -25,8 +26,10 @@ The `.orchestra/` agent knowledge base methodology — PRDs all the way down.
 ```
 /conduct (autonomous)
   or step-by-step:
-/milestone → /prd → /spec → /ticket → /open → implement → /close → update score
+/milestone → /prd → /spec → agentic coding → update score → /devlog
 ```
+
+**Document ownership:** PRDs are product-layer documents refined only with requestor input. Specs are execution-layer documents derived from PRDs and refined by the agent at runtime.
 
 ## References
 

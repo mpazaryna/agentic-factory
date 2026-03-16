@@ -37,23 +37,42 @@ The **materials table** is the key structure at every level:
 
 Roadmap rows are milestones. Milestone rows are deliverables. Tickets are generated from the gap — rows that aren't "Done" become work.
 
+## The Document Hierarchy
+
+The system has two distinct layers with different owners:
+
+**Product layer** (owned by the composer/requestor):
+- **Roadmap** — The vision. Why this project exists, what milestones matter.
+- **PRD** — The intent. What needs to be built, why it matters, what success looks like.
+
+**Execution layer** (owned by the agent):
+- **Spec** — The implementation plan. Derived from the PRD, but written in terms the agent can execute. The spec is the bridge between product intent and code.
+
+This separation is deliberate. The requestor defines *what* and *why*. The agent derives *how* from the PRD and writes it into a spec. The requestor should never need to engage with implementation details at the code level. If the agent has questions about purpose or delivery requirements, it goes back to the PRD. If the agent needs to refine its approach, it updates the spec — no human approval needed.
+
+PRDs are refined only with input from the requestor or product team. Specs can be refined by the agent at runtime.
+
 ## The Workflow
 
 1. **Compose** — Define a milestone as a PRD. Set the objective, write the done-conditions, fill the materials table with what needs to exist.
 
-2. **Conduct** — Read the milestone PRD. Identify what's not done. Propose or generate tickets from the gaps. Today this is manual; tomorrow an agent reads `roadmap.md` and surfaces the day's work.
+2. **Conduct** — Read the milestone PRD. Identify what's not done. Propose or generate tickets from the gaps.
 
-3. **Perform** — Each ticket becomes an agentic session. The agent reads the milestone PRD for context, executes the work, creates or updates the deliverable in the repo.
+3. **Spec** — Derive an implementation plan from the PRD. The agent reads the PRD and produces a spec it can execute against. This is the last step before code.
 
-4. **Progress** — Status rolls up through the materials tables. Deliverable done → update milestone PRD. All deliverables done → update roadmap. The score always reflects reality.
+4. **Perform** — The agent reads the spec, executes the work, and creates or updates deliverables in the repo. If the spec needs adjustment during implementation, the agent updates it.
+
+5. **Close** — Update the score. Mark deliverables done in the milestone PRD. Write a devlog entry capturing what happened and what was learned.
 
 ## The Agent Session Loop
 
 Every agent session follows the same pattern:
 
 1. **Read the score** — roadmap → active milestone → materials table
-2. **Perform** — execute the ticket
-3. **Update the score** — mark the deliverable, update milestone progress
+2. **Read the spec** — the implementation plan for this work item
+3. **Perform** — execute against the spec
+4. **Update the score** — mark the deliverable, update milestone progress
+5. **Devlog** — capture what happened, decisions made, lessons learned
 
 If the agent doesn't update the score, the performance isn't complete.
 
@@ -71,13 +90,15 @@ If the agent doesn't update the score, the performance isn't complete.
 
 **ADRs** (Business/Architecture Decision Records) are long-lived decisions that constrain how the project evolves. They outlast any individual ticket. When an agent needs to know why something is the way it is, the answer is in a ADR.
 
-**Work items** are per-ticket folders containing a PRD and optionally a spec. The PRD defines intent; the spec defines execution. Folder naming follows `{ticket-id}-{short-name}/`.
+**Work items** are per-ticket folders containing a PRD and a spec. The PRD defines intent (product layer — refined only with requestor input). The spec defines execution (agent layer — derived from the PRD, refined by the agent at runtime). Folder naming follows `{ticket-id}-{short-name}/`.
 
 **Devlogs** are chronological entries capturing what happened, what was learned, and what changed. Not a changelog — context that helps agents understand the trajectory of the project.
 
 ## Why This Works
 
 The system has no new artifact types. PRDs, specs, and decision records are well-understood formats. The innovation is using them recursively — the same materials-table structure at every level creates a machine-readable execution graph that agents can traverse.
+
+The clean separation between product layer (PRDs) and execution layer (specs) means requestors define intent without touching implementation, and agents derive implementation without needing to ask about intent. The PRD answers "why" and "what done looks like." The spec answers "how to build it." This boundary is what makes autonomous agent execution practical.
 
 The topology is the reference chain. Roadmap links to milestones, milestones link to deliverables, deliverables are files in the repo. No separate graph definition needed. The structure *is* the plan.
 
