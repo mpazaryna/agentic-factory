@@ -1,6 +1,6 @@
 # Decision Log: Commands vs Skills vs Agents
 
-**Date**: 2024-11-29
+**Date**: 2025-11-29
 **Context**: Building `/plan-spec` command to convert specs into TDD plans
 **Decision**: Pivot from command to skill; rethink command usage generally
 
