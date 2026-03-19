@@ -1,6 +1,6 @@
 ---
 name: research-docs-fetcher
-description: Use proactively for researching topics. Specialist for gathering documentation, technical specifications, and reference materials from the web.
+description: "Fetch and organize web documentation and technical specs into structured markdown. Use when gathering reference material from multiple URLs or researching technical topics requiring web access."
 tools: WebFetch, Read, Glob, Bash
 model: sonnet
 color: purple

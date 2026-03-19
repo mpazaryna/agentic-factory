@@ -1,6 +1,7 @@
 ---
 name: prime-web-dev
-description: "Quick-start web codebase comprehension — runs git ls-files, reads README and CONTEXT, and summarizes understanding. Use when the user wants a fast overview of a web project."
+description: "Scan a web codebase quickly — runs git ls-files, reads README and CONTEXT, and summarizes understanding. Use when the user wants a fast overview of a web project."
+allowed-tools: Bash, Read
 ---
 
 # Prime

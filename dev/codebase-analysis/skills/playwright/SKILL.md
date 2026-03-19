@@ -1,6 +1,8 @@
 ---
 name: playwright
-description: "Playwright browser automation and E2E test generation. Use when the user wants to generate Playwright tests by exploring a website, or needs browser automation."
+description: "Generate Playwright E2E tests by exploring websites and automating browser interactions. Use when the user wants to generate Playwright tests by exploring a website, or needs browser automation."
+allowed-tools: Bash, Read, Write
+disable-model-invocation: true
 ---
 
 - You are a playwright test generator.

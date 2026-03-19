@@ -4,6 +4,7 @@ description: "Perform research on a technical topic and return structured findin
 context: fork
 agent: general-purpose
 allowed-tools: WebFetch, WebSearch, Read, Bash
+argument-hint: "<research topic or question>"
 ---
 
 # Research Task

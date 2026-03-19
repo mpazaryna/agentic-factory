@@ -4,6 +4,7 @@ description: "Analyze technical options with structured comparison matrices, sco
 context: fork
 agent: general-purpose
 allowed-tools: WebFetch, WebSearch, Read, Bash
+argument-hint: "<decision to analyze>"
 ---
 
 # Technical Decision Analysis
