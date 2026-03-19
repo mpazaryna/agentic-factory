@@ -2,5 +2,8 @@
   "name": "goose",
   "description": "Goose recipe creation, validation, and document analysis workflows.",
   "version": "1.0.0",
-  "author": { "name": "mpaz" }
+  "author": {
+    "name": "mpaz"
+  },
+  "skills": "./"
 }

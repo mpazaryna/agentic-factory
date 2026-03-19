@@ -2,7 +2,7 @@
 name: scaffold
 description: "Scaffold the .orchestra/ agent knowledge base in a project — creates folder structure, templates, README, and walks through initial roadmap setup with vision and milestones. Use when setting up a new project or adding .orchestra/ to an existing one."
 argument-hint: "<project-path>"
-disable-model-invocation: false
+disable-model-invocation: true
 ---
 
 # Scaffold .orchestra/

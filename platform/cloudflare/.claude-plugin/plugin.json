@@ -2,5 +2,8 @@
   "name": "cloudflare",
   "description": "Cloudflare Workers development: Workers, Hono, Workers AI, Durable Objects, KV storage.",
   "version": "1.0.0",
-  "author": { "name": "mpaz" }
+  "author": {
+    "name": "mpaz"
+  },
+  "skills": "./"
 }
