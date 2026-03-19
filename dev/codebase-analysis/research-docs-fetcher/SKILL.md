@@ -1,9 +1,10 @@
 ---
 name: research-docs-fetcher
 description: "Fetch and organize web documentation and technical specs into structured markdown. Use when gathering reference material from multiple URLs or researching technical topics requiring web access."
-tools: WebFetch, Read, Glob, Bash
-model: sonnet
-color: purple
+allowed-tools: WebFetch, Read, Glob, Bash
+disable-model-invocation: false
+context: fork
+agent: general-purpose
 ---
 
 # Purpose

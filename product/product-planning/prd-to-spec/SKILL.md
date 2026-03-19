@@ -1,9 +1,8 @@
 ---
 name: prd-to-spec
-description: "Translate a validated PRD into a technical spec by investigating the codebase. The spec is the execution contract for implementing agents."
-tools: Read, Grep, Glob, Write, Bash
-model: sonnet
-memory: project
+description: "Translate a validated PRD into a technical spec by investigating the codebase. Use when a PRD is approved and needs an execution-ready technical specification."
+allowed-tools: Read, Grep, Glob, Write, Bash
+disable-model-invocation: false
 ---
 
 # PRD → Spec Writer

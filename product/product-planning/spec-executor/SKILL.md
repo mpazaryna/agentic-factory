@@ -1,7 +1,8 @@
 ---
 name: spec-executor
-description: Generic executor that runs any workflow spec from a specs directory. Reads the spec, generates queries, writes structured output.
-tools: Bash, Read, Write, Edit, Grep, Glob, TodoWrite
+description: "Execute workflow specs from a specs directory — read the spec, generate queries, write structured JSON and markdown output. Use when running data pipeline or analysis specs."
+allowed-tools: Bash, Read, Write, Edit, Grep, Glob
+disable-model-invocation: false
 ---
 
 # Spec Executor

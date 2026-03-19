@@ -1,7 +1,9 @@
 ---
 name: work-completion-summarizer
-description: Proactively triggered when work is completed to provide concise markdown summaries and suggest next steps. When you prompt this agent, describe exactly what you want them to communicate to the user. Remember, this agent has no context about any questions or previous conversations between you and the user. So be sure to communicate well so they can respond to the user. Be concise, and to the point - aim for 2 sentences max.
-color: green
+description: "Create concise work completion summaries with next steps and save to devlog. Use when a task is finished and needs a brief summary written to docs/devlog/."
+allowed-tools: Bash, Write
+disable-model-invocation: false
+user-invocable: false
 ---
 
 # Purpose

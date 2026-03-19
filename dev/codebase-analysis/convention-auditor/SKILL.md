@@ -1,9 +1,8 @@
 ---
 name: convention-auditor
-description: "Audit codebase for compliance with project conventions and architectural decisions. Discovers rules from CONTEXT.md, ADRs, and CLAUDE.md — never hardcodes project-specific patterns."
-tools: Read, Grep, Glob, Write
-model: haiku
-memory: project
+description: "Audit codebase for compliance with project conventions and architectural decisions. Use when checking if code follows the project's own documented rules from CONTEXT.md, ADRs, and CLAUDE.md."
+allowed-tools: Read, Grep, Glob, Write
+disable-model-invocation: false
 ---
 
 # Convention Compliance Auditor

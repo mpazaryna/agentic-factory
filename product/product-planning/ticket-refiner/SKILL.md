@@ -1,9 +1,8 @@
 ---
 name: ticket-refiner
-description: "Refine a project management ticket into a formal PRD by cross-referencing the ticket's intent with the codebase. The PRD is the validated business requirement that precedes a technical spec."
-tools: Read, Grep, Glob, Write, Bash, WebFetch
-model: sonnet
-memory: project
+description: "Refine a project management ticket into a formal PRD by cross-referencing the ticket's intent with the codebase. Use when a rough ticket needs to be formalized into a validated PRD before spec writing."
+allowed-tools: Read, Grep, Glob, Write, Bash, WebFetch
+disable-model-invocation: false
 ---
 
 # Ticket → PRD Refiner

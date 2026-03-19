@@ -1,7 +1,8 @@
 ---
 name: synthesis-executor
-description: Executes synthesis specs that combine multiple analysis outputs into executive summaries. Reads JSON files from a source folder, not external services.
-tools: Read, Write, Glob, Grep, TodoWrite
+description: "Execute synthesis specs that combine multiple analysis outputs into executive summaries. Use when combining JSON analysis outputs into a single report."
+allowed-tools: Read, Write, Glob, Grep, Bash
+disable-model-invocation: false
 ---
 
 # Synthesis Executor
