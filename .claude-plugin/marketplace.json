@@ -42,7 +42,7 @@
       "name": "product-planning",
       "source": "./product/product-planning",
       "description": "Product planning: ticket refinement, PRDs, specs, execution",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "category": "product",
       "tags": ["product", "planning", "prd", "specs", "tickets"]
     },
