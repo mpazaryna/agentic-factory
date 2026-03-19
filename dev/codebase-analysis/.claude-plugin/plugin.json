@@ -1,7 +1,7 @@
 {
   "name": "codebase-analysis",
   "description": "Codebase analysis practice: architecture analysis, auditing, research, testing, spike-driven development",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "author": { "name": "mpaz" },
   "skills": "./"
 }
