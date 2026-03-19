@@ -43,9 +43,6 @@ Components are built organically in real projects, then promoted into the factor
 ### Domain
 - `domain/yoga/` — Multi-agent yoga class planning for teachers
 
-### MCP Servers
-- `mcp/clickup-daily-queue/` — Daily ClickUp task queue for Claude Desktop (FastMCP)
-
 ### Infrastructure
 - `.claude-plugin/marketplace.json` — Root plugin marketplace catalog
 - `templates/` — Shared templates (e.g., CONTEXT.stub.md)
@@ -105,7 +102,7 @@ The repo is a Claude Code plugin marketplace. Install via:
 - New general components → into the appropriate practice domain
 - Project-specific tools → in the project repo as `.claude/skills/`
 - New practice areas → new plugin folder with `.claude-plugin/plugin.json` + `CLAUDE.md`
-- New MCP servers → `mcp/<server-name>/` with README.md, server.py, pyproject.toml
+- MCP servers → separate repos (`~/workspace/mcp-<name>/`), not in this repo
 
 ### Workflow
 1. Build components organically in real projects
