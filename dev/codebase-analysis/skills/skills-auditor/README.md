@@ -18,9 +18,9 @@ Each rule has a severity: **ERROR** (must fix), **WARN** (should fix), or **INFO
 ## How to use
 
 ```
-/skills-auditor ./dev/codebase-analysis
-/skills-auditor ./platform/cloudflare
-/skills-auditor ./pm/clickup
+/codebase-analysis:skills-auditor ./dev/codebase-analysis
+/codebase-analysis:skills-auditor ./platform/cloudflare
+/codebase-analysis:skills-auditor ./pm/clickup
 ```
 
 Pass the path to any plugin folder in this repo.

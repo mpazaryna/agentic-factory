@@ -132,7 +132,7 @@ Part of the [{Project Name} Roadmap](../../roadmap.md).
 
 ## Notes
 
-This milestone PRD needs to be fleshed out. Run `/prd` to expand it when ready.
+This milestone PRD needs to be fleshed out. Run `/orchestra:prd` to expand it when ready.
 ```
 
 ### Step 5: Create Initial Devlog Entry
@@ -152,8 +152,8 @@ Write `.orchestra/devlog/{YYYY}-Q{N}/{date}-project-kickoff.md`:
 - See ADR-000 for the founding decision
 
 ## Next Steps
-- Flesh out the first milestone PRD with `/prd`
-- Begin work with `/milestone` to review gaps
+- Flesh out the first milestone PRD with `/orchestra:prd`
+- Begin work with `/orchestra:milestone` to review gaps
 ```
 
 ## Phase 3: Report
@@ -177,9 +177,9 @@ Present everything that was created:
 - .orchestra/devlog/{quarter}/{date}-project-kickoff.md
 
 ### Next Steps
-1. Run `/milestone` to review the first milestone and identify gaps
-2. Run `/prd` to flesh out milestone PRDs as you're ready
-3. The loop: /milestone → /prd → /spec → /ticket → implement → done
+1. Run `/orchestra:milestone` to review the first milestone and identify gaps
+2. Run `/orchestra:prd` to flesh out milestone PRDs as you're ready
+3. The loop: /orchestra:milestone → /orchestra:prd → /orchestra:spec → /orchestra:ticket → implement → done
 ```
 
 ## Rules

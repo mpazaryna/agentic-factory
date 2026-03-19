@@ -375,15 +375,15 @@ The container is fixed: 3 blocks, 8:30-5:30. Load modulates intensity and projec
 - Paused means "temporarily deprioritized" not "forgotten"
 - Every week, paused/concept projects get the question: "Move forward or archive?"
 - Agents can spike on blockers - use them
-- Run `/kickoff` daily to stay oriented
-- Run `/weekly-summary` at end of week to close the loop
+- Run `/pkm:kickoff` daily to stay oriented
+- Run `/pkm:weekly-summary` at end of week to close the loop
 - ICS file goes to `50-log/weekly/YYYY/WNN-time-blocks.ics` - double-click to import to Apple Calendar
 
 ## Proactive Prescription
 
 **The system prescribes, it doesn't ask.**
 
-When you run `/weekly-plan`, lead with the load calculation. Don't ask "what pace do you want?" - tell the user what the data says. They can override, but the default is data-driven.
+When you run `/pkm:weekly-plan`, lead with the load calculation. Don't ask "what pace do you want?" - tell the user what the data says. They can override, but the default is data-driven.
 
 ```
 ## Load Calculation
@@ -398,7 +398,7 @@ This week is a recovery week: 2 blocks/day, 1-2 projects max.
 
 ## Weekly Evaluation Criteria
 
-When `/weekly-summary` runs at week end, it should evaluate against these criteria:
+When `/pkm:weekly-summary` runs at week end, it should evaluate against these criteria:
 
 **Modification compliance:**
 - How many days did an encouraged project get an agent run?

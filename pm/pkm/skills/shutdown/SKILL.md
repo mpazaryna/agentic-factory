@@ -152,7 +152,7 @@ Paused/Concept:
 Any project status changes for next week?
 ```
 
-Capture answers in the daily note. Suggest running `/weekly-summary` for the full retrospective.
+Capture answers in the daily note. Suggest running `/pkm:weekly-summary` for the full retrospective.
 
 ## Task Graduation
 
