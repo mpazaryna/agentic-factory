@@ -1,7 +1,7 @@
 ---
 name: commit
 description: "Stage working tree changes and create a Conventional Commit (no push). Use when the user wants to commit their current changes with proper governance."
-disable-model-invocation: true
+disable-model-invocation: false
 ---
 
 ## Git Governance

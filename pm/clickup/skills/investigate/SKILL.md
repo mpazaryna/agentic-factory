@@ -2,7 +2,7 @@
 name: investigate
 description: "Investigate a ClickUp ticket — analyze scope, discuss open questions, and refine before starting work. Use when a user wants to assess a ticket's readiness, clarify requirements, or refine acceptance criteria without writing code."
 argument-hint: "<task-id or search query>"
-disable-model-invocation: true
+disable-model-invocation: false
 ---
 
 ## Prerequisite
