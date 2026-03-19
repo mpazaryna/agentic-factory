@@ -37,6 +37,7 @@ Components are built organically in real projects, then promoted into the factor
 - `pm/clickup/` — ClickUp ticket lifecycle: open, investigate, agent, close
 - `pm/senior-pm/` — Portfolio health, risk analysis, resource planning
 - `pm/pkm/` — Personal knowledge management: daily rituals, weekly/monthly reviews
+- `pm/kairos/` — AI-augmented productivity: Monk agent for autonomous daily rhythm
 - `pm/orchestra/` — Agent knowledge base methodology: .orchestra/ scaffolding, roadmaps, BDRs
 
 ### Domain
