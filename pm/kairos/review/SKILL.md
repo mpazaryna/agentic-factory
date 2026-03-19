@@ -40,7 +40,7 @@ See `weekly.md` for full template.
 
 **Reads:** Daily notes (Mon-Fri), Clockify CSV, ClickUp task completion (via shutdown script), LooseIt email, the week's plan file.
 
-**Writes to:** `# Weekly Summary` section at bottom of `50-log/weekly/YYYY/YYYY-WNN.md`
+**Writes to:** `# Weekly Summary` section at bottom of `kairos/weekly/YYYY/YYYY-WNN.md`
 
 **Key sections:** What happened (from ClickUp + daily notes), time tracking (Clockify), where the time went (which milestones got attention), health (LooseIt), patterns, next week.
 
@@ -50,17 +50,17 @@ See `monthly.md` for full template.
 
 **Reads:** Weekly reviews for the month (already synthesized). Daily notes only if weekly reviews are missing data.
 
-**Writes to:** `50-log/monthly/YYYY/YYYY-MM.md`
+**Writes to:** `kairos/monthly/YYYY/YYYY-MM.md`
 
-**Key sections:** Portfolio snapshot (status changes), project movement, time trends (from weekly Clockify aggregates), where the time went across the month, goals check (reads `30-resource/planner/life-areas/goals.md`), patterns.
+**Key sections:** Portfolio snapshot (status changes), project movement, time trends (from weekly Clockify aggregates), where the time went across the month, goals check (reads `kairos/life-areas/goals.md`), patterns.
 
 ### Quarterly (`/review quarterly`)
 
 See `quarterly.md` for full template.
 
-**Reads:** Monthly reviews for the quarter (already synthesized). Life-area notes (`30-resource/planner/life-areas/`). The score (`99-orchestra/roadmap.md`).
+**Reads:** Monthly reviews for the quarter (already synthesized). Life-area notes (`kairos/life-areas/`). The score (`kairos/roadmap.md`).
 
-**Writes to:** `50-log/quarterly/YYYY/YYYY-QN.md`
+**Writes to:** `kairos/quarterly/YYYY/YYYY-QN.md`
 
 **Key sections:** The quarter in brief (narrative, not metrics), life area review (goals vs evidence), direction check (vision, purpose -- still true?), portfolio alignment (projects serving goals), next quarter focus.
 
@@ -70,8 +70,8 @@ This is a compass check, not a performance review.
 
 - Can be run multiple times at any zoom level -- overwrites previous output
 - Each level trusts the level below. Monthly doesn't re-read daily notes if weeklies exist.
-- Create folders as needed (`50-log/monthly/YYYY/`, `50-log/quarterly/YYYY/`)
+- Create folders as needed (`kairos/monthly/YYYY/`, `kairos/quarterly/YYYY/`)
 - LooseIt data feeds weekly and bubbles up. If not provided at weekly, note it as missing.
 - Clockify CSV: look for `~/Desktop/Clockify_Time_Report_Detailed_*.csv`. If not found, ask once.
-- ClickUp shutdown data: use `_tools/clickup-today.sh [DATE] --shutdown` for completion picture
+- ClickUp shutdown data: use `kairos/tools/clickup-today.sh [DATE] --shutdown` for completion picture
 - Week = Sun-Sat. Daily notes = Mon-Fri.

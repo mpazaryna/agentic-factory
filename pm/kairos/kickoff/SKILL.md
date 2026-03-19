@@ -23,8 +23,8 @@ Establish today's date from the system environment (provided as "Today's date: Y
 
 Read these in parallel, don't output yet:
 1. Previous working day's daily note - find Shutdown section (Tomorrow, Carry-over)
-2. `_data/projects/` folder - scan for active and encouraged projects
-3. This week's weekly note (`50-log/weekly/YYYY/YYYY-WNN.md`)
+2. `kairos/projects/` folder - scan for active and encouraged projects
+3. This week's weekly note (`kairos/weekly/YYYY/YYYY-WNN.md`)
 4. Recent daily notes - check which active projects have had focus this week
 5. Query ClickUp via MCP for today's assigned tasks
 

@@ -34,13 +34,31 @@ Monk loads the sibling skills as domain expertise:
 - **shutdown** — `${CLAUDE_PLUGIN_DIR}/shutdown/SKILL.md`
 - **interstitial** — `${CLAUDE_PLUGIN_DIR}/interstitial/SKILL.md`
 
-## Data Sources
+## Data Layout
+
+All data lives in a self-contained `kairos/` folder:
+
+```
+kairos/
+├── daily/YYYY/YYYY-MM-DD.md
+├── weekly/YYYY/YYYY-WNN.md
+├── monthly/YYYY/YYYY-MM.md
+├── quarterly/YYYY/YYYY-QN.md
+├── interstitial/YYYY-MM-DD-HHMMSS.md
+├── projects/*.md
+├── life-areas/goals.md
+├── roadmap.md
+├── devlog/
+└── tools/
+    ├── clickup-today.sh
+    └── calendar-week.sh
+```
 
 Monk reads from (never asks for):
-- ClickUp API (today's tasks, completion state)
-- Daily notes (previous day's shutdown, frontmatter metrics)
-- Weekly plan (project triage, flags, decisions)
-- Project records (`_data/projects/*.md`)
+- ClickUp API via `kairos/tools/clickup-today.sh`
+- Daily notes (`kairos/daily/`)
+- Weekly plan (`kairos/weekly/`)
+- Project records (`kairos/projects/`)
 
 ## Design Principles
 

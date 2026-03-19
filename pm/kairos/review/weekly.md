@@ -1,14 +1,14 @@
 # Weekly Review Template
 
-Appends to `50-log/weekly/YYYY/YYYY-WNN.md` under `# Weekly Summary`.
+Appends to `kairos/weekly/YYYY/YYYY-WNN.md` under `# Weekly Summary`.
 
 ## Pre-Flight
 
 1. **Clockify CSV** -- look for `~/Desktop/Clockify_Time_Report_Detailed_*.csv` matching the week. If not found, ask once.
 2. **LooseIt email** -- user provides. If not available, note as missing.
-3. **Daily notes** -- read Mon-Fri from `50-log/daily/YYYY/`
-4. **ClickUp completions** -- run `_tools/clickup-today.sh [DATE] --shutdown` for each day to get completed tasks
-5. **The week's plan** -- read the current `50-log/weekly/YYYY/YYYY-WNN.md` for flags and decisions
+3. **Daily notes** -- read Mon-Fri from `kairos/daily/YYYY/`
+4. **ClickUp completions** -- run `kairos/tools/clickup-today.sh [DATE] --shutdown` for each day to get completed tasks
+5. **The week's plan** -- read the current `kairos/weekly/YYYY/YYYY-WNN.md` for flags and decisions
 
 ## Output
 

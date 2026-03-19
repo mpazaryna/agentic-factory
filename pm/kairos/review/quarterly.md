@@ -1,15 +1,15 @@
 # Quarterly Review Template
 
-Writes to `50-log/quarterly/YYYY/YYYY-QN.md`. Create folder if needed.
+Writes to `kairos/quarterly/YYYY/YYYY-QN.md`. Create folder if needed.
 
 Schedule: end of March (Q1), June (Q2), September (Q3), December (Q4).
 
 ## Pre-Flight
 
-1. **Monthly reviews** -- read `50-log/monthly/YYYY/YYYY-MM.md` for each month in the quarter. Primary source.
-2. **Life-area notes** -- read all 13 files in `30-resource/planner/life-areas/`
-3. **Score** -- read `99-orchestra/roadmap.md`
-4. **Devlog** -- read `99-orchestra/devlog/` for trajectory context
+1. **Monthly reviews** -- read `kairos/monthly/YYYY/YYYY-MM.md` for each month in the quarter. Primary source.
+2. **Life-area notes** -- read all 13 files in `kairos/life-areas/`
+3. **Score** -- read `kairos/roadmap.md`
+4. **Devlog** -- read `kairos/devlog/` for trajectory context
 
 ## Output
 
@@ -68,10 +68,10 @@ date: YYYY-QN
 
 *These are reflective, not scored.*
 
-**Vision** ([[30-resource/planner/life-areas/vision]]): Still true? Has anything shifted?
-**Purpose** ([[30-resource/planner/life-areas/purpose]]): Still resonant?
-**People** ([[30-resource/planner/life-areas/people]]): Anyone added, faded, strengthened?
-**Daily rhythm** ([[30-resource/planner/life-areas/daily-rhythm]]): Does the ideal match reality?
+**Vision** ([[kairos/life-areas/vision]]): Still true? Has anything shifted?
+**Purpose** ([[kairos/life-areas/purpose]]): Still resonant?
+**People** ([[kairos/life-areas/people]]): Anyone added, faded, strengthened?
+**Daily rhythm** ([[kairos/life-areas/daily-rhythm]]): Does the ideal match reality?
 
 ## Score Alignment
 

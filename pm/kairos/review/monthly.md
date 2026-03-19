@@ -1,13 +1,13 @@
 # Monthly Review Template
 
-Writes to `50-log/monthly/YYYY/YYYY-MM.md`. Create folder if needed.
+Writes to `kairos/monthly/YYYY/YYYY-MM.md`. Create folder if needed.
 
 ## Pre-Flight
 
-1. **Weekly reviews** -- read all `50-log/weekly/YYYY/YYYY-WNN.md` files overlapping this month. These are the primary source.
-2. **Project data** -- read `_data/projects/*.md` for current status
-3. **Goals** -- read `30-resource/planner/life-areas/goals.md`
-4. **Score** -- read `99-orchestra/roadmap.md` for milestone context
+1. **Weekly reviews** -- read all `kairos/weekly/YYYY/YYYY-WNN.md` files overlapping this month. These are the primary source.
+2. **Project data** -- read `kairos/projects/*.md` for current status
+3. **Goals** -- read `kairos/life-areas/goals.md`
+4. **Score** -- read `kairos/roadmap.md` for milestone context
 
 Only read daily notes if weekly reviews are missing data.
 

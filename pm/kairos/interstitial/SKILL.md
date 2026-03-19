@@ -35,7 +35,7 @@ Just save it. Don't ask "what would you like to capture?"
 
 ## Create the Note
 
-- Filename: `50-log/interstitial/YYYY-MM-DD-HHMMSS.md`
+- Filename: `kairos/interstitial/YYYY-MM-DD-HHMMSS.md`
 - Frontmatter:
   ```yaml
   ---
@@ -48,7 +48,7 @@ Just save it. Don't ask "what would you like to capture?"
 
 ## Confirm
 
-Show: "Logged to `50-log/interstitial/YYYY-MM-DD-HHMMSS.md`"
+Show: "Logged to `kairos/interstitial/YYYY-MM-DD-HHMMSS.md`"
 
 Done - no follow-up needed.
 

@@ -13,10 +13,10 @@ Generates the weekly plan draft. Run once at start of week (Sunday or Monday). *
 
 **Read the score, surface decisions, get out of the way.**
 
-The 2026 roadmap (`99-orchestra/roadmap.md`) is the top-level score. ClickUp has the dated tickets. The weekly plan doesn't restate either -- it surfaces only what needs a decision, flags risks, and confirms the week's shape.
+The 2026 roadmap (`kairos/roadmap.md`) is the top-level score. ClickUp has the dated tickets. The weekly plan doesn't restate either -- it surfaces only what needs a decision, flags risks, and confirms the week's shape.
 
 **Three-system model:**
-- **Vault** = the score + narrative (99-orchestra/roadmap.md, weekly plans, daily notes)
+- **Vault** = the score + narrative (kairos/roadmap.md, weekly plans, daily notes)
 - **ClickUp** = task execution (source of truth for tickets, day-level assignment)
 - **Apple Reminders** = personal life (routines, errands, personal admin)
 
@@ -26,32 +26,32 @@ The 2026 roadmap (`99-orchestra/roadmap.md`) is the top-level score. ClickUp has
 
 ## Pre-Flight (all agent-gathered, no user input)
 
-1. Read the score -- `99-orchestra/roadmap.md`
-2. Read recent devlog -- `99-orchestra/devlog/`
+1. Read the score -- `kairos/roadmap.md`
+2. Read recent devlog -- `kairos/devlog/`
 3. Last week's plan + summary
 4. Trailing daily notes (5-7 days) for load calculation
-5. ClickUp tickets dated for the week (via `_tools/clickup-today.sh` for Sun-Sat, matching the calendar window)
+5. ClickUp tickets dated for the week (via `kairos/tools/clickup-today.sh` for Sun-Sat, matching the calendar window)
 6. Personal list (901711996386) for life project tickets -- check for due/overdue items (these become the frog). Only flag **undated** tickets in decisions -- tickets with start_dates are already planned.
-7. Apple Calendar -- run `_tools/calendar-week.sh [YYYY-MM-DD]` with any date in the week (Sun-Sat window)
+7. Apple Calendar -- run `kairos/tools/calendar-week.sh [YYYY-MM-DD]` with any date in the week (Sun-Sat window)
 
 ## Workflow
 
 1. **Pre-flight** -- gather everything above silently. No output until the draft is ready.
 
-2. **Write the draft** -- create `50-log/weekly/YYYY/YYYY-WNN.md` with:
+2. **Write the draft** -- create `kairos/weekly/YYYY/YYYY-WNN.md` with:
    - Load calculation (automated)
    - Calendar events (from Apple Calendar, automated)
    - Flags (from ClickUp + score analysis)
    - Open decisions as **markdown checkboxes** with ClickUp task IDs as clickable links (format: `[86xxxxxx](https://app.clickup.com/t/86xxxxxx)`)
    - Week shape filled in from data (frog found from Personal list, not asked for)
 
-3. **Tell the user** -- "Draft ready at `50-log/weekly/YYYY/YYYY-WNN.md`. Review in Obsidian, then run `/weekly-finalize`."
+3. **Tell the user** -- "Draft ready at `kairos/weekly/YYYY/YYYY-WNN.md`. Review in Obsidian, then run `/weekly-finalize`."
 
 That's it. No follow-up, no "say finalize." The user runs `/weekly-finalize` in a separate session.
 
 ## Output Format
 
-Write to `50-log/weekly/YYYY/YYYY-WNN.md`:
+Write to `kairos/weekly/YYYY/YYYY-WNN.md`:
 
 ```markdown
 ---

@@ -66,6 +66,6 @@ The skills are the sheet music. Monk is the one who keeps time.
 
 ### Prerequisites
 
-1. Vault with `50-log/daily/`, `50-log/weekly/`, `_data/projects/`
-2. `_tools/clickup-today.sh` for task queries
-3. `.env` with `CLICKUP_API_KEY`
+1. `kairos/` folder in the project root (Monk creates it if missing)
+2. `.env` with `CLICKUP_API_KEY`
+3. `kairos/tools/clickup-today.sh` for task queries
