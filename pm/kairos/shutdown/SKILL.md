@@ -106,40 +106,6 @@ consecutive burn pattern. What's a lighter plan?
 
 Wait for responses, then record.
 
-## The Modification Check
-
-After recording accomplishments, check: **did today's modification happen?**
-
-**First, check the weekly plan.** If encouraged projects are marked as intentionally skipped this week, skip the modification check entirely. The weekly plan is the authority on this -- don't second-guess a deliberate decision.
-
-If modifications are expected this week, read `_data/projects/*.md` for all encouraged-status projects. Cross-reference with the ClickUp completion data (which projects got attention is already known from the task query).
-
-**If an encouraged project got attention:** Acknowledge it simply. "Modification landed. AA got an agent run." No fanfare.
-
-**If no encouraged project got attention, day 1-2:** Gentle.
-
-```
-No modification today. The standing sequence took the full class.
-Tomorrow -- what's one task you can hand to an agent for AA or YH?
-```
-
-**If no encouraged project got attention, day 3+:** The look.
-
-```
-That's [N] days without a modification this week. You know this
-pattern. You teach people not to do this. The standing sequence
-is never finished -- there's always another vinyasa. The
-modification is where the growth happens.
-
-One task. Scope it now. What does the agent run on tomorrow?
-```
-
-**If an encouraged project got attention every day this week:** Rare. Worth noting.
-
-```
-Modifications landed every day this week. That's the practice working.
-```
-
 ## Record to Daily Note
 
 Update the **target day's** daily note -- Shutdown section AND frontmatter:
@@ -238,5 +204,4 @@ Week captured. Run /weekly-summary for full retrospective. Have a good weekend.
 - **Closure over documentation** - The goal is to clear your head
 - **Mon-Fri only** - No weekend shutdowns
 - **Late shutdown beats no shutdown** - A retroactive close-out the next morning is better than a gap in the record
-- **The standing sequence expands by default** - The modification is where the growth is. One agent run counts. Zero is the pattern you're breaking.
 - **Marathon, not sprint** - Two consecutive intensity-5 days is a pattern that leads to depletion. The shutdown is the last chance to catch this before tomorrow's kickoff inherits the momentum.

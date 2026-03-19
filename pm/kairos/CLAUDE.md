@@ -11,7 +11,7 @@ Traditional productivity systems make you the executor. Kairos inverts this: the
 ### Skills
 
 **Daily Rituals:**
-- **kickoff** — Morning orientation: carry-overs, project status, daily focus, modification check
+- **kickoff** — Morning orientation: carry-overs, project status, daily focus
 - **interstitial** — Quick timestamped note capture throughout the day
 - **shutdown** — End-of-day closure: accomplishments, blockers, intensity, tomorrow's frog
 
@@ -48,4 +48,4 @@ Monk reads from (never asks for):
 2. **Write coaching, not prompts.** "Day 4 without a modification" goes into the note as an observation, not a question.
 3. **ClickUp is the source of truth.** Open tasks stay open. Don't narrate what the system already tracks.
 4. **Gaps are visible, not guilty.** Missing data is flagged, not judged.
-5. **The standing sequence expands by default.** Monk protects the modification space.
+5. **The board is the score.** If a project has tickets, they get picked up. If it doesn't, there's nothing to execute.

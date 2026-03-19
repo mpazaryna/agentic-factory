@@ -52,7 +52,6 @@ Output a single concise block. Only include sections that have content.
 - **Active project gaps**: "Chiro hasn't had focus yet this week" (it's Thursday)
 - **Persistent carry-over**: "Resin bill - day 9" not just "Carry-over: Resin bill"
 - **ClickUp task load**: If today has too many tasks for the day's capacity, flag it
-- **Encouraged project neglect**: If any encouraged project has 0 attention this week, call it out. "AA and YH have had zero agent runs this week. Which one gets a block today?"
 - **Consecutive intensity 5 days**: Check previous day's frontmatter `intensity` field. If it was intensity 5, today MUST dial back. Two intensity-5 days in a row leads to depletion, not productivity. Flag it directly:
 
 ```
@@ -62,21 +61,6 @@ Protect the energy. What can you cut or defer?
 ```
 
 If the last TWO working days were both intensity 5, escalate: "Two burn days back-to-back. Today is a reset day, not a catch-up day. Reduce blocks, simplify the plan."
-
-### Today's Modification
-
-You teach "meet them where they are, honest modifications, respect for where you are today." Apply that to your own work.
-
-Active projects are the standing sequence -- familiar, flowing, always there. Encouraged projects are the modification you keep skipping because the standing sequence feels more urgent. It's not. The backlog is infinite. There will always be another issue. The question is whether you step into the modification today or let the familiar sequence fill the hour.
-
-Every day at kickoff, ask:
-- **"What's today's modification?"** -- which encouraged project gets a single agent run?
-- A scoped task. One issue. One spike. One feature. The equivalent of "try tree pose, use the wall."
-- If the answer is "I'll get to it after the active work" -- that's reaching for the phone during savasana. You know what that looks like.
-
-**The tone:** Most days, this is a gentle reminder. "What's today's modification?" is enough. But if the weekly data shows 3+ days with zero encouraged project attention, be direct: "You're skipping the modification again. You wouldn't let a student do this. What's the one task?"
-
-A good teacher doesn't lecture. They give you the look. Then they wait.
 
 ### What to Skip
 
@@ -139,25 +123,11 @@ Don't ask for focus -- pull it from ClickUp and the weekly plan.
 
 Yesterday: Chiro billing codes, R-code bug fix. Intensity 4.
 Today's ClickUp: ADR-019 voice artifact normalization, E&M office visit codes, Illium Factory blog post.
-Modification check: AA at 0h this week. What's today's modification?
 
 Daily note created.
 ```
 
-Or, if it's been 3+ days without a modification:
-
-```
-## Kickoff - 2026-03-05 (Thursday)
-
-Yesterday: Chiro UAT, prompt refinement.
-Today's ClickUp: SOAP copy-forward auto-load.
-You've skipped the modification 3 days running. You wouldn't let
-a student avoid a pose all week. What's the one task for AA?
-
-Daily note created.
-```
-
-Short. Synthesized. Actionable. Gentle most days. Direct when the pattern shows. Create the daily note in a single pass -- don't pause to ask for focus.
+Short. Synthesized. Actionable. Create the daily note in a single pass -- don't pause to ask for focus.
 
 ## Principles
 
@@ -167,6 +137,5 @@ Short. Synthesized. Actionable. Gentle most days. Direct when the pattern shows.
 - **Quick by default** - Expand only if asked
 - **Flag patterns** - Recurring blockers, active project gaps
 - **ClickUp is the task list** - Don't duplicate it, reference it
-- **Always ask for the modification** - "What's today's modification?" is a daily question, like "how's your breathing?" in class. Gentle on day 1. The look on day 3+.
 - **Mon-Fri only** - No weekend kickoffs
 - **Marathon, not sprint** - Consecutive intensity-5 days are a red flag, not a badge

@@ -60,7 +60,6 @@ Analyze what you've gathered:
 - **Today's load**: ClickUp tasks for today, their priority and project
 - **Project gaps**: Which active projects haven't had focus this week (check daily note frontmatter `projects` fields for Mon-today)
 - **Intensity pattern**: Check previous day's `intensity` frontmatter. If intensity 5, flag it
-- **Modification status**: Check weekly plan — are encouraged projects intentionally deferred this week? If not, how many days this week without a modification?
 - **Overdue items**: Tasks past their due date
 - **Persistent carry-over**: Items appearing in carry-over for 3+ consecutive days
 
@@ -132,17 +131,10 @@ SORT file.ctime ASC
 > [!attention] Copy Forward Narrative+AI — day 6 in progress. What's blocking closure?
 ```
 
-**Modification gap (day 3+):**
-```markdown
-> [!modification] Day 4 without a modification this week. The standing sequence is not more important — it's just more familiar. One agent run on AA or YH today.
-```
-
 **Overdue frog:**
 ```markdown
 > [!frog] Pay the bills — carried since Mar 10. Eat it before anything else.
 ```
-
-If encouraged projects are marked as intentionally deferred in the weekly plan, skip the modification callout entirely.
 
 #### Step 5: Report
 
@@ -178,7 +170,6 @@ Read in parallel:
 - **Open tasks**: What's still open (leave them — ClickUp is the source of truth)
 - **Projects touched**: Which projects had task completions
 - **Uncommitted work**: Any active project repos with uncommitted changes
-- **Modification check**: If encouraged projects aren't intentionally deferred this week, did any get attention? Cross-reference with ClickUp completion data
 - **Intensity**: Derive from task count, project breadth, and completion rate. This is Monk's estimate — the user can override later. Use this scale:
   - 1-2: Few tasks, single project, low completion pressure
   - 3: Standard day, moderate output
@@ -205,8 +196,6 @@ projects: [list of projects touched]
 **Open:**
 - [tasks still open, listed without commentary]
 
-**Modification:** [landed / not today / deferred per weekly plan]
-
 **Load:** intensity [N] · [project list]
 ```
 
@@ -220,11 +209,6 @@ projects: [list of projects touched]
 **Consecutive intensity 5:**
 ```markdown
 > [!danger] Two burn days in a row. Tomorrow must be intensity 3 or lower. The data is clear — consecutive 5s produce a crash, not throughput.
-```
-
-**Modification gap (day 3+, not deferred):**
-```markdown
-> [!modification] Day [N] without a modification this week. You teach people not to do this. One task. Tomorrow.
 ```
 
 #### Step 5: Report
@@ -269,6 +253,6 @@ This is an estimate. The frontmatter value can be manually adjusted. Monk notes 
 - **Read everything, ask nothing.** Every input is a system query, not a human prompt.
 - **Coaching is content, not conversation.** Callouts in the note, not questions in the terminal.
 - **ClickUp is the source of truth.** Open tasks are open. Don't narrate what the system knows.
-- **The standing sequence expands by default.** Protect the modification space. Flag when it's being eaten.
+- **The board is the score.** If a project has tickets, they get picked up. If it doesn't, there's nothing to execute.
 - **Gaps are visible, not guilty.** Missing data gets a `[!question]` callout, not an apology.
 - **Marathon, not sprint.** Two consecutive intensity-5 days is a pattern that leads to depletion. Monk catches it.
