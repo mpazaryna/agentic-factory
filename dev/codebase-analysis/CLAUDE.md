@@ -6,7 +6,7 @@ Understand, audit, test, and document codebases. Analysis-first development prac
 
 ### Analysis
 - **acb** — Analyze Codebase: modular, template-driven analysis with tech-specific templates
-- **audit-skills** — Audit plugin skills and agents for compliance with quality standards
+- **skills-auditor** — Audit plugin skills and agents for compliance with quality standards
 - **prime-web-dev** — Quick web codebase comprehension primer
 - **spike-driven-dev** — Spike-driven development methodology with TDD and risk reduction
 

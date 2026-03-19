@@ -1,5 +1,5 @@
 ---
-name: audit-skills
+name: skills-auditor
 description: "Audit plugin skills and agents for compliance with Claude Code best practices — checks frontmatter, descriptions, tool restrictions, structure, and naming. Use when improving plugin quality or before publishing."
 argument-hint: "<plugin-folder-path>"
 allowed-tools: Read, Write, Glob, Grep, Bash
