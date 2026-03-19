@@ -30,11 +30,12 @@ Each skill stops and asks before writing. You review, refine, approve. The skill
 
 ### Autonomous (Lenny)
 
-Let Lenny run the full loop:
+Agents are not slash commands. They're invoked conversationally — ask Claude to use lenny by name:
 
 ```
-/orchestra:lenny active
-/orchestra:lenny M2-financial-foundation
+"ask lenny to review the active milestone"
+"have lenny run the full loop on M2"
+"can lenny look at the active milestones"
 ```
 
 Lenny will:
@@ -51,9 +52,9 @@ Lenny will:
 | Situation | Approach |
 |-----------|----------|
 | Exploring a new milestone, uncertain scope | Human-in-the-loop with `/milestone` then `/prd` |
-| Well-defined gaps, clear acceptance criteria | Lenny: `/orchestra:lenny active` |
+| Well-defined gaps, clear acceptance criteria | "ask lenny to run the active milestone" |
 | Single PRD or spec needed | Interactive: `/orchestra:prd` or `/orchestra:spec` |
-| Batch execution across multiple gaps | Lenny: he'll loop through them all |
+| Batch execution across multiple gaps | "have lenny run the full loop on M2" |
 | First time setting up .orchestra/ | Interactive: `/orchestra:scaffold` (always manual) |
 
 ### How Lenny Uses Skills
