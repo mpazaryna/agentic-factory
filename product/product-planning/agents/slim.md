@@ -1,5 +1,5 @@
 ---
-name: ticket-refiner
+name: slim
 description: "Autonomous ticket-to-PRD agent. Fetches a ticket, investigates the codebase, and writes a formal PRD — no human checkpoints."
 model: sonnet
 ---
