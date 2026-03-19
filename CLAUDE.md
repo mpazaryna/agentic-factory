@@ -113,6 +113,48 @@ The repo is a Claude Code plugin marketplace. Install via:
 4. Update via `/plugin marketplace update`
 5. Author improvements by opening a plugin folder as a workspace: `cd plugin && claude`
 
+## Skill Quality Standards
+
+Every skill and agent in this repo must meet these standards before merging. Use `/codebase-analysis:audit-skills` to check compliance.
+
+### SKILL.md Frontmatter
+
+| Field | When Required | Notes |
+|-------|--------------|-------|
+| `name` | Always | kebab-case, ≤64 chars, matches directory name |
+| `description` | Always | 50+ chars, starts with action verb, includes "Use when..." triggers |
+| `allowed-tools` | Always | Explicit — never rely on implicit full-session access |
+| `disable-model-invocation` | Side-effect skills | Skills that write files, deploy, commit, or modify state |
+| `context: fork` | Research/verbose skills | Skills that produce large output Claude shouldn't hold in main context |
+| `agent` | When `context: fork` | Specify `Explore`, `Plan`, or `general-purpose` |
+| `argument-hint` | When skill takes args | Show users what to pass |
+| `user-invocable: false` | Background knowledge only | Skills Claude should know but users shouldn't invoke |
+
+### Agent Frontmatter
+
+| Field | When Required | Notes |
+|-------|--------------|-------|
+| `name` | Always | kebab-case, unique within plugin |
+| `description` | Always | Explains when Claude should delegate to this agent |
+| `tools` | Always | Explicit tool restrictions — principle of least privilege |
+| `model` | Recommended | Use `haiku` for fast/simple, `sonnet` for balanced, `opus` for complex |
+
+### Description Quality
+
+**Formula**: `[Action verb] [what it does]. Use when [specific triggers].`
+
+Good: `"Analyze technical options with structured comparison matrices. Use when choosing between technologies, architectures, or implementation approaches."`
+
+Bad: `"Helper for decisions"` — too generic, Claude can't pattern-match
+
+### Anti-Patterns
+
+- Missing `allowed-tools` — grants implicit full-session access
+- `context: fork` on passive reference material — subagent has nothing to do
+- `disable-model-invocation: true` on analysis skills — prevents Claude from proactively offering help
+- Skills over 500 lines without supporting files — move reference material to `references/`
+- Descriptions without "Use when..." — Claude can't decide when to auto-load
+
 ## Issue Tracking
 
 All tickets are tracked in ClickUp: https://app.clickup.com/9017822495/v/li/901711514601

@@ -1,6 +1,7 @@
 ---
 name: spike-driven-dev
-description: Guide for spike-driven development methodology. Use when starting new features, testing architecture patterns, integrating unfamiliar APIs/data sources, or validating technical feasibility before full implementation. Emphasizes TDD, real data validation, and risk reduction through minimal proofs-of-concept.
+description: "Apply spike-driven development methodology with TDD and risk reduction. Use when starting new features, testing architecture patterns, integrating unfamiliar APIs/data sources, or validating technical feasibility before full implementation."
+allowed-tools: Read
 ---
 
 # Spike-Driven Development
@@ -23,7 +24,7 @@ Create a spike ticket when:
 - Building something for the first time
 - The main ticket has >10 subtasks
 
-**For detailed decision criteria**, see [decision-criteria.md](references/decision-criteria.md)
+**For detailed decision criteria**, see [decision-criteria.md](${CLAUDE_SKILL_DIR}/references/decision-criteria.md)
 
 ## Spike Workflow
 
@@ -78,7 +79,7 @@ Run tests → ✅ PASS
 - Document pattern for replication
 - Update main ticket estimate if needed
 
-**For detailed TDD flow**, see [spike-patterns.md](references/spike-patterns.md)
+**For detailed TDD flow**, see [spike-patterns.md](${CLAUDE_SKILL_DIR}/references/spike-patterns.md)
 
 ### 4. Evaluate Outcome
 
@@ -123,13 +124,13 @@ Every spike should validate:
 ## Examples and Templates
 
 **For concrete examples** (exercise library, API integration, database migration):
-→ See [examples.md](references/examples.md)
+→ See [examples.md](${CLAUDE_SKILL_DIR}/references/examples.md)
 
 **For decision trees and risk analysis**:
-→ See [decision-criteria.md](references/decision-criteria.md)
+→ See [decision-criteria.md](${CLAUDE_SKILL_DIR}/references/decision-criteria.md)
 
 **For spike characteristics and TDD patterns**:
-→ See [spike-patterns.md](references/spike-patterns.md)
+→ See [spike-patterns.md](${CLAUDE_SKILL_DIR}/references/spike-patterns.md)
 
 ## Key Takeaways
 
