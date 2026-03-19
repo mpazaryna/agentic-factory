@@ -3,7 +3,7 @@ name: rebuild-readme
 description: "Generate a developer-focused README.md for a project or module — overview, getting started, architecture, development, deployment. Use when the user wants to regenerate their README."
 argument-hint: "<folder-path>"
 allowed-tools: Bash, Read, Write
-disable-model-invocation: false
+disable-model-invocation: true
 ---
 
 # Rebuild README

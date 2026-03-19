@@ -2,7 +2,7 @@
 name: conduct
 description: "Run the full conductor loop autonomously — review milestone, generate PRD, write spec, create ticket, execute, and update the score. Use when you want fully autonomous project execution from roadmap to done."
 argument-hint: "<milestone-name or 'active'>"
-disable-model-invocation: false
+disable-model-invocation: true
 context: fork
 agent: general-purpose
 ---

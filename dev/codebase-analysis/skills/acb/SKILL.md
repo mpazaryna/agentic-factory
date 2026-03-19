@@ -3,7 +3,7 @@ name: acb
 description: "Analyze Codebase — modular, template-driven codebase analysis that detects project type and generates comprehensive codebase_analysis.md. Use when the user wants a full codebase analysis, architecture overview, or onboarding document."
 argument-hint: "<folder-path>"
 allowed-tools: Bash, Read, Write
-disable-model-invocation: false
+disable-model-invocation: true
 ---
 
 # Analyze Codebase (Modular Templates)

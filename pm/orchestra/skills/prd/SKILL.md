@@ -2,7 +2,7 @@
 name: prd
 description: "Generate a PRD from a milestone gap — define objective, success criteria, materials table, and context. Use when a milestone review surfaces a gap that needs scoping before execution."
 argument-hint: "<gap-name or description>"
-disable-model-invocation: false
+disable-model-invocation: true
 ---
 
 # Write PRD

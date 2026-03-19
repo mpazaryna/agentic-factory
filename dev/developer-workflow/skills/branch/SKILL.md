@@ -2,7 +2,7 @@
 name: branch
 description: "Create a new feature branch from main with safety checks. Use when the user wants to start a new feature branch."
 argument-hint: "<branch-name>"
-disable-model-invocation: false
+disable-model-invocation: true
 ---
 
 Create a new feature branch from main and ensure safe development practices. Required branch name: $ARGUMENTS

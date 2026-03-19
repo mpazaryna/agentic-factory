@@ -1,7 +1,7 @@
 ---
 name: push
 description: "Stage, commit, and push the current branch following git governance rules. Use when the user wants to commit and push their changes to the remote."
-disable-model-invocation: false
+disable-model-invocation: true
 ---
 
 ## Git Governance

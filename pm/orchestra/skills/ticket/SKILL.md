@@ -2,7 +2,7 @@
 name: ticket
 description: "Create a ClickUp ticket from a PRD or spec — push the work item to the task tracker with objective, acceptance criteria, and traceability links. Use when a PRD is ready for tracking or a spec is ready for execution."
 argument-hint: "<work-item-name or path>"
-disable-model-invocation: false
+disable-model-invocation: true
 ---
 
 # Create Ticket

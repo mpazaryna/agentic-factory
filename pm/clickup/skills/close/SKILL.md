@@ -2,7 +2,7 @@
 name: close
 description: "Close a ClickUp ticket — UAT check, doc review, create PR, merge, and mark complete. Use when a user is done with implementation and ready to close out a ticket."
 argument-hint: "<task-id>"
-disable-model-invocation: false
+disable-model-invocation: true
 ---
 
 ## Prerequisite
