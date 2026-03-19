@@ -110,16 +110,16 @@ The topology is the reference chain. Roadmap links to milestones, milestones lin
 Once the orchestra plugin is installed, scaffold your project:
 
 ```
-/scaffold .
+/orchestra:scaffold .
 ```
 
 This creates the `.orchestra/` folder with the full structure: `roadmap.md`, `adr/`, `work/TEMPLATES/`, and `devlog/`. The scaffold walks you through defining your project vision and initial milestones, so you'll have a populated roadmap when it finishes.
 
 From there, the first real cycle is:
 
-1. `/milestone` — review what the roadmap says needs doing
-2. `/prd {gap}` — scope one piece of work
+1. `/orchestra:milestone` — review what the roadmap says needs doing
+2. `/orchestra:prd {gap}` — scope one piece of work
 3. Let the agent write a spec and implement against it
-4. Update the score and `/devlog` what happened
+4. Update the score and `/orchestra:devlog` what happened
 
 For the full skill reference and detailed workflows, see [GUIDE.md](GUIDE.md).

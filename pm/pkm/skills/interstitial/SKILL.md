@@ -9,8 +9,8 @@ Fast capture for thoughts, notes, and observations throughout the day.
 
 ## Two Modes
 
-### 1. Explicit Invocation (`/interstitial`)
-When the user types `/interstitial` with no content:
+### 1. Explicit Invocation (`/pkm:interstitial`)
+When the user types `/pkm:interstitial` with no content:
 - Prompt: "What's on your mind?"
 - Wait for response, then save
 

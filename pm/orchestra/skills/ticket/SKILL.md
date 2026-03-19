@@ -7,7 +7,7 @@ disable-model-invocation: true
 
 # Create Ticket
 
-Push a work item (PRD or spec) to ClickUp as a trackable ticket. The ticket becomes the contract that `/open` or `/agent` picks up.
+Push a work item (PRD or spec) to ClickUp as a trackable ticket. The ticket becomes the contract that `/clickup:open` or `/clickup:agent` picks up.
 
 ## Prerequisites
 
@@ -45,7 +45,7 @@ Build the ClickUp ticket description based on what's available:
 - PRD: .orchestra/work/{name}/prd.md
 - Milestone: {link to parent milestone PRD}
 
-Note: Spec not yet written. Run `/spec` to define the execution plan.
+Note: Spec not yet written. Run `/orchestra:spec` to define the execution plan.
 ```
 
 **If PRD + spec:**
@@ -115,8 +115,8 @@ Use the list ID from CLAUDE.md or CONTEXT.md.
 - PRD: .orchestra/work/{id}-{name}/prd.md
 - Spec: {path or "not yet written"}
 
-{If no spec: "Run `/spec {work-item-name}` to define the execution plan before starting work."}
-{If spec exists: "Ready for `/open {clickup-id}` or `/agent {clickup-id}`"}
+{If no spec: "Run `/orchestra:spec {work-item-name}` to define the execution plan before starting work."}
+{If spec exists: "Ready for `/clickup:open {clickup-id}` or `/clickup:agent {clickup-id}`"}
 ```
 
 ## Rules
