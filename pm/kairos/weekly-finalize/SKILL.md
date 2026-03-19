@@ -1,5 +1,8 @@
 ---
-description: Finalize the weekly plan after reviewing and acting on decisions in ClickUp.
+name: weekly-finalize
+description: "Finalize the weekly plan after reviewing and acting on decisions in ClickUp. Use when the draft weekly plan has been reviewed and is ready to lock."
+allowed-tools: Read, Glob, Grep, Bash, Write
+disable-model-invocation: false
 ---
 
 # Weekly Finalize

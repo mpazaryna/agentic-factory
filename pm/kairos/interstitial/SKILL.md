@@ -1,5 +1,8 @@
 ---
-description: Quick capture a timestamped note to log/ folder
+name: interstitial
+description: "Capture a quick timestamped note to the daily log folder. Use when jotting down a thought, task, or observation mid-day."
+allowed-tools: Read, Write, Bash
+disable-model-invocation: false
 ---
 
 # Interstitial

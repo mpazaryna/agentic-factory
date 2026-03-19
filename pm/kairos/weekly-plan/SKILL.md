@@ -1,5 +1,8 @@
 ---
-description: Start-of-week planning draft. Run once, review in Obsidian, finalize with /weekly-finalize.
+name: weekly-plan
+description: "Draft the start-of-week plan — project triage, load calculation, and priority setting. Use when beginning a new work week."
+allowed-tools: Read, Glob, Grep, Bash, Write
+disable-model-invocation: false
 ---
 
 # Weekly Plan

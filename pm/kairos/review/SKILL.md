@@ -1,5 +1,9 @@
 ---
-description: Review at weekly, monthly, or quarterly zoom. Usage -- /review weekly, /review monthly, /review quarterly.
+name: review
+description: "Run a review at weekly, monthly, or quarterly zoom — synthesize notes, surface patterns, generate retrospective. Use when running periodic reviews."
+argument-hint: "weekly | monthly | quarterly"
+allowed-tools: Read, Glob, Grep, Bash, Write
+disable-model-invocation: false
 ---
 
 # Review

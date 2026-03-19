@@ -1,5 +1,8 @@
 ---
-description: End-of-day capture. Quick closure, clear state.
+name: shutdown
+description: "End-of-day capture — ClickUp completion check, uncommitted work, intensity, tomorrow's frog. Use when closing out the workday."
+allowed-tools: Read, Glob, Grep, Bash, Write
+disable-model-invocation: false
 ---
 
 # Shutdown
