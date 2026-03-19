@@ -1,7 +1,7 @@
 ---
 name: factory
 description: "Agentic Factory gateway — install, discover, promote, and manage components from the factory toolkit. Use when the user wants to manage factory plugins and components."
-disable-model-invocation: true
+disable-model-invocation: false
 ---
 
 # Agentic Factory Gateway

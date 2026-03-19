@@ -3,7 +3,7 @@ name: rebuild-context
 description: "Update CONTEXT.md with current project state — active work areas, quick references, known issues, testing focus, environment status. Use when the user wants to regenerate their CONTEXT.md."
 argument-hint: "<folder-path>"
 allowed-tools: Bash, Read, Write
-disable-model-invocation: true
+disable-model-invocation: false
 ---
 
 # Rebuild Context
