@@ -2,7 +2,7 @@
 name: open
 description: "Fetch a ClickUp ticket, evaluate readiness, create a branch, and start working. Use when a user wants to start work on a ClickUp task — fetches the ticket, assesses clarity, creates a branch, and enters plan mode."
 argument-hint: "<task-id or search query>"
-disable-model-invocation: true
+disable-model-invocation: false
 ---
 
 ## Prerequisite

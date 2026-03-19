@@ -2,7 +2,7 @@
 name: agent
 description: "Autonomous ClickUp ticket execution — fetch, plan, implement, test, PR, merge, and close with no human checkpoints. Use when a user wants fully autonomous ticket completion."
 argument-hint: "<task-id>"
-disable-model-invocation: true
+disable-model-invocation: false
 context: fork
 agent: general-purpose
 ---
