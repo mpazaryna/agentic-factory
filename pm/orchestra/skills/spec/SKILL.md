@@ -2,7 +2,7 @@
 name: spec
 description: "Generate an execution spec from an approved PRD — define approach, steps, deliverables, acceptance criteria, and risks. Use when a PRD is approved and the work needs a concrete execution plan."
 argument-hint: "<prd-path or work-item-name>"
-disable-model-invocation: true
+disable-model-invocation: false
 ---
 
 # Write Spec

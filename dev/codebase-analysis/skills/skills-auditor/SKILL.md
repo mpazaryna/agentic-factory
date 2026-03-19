@@ -3,7 +3,7 @@ name: skills-auditor
 description: "Audit plugin skills and agents for compliance with Claude Code best practices — checks frontmatter, descriptions, tool restrictions, structure, and naming. Use when improving plugin quality or before publishing."
 argument-hint: "<plugin-folder-path>"
 allowed-tools: Read, Write, Glob, Grep, Bash
-disable-model-invocation: true
+disable-model-invocation: false
 ---
 
 # Audit Skills
@@ -44,7 +44,7 @@ For every SKILL.md found, check each rule below. Track pass/fail per skill.
 | **F8: argument-hint present** | If skill uses `$ARGUMENTS` or `$N`, `argument-hint` should exist | WARN |
 | **F9: context:fork has task** | If `context: fork`, skill body contains actionable instructions (not just reference) | ERROR |
 | **F10: context:fork has agent** | If `context: fork`, `agent` field is specified | WARN |
-| **F11: side-effects guarded** | Skills that use Write/Edit/Bash for mutations should have `disable-model-invocation: true` | WARN |
+| **F11: side-effects guarded** | Plugin skills should have `disable-model-invocation: false` (true hides them from slash commands when installed). Only project-local `.claude/skills/` may use `true`. | WARN |
 | **F12: no unknown fields** | Frontmatter only contains recognized fields | INFO |
 
 #### Content Rules

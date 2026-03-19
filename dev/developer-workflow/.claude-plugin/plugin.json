@@ -1,7 +1,7 @@
 {
   "name": "developer-workflow",
   "description": "Developer workflow practice: context architecture, codebase exploration, technical investigation, work reporting, quality control, git operations",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "mpaz"
   },

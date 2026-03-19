@@ -10,7 +10,7 @@
       "name": "developer-workflow",
       "source": "./dev/developer-workflow",
       "description": "Developer workflow: context, exploration, inquiry, reporting, quality, git",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "category": "dev",
       "tags": ["developer", "workflow", "documentation", "git", "quality"]
     },
@@ -18,7 +18,7 @@
       "name": "codebase-analysis",
       "source": "./dev/codebase-analysis",
       "description": "Codebase analysis: architecture analysis, auditing, research, testing, spike-driven development",
-      "version": "1.0.0",
+      "version": "1.2.0",
       "category": "dev",
       "tags": ["analysis", "auditing", "testing", "research", "playwright"]
     },
@@ -90,7 +90,7 @@
       "name": "clickup",
       "source": "./pm/clickup",
       "description": "ClickUp ticket lifecycle: open, investigate, execute, and close tickets with CONTEXT.md-driven project awareness",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "category": "pm",
       "tags": ["clickup", "tickets", "project-management", "lifecycle"]
     },
@@ -114,7 +114,7 @@
       "name": "orchestra",
       "source": "./pm/orchestra",
       "description": "Agent knowledge base methodology: .orchestra/ scaffolding, roadmaps as PRDs, ADRs, work items, devlogs",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "category": "pm",
       "tags": ["orchestra", "roadmap", "prd", "methodology", "knowledge-base"]
     },

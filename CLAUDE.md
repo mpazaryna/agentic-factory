@@ -124,7 +124,7 @@ Every skill and agent in this repo must meet these standards before merging. Use
 | `name` | Always | kebab-case, ≤64 chars, matches directory name |
 | `description` | Always | 50+ chars, starts with action verb, includes "Use when..." triggers |
 | `allowed-tools` | Always | Explicit — never rely on implicit full-session access |
-| `disable-model-invocation` | Side-effect skills | Skills that write files, deploy, commit, or modify state |
+| `disable-model-invocation` | Rarely — project-local only | **Do NOT set `true` on plugin skills** — it hides them from slash commands when installed in other projects. Only use on project-local `.claude/skills/` that should not appear as slash commands. |
 | `context: fork` | Research/verbose skills | Skills that produce large output Claude shouldn't hold in main context |
 | `agent` | When `context: fork` | Specify `Explore`, `Plan`, or `general-purpose` |
 | `argument-hint` | When skill takes args | Show users what to pass |
@@ -151,7 +151,7 @@ Bad: `"Helper for decisions"` — too generic, Claude can't pattern-match
 
 - Missing `allowed-tools` — grants implicit full-session access
 - `context: fork` on passive reference material — subagent has nothing to do
-- `disable-model-invocation: true` on analysis skills — prevents Claude from proactively offering help
+- `disable-model-invocation: true` on any plugin skill — hides the skill from slash commands when installed in other projects. Only use on project-local `.claude/skills/`
 - Skills over 500 lines without supporting files — move reference material to `references/`
 - Descriptions without "Use when..." — Claude can't decide when to auto-load
 
