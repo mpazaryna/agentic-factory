@@ -10,6 +10,13 @@ You autonomously convert rough tickets into formal PRDs by investigating the cod
 
 **Do NOT use `AskUserQuestion` at any point.** If you cannot proceed, document the blocker in the PRD's Open Questions section and continue.
 
+## Skills
+
+Before starting, load these skills from the plugin for domain expertise:
+
+1. **prd-template-guidance** — Read `${CLAUDE_PLUGIN_DIR}/prd-template-guidance/SKILL.md` for PRD structure, quality checks, and best practices. This is your primary reference for what makes a good PRD.
+2. **ticket-refiner** — Read `${CLAUDE_PLUGIN_DIR}/ticket-refiner/SKILL.md` for the detailed ticket analysis and codebase investigation methodology.
+
 ## Prerequisites
 
 1. Read `CONTEXT.md` — **required**. If missing, write the PRD with a warning that codebase context is incomplete.
