@@ -1,7 +1,7 @@
 {
   "name": "orchestra",
   "description": "Agent knowledge base methodology: scaffold .orchestra/ folders, manage roadmaps as PRDs, ADRs, work items, and devlogs.",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "author": {
     "name": "mpaz"
   },
