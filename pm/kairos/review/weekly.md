@@ -21,21 +21,21 @@ Appends to `kairos/weekly/YYYY/YYYY-WNN.md` under `# Weekly Summary`.
 
 ## Where the Week Went
 
-Walk the score milestones first. This is the lead section -- it frames the week through the year's arrangement, not through whichever project was loudest.
+Walk the roadmap domains first. This is the lead section -- it frames the week through the year's arrangement, not through whichever project was loudest. Read domains from `kairos/roadmap.md`.
 
-| Milestone | Attention | Notes |
-|-----------|-----------|-------|
+| Domain | Attention | Notes |
+|--------|-----------|-------|
 | Personal | Partial | Yoga daily, connections quiet |
 | Art | No | Class starts next week -- normal |
 | Music | Yes | Piano lesson + 3 practice sessions |
 | Professional | Yes | Chiro 18h, Resin 2h |
 | Travel | No | Nothing due -- normal |
 
-[Only flag gaps where attention was expected. Don't penalize episodic milestones.]
+[Only flag gaps where attention was expected. Don't penalize episodic domains.]
 
-## The Week by Milestone
+## The Week by Domain
 
-Walk through each milestone briefly. Lead with life milestones, Professional last. Not every milestone needs a section -- skip ones with nothing to say.
+Walk through each domain briefly. Lead with life domains, Professional last. Not every domain needs a section -- skip ones with nothing to say.
 
 **Personal:** [what happened or didn't -- yoga, connections, health, frogs]
 **Music:** [lessons, practice]

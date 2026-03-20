@@ -18,15 +18,15 @@
 | Status | Question |
 |--------|----------|
 | active | What's the commitment? (cap it) |
-| encouraged | What specific task? (name it or defer intentionally) |
+| active (no tickets) | Needs a task or intentional pause? |
 | stable | No action unless it breaks |
 | paused | Unblock or archive? |
 | concept | Start or archive? |
 
 ## Weekly Summary Evaluation (for /weekly-summary)
 
-**Score coverage:**
-- Did every milestone in the score get attention, or did Professional crowd everything out?
+**Roadmap coverage:**
+- Did every domain with active tickets get attention, or did Professional crowd everything out?
 - Were non-code commitments (lessons, classes, yoga, travel planning) honored?
 
 **Frog compliance:**

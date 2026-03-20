@@ -26,13 +26,15 @@ The 2026 roadmap (`kairos/roadmap.md`) is the top-level score. ClickUp has the d
 
 ## Pre-Flight (all agent-gathered, no user input)
 
-1. Read the score -- `kairos/roadmap.md`
-2. Read recent devlog -- `kairos/devlog/`
-3. Last week's plan + summary
-4. Trailing daily notes (5-7 days) for load calculation
-5. ClickUp tickets dated for the week (via `kairos/tools/clickup-today.sh` for Sun-Sat, matching the calendar window)
-6. Personal list (901711996386) for life project tickets -- check for due/overdue items (these become the frog). Only flag **undated** tickets in decisions -- tickets with start_dates are already planned.
-7. Apple Calendar -- run `kairos/tools/calendar-week.sh [YYYY-MM-DD]` with any date in the week (Sun-Sat window)
+1. Read the score -- `kairos/roadmap.md` (domains, milestones, objectives)
+2. Read project records -- `projects/*.md` (status, which roadmap domain each belongs to)
+3. Read recent devlog -- `kairos/devlog/`
+4. Last week's plan + summary
+5. Trailing daily notes (5-7 days) for load calculation
+6. ClickUp tickets dated for the week (via `kairos/tools/clickup-today.sh` for Sun-Sat, matching the calendar window)
+7. Personal list (901711996386) for life project tickets -- check for due/overdue items (these become the frog). Only flag **undated** tickets in decisions -- tickets with start_dates are already planned.
+8. Apple Calendar -- run `kairos/tools/calendar-week.sh [YYYY-MM-DD]` with any date in the week (Sun-Sat window)
+9. Cross-reference: map each ClickUp ticket to its project, then to its roadmap domain. This builds the Roadmap Pulse.
 
 ## Workflow
 
@@ -61,6 +63,18 @@ week: YYYY-WNN
 
 # W[NN] -- [theme]
 
+## Roadmap Pulse
+
+| Domain | This Week | Projects | Notes |
+|--------|-----------|----------|-------|
+| Personal | [tickets/events] | [active projects in domain] | [flags if any] |
+| Art | [tickets/events] | | |
+| Music | [tickets/events] | | |
+| Professional | [tickets/events] | | |
+| Travel | [tickets/events] | | |
+
+[Walk each domain from kairos/roadmap.md. For each, show what ClickUp tickets are scheduled this week, which projects are active, and flag domains with zero attention. Episodic domains (Travel, Art) with no activity are normal — only flag if there's an approaching deadline or unbooked commitment.]
+
 ## Load
 
 Trailing [N] days: avg intensity X.X, avg pomodoros X.X
@@ -84,7 +98,7 @@ Trailing [N] days: avg intensity X.X, avg pomodoros X.X
 - **Frog (Mon):** [found from Personal list -- due/overdue life task, linked to ClickUp]
 - **Heaviest day:** [day] -- [why]
 - **Lightest day:** [day]
-- **Score coverage:** [which milestones are covered]
+- **Roadmap coverage:** [which domains have tickets this week, which are dark]
 - **Theme:** [one sentence]
 
 ---
@@ -99,9 +113,9 @@ Trailing [N] days: avg intensity X.X, avg pomodoros X.X
 - **Overdue** -- only flag if due_date has passed. Due dates are for hard external deadlines only. Start_date in the past = "in progress," not overdue.
 - **In-progress carry-overs** -- HIGH tickets started in a prior week still open. In flight, not overdue.
 - **Overstacked days** (too many HIGH tickets + calendar events on one day)
-- **Empty milestones** -- any score milestone getting zero ClickUp attention this week?
+- **Dark domains** -- any roadmap domain getting zero ClickUp attention this week? Only flag if it has active projects with upcoming deadlines.
 - **Approaching deadlines** (within 3 weeks)
-- **Encouraged projects with no dated tickets** -- intentional deferral or needs a task?
+- **Active projects with no dated tickets** -- needs a task or intentional pause?
 
 ## Notes
 
