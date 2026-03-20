@@ -8,7 +8,7 @@ Schedule: end of March (Q1), June (Q2), September (Q3), December (Q4).
 
 1. **Monthly reviews** -- read `kairos/monthly/YYYY/YYYY-MM.md` for each month in the quarter. Primary source.
 2. **Life-area notes** -- read all 13 files in `kairos/life-areas/`
-3. **Score** -- read `kairos/roadmap.md`
+3. **Score** -- read `kairos/roadmaps/`
 4. **Devlog** -- read `kairos/devlog/` for trajectory context
 
 ## Output

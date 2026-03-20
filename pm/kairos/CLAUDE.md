@@ -49,7 +49,7 @@ workspace/
 │   ├── quarterly/YYYY/YYYY-QN.md
 │   ├── memory/YYYY-MM-DD-HHMMSS.md
 │   ├── life-areas/goals.md
-│   ├── roadmap.md
+│   ├── roadmaps/*.md
 │   ├── devlog/
 │   └── tools/
 │       ├── clickup-today.sh

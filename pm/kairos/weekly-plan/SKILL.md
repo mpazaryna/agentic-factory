@@ -13,10 +13,10 @@ Generates the weekly plan draft. Run once at start of week (Sunday or Monday). *
 
 **Read the score, surface decisions, get out of the way.**
 
-The 2026 roadmap (`kairos/roadmap.md`) is the top-level score. ClickUp has the dated tickets. The weekly plan doesn't restate either -- it surfaces only what needs a decision, flags risks, and confirms the week's shape.
+The 2026 roadmap (`kairos/roadmaps/`) is the top-level score. ClickUp has the dated tickets. The weekly plan doesn't restate either -- it surfaces only what needs a decision, flags risks, and confirms the week's shape.
 
 **Three-system model:**
-- **Vault** = the score + narrative (kairos/roadmap.md, weekly plans, daily notes)
+- **Vault** = the score + narrative (kairos/roadmaps/, weekly plans, daily notes)
 - **ClickUp** = task execution (source of truth for tickets, day-level assignment)
 - **Apple Reminders** = personal life (routines, errands, personal admin)
 
@@ -26,7 +26,7 @@ The 2026 roadmap (`kairos/roadmap.md`) is the top-level score. ClickUp has the d
 
 ## Pre-Flight (all agent-gathered, no user input)
 
-1. Read the score -- `kairos/roadmap.md` (domains, milestones, objectives)
+1. Read the score -- `kairos/roadmaps/` (domains, milestones, objectives)
 2. Read project records -- `projects/*.md` (status, which roadmap domain each belongs to)
 3. Read recent devlog -- `kairos/devlog/`
 4. Last week's plan + summary
@@ -73,7 +73,7 @@ week: YYYY-WNN
 | Professional | [tickets/events] | | |
 | Travel | [tickets/events] | | |
 
-[Walk each domain from kairos/roadmap.md. For each, show what ClickUp tickets are scheduled this week, which projects are active, and flag domains with zero attention. Episodic domains (Travel, Art) with no activity are normal — only flag if there's an approaching deadline or unbooked commitment.]
+[Walk each domain from kairos/roadmaps/. For each, show what ClickUp tickets are scheduled this week, which projects are active, and flag domains with zero attention. Episodic domains (Travel, Art) with no activity are normal — only flag if there's an approaching deadline or unbooked commitment.]
 
 ## Load
 

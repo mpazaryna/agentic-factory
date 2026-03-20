@@ -58,7 +58,7 @@ See `monthly.md` for full template.
 
 See `quarterly.md` for full template.
 
-**Reads:** Monthly reviews for the quarter (already synthesized). Life-area notes (`kairos/life-areas/`). The score (`kairos/roadmap.md`).
+**Reads:** Monthly reviews for the quarter (already synthesized). Life-area notes (`kairos/life-areas/`). The score (`kairos/roadmaps/`).
 
 **Writes to:** `kairos/quarterly/YYYY/YYYY-QN.md`
 

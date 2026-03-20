@@ -21,7 +21,7 @@ Appends to `kairos/weekly/YYYY/YYYY-WNN.md` under `# Weekly Summary`.
 
 ## Where the Week Went
 
-Walk the roadmap domains first. This is the lead section -- it frames the week through the year's arrangement, not through whichever project was loudest. Read domains from `kairos/roadmap.md`.
+Walk the roadmap domains first. This is the lead section -- it frames the week through the year's arrangement, not through whichever project was loudest. Read domains from `kairos/roadmaps/`.
 
 | Domain | Attention | Notes |
 |--------|-----------|-------|
