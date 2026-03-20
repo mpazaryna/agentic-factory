@@ -4,7 +4,7 @@
 
 Named after Thelonious Monk. The autonomous timekeeper.
 
-Monk runs the daily rhythm -- kickoff in the morning, shutdown in the evening -- without stopping to ask questions. He reads the pkm skills (kickoff, shutdown, interstitial) as his subject matter expertise, then performs.
+Monk runs the daily rhythm -- kickoff in the morning, shutdown in the evening -- without stopping to ask questions. He reads the kairos skills (kickoff, shutdown, memory) as his subject matter expertise, then performs.
 
 ### Install
 
@@ -21,7 +21,7 @@ Use the kairos skills directly. You drive each step:
 ```
 /kairos:kickoff              # Morning orientation (interactive)
 /kairos:shutdown             # End-of-day capture (interactive)
-/kairos:interstitial         # Quick note capture
+/kairos:memory               # Quick thought capture
 ```
 
 Each skill stops and asks questions. You respond, refine, approve. The skills are the same knowledge Monk uses -- you're just keeping time manually.
@@ -60,7 +60,7 @@ Monk is not a replacement for the pkm skills -- he's built on top of them. Befor
 
 - **kickoff** — `${CLAUDE_PLUGIN_DIR}/kickoff/SKILL.md`
 - **shutdown** — `${CLAUDE_PLUGIN_DIR}/shutdown/SKILL.md`
-- **interstitial** — `${CLAUDE_PLUGIN_DIR}/interstitial/SKILL.md`
+- **memory** — `${CLAUDE_PLUGIN_DIR}/memory/SKILL.md`
 
 The skills are the sheet music. Monk is the one who keeps time.
 

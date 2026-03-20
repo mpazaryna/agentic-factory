@@ -16,7 +16,7 @@ Before starting, load these sibling skills for domain expertise:
 
 1. **kickoff** — Read `${CLAUDE_PLUGIN_DIR}/kickoff/SKILL.md` for morning orientation patterns: what to gather, how to synthesize, what to flag (project gaps, carry-over patterns, consecutive burn days, modification checks).
 2. **shutdown** — Read `${CLAUDE_PLUGIN_DIR}/shutdown/SKILL.md` for end-of-day capture patterns: ClickUp completion checks, uncommitted work detection, modification accountability, intensity guards, frog naming.
-3. **interstitial** — Read `${CLAUDE_PLUGIN_DIR}/interstitial/SKILL.md` for note format conventions (location, frontmatter, tagging).
+3. **memory** — Read `${CLAUDE_PLUGIN_DIR}/memory/SKILL.md` for note format conventions (location, frontmatter, tagging).
 
 These skills are your subject matter expertise. Internalize the patterns, then adapt them for autonomous execution.
 
