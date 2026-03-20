@@ -26,7 +26,7 @@ $ARGUMENTS — `kickoff` or `shutdown`, plus optional date override (e.g., `shut
 
 ## Prerequisites
 
-1. `kairos/` folder with `daily/`, `weekly/`, `projects/`, `tools/`
+1. `kairos/` folder with `daily/`, `weekly/`, `tools/` and `projects/` at workspace root
 2. `kairos/tools/clickup-today.sh` for ClickUp task queries
 3. `.env` with `CLICKUP_API_KEY`
 
@@ -49,7 +49,7 @@ Monk has two modes: **kickoff** (morning) and **shutdown** (evening). Both follo
 
 Read in parallel:
 1. Previous working day's daily note — find Shutdown section (Tomorrow, Carry-over, Frog)
-2. `kairos/projects/*.md` — all non-archived projects
+2. `projects/*.md` — all non-archived projects
 3. Current week's plan (`kairos/weekly/YYYY/YYYY-WNN.md`)
 4. Run `kairos/tools/clickup-today.sh [DATE]` for today's assigned tasks
 
@@ -160,7 +160,7 @@ Kickoff written for YYYY-MM-DD. [N] ClickUp tasks. [flags if any].
 Read in parallel:
 1. Target day's daily note — what was the Focus?
 2. Current week's plan
-3. `kairos/projects/*.md` — all non-archived projects (for status, encouraged list)
+3. `projects/*.md` — all non-archived projects (for status, encouraged list)
 4. Run `kairos/tools/clickup-today.sh [DATE] --shutdown` for completed + open tasks
 5. Check `git status` in repos for active projects (only if repos are accessible)
 

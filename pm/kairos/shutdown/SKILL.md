@@ -39,7 +39,7 @@ Track whether this is a **late shutdown** (target day < today). This affects the
 Read in parallel, don't output yet:
 1. Target day's daily note - what was the Focus?
 2. Current week's plan (`kairos/weekly/`) - what was planned for today? What's planned for tomorrow? Are encouraged projects intentionally skipped this week?
-3. `kairos/projects/*.md` - all non-archived projects
+3. `projects/*.md` - all non-archived projects
 4. Active project repos - check for uncommitted work
 5. ClickUp tasks assigned to the target day - use `kairos/tools/clickup-today.sh [DATE] --shutdown` to get both open AND completed tasks (including subtasks closed today without a start_date)
 

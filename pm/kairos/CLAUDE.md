@@ -36,29 +36,32 @@ Monk loads the sibling skills as domain expertise:
 
 ## Data Layout
 
-All data lives in a self-contained `kairos/` folder:
+Two-folder convention: `kairos/` owns time, `projects/` owns work.
 
 ```
-kairos/
-├── daily/YYYY/YYYY-MM-DD.md
-├── weekly/YYYY/YYYY-WNN.md
-├── monthly/YYYY/YYYY-MM.md
-├── quarterly/YYYY/YYYY-QN.md
-├── interstitial/YYYY-MM-DD-HHMMSS.md
-├── projects/*.md
-├── life-areas/goals.md
-├── roadmap.md
-├── devlog/
-└── tools/
-    ├── clickup-today.sh
-    └── calendar-week.sh
+workspace/
+├── projects/                         # shared canonical data — read by all agents
+│   └── *.md
+├── kairos/                           # kairos-specific state
+│   ├── daily/YYYY/YYYY-MM-DD.md
+│   ├── weekly/YYYY/YYYY-WNN.md
+│   ├── monthly/YYYY/YYYY-MM.md
+│   ├── quarterly/YYYY/YYYY-QN.md
+│   ├── interstitial/YYYY-MM-DD-HHMMSS.md
+│   ├── life-areas/goals.md
+│   ├── roadmap.md
+│   ├── devlog/
+│   └── tools/
+│       ├── clickup-today.sh
+│       └── calendar-week.sh
+└── .env
 ```
 
 Monk reads from (never asks for):
 - ClickUp API via `kairos/tools/clickup-today.sh`
 - Daily notes (`kairos/daily/`)
 - Weekly plan (`kairos/weekly/`)
-- Project records (`kairos/projects/`)
+- Project records (`projects/`)
 
 ## Design Principles
 
