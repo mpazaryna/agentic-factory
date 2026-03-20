@@ -12,7 +12,7 @@ Traditional productivity systems make you the executor. Kairos inverts this: the
 
 **Daily Rituals:**
 - **kickoff** — Morning orientation: carry-overs, project status, daily focus
-- **memory** — Quick timestamped thought capture throughout the day
+- **knote** — Quick timestamped thought capture throughout the day
 - **shutdown** — End-of-day closure: accomplishments, blockers, intensity, tomorrow's frog
 
 **Weekly:**
@@ -21,7 +21,7 @@ Traditional productivity systems make you the executor. Kairos inverts this: the
 - **review** — Review at weekly, monthly, or quarterly zoom (dispatches to sub-documents)
 
 **Utilities:**
-- **remarkable** — Extract dated entries from Remarkable PDF notebooks into memory notes
+- **remarkable** — Extract dated entries from Remarkable PDF notebooks into knotes
 
 ### Agent: Monk
 
@@ -32,7 +32,7 @@ Monk runs kickoff and shutdown autonomously -- reads ClickUp, daily notes, weekl
 Monk loads the sibling skills as domain expertise:
 - **kickoff** — `${CLAUDE_PLUGIN_DIR}/kickoff/SKILL.md`
 - **shutdown** — `${CLAUDE_PLUGIN_DIR}/shutdown/SKILL.md`
-- **memory** — `${CLAUDE_PLUGIN_DIR}/memory/SKILL.md`
+- **knote** — `${CLAUDE_PLUGIN_DIR}/knote/SKILL.md`
 
 ## Data Layout
 
@@ -47,7 +47,7 @@ workspace/
 │   ├── weekly/YYYY/YYYY-WNN.md
 │   ├── monthly/YYYY/YYYY-MM.md
 │   ├── quarterly/YYYY/YYYY-QN.md
-│   ├── memory/YYYY-MM-DD-HHMMSS.md
+│   ├── knotes/YYYY-MM-DD-HHMMSS.md
 │   ├── life-areas/goals.md
 │   ├── roadmaps/*.md
 │   ├── devlog/

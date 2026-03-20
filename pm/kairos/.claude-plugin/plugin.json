@@ -1,7 +1,7 @@
 {
   "name": "kairos",
   "description": "AI-augmented productivity system: autonomous daily rhythm (kickoff/shutdown), load management, and weekly synthesis. Monk agent runs the rituals without human interaction.",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "author": {
     "name": "mpaz"
   },
