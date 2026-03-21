@@ -1,30 +1,30 @@
 ---
-name: reaper
-description: "Curated RSS news briefing — fetches tech feeds and curates a scannable digest. Use when you want a news briefing or ask what's new."
-allowed-tools: Read, Write, Bash, WebFetch
+name: rss
+description: "Fetch RSS feeds via WebFetch and curate a scannable news briefing. Use when you want a news briefing or ask what's new."
+allowed-tools: WebFetch, Write, Read
 disable-model-invocation: false
 ---
 
-# Reaper — Curated News Briefing
+# RSS — Curated News Briefing
 
-Fetch RSS feeds, filter, and curate a briefing. Write it to a file.
+Fetch RSS feeds using the **WebFetch** tool. Do NOT use Bash, Python, or curl. WebFetch is the only tool for fetching URLs.
 
 ## Feeds
 
-Fetch these two feeds using WebFetch:
+Fetch each of these feeds using WebFetch (one call per URL):
 
 1. `https://blog.cloudflare.com/rss/`
 2. `https://feeds.arstechnica.com/arstechnica/index`
 
 ## Steps
 
-1. Use WebFetch to fetch each feed URL above. The response will be XML (RSS).
+1. Call **WebFetch** for each feed URL above. Each response will be RSS XML.
 
-2. Parse the XML to extract the 10 most recent entries from each feed. For each entry extract: title, link, published date, and a brief summary.
+2. Parse the XML to extract the 10 most recent entries from each feed. For each entry extract: title, link, published date, and a one-sentence summary.
 
 3. Curate to the 15 most relevant entries across both feeds.
 
-4. Write the briefing to `kairos/briefings/YYYY-MM-DD.md` using this EXACT format:
+4. Use **Write** to save the briefing to `kairos/briefings/YYYY-MM-DD.md` using this EXACT format:
 
 ```markdown
 ---
