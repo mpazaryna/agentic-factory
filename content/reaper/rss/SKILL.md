@@ -1,36 +1,58 @@
 ---
 name: rss
-description: "Fetch RSS feeds via WebFetch and curate a scannable news briefing. Use when you want a news briefing or ask what's new."
-allowed-tools: WebFetch, Write, Read
+description: "Fetch RSS feeds and curate a scannable news briefing. Use when you want a news briefing or ask what's new."
+allowed-tools: Read, Write, Bash
 disable-model-invocation: false
 ---
 
 # RSS — Curated News Briefing
 
-Fetch RSS feeds using the **WebFetch** tool. Do NOT use Bash, Python, or curl. WebFetch is the only tool for fetching URLs.
+Fetch RSS feeds using the bundled Python script at `${CLAUDE_SKILL_DIR}/../tools/fetch_feeds.py`. The script reads OPML files from the vault's `data/opml/` folder.
 
-## Feeds
+## Setup
 
-Fetch each of these feeds using WebFetch (one call per URL):
+Place OPML subscription files in `data/opml/` in the working directory:
 
-1. `https://blog.cloudflare.com/rss/`
-2. `https://feeds.arstechnica.com/arstechnica/index`
+```
+data/opml/
+├── tech.opml
+├── business.opml
+└── [any .opml files]
+```
+
+## How to Fetch
+
+```bash
+# All feeds from an OPML file
+python3 ${CLAUDE_SKILL_DIR}/../tools/fetch_feeds.py --opml data/opml/tech.opml
+
+# Single feed by URL
+python3 ${CLAUDE_SKILL_DIR}/../tools/fetch_feeds.py https://blog.cloudflare.com/rss/
+
+# Limit entries per feed
+python3 ${CLAUDE_SKILL_DIR}/../tools/fetch_feeds.py --opml data/opml/tech.opml --limit 5
+```
+
+The script returns JSON. Parse it to build the briefing.
 
 ## Steps
 
-1. Call **WebFetch** for each feed URL above. Each response will be RSS XML.
+1. Check `data/opml/` for available OPML files. If none exist, tell the user to add their subscriptions there and stop.
 
-2. Parse the XML to extract the 10 most recent entries from each feed. For each entry extract: title, link, published date, and a one-sentence summary.
+2. Run the fetch script:
+   ```bash
+   python3 ${CLAUDE_SKILL_DIR}/../tools/fetch_feeds.py --opml data/opml/tech.opml
+   ```
 
-3. Curate to the 15 most relevant entries across both feeds.
+3. Parse the JSON output. Filter and curate to the 15-20 most relevant entries.
 
-4. Use **Write** to save the briefing to `kairos/briefings/YYYY-MM-DD.md` using this EXACT format:
+4. Write the briefing to `kairos/briefings/YYYY-MM-DD.md` using this EXACT format:
 
 ```markdown
 ---
 tags: [briefing]
 date: YYYY-MM-DD
-feeds: 2
+feeds: [number of feeds]
 ---
 
 # Briefing — Month Day, Year

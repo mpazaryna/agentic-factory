@@ -18,28 +18,56 @@ Before starting, load the RSS skill for domain expertise:
 
 ## Workflow
 
-### Step 1: Fetch Feeds
+### Step 1: Find Feeds
 
-Use WebFetch to fetch these two RSS feeds:
+Check `data/opml/` for available OPML files:
 
-1. `https://blog.cloudflare.com/rss/`
-2. `https://feeds.arstechnica.com/arstechnica/index`
+```bash
+ls data/opml/*.opml 2>/dev/null
+```
 
-### Step 2: Parse and Curate
+If none exist: "No feeds configured. Add OPML files to `data/opml/`." Stop.
 
-Parse the RSS XML from each feed. Extract the 10 most recent entries per feed (title, link, published date, summary). Curate to the 15 most relevant entries total.
+### Step 2: Determine Source
 
-### Step 3: Write Briefing
+- No arguments, "news", "what's new": use `data/opml/tech.opml` (or first available)
+- User names a file: use `data/opml/<name>.opml`
+- User provides a URL: fetch that single feed
 
-Write the briefing to `kairos/briefings/YYYY-MM-DD.md`. Create the directory if needed.
+### Step 3: Fetch and Parse
 
-Use this EXACT format — no conversational text, no summary, just this file:
+Run the fetch script:
+
+```bash
+python3 ${CLAUDE_PLUGIN_DIR}/tools/fetch_feeds.py --opml data/opml/tech.opml --limit 10
+```
+
+Or for a single URL:
+
+```bash
+python3 ${CLAUDE_PLUGIN_DIR}/tools/fetch_feeds.py <url>
+```
+
+### Step 4: Curate
+
+From the JSON output:
+1. Drop job posts, sponsored content, low-substance items
+2. Identify the most significant stories for Hot
+3. Keep genuinely notable stories for Notable
+4. Everything else worth a glance goes to Radar
+5. Curate to 15-20 total entries
+
+### Step 5: Write Briefing
+
+Write to `kairos/briefings/YYYY-MM-DD.md`. Create the directory if needed.
+
+Use this EXACT format:
 
 ```markdown
 ---
 tags: [briefing]
 date: YYYY-MM-DD
-feeds: 2
+feeds: [number of feeds]
 ---
 
 # Briefing — Month Day, Year
@@ -59,9 +87,9 @@ feeds: 2
 - [Story title](url) — _Source_
 ```
 
-### Step 4: Report
+### Step 6: Report
 
-Output ONLY this one line: `Briefing written to kairos/briefings/YYYY-MM-DD.md`
+Output ONLY: `Briefing written to kairos/briefings/YYYY-MM-DD.md`
 
 ## Rules
 
