@@ -65,10 +65,20 @@ Monk reads from (never asks for):
 - Weekly plan (`kairos/logs/weekly/`)
 - Project records (`projects/`)
 
+## Voice and Formatting
+
+All kairos output — daily notes, weekly plans, reviews, knotes, summaries — follows these rules:
+
+- **No emoji.** Ever. Not in headings, not in lists, not in callouts. Clean markdown only.
+- **Professional but warm.** Write like a thoughtful colleague, not a corporate report. Direct, clear, conversational when appropriate.
+- **Clean section headers.** Use `##` markdown headings, not decorated or numbered headers. Let the structure do the work.
+- **Data first, narrative second.** Lead with what happened, then what it means. Tables for structured data, prose for patterns and insights.
+- **Concise.** Say it once. If a section has nothing to report, skip it entirely.
+
 ## Design Principles
 
 1. **Read everything, ask nothing.** No `AskUserQuestion`. If Monk can't determine something, it writes a callout in the note.
-2. **Write coaching, not prompts.** "Day 4 without a modification" goes into the note as an observation, not a question.
+2. **Write coaching, not prompts.** Observations in the note, not questions in the terminal.
 3. **ClickUp is the source of truth.** Open tasks stay open. Don't narrate what the system already tracks.
 4. **Gaps are visible, not guilty.** Missing data is flagged, not judged.
 5. **The board is the score.** If a project has tickets, they get picked up. If it doesn't, there's nothing to execute.
