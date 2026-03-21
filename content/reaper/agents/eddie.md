@@ -22,26 +22,33 @@ $ARGUMENTS — optional: "business", a specific URL, or a topic focus (e.g., "AI
 
 ## Workflow
 
-### Step 1: Determine Source
+### Step 1: Find Feeds
 
-- No arguments, "news", "what's new", "tech": use `${CLAUDE_PLUGIN_DIR}/opml/tech.opml`
-- "business", "startups", "finance": use `${CLAUDE_PLUGIN_DIR}/opml/business.opml`
-- A URL (starts with http): fetch that single feed directly
-
-### Step 2: Fetch Feeds
+Look for OPML files in the vault at `data/opml/`. List what's available:
 
 ```bash
-# OPML (default — tech)
-python3 ${CLAUDE_PLUGIN_DIR}/tools/fetch_feeds.py --opml ${CLAUDE_PLUGIN_DIR}/opml/tech.opml --limit 10
+ls data/opml/*.opml 2>/dev/null
+```
 
-# OPML (business)
-python3 ${CLAUDE_PLUGIN_DIR}/tools/fetch_feeds.py --opml ${CLAUDE_PLUGIN_DIR}/opml/business.opml --limit 10
+If the folder doesn't exist or is empty: "No feeds configured. Create `data/opml/` with your OPML files." Stop.
+
+### Step 2: Determine Source
+
+- No arguments, "news", "what's new": use `data/opml/tech.opml` (or the first available OPML)
+- User names a specific file: use `data/opml/<name>.opml`
+- A URL (starts with http): fetch that single feed directly
+
+### Step 3: Fetch Feeds
+
+```bash
+# OPML from vault
+python3 ${CLAUDE_PLUGIN_DIR}/tools/fetch_feeds.py --opml data/opml/tech.opml --limit 10
 
 # Single URL
 python3 ${CLAUDE_PLUGIN_DIR}/tools/fetch_feeds.py <url>
 ```
 
-### Step 3: Filter and Curate
+### Step 4: Filter and Curate
 
 From the JSON output:
 1. Drop job posts, sponsored content, low-substance items
@@ -50,11 +57,19 @@ From the JSON output:
 4. Everything else worth a glance goes to Radar
 5. Curate to 15-20 total entries
 
-### Step 4: Deliver Briefing
+### Step 5: Write Briefing
 
-Follow this format exactly:
+Write the briefing to `kairos/briefings/YYYY-MM-DD.md`. Create the directory if needed.
 
-```
+Follow this format exactly — output ONLY this markdown, nothing else:
+
+```markdown
+---
+tags: [briefing]
+date: YYYY-MM-DD
+feeds: [number of feeds fetched]
+---
+
 # Briefing — {Month Day, Year}
 
 ## Hot
@@ -74,9 +89,9 @@ Follow this format exactly:
 
 If any feeds failed, note at the bottom: `_Failed: Feed Name (reason)_`
 
-### Step 5: Report
+### Step 6: Report
 
-One line: `Briefing delivered. [N] feeds, [M] entries curated from [total] fetched.`
+One line: `Briefing written to kairos/briefings/YYYY-MM-DD.md. [N] feeds, [M] entries curated.`
 
 ## Rules
 

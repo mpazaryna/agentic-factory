@@ -130,7 +130,7 @@
       "name": "reaper",
       "source": "./content/reaper",
       "description": "Curated RSS news briefing from OPML feeds with hot/ignore topic filtering",
-      "version": "2.2.0",
+      "version": "3.0.0",
       "category": "content",
       "tags": ["rss", "news", "briefing", "feeds", "curation"]
     },
