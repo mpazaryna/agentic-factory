@@ -1,19 +1,20 @@
 ---
 name: review
-description: "Run a review at weekly, monthly, or quarterly zoom — synthesize notes, surface patterns, generate retrospective. Use when running periodic reviews."
-argument-hint: "weekly | monthly | quarterly"
+description: "Run a review at weekly, monthly, quarterly, or yearly zoom — synthesize notes, surface patterns, generate retrospective. Use when running periodic reviews."
+argument-hint: "weekly | monthly | quarterly | yearly"
 allowed-tools: Read, Glob, Grep, Bash, Write
 disable-model-invocation: false
 ---
 
 # Review
 
-One skill, three zoom levels. Data cascades up -- weekly reads raw data, monthly reads weeklies, quarterly reads monthlies.
+One skill, four zoom levels. Data cascades up -- weekly reads raw data, monthly reads weeklies, quarterly reads monthlies, yearly reads quarterlies.
 
 ```
 /review weekly    -- end of work week (Friday)
 /review monthly   -- end of month
 /review quarterly -- end of quarter (Mar, Jun, Sep, Dec)
+/review yearly    -- end of year (December)
 ```
 
 ## Core Principle
@@ -66,11 +67,23 @@ See `quarterly.md` for full template.
 
 This is a compass check, not a performance review.
 
+### Yearly (`/review yearly`)
+
+See `yearly.md` for full template.
+
+**Reads:** Quarterly reviews for the year (already synthesized). Life-area notes (`kairos/life-areas/`). Roadmaps (`kairos/roadmaps/`). Projects (`projects/`).
+
+**Writes to:** `kairos/logs/yearly/YYYY.md`
+
+**Key sections:** The year in narrative, life area arc (where each area started vs ended), goal outcomes (met / missed / evolved), portfolio evolution (what shipped, what was archived, what emerged), direction for next year.
+
+This is the annual reflection. What changed, what held, what surprised you.
+
 ## Notes
 
 - Can be run multiple times at any zoom level -- overwrites previous output
 - Each level trusts the level below. Monthly doesn't re-read daily notes if weeklies exist.
-- Create folders as needed (`kairos/logs/monthly/YYYY/`, `kairos/logs/quarterly/YYYY/`)
+- Create folders as needed (`kairos/logs/monthly/YYYY/`, `kairos/logs/quarterly/YYYY/`, `kairos/logs/yearly/`)
 - LooseIt data feeds weekly and bubbles up. If not provided at weekly, note it as missing.
 - Clockify CSV: look for `~/Desktop/Clockify_Time_Report_Detailed_*.csv`. If not found, ask once.
 - ClickUp shutdown data: use `kairos/tools/clickup-today.sh [DATE] --shutdown` for completion picture

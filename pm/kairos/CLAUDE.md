@@ -47,7 +47,8 @@ workspace/
 │   │   ├── daily/YYYY/YYYY-MM-DD.md
 │   │   ├── weekly/YYYY/YYYY-WNN.md
 │   │   ├── monthly/YYYY/YYYY-MM.md
-│   │   └── quarterly/YYYY/YYYY-QN.md
+│   │   ├── quarterly/YYYY/YYYY-QN.md
+│   │   └── yearly/YYYY.md
 │   ├── knotes/YYYY/MM/YYYY-MM-DD-HHMMSS.md
 │   ├── life-areas/goals.md
 │   ├── roadmaps/*.md
