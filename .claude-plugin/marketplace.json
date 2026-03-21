@@ -127,6 +127,14 @@
       "tags": ["kairos", "productivity", "autonomous", "daily-rituals", "agent"]
     },
     {
+      "name": "reaper",
+      "source": "./content/reaper",
+      "description": "Curated RSS news briefing from OPML feeds with hot/ignore topic filtering",
+      "version": "1.0.0",
+      "category": "content",
+      "tags": ["rss", "news", "briefing", "feeds", "curation"]
+    },
+    {
       "name": "yoga",
       "source": "./domain/yoga",
       "description": "Yoga class planning: multi-agent system for sequencing, anatomy, themes, and teaching readiness",
