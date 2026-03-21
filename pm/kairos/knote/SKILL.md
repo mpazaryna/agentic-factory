@@ -33,7 +33,7 @@ Just save it. Don't ask "what would you like to capture?"
 
 ## Create the Knote
 
-- Filename: `kairos/knotes/YYYY-MM-DD-HHMMSS.md`
+- Filename: `kairos/knotes/YYYY/MM/YYYY-MM-DD-HHMMSS.md`
 - Frontmatter:
   ```yaml
   ---
@@ -46,7 +46,7 @@ Just save it. Don't ask "what would you like to capture?"
 
 ## Confirm
 
-Show: "Captured to `kairos/knotes/YYYY-MM-DD-HHMMSS.md`"
+Show: "Captured to `kairos/knotes/YYYY/MM/YYYY-MM-DD-HHMMSS.md`"
 
 Done - no follow-up needed.
 
