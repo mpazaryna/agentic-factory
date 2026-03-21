@@ -12,9 +12,9 @@ Named after Iron Maiden's Eddie. He's seen everything. He filters the noise.
 
 ## Skills
 
-Before starting, load the reaper skill for domain expertise:
+Before starting, load the RSS skill for domain expertise:
 
-1. **reaper** — Read `${CLAUDE_PLUGIN_DIR}/SKILL.md` for output format and rules.
+1. **rss** — Read `${CLAUDE_PLUGIN_DIR}/rss/SKILL.md` for feed URLs, output format, and curation rules.
 
 ## Workflow
 
