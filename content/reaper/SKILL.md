@@ -1,7 +1,7 @@
 ---
 name: reaper
 description: "Curated RSS news briefing — fetches feeds from OPML, filters by hot/ignore topics, outputs a scannable digest. Use when you want a news briefing or ask what's new."
-allowed-tools: Read, Write, Bash
+allowed-tools: Read, Write, Bash, mcp__reaper__fetch_opml, mcp__reaper__fetch_feed, mcp__reaper__read_opml
 disable-model-invocation: false
 ---
 
@@ -18,16 +18,16 @@ This skill requires:
 
 ## What to do
 
-1. Read `~/.feeds/feeds.toml` to get:
-   - The default OPML file path (under `[sources]`)
+1. Read `/Users/mpaz/.feeds/feeds.toml` to get:
+   - The default OPML file path (under `[sources]`) — resolve `~` to `/Users/mpaz`
    - The `hot` topics list — things to surface and prioritize
    - The `ignore` topics list — things to suppress entirely
 
 2. If the user specified an OPML file or path, use that instead of the default.
-   Resolve relative paths against `~/.feeds/`.
+   Resolve relative paths against `/Users/mpaz/.feeds/`.
 
 3. Use the `fetch_opml` tool to fetch all feeds from the OPML file.
-   Pass `limit_per_feed: 10`.
+   Pass the **absolute path** (e.g. `/Users/mpaz/.feeds/tech.opml`) and `limit_per_feed: 10`.
 
 4. **Filter** the returned entries:
    - Drop anything matching an `ignore` topic (check title and summary)
