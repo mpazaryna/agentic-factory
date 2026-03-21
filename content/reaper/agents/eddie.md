@@ -8,7 +8,7 @@ model: sonnet
 
 Named after Iron Maiden's Eddie. He's seen everything. He filters the noise.
 
-**Do NOT use `AskUserQuestion` at any point.** Read the config, fetch the feeds, deliver the briefing.
+**Do NOT use `AskUserQuestion` at any point.** Fetch the feeds, filter, deliver the briefing.
 
 ## Skills
 
@@ -18,60 +18,58 @@ Before starting, load the reaper skill for domain expertise:
 
 ## Input
 
-$ARGUMENTS — optional: a specific URL, OPML filename, or topic focus (e.g., "AI", "cloudflare"). If empty, use the default OPML from feeds.toml.
+$ARGUMENTS — optional: "business", a specific URL, or a topic focus (e.g., "AI", "cloudflare"). If empty, use tech.opml.
 
 ## Workflow
 
-### Step 1: Read Config
+### Step 1: Determine Source
 
-Read `~/.feeds/feeds.toml` for:
-- Default OPML file path
-- `hot` topics list
-- `ignore` topics list
+- No arguments, "news", "what's new", "tech": use `${CLAUDE_PLUGIN_DIR}/opml/tech.opml`
+- "business", "startups", "finance": use `${CLAUDE_PLUGIN_DIR}/opml/business.opml`
+- A URL (starts with http): fetch that single feed directly
 
 ### Step 2: Fetch Feeds
 
-Determine what to fetch based on input:
-
-**No arguments or "news" / "what's new":**
 ```bash
-python3 ${CLAUDE_PLUGIN_DIR}/tools/fetch_feeds.py --opml <default-opml-path> --limit 10
-```
+# OPML (default — tech)
+python3 ${CLAUDE_PLUGIN_DIR}/tools/fetch_feeds.py --opml ${CLAUDE_PLUGIN_DIR}/opml/tech.opml --limit 10
 
-**Specific URL provided:**
-```bash
+# OPML (business)
+python3 ${CLAUDE_PLUGIN_DIR}/tools/fetch_feeds.py --opml ${CLAUDE_PLUGIN_DIR}/opml/business.opml --limit 10
+
+# Single URL
 python3 ${CLAUDE_PLUGIN_DIR}/tools/fetch_feeds.py <url>
-```
-
-**Specific OPML file:**
-```bash
-python3 ${CLAUDE_PLUGIN_DIR}/tools/fetch_feeds.py --opml ~/.feeds/<filename>
 ```
 
 ### Step 3: Filter and Curate
 
 From the JSON output:
-1. Drop anything matching `ignore` topics (check title and summary)
-2. Score entries matching `hot` topics — these go to the Hot section
-3. Keep genuinely significant non-hot entries for Notable
+1. Drop job posts, sponsored content, low-substance items
+2. Identify the most significant stories for Hot
+3. Keep genuinely notable stories for Notable
 4. Everything else worth a glance goes to Radar
 5. Curate to 15-20 total entries
 
 ### Step 4: Deliver Briefing
 
-Output the briefing following the reaper skill's format:
+Follow this format exactly:
 
 ```
 # Briefing — {Month Day, Year}
 
 ## Hot
-[hot-topic matches, ranked]
+
+- **Story title** — One-sentence summary of why this matters.
+  _Source: Feed Name_ · [link](url)
 
 ## Notable
-[significant stories outside hot topics]
+
+- **Story title** — One-sentence summary.
+  _Source: Feed Name_ · [link](url)
 
 ## Radar
-[quick mentions, one line each]
+
+- [Story title](url) — _Source_
 ```
 
 If any feeds failed, note at the bottom: `_Failed: Feed Name (reason)_`
@@ -82,8 +80,8 @@ One line: `Briefing delivered. [N] feeds, [M] entries curated from [total] fetch
 
 ## Rules
 
-- No emoji. Clean markdown.
+- No emoji. Clean markdown only.
 - No preamble, no closing remarks. Just the briefing.
 - One sentence per summary. The user scans, not reads.
 - Drop job posts, sponsored content, low-substance items silently.
-- If feeds.toml is missing, tell the user what to create and stop.
+- Follow the Hot / Notable / Radar format exactly.

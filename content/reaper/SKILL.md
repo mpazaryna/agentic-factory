@@ -1,76 +1,69 @@
 ---
 name: reaper
-description: "Curated RSS news briefing — fetches feeds from a URL or OPML file, filters by hot/ignore topics, outputs a scannable digest. Use when you want a news briefing or ask what's new."
+description: "Curated RSS news briefing — fetches feeds from bundled OPML files or a URL, filters and curates a scannable digest. Use when you want a news briefing or ask what's new."
 allowed-tools: Read, Bash
 disable-model-invocation: false
 ---
 
 # Reaper — Curated News Briefing
 
-Fetch, filter, and curate a news briefing from RSS feeds. No MCP server needed — uses a bundled Python script.
+Fetch, filter, and curate a news briefing from RSS feeds. OPML files are bundled — no external config needed.
 
-## Setup
+## Available Feeds
 
-- A `feeds.toml` file in `~/.feeds/` with your preferences (hot/ignore topics, default OPML)
-- One or more OPML files in `~/.feeds/` with your subscriptions
-- Python 3.8+ (standard library only — no pip install needed)
+| File | Description |
+|------|-------------|
+| `${CLAUDE_SKILL_DIR}/opml/tech.opml` | AI/ML, tech news, development (7 feeds) |
+| `${CLAUDE_SKILL_DIR}/opml/business.opml` | Finance, markets, startups (4 feeds) |
 
 ## How It Works
 
-The skill uses `${CLAUDE_SKILL_DIR}/tools/fetch_feeds.py` to fetch feeds. The script takes a URL or OPML file and returns JSON.
-
 ```bash
-# Single feed
+# All tech feeds (default)
+python3 ${CLAUDE_SKILL_DIR}/tools/fetch_feeds.py --opml ${CLAUDE_SKILL_DIR}/opml/tech.opml
+
+# Business feeds
+python3 ${CLAUDE_SKILL_DIR}/tools/fetch_feeds.py --opml ${CLAUDE_SKILL_DIR}/opml/business.opml
+
+# Single feed by URL
 python3 ${CLAUDE_SKILL_DIR}/tools/fetch_feeds.py https://blog.cloudflare.com/rss/
 
-# All feeds from an OPML file
-python3 ${CLAUDE_SKILL_DIR}/tools/fetch_feeds.py --opml ~/.feeds/tech.opml
-
 # Limit entries per feed
-python3 ${CLAUDE_SKILL_DIR}/tools/fetch_feeds.py --opml ~/.feeds/tech.opml --limit 5
+python3 ${CLAUDE_SKILL_DIR}/tools/fetch_feeds.py --opml ${CLAUDE_SKILL_DIR}/opml/tech.opml --limit 5
 ```
 
 ## What to Do
 
-1. Read `~/.feeds/feeds.toml` to get:
-   - The default OPML file path (under `[sources]`)
-   - The `hot` topics list — things to surface and prioritize
-   - The `ignore` topics list — things to suppress entirely
+1. Determine which feeds to use:
+   - Default (no qualifier): `tech.opml`
+   - "business" or "startups": `business.opml`
+   - Specific URL provided: fetch that single feed
 
-2. If the user specified a URL, fetch that single feed:
+2. Fetch the feeds:
    ```bash
-   python3 ${CLAUDE_SKILL_DIR}/tools/fetch_feeds.py <url>
+   python3 ${CLAUDE_SKILL_DIR}/tools/fetch_feeds.py --opml ${CLAUDE_SKILL_DIR}/opml/<file>.opml
    ```
 
-3. If the user specified an OPML file, or no specific source (use default from feeds.toml):
-   ```bash
-   python3 ${CLAUDE_SKILL_DIR}/tools/fetch_feeds.py --opml <path>
-   ```
+3. Parse the JSON output. **Filter** the entries:
+   - Drop job posts, sponsored content, low-substance items
+   - Identify genuinely significant or surprising stories
+   - Curate down to the 15-20 most relevant entries
 
-4. Parse the JSON output. **Filter** the entries:
-   - Drop anything matching an `ignore` topic (check title and summary)
-   - Score the rest: entries matching `hot` topics get priority
-   - Keep non-hot entries only if they are genuinely significant or surprising
-
-5. **Curate** down to the 15-20 most relevant entries.
-
-6. **Format** the output as a briefing using the format below.
-
-## Output Format
+4. **Format** the output as a briefing:
 
 ```
 # Briefing — {Month Day, Year}
 
 ## Hot
 
-Stories matching your hot topics, ranked by relevance.
+Top stories — the most significant items across all feeds.
 
 - **Story title** — One-sentence summary of why this matters.
   _Source: Feed Name_ · [link](url)
 
 ## Notable
 
-Significant stories outside your stated interests.
+Worth knowing — significant but not leading.
 
 - **Story title** — One-sentence summary.
   _Source: Feed Name_ · [link](url)
@@ -84,25 +77,19 @@ Quick mentions — one line each.
 
 ## Rules
 
-- Lead with hot-topic matches under **Hot**. These are the user's stated interests — give them priority.
-- **Notable** is for stories that don't match hot topics but are genuinely significant.
-- **Radar** is for everything else worth a glance — one line, no summary.
-- Do NOT include anything matching ignore topics. Drop them silently.
-- Do NOT include job posts, sponsored content, or low-substance items.
-- Do NOT add preamble or closing remarks. Just the briefing.
-- Be concise. One sentence per summary. The user scans this, not reads essays.
-- If a feed failed to fetch, mention it briefly at the bottom: `_Failed: Feed Name (reason)_`
+- No emoji. Clean markdown only.
+- No preamble or closing remarks. Just the briefing.
+- One sentence per summary. The user scans, not reads.
+- Drop job posts, sponsored content, low-substance items silently.
+- If a feed failed to fetch, note at the bottom: `_Failed: Feed Name (reason)_`
 
 ## Examples
 
-User: "briefing"
-> Use default OPML from feeds.toml, full briefing.
+User: "what's new" or "news"
+> Fetch tech.opml, full briefing.
 
-User: "briefing from finance.opml"
-> Use `~/.feeds/finance.opml` instead.
+User: "business news" or "startup news"
+> Fetch business.opml.
 
 User: "what's new on cloudflare"
-> Fetch `https://blog.cloudflare.com/rss/` directly, single-feed briefing.
-
-User: "what's new in AI"
-> Use default OPML but weight AI/ML stories heavily, shrink other sections.
+> Fetch `https://blog.cloudflare.com/rss/` directly.

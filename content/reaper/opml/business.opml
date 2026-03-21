@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>Business Feeds</title>
+  </head>
+  <body>
+    <outline text="Finance &amp; Markets" title="Finance &amp; Markets">
+      <outline type="rss" text="Bloomberg Technology"
+               xmlUrl="https://feeds.bloomberg.com/technology/news.rss"
+               htmlUrl="https://www.bloomberg.com/technology"/>
+      <outline type="rss" text="TechCrunch"
+               xmlUrl="https://techcrunch.com/feed/"
+               htmlUrl="https://techcrunch.com"/>
+    </outline>
+    <outline text="Startups" title="Startups">
+      <outline type="rss" text="Y Combinator Blog"
+               xmlUrl="https://www.ycombinator.com/blog/rss/"
+               htmlUrl="https://www.ycombinator.com/blog"/>
+      <outline type="rss" text="a16z Blog"
+               xmlUrl="https://a16z.com/feed/"
+               htmlUrl="https://a16z.com"/>
+    </outline>
+  </body>
+</opml>
