@@ -45,7 +45,23 @@ Monk has two modes: **kickoff** (morning) and **shutdown** (evening). Both follo
 3. Calculate the previous working day (skip weekends)
 4. Determine ISO week number
 
-#### Step 2: Gather (silently)
+#### Step 2: Yesterday Check
+
+Read the previous working day's daily note. Check for a `## Shutdown` section with content.
+
+**If yesterday has no shutdown — recover it autonomously:**
+1. Run `kairos/tools/clickup-today.sh [YESTERDAY]` to get completed + open tasks
+2. Derive intensity from task count and project breadth
+3. Write a shutdown section to yesterday's note:
+   - Accomplished: from ClickUp completed tasks
+   - Open: from ClickUp open tasks
+   - Load: estimated intensity
+4. Add callout: `> [!recovered] Shutdown reconstructed by Monk from ClickUp data. Intensity estimated.`
+5. Update yesterday's frontmatter (intensity, projects)
+
+Then proceed to today.
+
+#### Step 3: Gather (silently)
 
 Read in parallel:
 1. Previous working day's daily note — find Shutdown section (Tomorrow, Carry-over, Frog)
@@ -53,7 +69,7 @@ Read in parallel:
 3. Current week's plan (`kairos/weekly/YYYY/YYYY-WNN.md`)
 4. Run `kairos/tools/clickup-today.sh [DATE]` for today's assigned tasks
 
-#### Step 3: Synthesize
+#### Step 4: Synthesize
 
 Analyze what you've gathered:
 - **Previous day context**: What was accomplished, what carried over, was a frog named
@@ -63,7 +79,7 @@ Analyze what you've gathered:
 - **Overdue items**: Tasks past their due date
 - **Persistent carry-over**: Items appearing in carry-over for 3+ consecutive days
 
-#### Step 4: Write the Daily Note
+#### Step 5: Write the Daily Note
 
 Create `kairos/daily/YYYY/YYYY-MM-DD.md` with this structure:
 
@@ -136,13 +152,15 @@ SORT file.ctime ASC
 > [!frog] Pay the bills — carried since Mar 10. Eat it before anything else.
 ```
 
-#### Step 5: Report
+#### Step 6: Report
 
 Output a brief summary of what was written:
 
 ```
 Kickoff written for YYYY-MM-DD. [N] ClickUp tasks. [flags if any].
 ```
+
+If yesterday was recovered, include: `Yesterday's shutdown reconstructed from ClickUp data.`
 
 ---
 

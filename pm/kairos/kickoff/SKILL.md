@@ -19,6 +19,22 @@ Establish today's date from the system environment (provided as "Today's date: Y
 - Calculate yesterday's date for reading the previous daily note (skip weekends -- if today is Monday, yesterday is Friday)
 - Calculate the ISO week number for the weekly file
 
+## Yesterday Check
+
+Before gathering context, verify the previous working day's note is complete:
+
+1. Read the previous working day's daily note
+2. Check for a `## Shutdown` section with content (not just the heading)
+
+**If yesterday has no shutdown:**
+- Tell the user: "Yesterday's shutdown didn't run. Quick catch-up before we start today."
+- Ask: What completed yesterday? Intensity (1-5)? Any blockers? Name today's frog.
+- Write the shutdown section to yesterday's note with the responses
+- Update yesterday's frontmatter (intensity, projects)
+- Then proceed to today's kickoff normally
+
+**If running as Monk (autonomous):** Don't ask — derive what you can from ClickUp (completed tasks for that day), estimate intensity, and write a best-effort shutdown with a callout: `> [!recovered] Shutdown reconstructed from ClickUp data. Intensity estimated.`
+
 ## Gather Context (silently)
 
 Read these in parallel, don't output yet:
