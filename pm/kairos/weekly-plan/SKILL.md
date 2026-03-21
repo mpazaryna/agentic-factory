@@ -40,20 +40,20 @@ The 2026 roadmap (`kairos/roadmaps/`) is the top-level score. ClickUp has the da
 
 1. **Pre-flight** -- gather everything above silently. No output until the draft is ready.
 
-2. **Write the draft** -- create `kairos/weekly/YYYY/YYYY-WNN.md` with:
+2. **Write the draft** -- create `kairos/logs/weekly/YYYY/YYYY-WNN.md` with:
    - Load calculation (automated)
    - Calendar events (from Apple Calendar, automated)
    - Flags (from ClickUp + score analysis)
    - Open decisions as **markdown checkboxes** with ClickUp task IDs as clickable links (format: `[86xxxxxx](https://app.clickup.com/t/86xxxxxx)`)
    - Week shape filled in from data (frog found from Personal list, not asked for)
 
-3. **Tell the user** -- "Draft ready at `kairos/weekly/YYYY/YYYY-WNN.md`. Review in Obsidian, then run `/weekly-finalize`."
+3. **Tell the user** -- "Draft ready at `kairos/logs/weekly/YYYY/YYYY-WNN.md`. Review in Obsidian, then run `/weekly-finalize`."
 
 That's it. No follow-up, no "say finalize." The user runs `/weekly-finalize` in a separate session.
 
 ## Output Format
 
-Write to `kairos/weekly/YYYY/YYYY-WNN.md`:
+Write to `kairos/logs/weekly/YYYY/YYYY-WNN.md`:
 
 ```markdown
 ---

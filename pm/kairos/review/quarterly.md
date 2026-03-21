@@ -1,12 +1,12 @@
 # Quarterly Review Template
 
-Writes to `kairos/quarterly/YYYY/YYYY-QN.md`. Create folder if needed.
+Writes to `kairos/logs/quarterly/YYYY/YYYY-QN.md`. Create folder if needed.
 
 Schedule: end of March (Q1), June (Q2), September (Q3), December (Q4).
 
 ## Pre-Flight
 
-1. **Monthly reviews** -- read `kairos/monthly/YYYY/YYYY-MM.md` for each month in the quarter. Primary source.
+1. **Monthly reviews** -- read `kairos/logs/monthly/YYYY/YYYY-MM.md` for each month in the quarter. Primary source.
 2. **Life-area notes** -- read all 13 files in `kairos/life-areas/`
 3. **Score** -- read `kairos/roadmaps/`
 4. **Devlog** -- read `kairos/devlog/` for trajectory context

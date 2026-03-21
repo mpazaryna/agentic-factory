@@ -40,7 +40,7 @@ Before gathering context, verify the previous working day's note is complete:
 Read these in parallel, don't output yet:
 1. Previous working day's daily note - find Shutdown section (Tomorrow, Carry-over)
 2. `projects/` folder - scan for active and encouraged projects
-3. This week's weekly note (`kairos/weekly/YYYY/YYYY-WNN.md`)
+3. This week's weekly note (`kairos/logs/weekly/YYYY/YYYY-WNN.md`)
 4. Recent daily notes - check which active projects have had focus this week
 5. Query ClickUp via MCP for today's assigned tasks
 

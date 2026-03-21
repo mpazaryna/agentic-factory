@@ -43,10 +43,11 @@ workspace/
 ├── projects/                         # shared canonical data — read by all agents
 │   └── *.md
 ├── kairos/                           # kairos-specific state
-│   ├── daily/YYYY/YYYY-MM-DD.md
-│   ├── weekly/YYYY/YYYY-WNN.md
-│   ├── monthly/YYYY/YYYY-MM.md
-│   ├── quarterly/YYYY/YYYY-QN.md
+│   ├── logs/
+│   │   ├── daily/YYYY/YYYY-MM-DD.md
+│   │   ├── weekly/YYYY/YYYY-WNN.md
+│   │   ├── monthly/YYYY/YYYY-MM.md
+│   │   └── quarterly/YYYY/YYYY-QN.md
 │   ├── knotes/YYYY/MM/YYYY-MM-DD-HHMMSS.md
 │   ├── life-areas/goals.md
 │   ├── roadmaps/*.md
@@ -59,8 +60,8 @@ workspace/
 
 Monk reads from (never asks for):
 - ClickUp API via `kairos/tools/clickup-today.sh`
-- Daily notes (`kairos/daily/`)
-- Weekly plan (`kairos/weekly/`)
+- Daily notes (`kairos/logs/daily/`)
+- Weekly plan (`kairos/logs/weekly/`)
 - Project records (`projects/`)
 
 ## Design Principles

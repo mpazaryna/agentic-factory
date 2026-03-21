@@ -122,7 +122,7 @@
       "name": "kairos",
       "source": "./pm/kairos",
       "description": "AI-augmented productivity: autonomous daily rhythm (kickoff/shutdown) via Monk agent, load management, weekly synthesis",
-      "version": "2.6.0",
+      "version": "2.7.0",
       "category": "pm",
       "tags": ["kairos", "productivity", "autonomous", "daily-rituals", "agent"]
     },

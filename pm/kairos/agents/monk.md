@@ -66,7 +66,7 @@ Then proceed to today.
 Read in parallel:
 1. Previous working day's daily note — find Shutdown section (Tomorrow, Carry-over, Frog)
 2. `projects/*.md` — all non-archived projects
-3. Current week's plan (`kairos/weekly/YYYY/YYYY-WNN.md`)
+3. Current week's plan (`kairos/logs/weekly/YYYY/YYYY-WNN.md`)
 4. Run `kairos/tools/clickup-today.sh [DATE]` for today's assigned tasks
 
 #### Step 4: Synthesize
@@ -81,7 +81,7 @@ Analyze what you've gathered:
 
 #### Step 5: Write the Daily Note
 
-Create `kairos/daily/YYYY/YYYY-MM-DD.md` with this structure:
+Create `kairos/logs/daily/YYYY/YYYY-MM-DD.md` with this structure:
 
 ```markdown
 ---

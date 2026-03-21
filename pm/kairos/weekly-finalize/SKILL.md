@@ -11,7 +11,7 @@ Run after you've reviewed the `/weekly-plan` draft and acted on decisions in Cli
 
 ## Workflow
 
-1. **Read the current week's plan** -- `kairos/weekly/YYYY/YYYY-WNN.md`
+1. **Read the current week's plan** -- `kairos/logs/weekly/YYYY/YYYY-WNN.md`
 
 2. **Check decisions** -- read the Decisions section:
    - Checked items = handled in ClickUp already
