@@ -12,7 +12,6 @@ The `.orchestra/` agent knowledge base methodology — PRDs all the way down.
 - **prd** — Generate a PRD from a milestone gap
 - **spec** — Generate an execution spec from an approved PRD
 - **ticket** — Push an approved spec to ClickUp as an executable ticket
-- **conduct** — Run the entire loop autonomously (forked context, no human checkpoints)
 
 ### Operations
 - **roadmap** — Read and manage roadmap.md: status, next work, updates, add milestones
@@ -24,10 +23,10 @@ The `.orchestra/` agent knowledge base methodology — PRDs all the way down.
 ## The Loop
 
 ```
-/conduct (autonomous)
-  or step-by-step:
-/milestone → /prd → /spec → agentic coding → update ticket → /devlog
+/milestone → /prd → /spec → /ticket → implement → /devlog
 ```
+
+The autonomous version of this loop is the **lenny** agent (`agents/lenny.md`).
 
 **Document ownership:** PRDs are product-layer documents refined only with requestor input. Specs are execution-layer documents derived from PRDs and refined by the agent at runtime.
 
