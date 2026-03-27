@@ -54,23 +54,25 @@ PRDs are refined only with input from the requestor or product team. Specs can b
 
 ## The Workflow
 
-1. **Compose** — Define a milestone as a PRD. Set the objective, write the done-conditions, fill the materials table with what needs to exist.
-
-2. **Conduct** — Read the milestone PRD. Identify what's not done. Propose or generate tickets from the gaps.
-
-3. **Spec** — Derive an implementation plan from the PRD. The agent reads the PRD and produces a spec it can execute against. This is the last step before code.
-
-4. **Perform** — The agent reads the spec, executes the work, and creates or updates deliverables in the repo. If the spec needs adjustment during implementation, the agent updates it.
-
-5. **Close** — Update the score. Mark deliverables done in the milestone PRD. Write a devlog entry capturing what happened and what was learned.
-
-Every agent session within Perform follows this protocol:
+The loop starts with a ticket — a brief contract that defines the work — and flows through planning into execution.
 
 ```
-read the score → read the PRD → write the spec → execute → update the ticket → devlog
+/ticket → /prd → /spec → implement → /devlog
 ```
 
-If the agent doesn't update the ticket, the performance isn't complete.
+1. **Ticket** — Capture the work brief. A ticket is the starting point: a ClickUp task, a Slack message, a sentence from a stakeholder. `/orchestra:ticket` captures it as-is and scaffolds the work item folder.
+
+2. **PRD** — Expand the brief into intent. `/orchestra:prd` reads the ticket and produces a proper PRD: objective, success criteria, materials table. This is where clarity happens — the ticket says what was asked for, the PRD says what "done" looks like.
+
+3. **Spec** — Derive the implementation plan. `/orchestra:spec` reads the PRD and produces a step-by-step execution plan the agent can follow. The spec is the bridge between product intent and code.
+
+4. **Implement** — The agent reads the spec, executes the work, and creates or updates deliverables in the repo. If the spec needs adjustment during implementation, the agent updates it — no human approval needed.
+
+5. **Close** — Update the score. Mark deliverables done in the milestone PRD. Write a devlog entry with `/orchestra:devlog` capturing what happened and what was learned.
+
+Every ticket gets both a PRD and a spec. For small work the PRD can be thin and the spec a few lines — but the structure stays consistent so agents never have to guess what exists.
+
+The autonomous version of this loop is the **lenny** agent, which runs the full cycle without human checkpoints.
 
 ## The Folder
 
@@ -107,7 +109,13 @@ The topology is the reference chain. Roadmap links to milestones, milestones lin
 
 ## Getting Started
 
-Once the orchestra plugin is installed, scaffold your project:
+### 1. Install the plugin
+
+```
+/plugin install orchestra@agentic-factory
+```
+
+### 2. Scaffold your project
 
 ```
 /orchestra:scaffold .
@@ -115,11 +123,47 @@ Once the orchestra plugin is installed, scaffold your project:
 
 This creates the `.orchestra/` folder with the full structure: `roadmap.md`, `adr/`, `work/TEMPLATES/`, and `devlog/`. The scaffold walks you through defining your project vision and initial milestones, so you'll have a populated roadmap when it finishes.
 
-From there, the first real cycle is:
+### 3. Start your first work cycle
 
-1. `/orchestra:milestone` — review what the roadmap says needs doing
-2. `/orchestra:prd {gap}` — scope one piece of work
-3. Let the agent write a spec and implement against it
-4. Update the score and `/orchestra:devlog` what happened
+**Option A: You have a ticket already** (most common)
+
+```
+/orchestra:ticket CU-abc123
+```
+
+or describe the work directly:
+
+```
+/orchestra:ticket "Add rate limiting to the API gateway"
+```
+
+This captures the brief and scaffolds the work item folder. Then:
+
+```
+/orchestra:prd {slug}       # expand the brief into a full PRD
+/orchestra:spec {slug}      # plan the implementation
+# implement the work
+/orchestra:devlog            # document what happened
+```
+
+**Option B: You're starting from the roadmap**
+
+```
+/orchestra:milestone         # review what the roadmap says needs doing
+/orchestra:ticket {gap}      # capture the gap as a work item
+/orchestra:prd {slug}        # scope it
+/orchestra:spec {slug}       # plan it
+# implement
+/orchestra:devlog            # log it
+```
+
+### 4. Keep the score current
+
+```
+/orchestra:roadmap status    # see where everything stands
+/orchestra:milestone         # drill into a milestone's gaps
+```
+
+The score must reflect reality. Completing work means updating the materials table — if the table doesn't know it's done, it's not done.
 
 For the full skill reference and detailed workflows, see [GUIDE.md](GUIDE.md).

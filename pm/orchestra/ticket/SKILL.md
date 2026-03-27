@@ -1,128 +1,99 @@
 ---
 name: ticket
-description: "Create a ClickUp ticket from a PRD or spec — push the work item to the task tracker with objective, acceptance criteria, and traceability links. Use when a PRD is ready for tracking or a spec is ready for execution."
-argument-hint: "<work-item-name or path>"
+description: "Capture a work ticket as the starting point for the orchestra loop — read a brief, scaffold the work item folder, and set up for PRD and spec. Use when starting new work from a ticket, task, or brief."
+argument-hint: "<clickup-id, url, or description>"
 disable-model-invocation: false
 ---
 
-# Create Ticket
+# Ticket
 
-Push a work item (PRD or spec) to ClickUp as a trackable ticket. The ticket becomes the contract that `/clickup:open` or `/clickup:agent` picks up.
+Capture a work ticket and scaffold the orchestra work item. The ticket is the contract — the starting point for the loop.
 
-## Prerequisites
+## Flow
 
-- `.env` with `CLICKUP_API_KEY`
-- CLAUDE.md with list ID (or CONTEXT.md with team/list ID)
-- A work item folder at `.orchestra/work/{name}/` with at least a `prd.md`
+```
+/ticket → /prd → /spec → implement → /devlog
+```
 
 ## Steps
 
-### 1. Read the Work Item
+### 1. Read the Brief
 
-- Find the work item from $ARGUMENTS (folder name or path)
-- Read `prd.md` (required)
-- Read `spec.md` if it exists (optional — spec may come later)
-- Extract: title, objective, success criteria, approach (if spec exists)
+From $ARGUMENTS, determine the source:
 
-### 2. Compose the Ticket
+- **ClickUp ID or URL** — fetch the ticket via ClickUp API:
+  ```bash
+  export CLICKUP_API_KEY=$(grep CLICKUP_API_KEY .env | cut -d '=' -f2)
+  curl -s -H "Authorization: $CLICKUP_API_KEY" "https://api.clickup.com/api/v2/task/$TASK_ID"
+  ```
+- **Text description** — the user is providing the brief directly
 
-Build the ClickUp ticket description based on what's available:
+Extract: title, objective, any acceptance criteria, priority, context.
 
-**If PRD only (no spec yet):**
+### 2. Check for Existing Work Item
 
-```
-## Objective
-{From PRD — what "done" looks like}
+Derive the slug: `{clickup-id}-{short-name}` (if from ClickUp) or `{short-name}` (if from text).
 
-## Success Criteria
-- [ ] {From PRD — testable criteria}
-- [ ] {Each one a checkbox}
+Check if `.orchestra/work/{slug}/` already exists.
 
-## Context
-{From PRD — why this matters, what milestone it serves}
+**If it exists:** show what's there (ticket.md, prd.md, spec.md) and stop. Don't overwrite.
 
-## References
-- PRD: .orchestra/work/{name}/prd.md
-- Milestone: {link to parent milestone PRD}
+### 3. Scaffold the Work Item
 
-Note: Spec not yet written. Run `/orchestra:spec` to define the execution plan.
-```
-
-**If PRD + spec:**
+Create the folder and write the ticket file:
 
 ```
-## Objective
-{From PRD — what "done" looks like}
+.orchestra/work/{slug}/
+└── ticket.md
+```
 
-## Approach
-{Summarized from spec — high-level steps}
+**ticket.md format:**
+
+```markdown
+# {Title}
+
+**Source:** {ClickUp link or "user brief"}
+**Priority:** {if known}
+**Date:** {today}
+
+## Brief
+
+{The ticket description — what was asked for, in the requestor's words}
 
 ## Acceptance Criteria
-- [ ] {From spec — testable criteria}
-- [ ] {Each one a checkbox}
 
-## References
-- PRD: .orchestra/work/{name}/prd.md
-- Spec: .orchestra/work/{name}/spec.md
-- Milestone: {link to parent milestone PRD}
+- [ ] {From the ticket, or "To be defined in PRD"}
+
+## Notes
+
+{Any constraints, context, or references from the original ticket}
 ```
 
-### 3. Determine Priority
+### 4. Update the Milestone
 
-Based on the PRD context:
-- **Urgent** (1): Blocker for other work
-- **High** (2): Milestone-critical
-- **Normal** (3): Standard priority
-- **Low** (4): Nice to have
+If an active milestone exists in `.orchestra/roadmap.md`:
+- Add a row to the milestone PRD's materials table pointing to the new work item
+- If no active milestone, note this in the output — the user can assign it later
 
-Ask the user to confirm priority if unclear.
-
-### 4. Create the Ticket
-
-Source the API key:
-```bash
-export CLICKUP_API_KEY=$(grep CLICKUP_API_KEY .env | cut -d '=' -f2)
-```
-
-Create via ClickUp API:
-```bash
-curl -s -X POST -H "Authorization: $CLICKUP_API_KEY" -H "Content-Type: application/json" \
-  -d '{"name":"[title]","description":"[composed description]","status":"to do","priority":[priority]}' \
-  "https://api.clickup.com/api/v2/list/[LIST_ID]/task"
-```
-
-Use the list ID from CLAUDE.md or CONTEXT.md.
-
-### 5. Update the Work Item
-
-- Rename the work item folder to include the ClickUp task ID: `{clickup-id}-{name}/`
-- Update the milestone PRD materials table with the ClickUp link and task ID
-- If the PRD references a milestone, update the roadmap materials table too
-
-### 6. Report
+### 5. Report
 
 ```
-## Ticket Created
+## Ticket Captured
+
 - **Title:** {title}
-- **ID:** {clickup-id}
-- **URL:** {clickup-url}
-- **Priority:** {priority}
-- **Status:** to do
-- **Has spec:** {yes/no}
+- **Slug:** {slug}
+- **Path:** .orchestra/work/{slug}/ticket.md
+- **Milestone:** {milestone name or "unassigned"}
 
-**Traceability:**
-- Milestone: {milestone name}
-- PRD: .orchestra/work/{id}-{name}/prd.md
-- Spec: {path or "not yet written"}
-
-{If no spec: "Run `/orchestra:spec {work-item-name}` to define the execution plan before starting work."}
-{If spec exists: "Ready for `/clickup:open {clickup-id}` or `/clickup:agent {clickup-id}`"}
+### Next Steps
+1. Run `/orchestra:prd {slug}` to expand the brief into a full PRD
+2. Run `/orchestra:spec {slug}` to plan execution
+3. Implement and log with `/orchestra:devlog`
 ```
 
 ## Rules
 
-- A PRD is the minimum requirement — never create a ticket without one
-- A spec is optional at ticket creation — it can be written later
-- Always include traceability links (PRD, milestone)
-- Always update the milestone materials table after creation
-- The ticket description should be self-contained — readable without opening the PRD
+- Never overwrite an existing work item — check first, always
+- The ticket.md preserves the original brief — don't rewrite or improve it
+- Every ticket gets a PRD and spec downstream — keep the folder ready for both
+- If the brief is vague, capture it as-is — the PRD step is where clarity happens
