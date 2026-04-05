@@ -16,6 +16,7 @@ The `.orchestra/` agent knowledge base methodology — PRDs all the way down.
 ### Operations
 - **roadmap** — Read and manage roadmap.md: status, next work, updates, add milestones
 - **devlog** — Document work sessions: journals, devlogs, status updates
+- **adr** — Capture architectural decisions with correct numbering and frontmatter into .orchestra/adr/
 - **uml** — Generate Mermaid diagrams (sequence, class, deployment, component, state) into .orchestra/uml/
 
 ### Background

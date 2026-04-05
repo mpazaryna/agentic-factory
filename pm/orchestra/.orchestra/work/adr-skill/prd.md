@@ -1,5 +1,5 @@
 ---
-status: draft
+status: complete
 created_on: 2026-04-05
 ---
 

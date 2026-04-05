@@ -26,7 +26,7 @@ The per-plugin `.orchestra/` pattern means each installable plugin in the monore
 |----------|----------|--------|
 | Core Loop | .orchestra/work/core-loop/prd.md | Done |
 | Frontmatter Contract | .orchestra/work/frontmatter-contract/prd.md | Done |
-| ADR Skill | .orchestra/work/adr-skill/prd.md | Not Started |
+| ADR Skill | .orchestra/work/adr-skill/prd.md | Done |
 | Per-Plugin Convention | .orchestra/work/per-plugin-convention/prd.md | In Progress |
 
 ## References
