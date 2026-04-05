@@ -1,6 +1,6 @@
 ---
 ticket: {clickup-id or slug}
-status: in-progress
+status: draft
 created_on: {YYYY-MM-DD}
 ---
 

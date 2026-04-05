@@ -112,6 +112,11 @@ Create `.orchestra/roadmap.md` as a PRD:
 For each milestone, create a stub PRD at `.orchestra/work/{slug}/prd.md`:
 
 ```markdown
+---
+status: draft
+created_on: {YYYY-MM-DD}
+---
+
 # {Milestone Name}
 
 **Objective:** {What "done" looks like for this milestone}
@@ -140,6 +145,10 @@ This milestone PRD needs to be fleshed out. Run `/orchestra:prd` to expand it wh
 Write `.orchestra/devlog/{YYYY}-Q{N}/{date}-project-kickoff.md`:
 
 ```markdown
+---
+created_on: {YYYY-MM-DD}
+---
+
 # {date}: Project Kickoff
 
 ## What Happened

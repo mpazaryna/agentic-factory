@@ -514,6 +514,10 @@ When features are removed:
 Here's a starter template:
 
 ```markdown
+---
+created_on: YYYY-MM-DD
+---
+
 # [Feature/Pattern Name]
 
 **Location:** `path/to/file.swift`

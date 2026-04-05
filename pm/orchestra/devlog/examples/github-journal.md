@@ -48,7 +48,7 @@ git log --since="midnight" --pretty=format:"%h %ad %s" --date=short --stat
 
 ```markdown
 ---
-date: YYYY-MM-DD
+created_on: YYYY-MM-DD
 time: HH:MM
 slug: brief-description
 commits: N
@@ -92,7 +92,7 @@ files_changed: N
 
 ```markdown
 ---
-date: 2025-01-15
+created_on: 2025-01-15
 time: 14:30
 slug: auth-refactor
 commits: 7

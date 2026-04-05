@@ -62,10 +62,12 @@ Include YAML frontmatter at the top of the file:
 ```yaml
 ---
 ticket: {clickup-id or slug — matches the work item folder name}
-status: in-progress
+status: draft
 created_on: {today's date in YYYY-MM-DD format}
 ---
 ```
+
+Status vocabulary for specs: `draft` → `approved` → `in-progress` → `complete`
 
 ### 6. Present for Approval
 

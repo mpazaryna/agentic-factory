@@ -1,7 +1,10 @@
+---
+status: accepted
+created_on: 2026-03-12
+---
+
 # ADR-000: The Score — Roadmaps as PRDs
 
-**Date:** 2026-03-12
-**Status:** Active
 **Decision:** The product roadmap is a PRD. Milestones are PRDs. The hierarchy is PRDs all the way down.
 
 ## Context
