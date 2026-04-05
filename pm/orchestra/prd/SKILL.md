@@ -56,6 +56,16 @@ Use the template from [references/prd-template.md](${CLAUDE_SKILL_DIR}/../../ref
 
 Save to: `.orchestra/work/{id}-{name}/prd.md`
 
+Include YAML frontmatter at the top of the file:
+
+```yaml
+---
+ticket: {clickup-id or slug — matches the work item folder name}
+status: in-progress
+created_on: {today's date in YYYY-MM-DD format}
+---
+```
+
 ### 6. Update the Milestone
 
 Add or update the row in the parent milestone PRD's materials table:

@@ -57,6 +57,16 @@ Use the template from [references/spec-template.md](${CLAUDE_SKILL_DIR}/../../re
 
 Save to: `.orchestra/work/{id}-{name}/spec.md` (alongside the PRD)
 
+Include YAML frontmatter at the top of the file:
+
+```yaml
+---
+ticket: {clickup-id or slug — matches the work item folder name}
+status: in-progress
+created_on: {today's date in YYYY-MM-DD format}
+---
+```
+
 ### 6. Present for Approval
 
 Show the user the spec. Ask:

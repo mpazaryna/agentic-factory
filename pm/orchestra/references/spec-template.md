@@ -1,3 +1,9 @@
+---
+ticket: {clickup-id or slug}
+status: in-progress
+created_on: {YYYY-MM-DD}
+---
+
 # Spec: {Title}
 
 **PRD:** {link to prd.md}
