@@ -151,6 +151,14 @@ If this diagram was prompted by a spec or ADR, add a reference line to that docu
 - **Specs** document *what* — reference the UML for *how*
 - **ADRs** document *why* — reference the UML for the topology that resulted from the decision
 
+## Examples
+
+See `examples/` for reference diagrams:
+
+| File | Type | What It Shows |
+|------|------|---------------|
+| `examples/sequence.md` | sequence | Multi-phase agent workflow with parallel tool calls and retry logic |
+
 ## Quality Checks
 
 - [ ] Diagram type matches what's being shown (don't use sequence for topology)
