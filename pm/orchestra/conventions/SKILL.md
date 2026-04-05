@@ -58,6 +58,7 @@ Roadmap rows = milestones. Milestone rows = deliverables.
 ├── work/              ← Per-ticket PRDs and specs
 │   ├── TEMPLATES/     ← PRD and spec templates
 │   └── {id}-{name}/   ← One folder per ticket
+├── uml/               ← Mermaid diagrams: sequence, class, deployment, component, state
 └── devlog/            ← Chronological journal by quarter
 ```
 
@@ -68,6 +69,7 @@ Roadmap rows = milestones. Milestone rows = deliverables.
 | **ADR** | Making a decision future agents must follow | `ADR-{NNN}-{name}.md` |
 | **Work item** | Starting a ClickUp ticket | `work/{clickup-id}-{name}/prd.md` |
 | **Spec** | Ticket needs execution detail | `work/{clickup-id}-{name}/spec.md` |
+| **UML** | Documenting system structure or agent workflow visually | `uml/{project}-{type}-{purpose}.md` |
 | **Devlog** | Something happened worth recording | `devlog/{YYYY}-Q{N}/{date}-{slug}.md` |
 | **Roadmap update** | Milestone status changed | Update `roadmap.md` materials table |
 

@@ -21,6 +21,7 @@ Create the `.orchestra/` agent knowledge base structure and set up the initial r
 │   └── TEMPLATES/
 │       ├── prd.md                     ← PRD template
 │       └── spec.md                    ← Spec template
+├── uml/                               ← Mermaid diagrams (sequence, class, deployment, component, state)
 └── devlog/                            ← Chronological journal
     └── {YYYY}-Q{N}/                   ← Current quarter folder
 ```
@@ -29,7 +30,7 @@ Create the `.orchestra/` agent knowledge base structure and set up the initial r
 
 1. Determine target path from $ARGUMENTS (default: current working directory)
 2. Check if `.orchestra/` already exists — if so, STOP and report what's there
-3. Create the directory structure above
+3. Create the directory structure above (including `uml/`)
 4. Generate `README.md` from [references/readme-template.md](${CLAUDE_SKILL_DIR}/../../references/readme-template.md)
 5. Generate `ADR-000-the-score.md` from [references/adr-000-the-score.md](${CLAUDE_SKILL_DIR}/../../references/adr-000-the-score.md)
 6. Generate PRD and spec templates in `work/TEMPLATES/`
@@ -183,6 +184,7 @@ Present everything that was created:
 - .orchestra/work/TEMPLATES/prd.md
 - .orchestra/work/TEMPLATES/spec.md
 - .orchestra/work/{slug}/prd.md (×{N} milestone stubs)
+- .orchestra/uml/ (empty, ready for diagrams)
 - .orchestra/devlog/{quarter}/{date}-project-kickoff.md
 
 ### Next Steps
