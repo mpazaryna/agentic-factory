@@ -82,4 +82,4 @@ Roadmap rows = milestones. Milestone rows = deliverables.
 
 ## Comprehensive Guide
 
-For detailed examples, common workflows, and skill-by-skill usage guide, see [GUIDE.md](${CLAUDE_SKILL_DIR}/../../GUIDE.md).
+For detailed examples, common workflows, and skill-by-skill usage guide, see [GUIDE.md](${CLAUDE_PLUGIN_DIR}/GUIDE.md).

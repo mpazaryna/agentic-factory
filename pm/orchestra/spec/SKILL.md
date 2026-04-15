@@ -41,7 +41,7 @@ Break the work into concrete steps:
 
 ### 4. Generate the Spec
 
-Use the template from [references/spec-template.md](${CLAUDE_SKILL_DIR}/../../references/spec-template.md):
+Use the template from [references/spec-template.md](${CLAUDE_PLUGIN_DIR}/references/spec-template.md):
 
 - **Title**: Matches the PRD title
 - **PRD link**: Relative path to the PRD

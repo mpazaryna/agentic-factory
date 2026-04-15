@@ -36,7 +36,7 @@ If the user provides $ARGUMENTS with a description, use that as the starting poi
 
 ### 3. Generate the PRD
 
-Use the template from [references/prd-template.md](${CLAUDE_SKILL_DIR}/../../references/prd-template.md):
+Use the template from [references/prd-template.md](${CLAUDE_PLUGIN_DIR}/references/prd-template.md):
 
 - **Title**: Clear, specific name
 - **Objective**: 1-2 sentences — what "done" looks like
