@@ -1,9 +1,9 @@
 {
   "name": "fork-terminal",
   "description": "Fork terminal sessions to new windows with agentic coding tools (Claude Code, Codex CLI, Gemini CLI) or raw CLI commands.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": {
     "name": "mpaz"
   },
-  "skills": "./"
+  "skills": "./skills/"
 }

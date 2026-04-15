@@ -1,9 +1,9 @@
 {
   "name": "reaper",
-  "description": "Curated RSS news briefing — fetches feeds from OPML, filters by hot/ignore topics, outputs a scannable digest.",
-  "version": "3.4.0",
+  "description": "Curated RSS news briefing \u2014 fetches feeds from OPML, filters by hot/ignore topics, outputs a scannable digest.",
+  "version": "3.4.1",
   "author": {
     "name": "mpaz"
   },
-  "skills": "./"
+  "skills": "./skills/"
 }
