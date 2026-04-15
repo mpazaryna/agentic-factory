@@ -1,9 +1,13 @@
 {
   "name": "orchestra",
   "description": "Agent knowledge base methodology: scaffold .orchestra/ folders, manage roadmaps as PRDs, ADRs, work items, and devlogs.",
-  "version": "1.9.2",
+  "version": "1.9.3",
   "author": {
-    "name": "mpaz"
+    "name": "mpaz",
+    "url": "https://github.com/mpaz"
   },
+  "homepage": "https://github.com/mpaz/agentic-factory/tree/main/pm/orchestra",
+  "repository": "https://github.com/mpaz/agentic-factory",
+  "license": "MIT",
   "skills": "./"
 }
