@@ -36,4 +36,4 @@ Motivated by bench needing machine-readable metadata across all `.orchestra/` fo
 
 ## References
 
-- [ADR-001: Artifact Frontmatter Contract](../../adr/ADR-001-artifact-frontmatter-contract.md)
+- ADR-001: Artifact Frontmatter Contract (.orchestra/adr/ADR-001-artifact-frontmatter-contract.md)

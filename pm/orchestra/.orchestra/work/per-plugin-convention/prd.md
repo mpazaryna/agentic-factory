@@ -32,5 +32,5 @@ In a monorepo of plugins, one root `.orchestra/` mixes concerns across unrelated
 
 ## References
 
-- [ADR-000: The Score](../../adr/ADR-000-the-score.md)
-- [ADR-001: Artifact Frontmatter Contract](../../adr/ADR-001-artifact-frontmatter-contract.md)
+- ADR-000: The Score (.orchestra/adr/ADR-000-the-score.md)
+- ADR-001: Artifact Frontmatter Contract (.orchestra/adr/ADR-001-artifact-frontmatter-contract.md)

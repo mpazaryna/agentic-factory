@@ -128,7 +128,7 @@ created_on: {YYYY-MM-DD}
 
 ## Context
 
-Part of the [{Project Name} Roadmap](../../roadmap.md).
+Part of the {Project Name} Roadmap (.orchestra/roadmap.md).
 
 ## Materials
 

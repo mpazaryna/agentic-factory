@@ -102,4 +102,4 @@ Use a sequence diagram when documenting:
 ## References
 
 - [Mermaid sequenceDiagram docs](https://mermaid.js.org/syntax/sequenceDiagram.html)
-- [orchestra:uml skill](../SKILL.md)
+- orchestra:uml skill (uml/SKILL.md)

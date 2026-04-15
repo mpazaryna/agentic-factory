@@ -29,4 +29,4 @@ ADR-001 consequences call for an `orchestra:adr` skill. Currently ADRs are writt
 
 ## References
 
-- [ADR-001: Artifact Frontmatter Contract](../../adr/ADR-001-artifact-frontmatter-contract.md)
+- ADR-001: Artifact Frontmatter Contract (.orchestra/adr/ADR-001-artifact-frontmatter-contract.md)
