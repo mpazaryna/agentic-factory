@@ -1,9 +1,0 @@
-{
-  "name": "swift-development",
-  "description": "Swift development practice: Swift language patterns, SwiftUI implementation, App Store submission prep",
-  "version": "1.0.1",
-  "author": {
-    "name": "mpaz"
-  },
-  "skills": "./skills/"
-}

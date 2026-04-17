@@ -1,9 +1,0 @@
-{
-  "name": "pkm",
-  "description": "Personal knowledge management rituals: daily kickoff/shutdown, interstitial journaling, weekly/monthly reviews and planning.",
-  "version": "1.0.1",
-  "author": {
-    "name": "mpaz"
-  },
-  "skills": "./skills/"
-}
