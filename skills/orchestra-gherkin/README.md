@@ -12,7 +12,9 @@ Generate Gherkin BDD scenarios from an orchestra PRD or spec.
 
 ## What It Does
 
-Reads a PRD or spec from `.orchestra/work/` and writes a `gherkin.md` alongside it containing fenced ` ```gherkin ` blocks.
+Reads a PRD or spec from `.orchestra/work/` and writes alongside it:
+- `gherkin-spec.md` when sourced from a spec
+- `gherkin-prd.md` when sourced from a PRD
 
 **From a PRD** — maps user goals and success criteria to high-level scenarios.
 
@@ -48,7 +50,7 @@ Feature: User Authentication
 - 3–7 scenarios per feature
 - `Background:` block only when 3+ scenarios share preconditions
 - `@wip` tags on out-of-scope items
-- Generates `gherkin.md` in the same directory as the source
+- Generates `gherkin-spec.md` or `gherkin-prd.md` depending on source
 
 ## See Also
 

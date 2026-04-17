@@ -45,7 +45,9 @@ If no path or name is provided, STOP and ask the user to provide one.
 
 ### Step 3: Generate Gherkin
 
-Write a `gherkin.md` file in the same directory as the source file.
+Write the output file in the same directory as the source file:
+- If source is `spec.md` → write `gherkin-spec.md`
+- If source is `prd.md` → write `gherkin-prd.md`
 
 Output format:
 
@@ -94,6 +96,6 @@ Feature: <feature name from PRD/spec title>
 ### Step 5: Report
 
 Tell the user:
-- Path to the generated `gherkin.md`
+- Path to the generated `gherkin-spec.md` or `gherkin-prd.md`
 - How many scenarios were generated
 - Any acceptance criteria from the source that couldn't be mapped to a scenario (and why)
