@@ -86,5 +86,5 @@ This is the annual reflection. What changed, what held, what surprised you.
 - Create folders as needed (`kairos/logs/monthly/YYYY/`, `kairos/logs/quarterly/YYYY/`, `kairos/logs/yearly/`)
 - LooseIt data feeds weekly and bubbles up. If not provided at weekly, note it as missing.
 - Clockify CSV: look for `~/Desktop/Clockify_Time_Report_Detailed_*.csv`. If not found, ask once.
-- ClickUp shutdown data: use `kairos/tools/clickup-today.sh [DATE] --shutdown` for completion picture
+- ClickUp shutdown data: use `~/workspace/primary-pm/_tools/clickup-today.sh [DATE] --shutdown` for completion picture
 - Week = Sun-Sat. Daily notes = Mon-Fri.

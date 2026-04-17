@@ -1,6 +1,7 @@
 ---
 name: orchestra-adr
 description: "Capture an architectural decision record — document a decision that was made during work, why it was made, and its consequences. Use when a significant technical or process decision needs to be recorded for future agents and developers."
+allowed-tools: Read, Glob, Write
 argument-hint: "<decision-title or description>"
 disable-model-invocation: false
 ---
@@ -121,8 +122,7 @@ Write ADRs as if briefing a capable agent who has never seen this project before
 
 | Skill | Purpose |
 |-------|---------|
-| `orchestra:conventions` | Methodology and roles |
-| `orchestra:prd` | Scope work from a ticket |
-| `orchestra:spec` | Execution plan for a PRD |
-| `orchestra:adr` | Capture decisions made during work |
-| `orchestra:devlog` | Narrative work documentation |
+| `orchestra-prd` | Scope work from a ticket |
+| `orchestra-spec` | Execution plan for a PRD |
+| `orchestra-adr` | Capture decisions made during work |
+| `orchestra-devlog` | Narrative work documentation |

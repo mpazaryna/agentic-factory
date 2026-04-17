@@ -1,6 +1,7 @@
 ---
 name: orchestra-scaffold
 description: "Scaffold the .orchestra/ agent knowledge base in a project — creates folder structure, templates, README, and walks through initial roadmap setup with vision and milestones. Use when setting up a new project or adding .orchestra/ to an existing one."
+allowed-tools: Read, Glob, Write, Bash
 argument-hint: "<project-path>"
 disable-model-invocation: false
 ---
@@ -31,8 +32,8 @@ Create the `.orchestra/` agent knowledge base structure and set up the initial r
 1. Determine target path from $ARGUMENTS (default: current working directory)
 2. Check if `.orchestra/` already exists — if so, STOP and report what's there
 3. Create the directory structure above (including `uml/`)
-4. Generate `README.md` from [references/readme-template.md](${CLAUDE_PLUGIN_DIR}/references/readme-template.md)
-5. Generate `ADR-000-the-score.md` from [references/adr-000-the-score.md](${CLAUDE_PLUGIN_DIR}/references/adr-000-the-score.md)
+4. Generate `README.md` — explain what `.orchestra/` is, how agents should use it, and the PRD-all-the-way-down methodology
+5. Generate `ADR-000-the-score.md` — document the founding decision: this project uses the orchestra methodology, PRDs are the unit of work, agents read `.orchestra/` for context before acting
 6. Generate PRD and spec templates in `work/TEMPLATES/`
 7. Create the current quarter devlog folder
 
@@ -138,7 +139,7 @@ Part of the {Project Name} Roadmap (.orchestra/roadmap.md).
 
 ## Notes
 
-This milestone PRD needs to be fleshed out. Run `/orchestra:prd` to expand it when ready.
+This milestone PRD needs to be fleshed out. Run `orchestra-prd` to expand it when ready.
 ```
 
 ### Step 5: Create Initial Devlog Entry
@@ -162,8 +163,8 @@ created_on: {YYYY-MM-DD}
 - See ADR-000 for the founding decision
 
 ## Next Steps
-- Flesh out the first milestone PRD with `/orchestra:prd`
-- Begin work with `/orchestra:milestone` to review gaps
+- Flesh out the first milestone PRD with `orchestra-prd`
+- Begin work with `orchestra-milestone` to review gaps
 ```
 
 ## Phase 3: Report
@@ -188,9 +189,9 @@ Present everything that was created:
 - .orchestra/devlog/{quarter}/{date}-project-kickoff.md
 
 ### Next Steps
-1. Run `/orchestra:milestone` to review the first milestone and identify gaps
-2. Run `/orchestra:prd` to flesh out milestone PRDs as you're ready
-3. The loop: /orchestra:milestone → /orchestra:prd → /orchestra:spec → /orchestra:ticket → implement → done
+1. Run `orchestra-milestone` to review the first milestone and identify gaps
+2. Run `orchestra-prd` to flesh out milestone PRDs as you're ready
+3. The loop: orchestra-milestone → orchestra-prd → orchestra-spec → orchestra-ticket → implement → done
 ```
 
 ## Rules

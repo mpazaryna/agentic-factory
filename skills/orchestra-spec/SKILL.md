@@ -1,6 +1,7 @@
 ---
 name: orchestra-spec
 description: "Generate an execution spec from an approved PRD — define approach, steps, deliverables, acceptance criteria, and risks. Use when a PRD is approved and the work needs a concrete execution plan."
+allowed-tools: Read, Glob, Grep, Write
 argument-hint: "<prd-path or work-item-name>"
 disable-model-invocation: false
 ---
@@ -27,7 +28,7 @@ Generate an execution spec from an approved PRD. The spec is the contract betwee
 
 If the work involves code changes:
 - Glob for relevant files mentioned in the PRD
-- Read existing patterns and conventions from CONTEXT.md or CLAUDE.md
+- Read existing patterns and conventions from CLAUDE.md
 - Identify integration points and dependencies
 - Note existing tests that may need updating
 
@@ -41,7 +42,7 @@ Break the work into concrete steps:
 
 ### 4. Generate the Spec
 
-Use the template from [references/spec-template.md](${CLAUDE_PLUGIN_DIR}/references/spec-template.md):
+Generate the spec with this structure:
 
 - **Title**: Matches the PRD title
 - **PRD link**: Relative path to the PRD

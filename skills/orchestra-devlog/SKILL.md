@@ -1,6 +1,7 @@
 ---
 name: orchestra-devlog
 description: Developer reporting for the orchestra methodology. Write devlogs and git journals. Devlogs live in .orchestra/devlog/. Use when writing journals, devlogs, or documenting development work.
+allowed-tools: Read, Glob, Bash, Write
 ---
 
 # Devlog
@@ -48,7 +49,6 @@ Narrative-style work logs with context and decisions. Great for:
 
 | Skill | Purpose |
 |-------|---------|
-| `orchestra:conventions` | Methodology and roles |
-| `orchestra:roadmap` | Roadmap management |
-| `orchestra:milestone` | Milestone progress |
-| `orchestra:devlog` | Work documentation and communication |
+| `orchestra-roadmap` | Roadmap management |
+| `orchestra-milestone` | Milestone progress |
+| `orchestra-devlog` | Work documentation and communication |

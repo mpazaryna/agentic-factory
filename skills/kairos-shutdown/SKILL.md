@@ -1,5 +1,5 @@
 ---
-name: shutdown
+name: kairos-shutdown
 description: "End-of-day capture — ClickUp completion check, uncommitted work, intensity, tomorrow's frog. Use when closing out the workday."
 allowed-tools: Read, Glob, Grep, Bash, Write
 disable-model-invocation: false
@@ -41,7 +41,7 @@ Read in parallel, don't output yet:
 2. Current week's plan (`kairos/logs/weekly/`) - what was planned for today? What's planned for tomorrow? Are encouraged projects intentionally skipped this week?
 3. `projects/*.md` - all non-archived projects
 4. Active project repos - check for uncommitted work
-5. ClickUp tasks assigned to the target day - use `kairos/tools/clickup-today.sh [DATE] --shutdown` to get both open AND completed tasks (including subtasks closed today without a start_date)
+5. ClickUp tasks assigned to the target day - use `~/workspace/primary-pm/_tools/clickup-today.sh [DATE] --shutdown` to get both open AND completed tasks (including subtasks closed today without a start_date)
 
 ## Check Uncommitted Work
 
@@ -53,7 +53,7 @@ Don't use AskUserQuestion. Just ask and wait for response.
 
 ## Check ClickUp Task Completion
 
-Run `kairos/tools/clickup-today.sh [DATE] --shutdown` to get the full picture:
+Run `~/workspace/primary-pm/_tools/clickup-today.sh [DATE] --shutdown` to get the full picture:
 - Tasks with start_date today (open and completed)
 - Tasks closed today that had no start_date (subtasks, ad-hoc work)
 
@@ -194,7 +194,7 @@ Recorded. Uncommitted work handled. See you tomorrow.
 
 **Friday shutdown:**
 ```
-Week captured. Run /weekly-summary for full retrospective. Have a good weekend.
+Week captured. Run /kairos-review weekly for full retrospective. Have a good weekend.
 ```
 
 ## Principles

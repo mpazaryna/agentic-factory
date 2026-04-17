@@ -1,6 +1,7 @@
 ---
 name: orchestra-ticket
 description: "Capture a work ticket as the starting point for the orchestra loop — read a brief, scaffold the work item folder, and set up for PRD and spec. Use when starting new work from a ticket, task, or brief."
+allowed-tools: Read, Glob, Write, Bash
 argument-hint: "<clickup-id, url, or description>"
 disable-model-invocation: false
 ---
@@ -21,11 +22,7 @@ Capture a work ticket and scaffold the orchestra work item. The ticket is the co
 
 From $ARGUMENTS, determine the source:
 
-- **ClickUp ID or URL** — fetch the ticket via ClickUp API:
-  ```bash
-  export CLICKUP_API_KEY=$(grep CLICKUP_API_KEY .env | cut -d '=' -f2)
-  curl -s -H "Authorization: $CLICKUP_API_KEY" "https://api.clickup.com/api/v2/task/$TASK_ID"
-  ```
+- **ClickUp ID or URL** — fetch the ticket using ClickUp MCP tools (requires ClickUp MCP to be installed). Use the task ID to retrieve title, description, and acceptance criteria.
 - **Text description** — the user is providing the brief directly
 
 Extract: title, objective, any acceptance criteria, priority, context.
@@ -86,9 +83,9 @@ If an active milestone exists in `.orchestra/roadmap.md`:
 - **Milestone:** {milestone name or "unassigned"}
 
 ### Next Steps
-1. Run `/orchestra:prd {slug}` to expand the brief into a full PRD
-2. Run `/orchestra:spec {slug}` to plan execution
-3. Implement and log with `/orchestra:devlog`
+1. Run `orchestra-prd {slug}` to expand the brief into a full PRD
+2. Run `orchestra-spec {slug}` to plan execution
+3. Implement and log with `orchestra-devlog`
 ```
 
 ## Rules

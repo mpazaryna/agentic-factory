@@ -1,6 +1,7 @@
 ---
 name: orchestra-milestone
 description: "Review milestones and project progress — diff materials table against repo state, surface gaps, and propose next work items. Use when the user asks about milestones, project status, what to work on next, what's left to do, or wants to check progress on the roadmap."
+allowed-tools: Read, Glob, Grep, Write
 argument-hint: "<milestone-name or 'active'>"
 ---
 

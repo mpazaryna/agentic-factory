@@ -1,5 +1,5 @@
 ---
-name: weekly-plan
+name: kairos-weekly-plan
 description: "Draft the start-of-week plan — project triage, load calculation, and priority setting. Use when beginning a new work week."
 allowed-tools: Read, Glob, Grep, Bash, Write
 disable-model-invocation: false
@@ -13,7 +13,7 @@ Generates the weekly plan draft. Run once at start of week (Sunday or Monday). *
 
 **Read the score, surface decisions, get out of the way.**
 
-The 2026 roadmap (`kairos/roadmaps/`) is the top-level score. ClickUp has the dated tickets. The weekly plan doesn't restate either -- it surfaces only what needs a decision, flags risks, and confirms the week's shape.
+The roadmap (`kairos/roadmaps/`) is the top-level score. ClickUp has the dated tickets. The weekly plan doesn't restate either -- it surfaces only what needs a decision, flags risks, and confirms the week's shape.
 
 **Three-system model:**
 - **Vault** = the score + narrative (kairos/roadmaps/, weekly plans, daily notes)
@@ -31,9 +31,9 @@ The 2026 roadmap (`kairos/roadmaps/`) is the top-level score. ClickUp has the da
 3. Read recent devlog -- `kairos/devlog/`
 4. Last week's plan + summary
 5. Trailing daily notes (5-7 days) for load calculation
-6. ClickUp tickets dated for the week (via `kairos/tools/clickup-today.sh` for Sun-Sat, matching the calendar window)
-7. Personal list (901711996386) for life project tickets -- check for due/overdue items (these become the frog). Only flag **undated** tickets in decisions -- tickets with start_dates are already planned.
-8. Apple Calendar -- run `kairos/tools/calendar-week.sh [YYYY-MM-DD]` with any date in the week (Sun-Sat window)
+6. ClickUp tickets dated for the week (via `~/workspace/primary-pm/_tools/clickup-today.sh` for Sun-Sat, matching the calendar window)
+7. Personal ClickUp list (read list ID from environment or config) for life project tickets -- check for due/overdue items (these become the frog). Only flag **undated** tickets in decisions -- tickets with start_dates are already planned.
+8. Apple Calendar -- run `~/workspace/primary-pm/_tools/calendar-week.sh [YYYY-MM-DD]` with any date in the week (Sun-Sat window)
 9. Cross-reference: map each ClickUp ticket to its project, then to its roadmap domain. This builds the Roadmap Pulse.
 
 ## Workflow
@@ -47,7 +47,7 @@ The 2026 roadmap (`kairos/roadmaps/`) is the top-level score. ClickUp has the da
    - Open decisions as **markdown checkboxes** with ClickUp task IDs as clickable links (format: `[86xxxxxx](https://app.clickup.com/t/86xxxxxx)`)
    - Week shape filled in from data (frog found from Personal list, not asked for)
 
-3. **Tell the user** -- "Draft ready at `kairos/logs/weekly/YYYY/YYYY-WNN.md`. Review in Obsidian, then run `/weekly-finalize`."
+3. **Tell the user** -- "Draft ready at `kairos/logs/weekly/YYYY/YYYY-WNN.md`. Review the file, then run `/kairos-weekly-finalize`."
 
 That's it. No follow-up, no "say finalize." The user runs `/weekly-finalize` in a separate session.
 
@@ -121,6 +121,6 @@ Trailing [N] days: avg intensity X.X, avg pomodoros X.X
 
 - Run once per week. Never rerun mid-week.
 - Mon-Fri working week. Calendar and ClickUp both read Sun-Sat for the full week view. Daily notes are Mon-Fri only.
-- ClickUp Personal list (901711996386) covers yoga, music, art, connections, travel
+- ClickUp Personal list (configure list ID in environment or config) covers yoga, music, art, connections, travel
 - Don't list every ticket by day -- ClickUp already does that
 - See `reference.md` for load thresholds, status questions, and evaluation criteria

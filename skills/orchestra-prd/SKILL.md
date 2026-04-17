@@ -1,6 +1,7 @@
 ---
 name: orchestra-prd
 description: "Generate a PRD from a milestone gap — define objective, success criteria, materials table, and context. Use when a milestone review surfaces a gap that needs scoping before execution."
+allowed-tools: Read, Glob, Write
 argument-hint: "<gap-name or description>"
 disable-model-invocation: false
 ---
@@ -36,7 +37,7 @@ If the user provides $ARGUMENTS with a description, use that as the starting poi
 
 ### 3. Generate the PRD
 
-Use the template from [references/prd-template.md](${CLAUDE_PLUGIN_DIR}/references/prd-template.md):
+Generate the PRD with this structure:
 
 - **Title**: Clear, specific name
 - **Objective**: 1-2 sentences — what "done" looks like

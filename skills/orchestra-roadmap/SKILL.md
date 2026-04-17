@@ -1,6 +1,7 @@
 ---
 name: orchestra-roadmap
 description: "Read and manage the .orchestra/roadmap.md — show status, identify active milestones, find gaps, propose next work. Use when the user asks about project status, what to work on next, or wants to update the roadmap."
+allowed-tools: Read, Write
 ---
 
 # Roadmap Manager

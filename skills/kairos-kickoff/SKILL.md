@@ -1,5 +1,5 @@
 ---
-name: kickoff
+name: kairos-kickoff
 description: "Quick morning orientation — surface ClickUp tasks, carry-overs, project gaps, and intensity patterns. Use when starting the workday."
 allowed-tools: Read, Glob, Grep, Bash, Write
 disable-model-invocation: false
