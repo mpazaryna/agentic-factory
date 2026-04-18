@@ -26,6 +26,14 @@ skills/     — 34 skills, flat, domain-prefixed
 | `dev-` | Developer tooling | enforcer, playwright, skills-auditor |
 | `writing-` | Prose style | no-slop |
 
+## Focused Plugins
+
+Curated subsets for distribution — source lives in `skills/`, plugins get a copy:
+
+| Plugin | Skills | Install |
+|--------|--------|---------|
+| `plugins/cloudflare/` | cf-workers, cf-workers-ai, cf-hono, cf-kv, cf-durable-objects | `/plugin install cloudflare@agentic-factory` |
+
 ## Installable Plugin
 
 ```

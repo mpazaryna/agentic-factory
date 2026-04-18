@@ -9,6 +9,14 @@
   },
   "plugins": [
     {
+      "name": "cloudflare",
+      "source": "./plugins/cloudflare",
+      "description": "Cloudflare Workers platform skills: Workers, Workers AI, Hono, KV, and Durable Objects",
+      "version": "1.0.0",
+      "category": "platform",
+      "tags": ["cloudflare", "workers", "edge", "hono", "kv", "durable-objects"]
+    },
+    {
       "name": "skills",
       "source": "./skills",
       "description": "Cross-domain skills collection: PM, dev, content, product, and platform skills for Claude Code",
