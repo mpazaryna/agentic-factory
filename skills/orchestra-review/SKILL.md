@@ -58,6 +58,12 @@ Review the diff for quality issues beyond the acceptance criteria:
 - Spec steps that appear skipped or only partially executed
 - Anything that would surprise a future reader
 
+**TDD tier check — treat missing tiers as a FAIL:**
+- Unit tests present and committed before their implementation? If not: FAIL
+- Integration tests present for any external boundary (network, DB, filesystem)? If absent: FAIL
+- E2E tests present for the user-facing interface (CLI, HTTP endpoint)? If absent: FAIL
+- Are integration tests hitting the real boundary (no mocks at the seam being tested)? If mocked: FAIL
+
 ### 5. Produce the Verdict
 
 Output a structured review report:
@@ -104,6 +110,9 @@ Signal: ready for `/orchestra-merge`
 - [ ] Every deliverable in the materials table confirmed to exist
 - [ ] Diff reviewed for shortcuts or incomplete steps
 - [ ] Verdict is unambiguous — PASS or FAIL, not "mostly done"
+- [ ] All three test tiers confirmed present: unit, integration, E2E — absence of any tier is a FAIL
+- [ ] Integration tests verified to hit real boundaries (not mocked at the seam)
+- [ ] TDD commit ordering verified for all tiers, not just unit tests
 
 ## Boundaries
 

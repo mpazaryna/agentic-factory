@@ -118,6 +118,8 @@ Work item folders are named `{ticket-id}-{short-name}`. The ticket ID comes from
 
 **Picking up existing work?** Find the work item folder under `.orchestra/work/`, read the spec, check the status, and invoke the skill that matches.
 
+**Coming back after a break?** Run `/orchestra-milestone`. It reads `roadmap.md`, finds the first milestone that isn't Done, checks what's missing from its materials table, and tells you exactly what to do next. One command gets you oriented regardless of where you left off — no need to remember where you were.
+
 ---
 
 ## Reading the Repo

@@ -76,13 +76,36 @@ git branch -d impl/{ticket-id}
 
 Only delete after a successful merge — confirm `git branch -d` (safe delete) not `-D` (force).
 
-### 7. Report
+### 7. Update the Roadmap
+
+Find the row for this milestone in `.orchestra/roadmap.md` and update its status to `Done`:
+
+```markdown
+| {Milestone Name} | .orchestra/work/{slug}/prd.md | Done |
+```
+
+Commit alongside any other cleanup:
+
+```bash
+git add .orchestra/roadmap.md
+git commit -m "chore({ticket-id}): update roadmap status to Done"
+```
+
+### 8. Push to Origin
+
+```bash
+git push
+```
+
+### 9. Report
 
 Output a concise summary:
 
 - Merged branch and commit range
 - Conflicts resolved (if any) and how
 - Work item closed
+- Roadmap updated
+- Pushed to origin
 - Final status: `closed`
 
 ## Quality Checks
@@ -92,9 +115,10 @@ Output a concise summary:
 - [ ] No conflicts left unresolved
 - [ ] Branch deleted cleanly with `-d` (not `-D`)
 - [ ] Spec status updated to `closed`
+- [ ] Roadmap row updated to `Done`
+- [ ] Pushed to origin
 
 ## Boundaries
 
-- Do not push to remote unless the user explicitly asks
 - Do not close the branch if the merge failed — leave it for inspection
 - Do not skip the status check — merging an unreviewed branch defeats the pipeline
