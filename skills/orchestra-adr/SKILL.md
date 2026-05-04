@@ -1,6 +1,7 @@
 ---
 name: orchestra-adr
-description: "Capture an architectural decision record — document a decision that was made during work, why it was made, and its consequences. Use when a significant technical or process decision needs to be recorded for future agents and developers."
+description: "Capture an architectural decision record — document a decision that was made during work, why it was made, and its consequences."
+when_to_use: "Use when a significant technical or process decision needs to be recorded for future agents and developers."
 allowed-tools: Read, Glob, Write
 argument-hint: "<decision-title or description>"
 disable-model-invocation: false

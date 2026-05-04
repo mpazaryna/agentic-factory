@@ -1,6 +1,7 @@
 ---
 name: orchestra-uml
-description: "Generate UML diagrams as Mermaid code and save them to .orchestra/uml/. Use when documenting system architecture, agent workflows, deployment topology, or state machines. Supports sequence, class, deployment, component, and state diagram types."
+description: "Generate UML diagrams as Mermaid code and save them to .orchestra/uml/. Supports sequence, class, deployment, component, and state diagram types."
+when_to_use: "Use when documenting system architecture, agent workflows, deployment topology, or state machines."
 argument-hint: "<diagram-type> <what to diagram>"
 allowed-tools: Read, Write, Glob, Bash
 ---

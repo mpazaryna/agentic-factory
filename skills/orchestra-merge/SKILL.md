@@ -1,6 +1,7 @@
 ---
 name: orchestra-merge
-description: "Merge a reviewed implementation branch into main — resolve conflicts, close the work item, and clean up the branch. Use when an implementation has passed review and is ready to ship."
+description: "Merge a reviewed implementation branch into main — resolve conflicts, close the work item, and clean up the branch."
+when_to_use: "Use when an implementation has passed review and is ready to ship."
 allowed-tools: Read, Glob, Write, Edit, Bash
 argument-hint: "<spec-path or work-item-name>"
 ---

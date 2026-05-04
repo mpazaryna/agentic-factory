@@ -11,7 +11,8 @@
       "Bash(git commit -m ' *)",
       "Bash(git push *)",
       "Bash(curl -s -X PUT https://api.clickup.com/api/v2/task/86e15rqpp -H 'Authorization: pk_192168377_835OMOLNDMU6PVDRC39LWIT98A18OWO0' -H 'Content-Type: application/json' -d '{\"status\": \"complete\"}')",
-      "Bash(python3 -c \"import sys,json; t=json.load\\(sys.stdin\\); print\\(t.get\\('status',{}\\).get\\('status'\\)\\)\")"
+      "Bash(python3 -c \"import sys,json; t=json.load\\(sys.stdin\\); print\\(t.get\\('status',{}\\).get\\('status'\\)\\)\")",
+      "Bash(gh api *)"
     ],
     "deny": [],
     "ask": []

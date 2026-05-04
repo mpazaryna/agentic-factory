@@ -1,6 +1,7 @@
 ---
 name: orchestra-program
-description: "Explain what the orchestra methodology is — the pipeline, roles, file structure, status vocabulary, and skill index. Use when someone asks what orchestra is, how it works, or where to start."
+description: "Explain what the orchestra methodology is — the pipeline, roles, file structure, status vocabulary, and skill index."
+when_to_use: "Use when someone asks what orchestra is, how it works, or where to start."
 allowed-tools: Read, Glob
 ---
 

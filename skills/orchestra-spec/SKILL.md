@@ -1,6 +1,7 @@
 ---
 name: orchestra-spec
-description: "Generate an execution spec from an approved PRD — define approach, steps, deliverables, acceptance criteria, and risks. Use when a PRD is approved and the work needs a concrete execution plan."
+description: "Generate an execution spec from an approved PRD — define approach, steps, deliverables, acceptance criteria, and risks."
+when_to_use: "Use when a PRD is approved and the work needs a concrete execution plan."
 allowed-tools: Read, Glob, Grep, Write
 argument-hint: "<prd-path or work-item-name>"
 disable-model-invocation: false

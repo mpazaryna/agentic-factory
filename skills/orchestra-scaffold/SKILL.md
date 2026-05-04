@@ -1,202 +1,253 @@
 ---
 name: orchestra-scaffold
-description: "Scaffold the .orchestra/ agent knowledge base in a project — creates folder structure, templates, README, and walks through initial roadmap setup with vision and milestones. Use when setting up a new project or adding .orchestra/ to an existing one."
+description: "Scaffold the .orchestra/ agent knowledge base in a project — creates folder structure, templates, README, and ADR-000."
+when_to_use: "Use when setting up a new project or adding .orchestra/ to an existing one."
 allowed-tools: Read, Glob, Write, Bash
 argument-hint: "<project-path>"
-disable-model-invocation: false
 ---
 
 # Scaffold .orchestra/
 
-Create the `.orchestra/` agent knowledge base structure and set up the initial roadmap interactively.
+Create the `.orchestra/` agent knowledge base structure. This is mechanical work — no questions asked, just files. When done, run `/orchestra-roadmap` to define the project vision and milestones interactively.
 
 ## What It Creates
 
 ```
 .orchestra/
-├── README.md                          ← Explains the folder to agents and humans
-├── roadmap.md                         ← The score — top-level PRD (populated)
-├── adr/                               ← Architecture Decision Records
-│   └── ADR-000-the-score.md           ← Founding decision: PRDs all the way down
-├── work/                              ← Per-ticket work items
+├── README.md
+├── adr/
+│   └── ADR-000-the-score.md
+├── work/
 │   └── TEMPLATES/
-│       ├── prd.md                     ← PRD template
-│       └── spec.md                    ← Spec template
-├── uml/                               ← Mermaid diagrams (sequence, class, deployment, component, state)
-└── devlog/                            ← Chronological journal
-    └── {YYYY}-Q{N}/                   ← Current quarter folder
+│       ├── prd.md
+│       └── spec.md
+├── uml/
+└── devlog/
+    └── {YYYY}-Q{N}/
 ```
 
-## Phase 1: Create Structure
+## Steps
 
-1. Determine target path from $ARGUMENTS (default: current working directory)
-2. Check if `.orchestra/` already exists — if so, STOP and report what's there
-3. Create the directory structure above (including `uml/`)
-4. Generate `README.md` — explain what `.orchestra/` is, how agents should use it, and the PRD-all-the-way-down methodology
-5. Generate `ADR-000-the-score.md` — document the founding decision: this project uses the orchestra methodology, PRDs are the unit of work, agents read `.orchestra/` for context before acting
-6. Generate PRD and spec templates in `work/TEMPLATES/`
-7. Create the current quarter devlog folder
+### 1. Check
 
-## Phase 2: Set Up the Roadmap
+- Determine target path from $ARGUMENTS (default: current working directory)
+- If `.orchestra/` already exists → STOP and report what's there
+- Note the project name: use the directory name (e.g. `basename` of the path)
 
-The roadmap is the score — every project needs one. Walk the user through defining it.
+### 2. Create or Update Project README
 
-### Step 1: Ask for the Vision
+The project `README.md` (at the project root, not inside `.orchestra/`) is the human-facing entry point and the source of the orchestra Brief.
 
-Ask the user:
-
-```
-To set up your roadmap, I need to understand the project:
-
-1. **Project name** — What is this project called?
-2. **Vision** — In 1-2 sentences, what does "done" look like at the highest level?
-   (Example: "A chiropractic app that replaces paper SOAP notes with AI-assisted documentation")
-3. **Who is the audience?** — Who benefits when this is done?
-```
-
-Wait for answers before proceeding.
-
-### Step 2: Define Milestones
-
-Ask the user:
-
-```
-Now let's break the vision into milestones. A milestone is a meaningful checkpoint —
-something you could demo, ship, or celebrate.
-
-What are your first 2-4 milestones? For each one:
-- **Name** — short, memorable (e.g., "MVP Launch", "Beta Testing", "API Integration")
-- **Objective** — what does "done" look like for this milestone?
-
-Don't overthink it — milestones can be added and refined later.
-What matters is having a starting score to play from.
-```
-
-If the user is unsure, help them derive milestones from the vision:
-- What's the minimum viable version?
-- What comes after that?
-- What would make it "complete"?
-
-### Step 3: Generate the Roadmap
-
-Create `.orchestra/roadmap.md` as a PRD:
+**If no `README.md` exists:**
+Create one with a Brief section template:
 
 ```markdown
-# {Project Name} Roadmap
+# {directory-name}
 
-**Objective:** {Vision — 1-2 sentences}
+> {one-line description — fill this in}
 
-## Success Criteria
+## Brief
 
-- [ ] {Derived from vision — what "fully done" looks like}
-- [ ] {Second criterion}
-- [ ] {Third criterion}
+**Vision:** {what done looks like at the highest level — fill this in}
+**Audience:** {who benefits — fill this in}
 
-## Context
+## Usage
 
-{Why this project matters. Who it serves. What problem it solves.}
-
-## Milestones
-
-| Material | Location | Status |
-|----------|----------|--------|
-| {Milestone 1 name} | .orchestra/work/{slug}/prd.md | Not Started |
-| {Milestone 2 name} | .orchestra/work/{slug}/prd.md | Not Started |
-| {Milestone 3 name} | .orchestra/work/{slug}/prd.md | Not Started |
-
-## References
-
-- ADR-000: [The Score](.orchestra/adr/ADR-000-the-score.md)
+{fill in after first milestone ships}
 ```
 
-### Step 4: Scaffold Milestone PRDs
-
-For each milestone, create a stub PRD at `.orchestra/work/{slug}/prd.md`:
+**If `README.md` exists and has no `## Brief` section:**
+Append the Brief section to the end of the file:
 
 ```markdown
----
-status: draft
-created_on: {YYYY-MM-DD}
----
 
-# {Milestone Name}
+## Brief
 
-**Objective:** {What "done" looks like for this milestone}
-
-## Success Criteria
-
-- [ ] {To be defined}
-
-## Context
-
-Part of the {Project Name} Roadmap (.orchestra/roadmap.md).
-
-## Materials
-
-| Material | Location | Status |
-|----------|----------|--------|
-| {To be defined} | | Not Started |
-
-## Notes
-
-This milestone PRD needs to be fleshed out. Run `orchestra-prd` to expand it when ready.
+**Vision:** {what done looks like at the highest level — fill this in}
+**Audience:** {who benefits — fill this in}
 ```
 
-### Step 5: Create Initial Devlog Entry
+**If `README.md` exists and already has a `## Brief` section:**
+Leave it untouched. Report it as already present.
 
-Write `.orchestra/devlog/{YYYY}-Q{N}/{date}-project-kickoff.md`:
+### 3. Create Structure
+
+Create all directories: `adr/`, `work/TEMPLATES/`, `uml/`, `devlog/{YYYY}-Q{N}/`
+
+### 4. Write .orchestra/README.md
+
+Explain the folder to agents and humans:
 
 ```markdown
----
-created_on: {YYYY-MM-DD}
----
+# .orchestra/
 
-# {date}: Project Kickoff
+Agent knowledge base for this project. All agents read this folder before acting.
 
-## What Happened
-- Scaffolded .orchestra/ agent knowledge base
-- Defined project vision: {vision}
-- Established {N} initial milestones: {list}
+## Structure
 
-## Decisions
-- Using the orchestra methodology (PRDs all the way down)
-- See ADR-000 for the founding decision
+- `roadmap.md` — The score. Project vision and milestone index.
+- `adr/` — Architecture Decision Records. Decisions that affect future agents.
+- `work/` — Per-work-item folders. Each contains a PRD, spec, and gherkin.
+- `uml/` — Mermaid diagrams for architecture, workflows, and state machines.
+- `devlog/` — Chronological journal of development sessions.
 
-## Next Steps
-- Flesh out the first milestone PRD with `orchestra-prd`
-- Begin work with `orchestra-milestone` to review gaps
-```
-
-## Phase 3: Report
-
-Present everything that was created:
+## The Loop
 
 ```
-## .orchestra/ Scaffolded
-
-**Project:** {name}
-**Vision:** {vision}
-**Milestones:** {count}
-
-### Created
-- .orchestra/README.md
-- .orchestra/roadmap.md (populated with {N} milestones)
-- .orchestra/adr/ADR-000-the-score.md
-- .orchestra/work/TEMPLATES/prd.md
-- .orchestra/work/TEMPLATES/spec.md
-- .orchestra/work/{slug}/prd.md (×{N} milestone stubs)
-- .orchestra/uml/ (empty, ready for diagrams)
-- .orchestra/devlog/{quarter}/{date}-project-kickoff.md
-
-### Next Steps
-1. Run `orchestra-milestone` to review the first milestone and identify gaps
-2. Run `orchestra-prd` to flesh out milestone PRDs as you're ready
-3. The loop: orchestra-milestone → orchestra-prd → orchestra-spec → orchestra-ticket → implement → done
+/orchestra-roadmap   → define vision and milestones
+/orchestra-plan      → PRD → Spec → Gherkin for a work item
+/orchestra-implement → execute an approved spec
+/orchestra-review    → validate implementation against spec
+/orchestra-merge     → merge and close the work item
 ```
 
 ## Rules
 
-- Always ask for vision and milestones — never scaffold with an empty roadmap
-- Milestone slugs use kebab-case
-- If the user gives more than 6 milestones, suggest grouping some — too many dilutes focus
-- If the user can't articulate a vision, help them — "What would make this project worth celebrating?"
+- Agents read the roadmap and relevant ADRs before acting on any work item
+- Every work item has a PRD before a spec; every spec before implementation
+- Nothing moves forward without explicit human approval at each gate
+```
+
+### 5. Write ADR-000
+
+Write `.orchestra/adr/ADR-000-the-score.md`:
+
+```markdown
+---
+id: ADR-000
+status: accepted
+created_on: {YYYY-MM-DD}
+---
+
+# ADR-000: The Score
+
+## Decision
+
+This project uses the orchestra methodology. PRDs are the unit of work. Every
+significant piece of work has a PRD before a spec, and a spec before implementation.
+
+## Rationale
+
+Without a written PRD, work drifts. Without a spec, agents have no contract to
+execute against. Without Gherkin, there is no definition of done an agent can verify.
+
+The `.orchestra/` folder is the shared knowledge base. Agents read it. Humans update
+it at each gate. The score doesn't change mid-performance without a new ADR.
+
+## Consequences
+
+- No implementation without an approved spec
+- No spec without an approved PRD
+- All significant architectural decisions are recorded as ADRs
+```
+
+### 6. Write Templates
+
+Write `.orchestra/work/TEMPLATES/prd.md`:
+
+```markdown
+---
+ticket:
+status: draft
+created_on:
+---
+
+# {Title}
+
+## Objective
+{What does "done" look like? 1–2 sentences.}
+
+## Success Criteria
+- [ ] {Testable criterion}
+
+## Context
+{Why this matters. Which milestone it serves.}
+
+## Materials
+
+| Deliverable | Location | Status |
+|-------------|----------|--------|
+| | | Not Started |
+
+## References
+
+## Notes
+```
+
+Write `.orchestra/work/TEMPLATES/spec.md`:
+
+```markdown
+---
+ticket:
+status: draft
+created_on:
+---
+
+# {Title}
+
+> PRD: {path}
+
+## Objective
+{Restated from PRD}
+
+## Approach
+
+### Step 1: {name}
+
+## Testing Strategy
+
+### Unit Tests
+### Integration Tests
+### E2E Tests
+
+## Deliverables
+
+| File | Purpose | Status |
+|------|---------|--------|
+
+## Acceptance Criteria
+
+### Functional
+### Unit
+### Integration
+### E2E
+
+## Dependencies
+
+## Risks
+
+| Risk | Mitigation |
+|------|-----------|
+```
+
+### 6. Report
+
+```
+## .orchestra/ Scaffolded
+
+### Created
+- README.md                          [created with Brief section]  ← or "Brief section added" / "Brief already present"
+- .orchestra/README.md
+- .orchestra/adr/ADR-000-the-score.md
+- .orchestra/work/TEMPLATES/prd.md
+- .orchestra/work/TEMPLATES/spec.md
+- .orchestra/uml/
+- .orchestra/devlog/{quarter}/
+
+### Next Step
+Fill in the Brief section in README.md, then run /orchestra-roadmap.
+
+The Brief is the minimum needed to seed the roadmap without typing it twice:
+
+    ## Brief
+    **Vision:** {what done looks like at the highest level}
+    **Audience:** {who benefits}
+
+Vision and audience are stable from day one. Milestones are a planning output —
+/orchestra-roadmap derives them from the vision in conversation with you.
+
+/orchestra-roadmap will read the Brief and propose milestones for your approval.
+If no Brief is present it will ask you the questions interactively.
+```
+
+Stop here. Do not ask about the project. Do not generate a roadmap.

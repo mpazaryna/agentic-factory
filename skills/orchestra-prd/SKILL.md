@@ -1,6 +1,7 @@
 ---
 name: orchestra-prd
-description: "Generate a PRD from a milestone gap — define objective, success criteria, materials table, and context. Use when a milestone review surfaces a gap that needs scoping before execution."
+description: "Generate a PRD from a milestone gap — define objective, success criteria, materials table, and context."
+when_to_use: "Use when a milestone review surfaces a gap that needs scoping before execution."
 allowed-tools: Read, Glob, Write
 argument-hint: "<gap-name or description>"
 disable-model-invocation: false
