@@ -1,7 +1,8 @@
 ---
 name: orchestra-review
-description: "Review a completed implementation branch against its spec and acceptance criteria — catch gaps, shortcuts, and quality issues before merge. Use when an implementation branch is complete and ready for review."
-allowed-tools: Read, Glob, Grep, Bash
+description: "Review a completed implementation branch against its spec and acceptance criteria — catch gaps, shortcuts, and quality issues before merge."
+when_to_use: "Use when an implementation branch is complete and ready for review."
+allowed-tools: Read, Glob, Grep, Bash, Write
 argument-hint: "<spec-path or work-item-name>"
 ---
 
@@ -113,6 +114,34 @@ Signal: ready for `/orchestra-merge`
 - [ ] All three test tiers confirmed present: unit, integration, E2E — absence of any tier is a FAIL
 - [ ] Integration tests verified to hit real boundaries (not mocked at the seam)
 - [ ] TDD commit ordering verified for all tiers, not just unit tests
+
+### 8. Write the Devlog
+
+After producing the verdict, write a devlog entry regardless of PASS or FAIL.
+
+File path: `.orchestra/devlog/{YYYY}-Q{N}/{YYYY-MM-DD}-review-{ticket-id}.md`
+
+```markdown
+---
+created_on: {YYYY-MM-DD}
+---
+
+# {YYYY-MM-DD}: Review — {ticket-id}
+
+## Verdict
+{PASS | FAIL}
+
+## What Was Reviewed
+{1–2 sentences: what the work item did and what was checked}
+
+## Findings
+{Key passing criteria, failing criteria, and quality issues found.
+Be specific — file paths, criterion names, what evidence was or wasn't there.}
+
+## Next Step
+{If PASS: ready for /orchestra-merge}
+{If FAIL: return to /orchestra-implement — list the blocking issues}
+```
 
 ## Boundaries
 

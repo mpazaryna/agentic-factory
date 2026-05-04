@@ -1,6 +1,7 @@
 ---
 name: orchestra-implement
-description: "Execute an approved spec — create a branch, work through each step, commit progress, and mark complete. Use when a spec is approved and ready for implementation."
+description: "Execute an approved spec — create a branch, work through each step, commit progress, and mark complete."
+when_to_use: "Use when a spec is approved and ready for implementation."
 allowed-tools: Read, Glob, Grep, Write, Edit, Bash
 argument-hint: "<spec-path or work-item-name>"
 ---

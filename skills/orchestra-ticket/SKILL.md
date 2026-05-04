@@ -1,6 +1,7 @@
 ---
 name: orchestra-ticket
-description: "Capture a work ticket as the starting point for the orchestra loop — read a brief, scaffold the work item folder, and set up for PRD and spec. Use when starting new work from a ticket, task, or brief."
+description: "Capture a work ticket as the starting point for the orchestra loop — read a brief, scaffold the work item folder, and set up for PRD and spec."
+when_to_use: "Use when starting new work from a ticket, task, or brief."
 allowed-tools: Read, Glob, Write, Bash
 argument-hint: "<clickup-id, url, or description>"
 disable-model-invocation: false

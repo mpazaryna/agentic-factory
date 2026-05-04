@@ -1,6 +1,7 @@
 ---
 name: orchestra-gherkin
-description: "Generate Gherkin scenarios from an orchestra PRD or spec — produces Feature/Scenario blocks in fenced gherkin markdown. Use when translating acceptance criteria or implementation steps into executable BDD scenarios."
+description: "Generate Gherkin scenarios from an orchestra PRD or spec — produces Feature/Scenario blocks in fenced gherkin markdown."
+when_to_use: "Use when translating acceptance criteria or implementation steps into executable BDD scenarios."
 argument-hint: "<prd-path | spec-path | work-item-name>"
 allowed-tools: Read, Glob, Write
 ---
