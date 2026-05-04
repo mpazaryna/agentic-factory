@@ -43,13 +43,6 @@ for skill in ~/workspace/agentic-factory/skills/*/; do
 done
 ```
 
-### Other machines (plugin marketplace)
-
-```
-/plugin marketplace add mpaz/agentic-factory
-/plugin install skills@agentic-factory
-```
-
 ## Authoring
 
 Build in a real project first. Promote here when the skill is proven and generic enough to reuse.
