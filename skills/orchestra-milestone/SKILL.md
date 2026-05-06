@@ -29,8 +29,8 @@ For each row in the milestone PRD's materials table:
 - If it exists, read it and assess completeness
 - Compare actual state to the status column — flag mismatches
 
-**If location is a ClickUp link:**
-- Note it for the user (don't fetch unless clickup skills are installed)
+**If location is an issue tracker link:**
+- Note it for the user and skip — link resolution requires an installed integration
 
 **If status is "Done":**
 - Verify the deliverable actually exists and looks complete

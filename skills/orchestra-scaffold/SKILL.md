@@ -123,8 +123,7 @@ created_on: {YYYY-MM-DD}
 
 ## Decision
 
-This project uses the orchestra methodology. PRDs are the unit of work. Every
-significant piece of work has a PRD before a spec, and a spec before implementation.
+This project uses Orchestra — a software development lifecycle encoded for agents. PRDs are the unit of work. Every significant piece of work has a PRD before a spec, and a spec before implementation.
 
 ## Rationale
 

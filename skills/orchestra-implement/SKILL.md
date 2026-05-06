@@ -25,6 +25,25 @@ Execute an approved spec end-to-end. Work through each step in order, commit pro
 - Read the PRD alongside it for intent context
 - Confirm `status: approved` in the frontmatter — stop and report if `draft`, `in-progress`, or `complete`
 
+**Pre-flight: verify milestone traceability**
+
+Before creating a branch, check whether this work item is anchored to a milestone:
+
+- Read `.orchestra/roadmap.md`
+- For each milestone row, read its PRD and scan the materials table
+- Check whether this work item's path appears in any materials table
+
+**If found:** note which milestone this serves — include it in the Step 7 report.
+
+**If not found:** surface an advisory and wait for explicit confirmation:
+
+> "This work item does not appear in any milestone's materials table — it has no stated goal it serves. Proceed anyway, or assign it to a milestone first via `/orchestra-roadmap update`?"
+
+- **Proceed** → continue to Step 2
+- **Assign first** → stop here; resume after the user runs `/orchestra-roadmap update`
+
+This is advisory, not a blocker. At agentic speed, work sometimes moves faster than the roadmap. The check makes the gap visible so the human consciously decides, rather than silently accepting scope drift.
+
 ### 2. Prepare the Branch
 
 ```bash
@@ -95,6 +114,7 @@ Output a concise summary:
 
 ## Quality Checks
 
+- [ ] Milestone traceability checked — gap surfaced and human confirmed before proceeding
 - [ ] Every step in the spec was executed — none skipped
 - [ ] Every acceptance criterion checked explicitly, not assumed
 - [ ] All deliverables in the materials table exist at their specified paths

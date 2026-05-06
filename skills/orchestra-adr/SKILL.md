@@ -119,11 +119,3 @@ ADRs are the project's institutional memory. Future agents glob `.orchestra/adr/
 
 Write ADRs as if briefing a capable agent who has never seen this project before.
 
-## Part of Orchestra
-
-| Skill | Purpose |
-|-------|---------|
-| `orchestra-prd` | Scope work from a ticket |
-| `orchestra-spec` | Execution plan for a PRD |
-| `orchestra-adr` | Capture decisions made during work |
-| `orchestra-devlog` | Narrative work documentation |

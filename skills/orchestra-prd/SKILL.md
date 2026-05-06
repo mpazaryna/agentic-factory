@@ -1,20 +1,20 @@
 ---
 name: orchestra-prd
-description: "Generate a PRD from a milestone gap — define objective, success criteria, materials table, and context."
-when_to_use: "Use when a milestone review surfaces a gap that needs scoping before execution."
+description: "Define the what and why for a piece of work — objective, success criteria, materials table, and context. The foundational Score document before any spec is written."
+when_to_use: "Use when a piece of work needs to be scoped before execution — whether surfaced by a milestone review, a ticket, a stakeholder request, or a spike finding."
 allowed-tools: Read, Glob, Write
-argument-hint: "<gap-name or description>"
+argument-hint: "<work-item name or description>"
 disable-model-invocation: false
 ---
 
 # Write PRD
 
-Generate a PRD for a work item that traces back to a milestone in the roadmap.
+Define the what and why for a piece of work. The PRD is the foundational Score document — it must exist and be approved before any spec is written.
 
 ## Prerequisites
 
 - `.orchestra/roadmap.md` must exist
-- An active milestone PRD should exist with a gap that motivates this PRD
+- Read the roadmap and any active milestone PRD for context — but a milestone gap is not required to write a PRD
 
 ## Steps
 
@@ -50,9 +50,9 @@ Generate the PRD with this structure:
 
 ### 4. Determine Work Item ID
 
-- If a ClickUp ticket exists or will be created, use `{clickup-id}-{short-name}`
+- If a ticket ID exists from an issue tracker, use `{ticket-id}-{short-name}`
 - If no ticket yet, use a descriptive slug: `{short-name}`
-- The user can rename the folder later when a ticket is created
+- The user can rename the folder later when a ticket is assigned
 
 ### 5. Write the File
 
@@ -62,7 +62,7 @@ Include YAML frontmatter at the top of the file:
 
 ```yaml
 ---
-ticket: {clickup-id or slug — matches the work item folder name}
+ticket: {ticket-id or slug — matches the work item folder name}
 status: draft
 created_on: {today's date in YYYY-MM-DD format}
 ---
@@ -72,11 +72,14 @@ Status vocabulary for PRDs: `draft` → `approved` → `complete`
 
 ### 6. Update the Milestone
 
-Add or update the row in the parent milestone PRD's materials table:
+If an active milestone PRD exists in `.orchestra/roadmap.md`:
+- Add or update the row in that milestone's materials table:
 
 ```markdown
 | {PRD title} | .orchestra/work/{id}-{name}/prd.md | Not Started |
 ```
+
+If no active milestone exists, skip this step and note it in the report — the work item can be assigned to a milestone later.
 
 ### 7. Present for Approval
 
@@ -91,5 +94,5 @@ Show the user the complete PRD. Ask:
 - [ ] Objective is specific — not "improve the thing" but "add X that does Y so Z"
 - [ ] Success criteria are testable — each one can be checked as done/not done
 - [ ] Materials table lists concrete deliverables with file paths
-- [ ] Context traces back to a milestone in the roadmap
+- [ ] Context explains why this work matters — and traces to a milestone if one exists
 - [ ] No open questions left unaddressed (flag them if unresolved)

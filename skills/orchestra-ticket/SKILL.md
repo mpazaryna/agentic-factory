@@ -3,7 +3,7 @@ name: orchestra-ticket
 description: "Capture a work ticket as the starting point for the orchestra loop — read a brief, scaffold the work item folder, and set up for PRD and spec."
 when_to_use: "Use when starting new work from a ticket, task, or brief."
 allowed-tools: Read, Glob, Write, Bash
-argument-hint: "<clickup-id, url, or description>"
+argument-hint: "<ticket-id, url, or description>"
 disable-model-invocation: false
 ---
 
@@ -14,7 +14,7 @@ Capture a work ticket and scaffold the orchestra work item. The ticket is the co
 ## Flow
 
 ```
-/ticket → /prd → /spec → implement → /devlog
+/orchestra-ticket → /orchestra-plan (PRD → Spec → Gherkin) → /orchestra-implement → /orchestra-review → /orchestra-merge
 ```
 
 ## Steps
@@ -23,14 +23,14 @@ Capture a work ticket and scaffold the orchestra work item. The ticket is the co
 
 From $ARGUMENTS, determine the source:
 
-- **ClickUp ID or URL** — fetch the ticket using ClickUp MCP tools (requires ClickUp MCP to be installed). Use the task ID to retrieve title, description, and acceptance criteria.
+- **Issue tracker ID or URL** — fetch the ticket if an integration is installed. Use the task ID to retrieve title, description, and acceptance criteria.
 - **Text description** — the user is providing the brief directly
 
 Extract: title, objective, any acceptance criteria, priority, context.
 
 ### 2. Check for Existing Work Item
 
-Derive the slug: `{clickup-id}-{short-name}` (if from ClickUp) or `{short-name}` (if from text).
+Derive the slug: `{ticket-id}-{short-name}` (if from an issue tracker) or `{short-name}` (if from a text brief).
 
 Check if `.orchestra/work/{slug}/` already exists.
 
@@ -50,7 +50,7 @@ Create the folder and write the ticket file:
 ```markdown
 # {Title}
 
-**Source:** {ClickUp link or "user brief"}
+**Source:** {issue tracker link or "user brief"}
 **Priority:** {if known}
 **Date:** {today}
 

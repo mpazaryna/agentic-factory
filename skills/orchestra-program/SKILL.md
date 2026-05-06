@@ -1,7 +1,7 @@
 ---
 name: orchestra-program
-description: "Explain what the orchestra methodology is — the pipeline, roles, file structure, status vocabulary, and skill index."
-when_to_use: "Use when someone asks what orchestra is, how it works, or where to start."
+description: "Explain what Orchestra is — a software development lifecycle encoded for agents, its SDLC roots, the pipeline, roles, file structure, status vocabulary, and skill index."
+when_to_use: "Use when someone asks what Orchestra is, how it works, where its components come from, or where to start."
 allowed-tools: Read, Glob
 ---
 
@@ -13,20 +13,51 @@ Present the orchestra methodology as a complete orientation. This is the program
 
 ### The Metaphor
 
-Orchestra is a methodology for structured software development using AI agents. The name comes from the roles:
+Orchestra is a software development lifecycle (SDLC) — the same discipline engineers have practiced for decades, encoded so that agents can execute it. The name comes from the roles:
 
-- **Composer** — the human who sets the vision and approves the work
-- **Conductor** — the agent (Lenny) who interprets the score and leads execution
-- **Musicians** — the skills, each playing their part in sequence
-- **Score** — the spec: the agreed contract before performance begins
+- **Composer** — the human who sets the vision and approves the work *(Product Owner / Stakeholder)*
+- **Conductor** — the agent who interprets the score and leads execution *(Tech Lead — human or agent)*
+- **Musicians** — the skills, each playing their part in sequence *(Specialist engineers / sub-agents)*
+- **Score** — the spec: the agreed contract before performance begins *(Requirements + Design documents)*
 
 No musician improvises. No step is skipped. The program tells you what will be played, in what order, before the lights go dark.
 
 ---
 
+### The Roots
+
+Every component of Orchestra traces to a proven SDLC discipline. Nothing was invented — it was encoded.
+
+| Orchestra | SDLC Ancestor | The Discipline |
+|---|---|---|
+| Score (PRD + Spec + Gherkin) | Requirements → Technical Design → Acceptance Tests | Spec-driven development — written before execution begins |
+| PRD | Product requirements document | *What* and *why*, decided before *how* |
+| Spec | Technical design document | *How*, decided before building begins |
+| Gherkin | BDD acceptance criteria (Dan North, 2006) | Tests as the contract between intent and implementation |
+| ADR | Architecture Decision Records (Nygard, 2011) | Decisions as durable artifacts, not conversation |
+| Implement | Branch / commit / test cycle | Execution against the spec — no improvisation |
+| Review | Code review + design review | Evidence-based gate before integration |
+| Merge | Continuous integration gate | The premiere — the permanent record |
+| Devlog | Engineering journal + commit discipline | Programme notes — context for the audience that follows |
+| Roadmap | Product roadmap / milestone planning | Vision encoded as checkable states |
+
+The novel layer is the runtime: agents execute against these artifacts as their primary input, rather than humans translating from them.
+
+---
+
+### The Governing Principle
+
+**The score is written before the performance begins.**
+
+Agents execute against artifacts, not instructions. A conductor without a score is improvising. An agent without a spec is guessing. The Q&A phases — PRD, then Spec — exist to make the score tight enough that execution requires no interpretation.
+
+---
+
 ### The Pipeline
 
-Every piece of work moves through the same pipeline:
+Every piece of work moves through the same pipeline in two halves: writing the score, then performing it.
+
+**Score — Requirements & Design**
 
 | Stage | Skill | What Happens |
 |---|---|---|
@@ -35,6 +66,11 @@ Every piece of work moves through the same pipeline:
 | Plan | `/orchestra-spec` | Q&A with the composer produces the spec — the *how* |
 | Validate | `/orchestra-gherkin` | Acceptance criteria written as testable Gherkin scenarios |
 | **Approve** | *(human gate)* | Composer signs off — the score is locked |
+
+**Performance — Build & Deliver**
+
+| Stage | Skill | What Happens |
+|---|---|---|
 | Implement | `/orchestra-implement` | A branch is created, spec steps executed, commits made |
 | Review | `/orchestra-review` | Every acceptance criterion checked with evidence — PASS or FAIL |
 | Merge | `/orchestra-merge` | Reviewed branch merged to main, work item closed |
@@ -45,7 +81,7 @@ The Q&A before the spec is what makes the rest possible. A tight spec is a spec 
 
 ### Status Vocabulary
 
-Work items carry a status that tracks exactly where they are in the pipeline:
+Work items carry a status that tracks exactly where they are in the pipeline. These are *stage gates* — a recognized SDLC pattern in which each status is a decision point that must be explicitly cleared before the next phase begins. Nothing advances automatically.
 
 ```
 draft → approved → in-progress → complete → reviewed → closed
@@ -80,34 +116,41 @@ Everything lives under `.orchestra/` in the project root:
     └── YYYY-MM-DD-*.md     — Developer journals
 ```
 
-Work item folders are named `{ticket-id}-{short-name}`. The ticket ID comes from ClickUp. If no ticket exists yet, use a descriptive slug.
+Work item folders are named `{ticket-id}-{short-name}`. The ticket ID comes from your issue tracker. If no ticket exists yet, use a descriptive slug.
 
 ---
 
 ### Skill Index
 
-**Planning skills** — left side of the pipeline:
+**Score — Requirements & Design:**
 
 | Skill | Purpose |
 |---|---|
 | `orchestra-ticket` | Capture a work item and scaffold its folder |
-| `orchestra-prd` | Generate a PRD from a milestone gap |
+| `orchestra-prd` | Define the *what* and *why* for a piece of work |
 | `orchestra-spec` | Generate an execution spec from an approved PRD |
 | `orchestra-gherkin` | Generate Gherkin scenarios from a spec |
+| `orchestra-plan` | Run the full PRD → Spec → Gherkin loop in one session |
 | `orchestra-roadmap` | Read and manage the roadmap |
 | `orchestra-milestone` | Review milestone progress, surface gaps |
-| `orchestra-adr` | Capture an architectural decision |
-| `orchestra-devlog` | Write developer journals |
 | `orchestra-scaffold` | Bootstrap the `.orchestra/` structure in a new project |
-| `orchestra-uml` | Generate UML diagrams as Mermaid code |
 
-**Execution skills** — right side of the pipeline:
+**Performance — Build & Deliver:**
 
 | Skill | Purpose |
 |---|---|
 | `orchestra-implement` | Execute an approved spec on a branch |
 | `orchestra-review` | Review a completed implementation against its spec |
 | `orchestra-merge` | Merge a reviewed branch to main and close the work item |
+| `orchestra-eval` | Grade skill outputs against acceptance criteria |
+
+**Persistent Record — Spans the Lifecycle:**
+
+| Skill | Purpose |
+|---|---|
+| `orchestra-adr` | Capture an architectural decision |
+| `orchestra-devlog` | Write developer journals |
+| `orchestra-uml` | Generate UML diagrams as Mermaid code |
 
 ---
 
@@ -125,8 +168,8 @@ Work item folders are named `{ticket-id}-{short-name}`. The ticket ID comes from
 
 ## Reading the Repo
 
-If the user wants a live picture of the current project alongside the program, read:
-- `.orchestra/roadmap.md` — for the current vision and milestones
-- `.orchestra/work/*/prd.md` — to list active work items and their statuses
+When presenting the program on an active project, always follow with the live state. Read:
+- `.orchestra/roadmap.md` — current vision and milestones
+- `.orchestra/work/*/prd.md` — active work items and their statuses
 
-Present the live state after the program overview if it adds useful context.
+Present this after the program overview. The program tells you what will be played; the live state tells you where tonight's performance stands.

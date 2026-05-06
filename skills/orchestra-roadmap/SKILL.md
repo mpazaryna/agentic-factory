@@ -76,7 +76,7 @@ If the user is unsure, help them derive milestones from the vision:
 
 If the user gives more than 6, suggest grouping — too many dilutes focus.
 
-### Step 3: Draft the Roadmap
+### Step 4: Draft the Roadmap
 
 Generate the roadmap and present it for review:
 
@@ -112,7 +112,7 @@ Ask via AskUserQuestion:
 
 Iterate until approved. Apply the same gate protocol as `orchestra-plan`: one question, re-present after feedback, advance on approval.
 
-### Step 4: Write on Approval
+### Step 5: Write on Approval
 
 On approval, write:
 
@@ -149,7 +149,7 @@ Part of the [{Project Name} Roadmap](.orchestra/roadmap.md).
 Run /orchestra-plan {slug} to start the planning loop for this milestone.
 ```
 
-### Step 5: Report
+### Step 6: Report
 
 ```
 ## Roadmap Bootstrapped

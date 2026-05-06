@@ -52,7 +52,7 @@ Before generating anything, read context:
 
 Determine the next work item ID:
 - Format: `{NNN}-{slug}` where NNN is the next 3-digit number (e.g. `007-payment-webhook`)
-- If $ARGUMENTS contains a ClickUp ticket ID, use it as the `ticket` field; derive the slug from the description
+- If $ARGUMENTS contains a ticket ID from an issue tracker, use it as the `ticket` field; derive the slug from the description
 
 If $ARGUMENTS doesn't contain enough to write a PRD, ask via AskUserQuestion:
 - What are we building?
@@ -71,7 +71,7 @@ The PRD is a business document. It answers **why** — the problem, the user, th
 
 ```markdown
 ---
-ticket: {clickup-id or NNN-slug}
+ticket: {ticket-id or NNN-slug}
 status: draft
 created_on: {YYYY-MM-DD}
 ---
@@ -156,21 +156,21 @@ created_on: {YYYY-MM-DD}
 - Files: {test file paths}
 - Covers: {behaviors tested}
 - Mocking: {what is mocked}
-- Run: default (`pytest` with no flags)
+- Run: project default suite
 - Commit: test file before implementation file
 
 ### Integration Tests
 - Files: {test file paths}
 - Covers: {behaviors tested — must include any real API/DB/network boundary}
 - Mocking: nothing at the boundary under test
-- Run: `pytest -m integration`
+- Run: integration suite (excluded from default)
 - Commit: test file before the integration implementation
 
 ### E2E Tests
 - Files: {test file paths}
 - Covers: {full user-facing path}
 - Mocking: nothing
-- Run: `pytest -m e2e` or `playwright test`
+- Run: e2e suite (excluded from default)
 - Commit: test file before the wiring that makes it pass
 
 ## Deliverables

@@ -105,16 +105,6 @@ status: reviewed
 
 Signal: ready for `/orchestra-merge`
 
-## Quality Checks
-
-- [ ] Every acceptance criterion evaluated with evidence, not assumed
-- [ ] Every deliverable in the materials table confirmed to exist
-- [ ] Diff reviewed for shortcuts or incomplete steps
-- [ ] Verdict is unambiguous — PASS or FAIL, not "mostly done"
-- [ ] All three test tiers confirmed present: unit, integration, E2E — absence of any tier is a FAIL
-- [ ] Integration tests verified to hit real boundaries (not mocked at the seam)
-- [ ] TDD commit ordering verified for all tiers, not just unit tests
-
 ### 8. Write the Devlog
 
 After producing the verdict, write a devlog entry regardless of PASS or FAIL.
@@ -142,6 +132,17 @@ Be specific — file paths, criterion names, what evidence was or wasn't there.}
 {If PASS: ready for /orchestra-merge}
 {If FAIL: return to /orchestra-implement — list the blocking issues}
 ```
+
+## Quality Checks
+
+- [ ] Every acceptance criterion evaluated with evidence, not assumed
+- [ ] Every deliverable in the materials table confirmed to exist
+- [ ] Diff reviewed for shortcuts or incomplete steps
+- [ ] Verdict is unambiguous — PASS or FAIL, not "mostly done"
+- [ ] If the work item involves code: all three test tiers confirmed present (unit, integration, E2E) — absence of any tier is a FAIL
+- [ ] If the work item involves code: integration tests verified to hit real boundaries (not mocked at the seam)
+- [ ] If the work item involves code: TDD commit ordering verified for all tiers
+- [ ] Devlog written regardless of verdict
 
 ## Boundaries
 

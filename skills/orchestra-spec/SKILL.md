@@ -45,11 +45,11 @@ Break the work into concrete steps:
 
 TDD is mandatory across three tiers. For every spec that involves code, design all three layers before writing the approach steps:
 
-**Unit tests** — mock external boundaries (network, filesystem, DB). Fast, deterministic. Committed before the implementation they cover. Marked as default (`pytest` with no flags).
+**Unit tests** — mock external boundaries (network, filesystem, DB). Fast, deterministic. Committed before the implementation they cover. Run as the project default suite — no external dependencies required.
 
-**Integration tests** — exercise real subsystems at the boundary being tested (real API, real DB, real filesystem). No mocks at the boundary. Marked `@pytest.mark.integration`, excluded from the default run. Must include any external API call so redirect behavior, auth, and response shape are verified against reality.
+**Integration tests** — exercise real subsystems at the boundary being tested (real API, real DB, real filesystem). No mocks at the boundary. Excluded from the default run — require external access. Must include any external API call so redirect behavior, auth, and response shape are verified against reality.
 
-**E2E tests** — exercise the full user-facing interface from end to end (CLI invocation, HTTP endpoint). Hits real external dependencies. Marked `@pytest.mark.e2e`.
+**E2E tests** — exercise the full user-facing interface from end to end (CLI invocation, HTTP endpoint, browser). Hits real external dependencies. Excluded from the default run — require the full running stack.
 
 For each tier, specify:
 - Which file(s) hold the tests
@@ -80,7 +80,7 @@ Include YAML frontmatter at the top of the file:
 
 ```yaml
 ---
-ticket: {clickup-id or slug — matches the work item folder name}
+ticket: {ticket-id or slug — matches the work item folder name}
 status: draft
 created_on: {today's date in YYYY-MM-DD format}
 ---
@@ -242,7 +242,7 @@ Key Playwright practices for specs:
 
 > Mocks are allowed in unit tests to keep them fast and isolated. Integration tests MUST hit the real system at the boundary being tested — no exceptions. E2E tests MUST invoke the real user interface against the real stack.
 
-Violating this rule means tests can pass while the system is broken in production, as happened with the `follow_redirects` bug: all unit tests passed, but the real Frankfurter API returned a 301 that `httpx` didn't follow, crashing the CLI at runtime.
+Violating this rule means tests can pass while the system is broken in production. A common failure mode: all unit tests pass against mocked responses, but the real external service returns a redirect or unexpected shape that the mock never encoded — crashing the system at runtime in a way no unit test could have caught.
 
 ---
 
