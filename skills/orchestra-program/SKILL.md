@@ -132,14 +132,14 @@ Work item folders are named `{ticket-id}-{short-name}`. The ticket ID comes from
 | `orchestra-gherkin` | Generate Gherkin scenarios from a spec |
 | `orchestra-plan` | Run the full PRD → Spec → Gherkin loop in one session |
 | `orchestra-roadmap` | Read and manage the roadmap |
-| `orchestra-milestone` | Review milestone progress, surface gaps |
+| `orchestra-milestone` | Review milestone progress, surface gaps, and reverse-check for orphaned work items not tracked by any milestone |
 | `orchestra-scaffold` | Bootstrap the `.orchestra/` structure in a new project |
 
 **Performance — Build & Deliver:**
 
 | Skill | Purpose |
 |---|---|
-| `orchestra-implement` | Execute an approved spec on a branch |
+| `orchestra-implement` | Execute an approved spec on a branch — includes pre-flight milestone traceability check |
 | `orchestra-review` | Review a completed implementation against its spec |
 | `orchestra-merge` | Merge a reviewed branch to main and close the work item |
 | `orchestra-eval` | Grade skill outputs against acceptance criteria |
