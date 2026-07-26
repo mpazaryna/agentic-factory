@@ -107,6 +107,26 @@ specialists: [`yoga-orchestrator`](skills/yoga/yoga-orchestrator),
 
 ---
 
+## In the lab
+
+Not proven yet. Visible on purpose, because the point is to get comments before
+it's treated as reliable.
+
+**[`dev-distribution-audit`](skills/lab/dev-distribution-audit)** — a skill can be
+flawless and still never reach anyone. Discovery failures are silent: a category
+folder that gains its own `SKILL.md` swallows every skill beneath it, a skill one
+level too deep is invisible, two skills sharing a `name` deduplicate by search
+order. This runs the real installers and diffs their output against the repo
+instead of trusting the layout. Every check in it was a live defect here.
+
+Open questions and promotion criteria are in its
+[REVIEW.md](skills/lab/dev-distribution-audit/REVIEW.md). Comments welcome.
+
+Lab skills are offered by the CLI but **excluded from every plugin** — see
+[skills/lab/](skills/lab).
+
+---
+
 ## Install
 
 Skills install **per project** — each repo declares what it consumes. There is
@@ -147,7 +167,8 @@ skills/
 ├── platform/   11   target runtimes — Cloudflare, Apple
 ├── practice/   11   rhythm, investigation, capture
 ├── dev/         4   building and auditing
-└── yoga/        5   domain vertical
+├── yoga/        5   domain vertical
+└── lab/         1   in review — not proven, excluded from plugins
 ```
 
 Skills sit one level below a category folder:

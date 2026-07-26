@@ -14,7 +14,7 @@ none of those paths resolved here. Recover any of them from git history
 ## Directory Layout
 
 ```
-skills/     — 31 skills in 4 category folders
+skills/     — 31 proven skills in 4 category folders, plus lab/
 ```
 
 ### Skill Categories
@@ -25,6 +25,7 @@ skills/     — 31 skills in 4 category folders
 | `practice/` | Personal rhythm, investigation, workflow | kairos-kickoff, kairos-shutdown, kairos-knote, kairos-review, kairos-weekly-plan, kairos-weekly-finalize, feynman-inquiry, feynman-decision, clickup-backfill, digest, writing-no-slop |
 | `dev/` | Tooling for building and auditing | dev-enforcer, dev-playwright, dev-skills-auditor, web-perf |
 | `yoga/` | Yoga class planning (multi-skill) | yoga-orchestrator, yoga-anatomy-expert, yoga-asana-strategist, yoga-professor, yoga-theme-developer |
+| `lab/` | **In review — not proven.** Excluded from every plugin | dev-distribution-audit |
 
 Domain prefixes in skill *names* are retained — the name is the invocation
 identity and renaming breaks existing installs. The folder groups the source;
@@ -63,12 +64,12 @@ Two paths with different curation behavior. Know which you're changing.
 
 | Path | Curated? | Source of truth |
 |------|----------|-----------------|
-| `npx skills@latest add mpazaryna/agentic-factory` | **No** — offers all 31, every folder | convention: the directory walk |
+| `npx skills@latest add mpazaryna/agentic-factory` | **No** — offers all 32, every folder including `lab/` | convention: the directory walk |
 | `/plugin install <name>@agentic-factory` | **Yes** — only listed paths | `.claude-plugin/marketplace.json` |
 
 ```
 /plugin marketplace add mpazaryna/agentic-factory
-/plugin install skills@agentic-factory        # all 31, via the 4 category folders
+/plugin install skills@agentic-factory        # 31, via the 4 category folders
 /plugin install cloudflare@agentic-factory    # 8 Cloudflare skills only
 ```
 
@@ -78,9 +79,31 @@ itself declares metadata and skill paths — there are no per-plugin
 to the relevant `skills` array if it belongs in a focused plugin; the `skills`
 plugin picks it up automatically via its category folder.
 
-Naming a folder `deprecated/` or `in-progress/` signals status to a human
-reading the picker but **does not hide anything** from the CLI. Anything in the
-repo is installable. Delete what's superseded; git history is the archive.
+Naming a folder `lab/`, `deprecated/`, or `in-progress/` signals status to a
+human reading the picker but **does not hide anything** from the CLI. Anything in
+the repo is installable. Delete what's superseded; git history is the archive.
+
+## The Lab
+
+`skills/lab/` holds skills under review — worth looking at, not yet proven.
+
+The only real mechanism is the manifest: `lab/` is deliberately absent from every
+`skills` array, so plugin installs skip it while CLI installs still offer it.
+That asymmetry *is* the lab. A skill that must not reach anyone at all stays in
+the project it's being built in, not here.
+
+Three rules:
+
+1. **Final name on day one.** A skill headed for `dev/` is named `dev-*` while it
+   sits in the lab, so graduating is `git mv` with no rename and no broken
+   installs. Add it to the relevant `skills` array at that point — that is what
+   graduating means.
+2. **Every lab skill carries a `REVIEW.md`** stating what feedback it needs, what
+   the author is unsure about, and the criteria for promotion. Without it, "in
+   review" is just a folder name.
+3. **Retire freely.** A lab skill that doesn't earn promotion gets deleted.
+
+See [skills/lab/README.md](skills/lab/README.md).
 
 ### SKILL.md Frontmatter
 
