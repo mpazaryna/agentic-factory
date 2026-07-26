@@ -1,8 +1,7 @@
 ---
 name: swift-ui
 description: SwiftUI implementation patterns for building polished iOS/macOS apps. Use when building views, managing state, creating layouts, implementing animations, or structuring app architecture in SwiftUI.
-allowed-tools:
-  - Read
+allowed-tools: Read, Grep, Glob
 ---
 
 # swift-ui

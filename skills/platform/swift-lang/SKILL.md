@@ -1,8 +1,7 @@
 ---
 name: swift-lang
 description: "Master advanced Swift language features: macros, concurrency, generics, networking, testing. Use when working with Swift macros, async/await patterns, protocol design, or optimizing for performance. See swift-ui for SwiftUI-specific patterns."
-allowed-tools:
-  - Read
+allowed-tools: Read, Grep, Glob
 ---
 
 # swift-lang

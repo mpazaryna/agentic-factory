@@ -4,32 +4,57 @@
     "name": "mpazaryna"
   },
   "metadata": {
-    "description": "Plugin marketplace for Claude Code — skills and agents organized by practice domain",
-    "version": "2.0.0"
+    "description": "Plugin marketplace for Claude Code — skills organized by practice domain",
+    "version": "3.0.0"
   },
   "plugins": [
     {
-      "name": "cloudflare",
-      "source": "./plugins/cloudflare",
-      "description": "Cloudflare Workers platform skills: Workers, Workers AI, Hono, KV, and Durable Objects",
+      "name": "skills",
+      "source": "./",
+      "description": "Cross-domain skills collection: platform, practice, dev tooling, and domain skills for Claude Code",
       "version": "1.0.0",
-      "category": "platform",
-      "tags": ["cloudflare", "workers", "edge", "hono", "kv", "durable-objects"]
+      "category": "skills",
+      "author": {
+        "name": "mpazaryna",
+        "url": "https://github.com/mpazaryna"
+      },
+      "homepage": "https://github.com/mpazaryna/agentic-factory",
+      "repository": "https://github.com/mpazaryna/agentic-factory",
+      "license": "MIT",
+      "keywords": ["platform", "practice", "dev", "cloudflare", "swift", "skills"],
+      "skills": [
+        "./skills/platform/",
+        "./skills/practice/",
+        "./skills/dev/",
+        "./skills/yoga/"
+      ],
+      "strict": false
     },
     {
-      "name": "skills",
-      "source": "./skills",
-      "description": "Cross-domain skills collection: PM, dev, content, product, and platform skills for Claude Code",
-      "version": "0.1.0",
-      "category": "skills",
-      "tags": [
-        "pm",
-        "dev",
-        "content",
-        "product",
-        "platform",
-        "skills"
-      ]
+      "name": "cloudflare",
+      "source": "./",
+      "description": "Cloudflare platform skills: Workers, Durable Objects, Hono, Wrangler, Agents SDK, Sandbox SDK, and Email Service",
+      "version": "2.0.0",
+      "category": "platform",
+      "author": {
+        "name": "mpazaryna",
+        "url": "https://github.com/mpazaryna"
+      },
+      "homepage": "https://github.com/mpazaryna/agentic-factory/tree/main/skills/platform",
+      "repository": "https://github.com/mpazaryna/agentic-factory",
+      "license": "MIT",
+      "keywords": ["cloudflare", "workers", "edge", "hono", "durable-objects", "wrangler"],
+      "skills": [
+        "./skills/platform/cloudflare",
+        "./skills/platform/workers-best-practices",
+        "./skills/platform/wrangler",
+        "./skills/platform/durable-objects",
+        "./skills/platform/cf-hono",
+        "./skills/platform/agents-sdk",
+        "./skills/platform/sandbox-sdk",
+        "./skills/platform/cloudflare-email-service"
+      ],
+      "strict": false
     }
   ]
 }
