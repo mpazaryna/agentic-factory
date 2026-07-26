@@ -38,12 +38,19 @@ This Claude skill provides comprehensive pre-submission review of SwiftUI-based 
 3. Skill will be automatically installed and available
 
 ### For Claude Code (CLI)
-```bash
-# Copy skill folder to Claude skills directory
-cp -r swiftui-submission-prep ~/.claude/skills/
 
-# Or install from this directory
-ln -s "$(pwd)/swiftui-submission-prep" ~/.claude/skills/
+Skills install per project — there is no global install. Pull an editable copy
+into the current project with the [`skills`](https://www.skills.sh) CLI:
+
+```bash
+npx skills@latest add mpazaryna/agentic-factory --skill swiftui-submission-prep
+```
+
+Or take it read-only as part of the marketplace bundle:
+
+```
+/plugin marketplace add mpazaryna/agentic-factory
+/plugin install skills@agentic-factory
 ```
 
 ### For Claude Apps (Browser)

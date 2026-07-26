@@ -1,4 +1,4 @@
-# How to Use dev-inquiry
+# How to Use feynman-inquiry
 
 ## The Core Idea
 

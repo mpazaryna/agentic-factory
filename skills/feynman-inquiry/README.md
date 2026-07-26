@@ -1,4 +1,4 @@
-# dev-inquiry
+# feynman-inquiry
 
 > Feynman-style technical inquiry for developers. Understand before you decide. Validate before you build.
 
@@ -49,7 +49,7 @@ Each mode builds on the previous. Don't decide before you understand.
 ## Structure
 
 ```
-dev-inquiry/
+feynman-inquiry/
 ├── SKILL.md              # Orchestrator (routes to references)
 ├── README.md             # This file
 ├── HOW_TO_USE.md         # Usage patterns
@@ -61,13 +61,12 @@ dev-inquiry/
     └── examples.md       # Real examples across all modes
 ```
 
-## Part of the dev-* Family
+## Part of the feynman-* Family
 
 | Skill | Purpose |
 |-------|---------|
-| `dev-inquiry` | Technical investigation and decision-making |
-| `dev-reason` | Problem-solving and debugging (future) |
-| `dev-reports` | Work documentation and communication (future) |
+| `feynman-inquiry` | Technical investigation — understand before you decide |
+| `feynman-decision` | Option comparison, scoring, and ADR drafts |
 
 ## Installation
 
