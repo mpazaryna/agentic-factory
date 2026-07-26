@@ -33,22 +33,31 @@ skills/     — 34 skills, flat, domain-prefixed
 
 ## Install
 
-### Dev machine (symlink)
+Skills install **per project** — each repo (substation) declares the skills it
+consumes. There is no global install.
 
-Symlink individual skills directly into `~/.claude/skills/` for live editing:
+### Skills you'll adapt — editable copy (capabilities)
+
+Pull skills into the current project with the [`skills`](https://www.skills.sh)
+CLI. They land in the project's agent dir, editable and committed with the repo:
 
 ```bash
-for skill in ~/workspace/agentic-factory/skills/*/; do
-  ln -sf "$skill" ~/.claude/skills/$(basename "$skill")
-done
+npx skills@latest add mpazaryna/agentic-factory                            # choose interactively
+npx skills@latest add mpazaryna/agentic-factory --skill orchestra-review   # a single skill
+npx skills@latest update                                                   # re-sync from source
 ```
 
-### Other machines (plugin marketplace)
+### Skills that must stay identical — read-only, versioned (contracts)
+
+Install the marketplace plugin: a managed, read-only bundle that moves as one
+unit. Read-only means it *can't* drift — you can't edit it in place, only pull a
+new version.
 
 ```
-/plugin marketplace add mpaz/agentic-factory
+/plugin marketplace add mpazaryna/agentic-factory
 /plugin install skills@agentic-factory
 ```
+
 
 ## Authoring
 
