@@ -18,3 +18,7 @@ Thumbs.db
 *.swo
 /_audit
 .env
+
+# Local Claude Code settings — machine-specific, and permission rules can
+# capture secrets from the commands they allow. Never commit.
+.claude/settings.local.json
