@@ -3,7 +3,7 @@
   "description": "Cloudflare Workers platform skills: Workers, Workers AI, Hono, KV, and Durable Objects.",
   "version": "1.0.0",
   "author": {
-    "name": "mpaz",
+    "name": "mpazaryna",
     "url": "https://github.com/mpazaryna"
   },
   "homepage": "https://github.com/mpazaryna/agentic-factory/tree/main/plugins/cloudflare",
