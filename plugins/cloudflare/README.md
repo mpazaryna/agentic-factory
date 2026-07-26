@@ -15,7 +15,7 @@ Cloudflare Workers platform skills for Claude Code.
 ## Install
 
 ```
-/plugin marketplace add mpaz/agentic-factory
+/plugin marketplace add mpazaryna/agentic-factory
 /plugin install cloudflare@agentic-factory
 ```
 

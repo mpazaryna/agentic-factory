@@ -37,7 +37,7 @@ Curated subsets for distribution — source lives in `skills/`, plugins get a co
 ## Installable Plugin
 
 ```
-/plugin marketplace add mpaz/agentic-factory
+/plugin marketplace add mpazaryna/agentic-factory
 /plugin install skills@agentic-factory
 ```
 
