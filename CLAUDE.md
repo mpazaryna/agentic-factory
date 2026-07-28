@@ -14,7 +14,7 @@ none of those paths resolved here. Recover any of them from git history
 ## Directory Layout
 
 ```
-skills/     — 31 proven skills in 4 category folders, plus lab/
+skills/     — 49 proven skills in 5 category folders, plus lab/
 ```
 
 ### Skill Categories
@@ -24,6 +24,7 @@ skills/     — 31 proven skills in 4 category folders, plus lab/
 | `platform/` | Target runtimes — Cloudflare and Apple | cloudflare, workers-best-practices, wrangler, durable-objects, cf-hono, agents-sdk, sandbox-sdk, cloudflare-email-service, swift-lang, swift-ui, swiftui-submission-prep |
 | `practice/` | Personal rhythm, investigation, workflow | kairos-kickoff, kairos-shutdown, kairos-knote, kairos-review, kairos-weekly-plan, kairos-weekly-finalize, feynman-inquiry, feynman-decision, clickup-backfill, digest, writing-no-slop |
 | `dev/` | Tooling for building and auditing | dev-enforcer, dev-playwright, dev-skills-auditor, web-perf |
+| `sdlc/` | Orchestra — the software development lifecycle encoded for agents | orchestra-usher, orchestra-scaffold, orchestra-roadmap, orchestra-milestone, orchestra-ticket, orchestra-prd, orchestra-spec, orchestra-gherkin, orchestra-implement, orchestra-review, orchestra-merge, orchestra-devlog, orchestra-adr, orchestra-plan, orchestra-afk, orchestra-uml, orchestra-program, orchestra-eval |
 | `yoga/` | Yoga class planning (multi-skill) | yoga-orchestrator, yoga-anatomy-expert, yoga-asana-strategist, yoga-professor, yoga-theme-developer |
 | `lab/` | **In review — not proven.** Excluded from every plugin | dev-distribution-audit |
 
@@ -64,16 +65,17 @@ Two paths with different curation behavior. Know which you're changing.
 
 | Path | Curated? | Source of truth |
 |------|----------|-----------------|
-| `npx skills@latest add mpazaryna/agentic-factory` | **No** — offers all 32, every folder including `lab/` | convention: the directory walk |
+| `npx skills@latest add mpazaryna/agentic-factory` | **No** — offers all 50, every folder including `lab/` | convention: the directory walk |
 | `/plugin install <name>@agentic-factory` | **Yes** — only listed paths | `.claude-plugin/marketplace.json` |
 
 ```
 /plugin marketplace add mpazaryna/agentic-factory
-/plugin install skills@agentic-factory        # 31, via the 4 category folders
+/plugin install skills@agentic-factory        # 49, via the 5 category folders
 /plugin install cloudflare@agentic-factory    # 8 Cloudflare skills only
+/plugin install orchestra@agentic-factory     # the 18 sdlc/ skills only
 ```
 
-Both marketplace entries use `source: "./"` with `strict: false`, so the entry
+All three marketplace entries use `source: "./"` with `strict: false`, so the entry
 itself declares metadata and skill paths — there are no per-plugin
 `plugin.json` files and no duplicated skill copies. When you add a skill, add it
 to the relevant `skills` array if it belongs in a focused plugin; the `skills`
@@ -144,3 +146,18 @@ See [skills/lab/README.md](skills/lab/README.md).
 - MCP servers → separate repos (`~/workspace/mcp-<name>/`), not here
 - Subagents → not here. A skill that needs isolation uses `context: fork`. An
   agent that only exists to load skills by path is a broken indirection
+
+### Skills also served over MCP
+
+`skills/sdlc/` is also delivered as MCP tools by
+[mpazaryna/orchestra](https://github.com/mpazaryna/orchestra), which keeps its
+own copies under `skills/` and codegens them into a Cloudflare Worker.
+
+**This repo is the source of truth for skill content.** The orchestra copies were
+adapted for MCP delivery and are deliberately allowed to diverge — edits here do
+not propagate there, and nothing syncs the two. Don't "fix" one to match the
+other without deciding that's what you want.
+
+The reason both exist: MCP delivery needs a deployed Worker, an API key, and a
+network round-trip. Installed skills need none of that, and they arrive as slash
+commands. External users get the second path only if the skills live here.

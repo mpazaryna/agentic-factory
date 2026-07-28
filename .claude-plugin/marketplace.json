@@ -11,8 +11,8 @@
     {
       "name": "skills",
       "source": "./",
-      "description": "Cross-domain skills collection: platform, practice, dev tooling, and domain skills for Claude Code",
-      "version": "1.0.0",
+      "description": "Cross-domain skills collection: platform, practice, dev tooling, SDLC, and domain skills for Claude Code",
+      "version": "1.1.0",
       "category": "skills",
       "author": {
         "name": "mpazaryna",
@@ -21,11 +21,12 @@
       "homepage": "https://github.com/mpazaryna/agentic-factory",
       "repository": "https://github.com/mpazaryna/agentic-factory",
       "license": "MIT",
-      "keywords": ["platform", "practice", "dev", "cloudflare", "swift", "skills"],
+      "keywords": ["platform", "practice", "dev", "sdlc", "cloudflare", "swift", "skills"],
       "skills": [
         "./skills/platform/",
         "./skills/practice/",
         "./skills/dev/",
+        "./skills/sdlc/",
         "./skills/yoga/"
       ],
       "strict": false
@@ -53,6 +54,25 @@
         "./skills/platform/agents-sdk",
         "./skills/platform/sandbox-sdk",
         "./skills/platform/cloudflare-email-service"
+      ],
+      "strict": false
+    },
+    {
+      "name": "orchestra",
+      "source": "./",
+      "description": "Orchestra SDLC skills: the ticket → PRD → spec → implement → review → merge loop, with devlog, ADR, roadmap, and milestone tracking",
+      "version": "1.0.0",
+      "category": "sdlc",
+      "author": {
+        "name": "mpazaryna",
+        "url": "https://github.com/mpazaryna"
+      },
+      "homepage": "https://github.com/mpazaryna/agentic-factory/tree/main/skills/sdlc",
+      "repository": "https://github.com/mpazaryna/agentic-factory",
+      "license": "MIT",
+      "keywords": ["sdlc", "orchestra", "prd", "spec", "planning", "devlog", "adr"],
+      "skills": [
+        "./skills/sdlc/"
       ],
       "strict": false
     }

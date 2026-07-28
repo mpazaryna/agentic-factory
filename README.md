@@ -1,6 +1,6 @@
 # Agentic Factory
 
-31 skills for Claude Code, each built to fix something that actually went wrong.
+49 skills for Claude Code, each built to fix something that actually went wrong.
 
 Every one of these came out of real work, got used until it earned its place, and
 was promoted here. Start with the problem you have.
@@ -79,6 +79,44 @@ one-sentence paragraphs for emphasis. Fluent and unmistakably machine-made.
 **[`writing-no-slop`](skills/practice/writing-no-slop)** is a style guide that
 bans the specific clichés, filler, and vague vocabulary that give it away.
 
+## "Every session starts from zero."
+
+The plan lived in a chat window and evaporated with it. The next session — yours
+or an agent's — opens the repo cold, with no record of what was decided, what was
+already tried, or what "done" was supposed to mean. So it re-derives, re-decides,
+and sometimes rebuilds what already exists.
+
+**Orchestra** is a software development lifecycle encoded for agents: eighteen
+skills that carry work from a ticket to a merge and leave the reasoning behind in
+the repo, in a `.orchestra/` folder, where the next session can find it.
+
+| Stage | Skill | Produces |
+|-------|-------|----------|
+| Orient | [`orchestra-usher`](skills/sdlc/orchestra-usher) | a read of project state, routed to the next skill |
+| Set up | [`orchestra-scaffold`](skills/sdlc/orchestra-scaffold) | the `.orchestra/` knowledge base |
+| Frame | [`orchestra-roadmap`](skills/sdlc/orchestra-roadmap) | vision and milestones |
+| Review | [`orchestra-milestone`](skills/sdlc/orchestra-milestone) | gaps between the plan and the repo |
+| Intake | [`orchestra-ticket`](skills/sdlc/orchestra-ticket) | a work item from a brief |
+| Scope | [`orchestra-prd`](skills/sdlc/orchestra-prd) | objective, success criteria, materials |
+| Design | [`orchestra-spec`](skills/sdlc/orchestra-spec) | approach, steps, acceptance criteria, risks |
+| Specify | [`orchestra-gherkin`](skills/sdlc/orchestra-gherkin) | executable BDD scenarios |
+| Build | [`orchestra-implement`](skills/sdlc/orchestra-implement) | a branch, commits, a completed spec |
+| Check | [`orchestra-review`](skills/sdlc/orchestra-review) | gaps and shortcuts caught before merge |
+| Ship | [`orchestra-merge`](skills/sdlc/orchestra-merge) | merged branch, closed work item |
+| Record | [`orchestra-devlog`](skills/sdlc/orchestra-devlog), [`orchestra-adr`](skills/sdlc/orchestra-adr) | the story behind the commits; decisions and their consequences |
+
+Plus [`orchestra-plan`](skills/sdlc/orchestra-plan) (runs PRD → Spec → Gherkin in
+one session with approval gates), [`orchestra-afk`](skills/sdlc/orchestra-afk)
+(the same discipline unattended — gates become files, approval becomes a commit),
+[`orchestra-uml`](skills/sdlc/orchestra-uml),
+[`orchestra-program`](skills/sdlc/orchestra-program), and
+[`orchestra-eval`](skills/sdlc/orchestra-eval).
+
+These are also served over MCP by
+[mpazaryna/orchestra](https://github.com/mpazaryna/orchestra) — which needs a
+deployed Worker and an API key. Installed from here they need neither. See
+[skills/sdlc/](skills/sdlc).
+
 ---
 
 ## Also here
@@ -153,8 +191,9 @@ means it *can't* drift — you can't edit it in place, only pull a new version.
 
 ```
 /plugin marketplace add mpazaryna/agentic-factory
-/plugin install skills@agentic-factory        # all 31 skills
+/plugin install skills@agentic-factory        # all 49 skills
 /plugin install cloudflare@agentic-factory    # Cloudflare platform subset only
+/plugin install orchestra@agentic-factory     # the SDLC loop only
 ```
 
 Unlike the CLI, plugins **are** curated: each entry in
@@ -167,6 +206,7 @@ skills/
 ├── platform/   11   target runtimes — Cloudflare, Apple
 ├── practice/   11   rhythm, investigation, capture
 ├── dev/         4   building and auditing
+├── sdlc/       18   orchestra — the lifecycle encoded for agents
 ├── yoga/        5   domain vertical
 └── lab/         1   in review — not proven, excluded from plugins
 ```
